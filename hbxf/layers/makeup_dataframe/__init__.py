@@ -1,3 +1,4 @@
+from layers.makeup_dataframe.add_ceil import add_ceil
 from layers.makeup_dataframe.merge_initialized_table import merge_initialized_table
 from layers.makeup_dataframe.order_limit import order_limit
 from layers.makeup_dataframe.add_unit import add_unit
@@ -8,6 +9,7 @@ def makeup_dataframe(dataframe_list):
     1. 排  序 / 补  零
     2. order / limit
     3. value 的单位
+    4. 设置数值上限
     """
 
     for dataframe in dataframe_list:
@@ -24,6 +26,11 @@ def makeup_dataframe(dataframe_list):
         # 添加单位
         if dataframe.get("unit"):
             df = add_unit(dataframe)
+            dataframe["df"] = df
+
+        # 设置上限
+        if dataframe.get("ceil"):
+            df = add_ceil(dataframe)
             dataframe["df"] = df
 
     return 200, "success", dataframe_list

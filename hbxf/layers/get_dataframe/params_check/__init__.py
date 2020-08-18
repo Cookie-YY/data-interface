@@ -1,3 +1,4 @@
+from .params_chech_each import params_chech_each
 from .params_check_real_table import get_real_table
 
 
@@ -14,6 +15,13 @@ def params_check(**kwargs):
                 4. @zb             # 相当于 $name / $name
     """
     parsed_content = {}
+    # 1. 参数逐一校验
+    code, msg, checked_params = params_chech_each(kwargs)
+    if code != 200:
+        return code, msg, {}
+    parsed_content["checked_params"] = checked_params
+
+    # 2. 表是否存在
     code, msg, real_table = get_real_table(kwargs.get("table"),
                                            kwargs.get("realm"),
                                            kwargs.get("busin"),
@@ -23,6 +31,7 @@ def params_check(**kwargs):
                                            kwargs.get("index"))
     if code != 200:
         return code, msg, {}
+
     parsed_content["real_table"] = real_table
 
     return 200, "success", parsed_content

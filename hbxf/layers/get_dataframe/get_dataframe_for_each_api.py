@@ -36,11 +36,14 @@ def get_dataframe_for_each_api(apis):
     strictorder = apis.pop("strictorder", "")              # (排序) 避免条件中存在 & 给到包装层
     limit_inner = apis.pop("limit_inner", "999999999")     # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
     limit_outer = apis.pop("limit_outer", "999999999")     # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
+    # ceil 和 ceil_value
+    ceil = apis.pop("ceil", "")                            # 数值上限
+    ceil_value = apis.pop("ceil_value", ceil)              # 达到上限后显示的内容
 
     # 将字段的默认值赋予参数字典
     apis_copy["busin"] = busin
     apis_copy["value"] = value
-    # apis_copy["limit"] = limit
+    apis_copy["ceil_value"] = ceil_value
 
     # 以下做了假数据处理兼容，正常需要改回来
     day = apis.pop("day", "")
@@ -54,6 +57,7 @@ def get_dataframe_for_each_api(apis):
     code, msg, parsed_check_content = params_check(**locals())
     if code != 200:
         return code, msg, {}
+    apis_copy.update(parsed_check_content["checked_params"])  # 检查后的参数可能会有改动，更新给apis_copy
 
     # 参数解析
     from layers.get_dataframe.params_parse import params_parse
