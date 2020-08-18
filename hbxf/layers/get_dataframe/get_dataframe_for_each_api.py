@@ -80,6 +80,7 @@ def get_dataframe_for_each_api(apis):
 
     # return 200, "success", results
     dataframe = {**apis_copy, **{"df": df}}
+    dataframe["table"] = [i.get("table") for i in waiting_for_search if "table" in i]
     return 200, "success", dataframe
 
 
