@@ -1,0 +1,30 @@
+from sqlalchemy.orm import Session
+
+
+def params_search(waiting_for_search, order, limit):
+    """
+    waiting_for_search: [
+        {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]},
+        {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]}
+    ]
+    """
+    from utils.db_connection import engine
+    session = Session(engine)
+    searched = []
+    for search_one_table in waiting_for_search:  # 第一张表
+        # 查找表格中的字段
+        search_table = []
+        try:
+            tar_vs = [getattr(search_one_table["ex_table"].columns, i) for i in search_one_table["columns"]]
+        except AttributeError as e:
+            return 400, f"The table {search_one_table['table']} has no specific columns {e.args}", []
+
+        # 当前表中的多组条件
+        for conditions in search_one_table["conditions"]:  # 第一组条件
+            results = session.query(*tar_vs).filter(*conditions)
+            # .order_by(*order).limit(limit)  # results直接print是sql语句
+            data = [dict(zip(result.keys(), result)) for result in results]
+            search_table.append(data)
+        searched.append(search_table)
+    session.close()
+    return 200, "success", searched
