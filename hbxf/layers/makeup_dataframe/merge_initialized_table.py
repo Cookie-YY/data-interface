@@ -34,14 +34,13 @@ def update_df(df, df_list, update_data, init_df):
     for l in df_list:
         if l not in update_data:
             on.append(l)
-    res = init_df.merge(df, how="outer", on=on, suffixes=("_x", ""))
+    res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     del_l = []
     for s in update_data:
         del_l.append(s + "_x")
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
     res = (res.drop(del_l, axis=1)).fillna(0)
-    res.columns = df_list
-    print(res)
+    # res.columns = df_list
     return res
 
 

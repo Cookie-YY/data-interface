@@ -26,11 +26,11 @@ def params2dataframe(results, apis_copy):
     #     zb，需要计算在哪个维度上的占比
     #     同比/环比 在拼接后进行计算
     # 4. 融合一个大表内的多个df，如果匹配不上就是 0
-    # 5. 按照结果列重命名
 
-    # 其他
-    # 1. name有两个，合并到一起（yjnr_ejnr）
-    # 2. 需要增加首字母映射（表也是特殊表，两个特殊表）
+    # 2. 转成df
+    df_list = simple2df(results)  # simple2df 简单转成df，不会替换 name 和 stack，得到df_list，后续的tb/hb 需要用两个df
+    if None in df_list[0][0].values:
+        return 200, "success", df_list[0][0]
 
     # 处理 transformer 问题
     transformer = apis_copy.get("transformer", "")
@@ -52,7 +52,7 @@ def params2dataframe(results, apis_copy):
     # 开始解析
     from app import app
     sig_digits = app.config["SIGNIFICANT_DIGITS"]
-    df_list = simple2df(results)  # simple2df 简单转成df，不会替换 name 和 stack，得到df_list，后续的tb/hb 需要用两个df
+
     if "@groupby" in transformer:
         # @groupby单独使用即可，对 value 列之外的所有列（"zb"列也除外）做groupby 对value列求和
         df_list = parse_groupby(df_list, apis_copy)

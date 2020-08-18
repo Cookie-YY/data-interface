@@ -45,12 +45,12 @@ def get_dataframe_for_each_api(apis):
     apis_copy["value"] = value
     apis_copy["ceil_value"] = ceil_value
 
-    # 以下做了假数据处理兼容，正常需要改回来
-    day = apis.pop("day", "")
-    if day:
-        day = "[2019-01-01,2020-03-03]"
-        apis_copy["day"] = day
-        apis["day"] = day
+    # # 以下做了假数据处理兼容，正常需要改回来
+    # day = apis.pop("day", "")
+    # if day:
+    #     day = "[2019-01-01,2020-03-03]"
+    #     apis_copy["day"] = day
+    #     apis["day"] = day
 
     # 参数校验
     from layers.get_dataframe.params_check import params_check
