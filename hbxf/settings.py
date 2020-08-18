@@ -16,6 +16,8 @@ INITIALIZATION_FILE_PATH = os.path.join(BASE_DIR, "init_files")
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
 
+TIMEOUT = 3
+
 # DEBUG模式开关
 DEBUG = True
 # 指标库：指标表的位置
