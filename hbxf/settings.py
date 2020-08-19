@@ -16,6 +16,7 @@ INITIALIZATION_FILE_PATH = os.path.join(BASE_DIR, "init_files")
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
 
+# 设定判断超时的时间
 TIMEOUT = 3
 
 # DEBUG模式开关

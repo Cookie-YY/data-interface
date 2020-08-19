@@ -11,6 +11,7 @@ TIMEOUT = app.config["TIMEOUT"]
 @timeout(TIMEOUT, error_message="ConnectionError")
 def connect_db_test():
     engine.connect()
+    print(engine.url)
 
 
 def env_test():
