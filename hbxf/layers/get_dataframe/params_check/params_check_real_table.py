@@ -38,12 +38,12 @@ def get_candidate_tables(table, realm, busin, timetype, qh, lx, index):
 def get_real_table(table, realm, busin, timetype, qh, lx, index):
     candidate_tables = get_candidate_tables(table, realm, busin, timetype, qh, lx, index)
     from utils.db_connection import metadata
-    from utils.db_connection import engine
-    metadata.reflect(bind=engine)
+    from utils.db_connection import zb_engine
+    metadata.reflect(bind=zb_engine)
     tables = metadata.tables.keys()
     for table in candidate_tables:
         if table in tables:
-            ex_table = Table(table, metadata, autoload=True, autoload_with=engine)
+            ex_table = Table(table, metadata, autoload=True, autoload_with=zb_engine)
             return 200, "success", {"table": table, "ex_table": ex_table}
 
         # return 400, f"ConnectionError: Please check for net connection or check for driver for database(eg: pymysql for mysql)", {}

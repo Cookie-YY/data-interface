@@ -9,8 +9,8 @@ def params_search(waiting_for_search, order, limit):
     ]
     """
     # 获取数据库连接
-    from utils.db_connection import engine
-    session = Session(engine)
+    from utils.db_connection import zb_engine
+    session = Session(zb_engine)
     searched = []
 
     # 获取返回零数据还是空对象的配置
