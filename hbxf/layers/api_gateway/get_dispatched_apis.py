@@ -35,7 +35,7 @@ def check_graph_id_dict(graph_id_dict):
 
 def get_dispatched_apis(request_args):
     # 去掉带有 invalid 的项
-    # request_args = {k: v for k, v in request_args.items() if v != "invalid"}
+    request_args = {k: v for k, v in request_args.items() if not (v == "invalid" and k.startswith("gd_id"))}
     request_args_copy = request_args.copy()  # 备份，方便遍历
 
     graph_id_dict = {i: request_args.pop(str(i), "") for i in request_args_copy if i.startswith("gd_id")}
