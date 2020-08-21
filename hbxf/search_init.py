@@ -1,5 +1,5 @@
 import pymysql
-from pypinyin import pinyin
+from pypinyin import lazy_pinyin
 
 # 创建表search_xfbm_jb
 from utils.db_connection import ZB_DB_DICT, FX_DB_DICT
@@ -66,7 +66,7 @@ def write_search_xfbm_jb():
         print(f"\b\b\b\b\b\b\b\b\b{ind+1}/{total}", end="", flush=True)
         jb = int(row[1]) - 1
         xfbm = row[0]
-        xfbm_alpha = (pinyin(xfbm[0]))[0][0][0]
+        xfbm_alpha = (lazy_pinyin(xfbm[0]))[0][0]
         # xfbm_alpha = (row[-1])[-1]
         values = (jb, str(xfbm), str(xfbm_alpha).upper())
         try:
@@ -102,8 +102,8 @@ def write_search_qh_zrdw_jb():
             jb = int(row[1]) - 1
             qh = region_dict[row[-1]]
             zrdw = row[0]
-            qh_alpha = (pinyin(qh[0]))[0][0][0]
-            zrdw_alpha = (pinyin(zrdw[0]))[0][0][0]
+            qh_alpha = (lazy_pinyin(qh[0]))[0][0]
+            zrdw_alpha = (lazy_pinyin(zrdw[0]))[0][0]
             values = (jb, qh, zrdw, qh_alpha.upper(), zrdw_alpha.upper())
             try:
                 cursor.execute(insert_sql, values)
