@@ -1,10 +1,10 @@
 import json
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from flask_cors import CORS
 
 from layers import parse_data  # get_parsed_data是所有的入口
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="hbxfdp_index", static_folder="hbxfdp_static")
 app.config.from_object("settings")
 CORS(app, supports_credentials=True)
 
@@ -31,6 +31,10 @@ def data_index_api(realm, index):
 def data_index_api_noindex(realm):
     index = "none"  # 如果路径中没有 index， 请求参数中必须有index
     return data_index_api(realm, index)
+
+@app.route("/hbxfdp/")
+def hbxfdp():
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
