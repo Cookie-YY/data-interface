@@ -34,8 +34,10 @@ def get_dataframe_for_each_api(apis):
     full = apis.pop("full", "")
     makeup = apis.pop("makeup", "")                        # (补零) 避免条件中存在 & 给到包装层
     strictorder = apis.pop("strictorder", "")              # (排序) 避免条件中存在 & 给到包装层
-    limit_inner = apis.pop("limit_inner", "999999999")     # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
-    limit_outer = apis.pop("limit_outer", "999999999")     # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
+    # limit_inner = apis.pop("limit_inner", "999999999")     # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
+    # limit_outer = apis.pop("limit_outer", "999999999")     # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
+    name_limit = apis.pop("name_limit", "999999999")  # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
+    stack_limit = apis.pop("stack_limit", "999999999")  # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
     # ceil 和 ceil_value
     ceil = apis.pop("ceil", "")                            # 数值上限
     ceil_value = apis.pop("ceil_value", ceil)              # 达到上限后显示的内容
