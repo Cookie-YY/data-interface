@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # 初始化指标需要的txt文件位置
 INITIALIZATION_FILE_PATH = os.path.join(BASE_DIR, "init_files")
 
-# 保留的小数位数
+# 计算后（占比/同比/环比）保留的小数位数，百分比显示
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
 
@@ -32,7 +32,7 @@ ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot'
 # ZB_DB = 'mysql+pymysql://root:Beidas0ft@193.168.15.25:3306/pt_dev_dabot_zb'
 # ZB_DB = 'mysql+pymysql://root:Beidas0ft@127.0.0.1:3306/test'
 
-# 如果没有数据，返回零数据[1] 或者 都是空对象[0]
+# 如果没有数据---1：返回零数据 0：返回一个空对象
 RETURN_ZERO_DATA = 1
 # $反向解析：name=$timetype  =>  name=cy  => name=year
 URL_REFERENCE = {
@@ -40,12 +40,6 @@ URL_REFERENCE = {
     "cm": "month",
     "shij": "shij_02",
     "shej": "shej_02"
-}
-
-# 初始化指标库
-COLUMN_VALUES = {
-    "shij_02": ["A市", "石家庄市","唐山市","秦皇岛市","邯郸市","邢台市","保定市","张家口市","承德市","沧州市","廊坊市","衡水市"],
-    "xfjc": [10]
 }
 
 # 初始化指标需要的值
@@ -56,7 +50,7 @@ INITIALIZATION = {
         # "day": ["date:2016-2020"],
 
         "shej_02": ["河北省"],
-        "shij_02": ["石家庄市","唐山市","秦皇岛市","邯郸市","邢台市","保定市","张家口市","承德市","沧州市","廊坊市","衡水市"],
+        "shij_02": ["石家庄市","唐山市","秦皇岛市","邯郸市","邢台市","保定市","张家口市","承德市","沧州市","廊坊市","衡水市", "辛集市", "定州市", "雄安新区"],
         # "xj_02": "D:\\Study\\PKUSE\\all-through\\产品\\指标表初始化\\xj_02.txt",
         "cfxfbz": ["初件", "重件"],
         "lmj": ["联名件", "非联名件"],
@@ -154,7 +148,6 @@ INITIALIZATION = {
 
 # 初始化指标需要的值
 URL_DISPATCH_MAP = {
-
     ###### 问题分类地图 ######
     # 全部_件次
     "全部_件次": "http://39.107.240.28:3389/api/xf/?index=xfjc_zb&timetype=cd&qh=xj&lx=yjnr&name=shij_02&value=xfjc&transformer=@groupby&day=[2019-01-01,2019-02-02]&full=true",
