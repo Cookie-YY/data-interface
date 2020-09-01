@@ -12,10 +12,12 @@ def process_drop(api_dict):
             remove_list.append(k)
             if k == "shij_02":
                 update_dict["qh"] = "shej"
+                update_dict["table"] = api_dict.get("table", "").replace("shij", "shej")
                 if api_dict.get("name") == "shij_02":
                     remove_list.append("name")
             elif k == "month":
                 update_dict["timetype"] = "cy"
+                update_dict["table"] = api_dict.get("table", "").replace("cm", "cy")
                 if api_dict.get("name") == "month":
                     remove_list.append("name")
             elif k.strip("C") in api_dict.get("lx", ""):
@@ -23,6 +25,7 @@ def process_drop(api_dict):
                 lx = api_dict.get("lx", "")
                 lx = lx.replace(f"_{k_strip}", "").replace(f"{k_strip}_", "").replace(f"{k_strip}", "")
                 api_dict["lx"] = lx
+                update_dict["table"] = api_dict.get("table", "").replace(f"_{k_strip}", "").replace(f"{k_strip}_", "").replace(f"{k_strip}", "")
                 if api_dict.get("name") == k_strip:
                     remove_list.append("name")
             else:
