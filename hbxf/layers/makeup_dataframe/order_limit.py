@@ -1,6 +1,7 @@
 import re
 import pandas as pd
 
+
 def order_limit(dataframe):
 
     df = dataframe["df"]
@@ -51,22 +52,28 @@ def order_limit(dataframe):
 
 
 def name_stack_limit(dataframe, condition, need_limit, value):
-    df = dataframe["df"]
+    df = dataframe['df']
     limit_condition = dataframe.get(condition)
-    limit_obj = re.search('\d+', limit_condition)
-    if limit_obj:
-        limit = limit_obj.group()
-        # groupe_df = df.groupby([stack], as_index=True)[name].apply(lambda x: [x.str.cat(sep=',')]).reset_index()
-        groupe_df = df.groupby([need_limit], as_index=True)[value].sum().reset_index()
+    limit_obj1 = re.search('\d+', limit_condition)
+    limit_obj2 = re.findall('\d\+(.*)', limit_condition)
+    groupe_df = df.groupby([need_limit], as_index=True)[value].sum().reset_index()
+    rows = groupe_df.iloc[:, 0].size
+    if limit_obj1 and limit_obj2:
+        limit = limit_obj1.group()
         limit_df = groupe_df.loc[:, [need_limit]].head(int(limit))
-        rows = groupe_df.iloc[:, 0].size
         value_sum = ((groupe_df.tail(rows - int(limit)))[value]).sum()
         new_df = pd.merge(limit_df, df, how="inner", on=need_limit)
         rows_l = []
         for i in range(len(list(df))):
-            rows_l.append("其他")
+            rows_l.append(limit_obj2[0])
         df_dict = dict(zip(list(df), rows_l))
         df_dict[value] = value_sum
         new_df = new_df.append([df_dict], ignore_index=False)
-        print(new_df)
         return new_df
+    elif limit_obj1 and not limit_obj2:
+        limit = limit_obj1.group()
+        limit_df = groupe_df.loc[:, [need_limit]].head(int(limit))
+        new_df = pd.merge(limit_df, df, how="inner", on=need_limit)
+        return new_df
+    else:
+        return df
