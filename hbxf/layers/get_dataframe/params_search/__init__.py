@@ -32,8 +32,8 @@ def params_search(waiting_for_search, order, limit):
             results = session.query(*tar_vs).filter(*conditions)
             # .order_by(*order).limit(limit)  # results直接print是sql语句
             data = [dict(zip(result.keys(), result)) for result in results]
-            if RETURN_ZERO_DATA and not data:
-                data = [dict(zip(columns, [None]*len(columns)))]
+            if RETURN_ZERO_DATA and not data:  # 空数据需要返回初始化的0，并且是空数据
+                data = [dict(zip(columns, [None]*len(columns)))]  # 返回的结果只有一行，全是None
             search_table.append(data)
         searched.append(search_table)
     session.close()

@@ -1,0 +1,54 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "1",
+      "value": 100
+    },
+    {
+      "name": "2",
+      "value": 273
+    },
+    {
+      "name": "3",
+      "value": 535
+    },
+    {
+      "name": "4",
+      "value": 623
+    },
+    {
+      "name": "5",
+      "value": 754
+    },
+    {
+      "name": "6",
+      "value": 745
+    },
+    {
+      "name": "7",
+      "value": 735
+    },
+    {
+      "name": "8",
+      "value": 1238
+    },
+    {
+      "name": "9",
+      "value": 851
+    },
+    {
+      "name": "10",
+      "value": 757
+    },
+    {
+      "name": "11",
+      "value": 865
+    },
+    {
+      "name": "12",
+      "value": 858
+    }
+  ]
+}

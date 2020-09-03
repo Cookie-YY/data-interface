@@ -1,7 +1,6 @@
 import os
 
 import pandas as pd
-import json
 import itertools
 import copy
 from layers.makeup_dataframe.day_initialized import day_initialized

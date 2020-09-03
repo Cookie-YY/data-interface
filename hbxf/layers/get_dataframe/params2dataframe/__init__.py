@@ -29,7 +29,8 @@ def params2dataframe(results, apis_copy):
 
     # 2. 转成df
     df_list = simple2df(results)  # simple2df 简单转成df，不会替换 name 和 stack，得到df_list，后续的tb/hb 需要用两个df
-    if None in df_list[0][0].values:
+    # 如果结果只有一行，并且这一行里面还有None，就证明是之前空数据也要返回0的情况，直接返回
+    if df_list[0][0].shape[0] == 1 and None in df_list[0][0].values:
         return 200, "success", df_list[0][0]
 
     # 处理 transformer 问题

@@ -26,9 +26,11 @@ def parse_tb_or_hb(df_list, apis_copy):
         df = pd.merge(first_df, second_df, how="outer", on=columns_for_merge, suffixes=('_now', '_last'))
 
         df[value] = (df[value+"_now"] - df[value+"_last"]) / df[value+"_last"]
+        df.drop(value+"_now", axis=1, inplace=True)
+        df.drop(value+"_last", axis=1, inplace=True)
     else:
         df = df_list[0][0]
         df[value] = (df[value] - 0) / 0
-    df = df.replace(np.nan, "")
+    df = df.replace(np.nan, 0)
     df = df.replace([np.inf, -np.inf], 0)
     return df

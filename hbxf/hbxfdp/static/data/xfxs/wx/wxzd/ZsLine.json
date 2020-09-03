@@ -1,0 +1,59 @@
+{
+  "code": "200",
+  "msg": "success",
+  "map": {
+    "value_g0_1": "领导信箱",
+    "value_g1_1": "电脑端",
+    "value_g2_1": "手机APP",
+    "value_g3_1": "微信端",
+    "value_g4_1": "自登件",
+    "value_g5_1": "来电"
+  },
+  "data":[
+    {
+      "name": "2016",
+      "value_g0_1": 142,
+      "value_g1_1": 100,
+      "value_g2_1": 150,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2017",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2018",
+      "value_g0_1": 623,
+      "value_g1_1": 535,
+      "value_g2_1": 300,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2019",
+      "value_g0_1": 536,
+      "value_g1_1": 623,
+      "value_g2_1": 400,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2020",
+      "value_g0_1": 638,
+      "value_g1_1": 754,
+      "value_g2_1": 500,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    }
+  ]
+}
