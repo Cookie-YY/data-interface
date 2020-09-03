@@ -8,7 +8,8 @@ from layers import parse_data  # get_parsed_data是所有的入口
 
 app = Flask(__name__, template_folder="hbxfdp", static_folder="hbxfdp")
 app.config.from_object("settings")
-app.config.from_object("settings.apis_dispatch")
+# app.config.from_object("settings.apis_dispatch_hb")
+app.config.from_object("settings.apis_dispatch_gd")
 # app.config.from_object("settings.init_dicts_hb")
 app.config.from_object("settings.init_dicts_gd")
 CORS(app, supports_credentials=True)
