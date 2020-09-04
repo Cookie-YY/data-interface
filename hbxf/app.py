@@ -50,5 +50,6 @@ def refresh_all():
     refresh()
     return jsonify({200, "success", {}})
 
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=3389, debug=app.config.get("DEBUG"))

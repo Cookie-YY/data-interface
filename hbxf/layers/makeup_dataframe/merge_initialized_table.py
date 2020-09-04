@@ -1,6 +1,8 @@
 import os
 
 import pandas as pd
+import numpy as np
+import random
 import itertools
 import copy
 from layers.makeup_dataframe.day_initialized import day_initialized
@@ -28,18 +30,27 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
 # df_list: 输入df列名的 list
 # update_data: 需要更新数据的列名
 # init_df: 初始化的df
-def update_df(df, df_list, update_data, init_df):
+def update_df(df_dict, df, df_list, update_data, init_df):
     on = []
     for l in df_list:
         if l not in update_data:
             on.append(l)
-    res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     del_l = []
     for s in update_data:
         del_l.append(s + "_x")
+    res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
-    res = (res.drop(del_l, axis=1)).fillna(0)
-    # res.columns = df_list
+
+    # res = (res.drop(del_l, axis=1)).fillna(0)
+
+    res[s] = res[s].apply(lambda x: eval(df_dict.get(s)[0]) if pd.isna(x) else x)
+
+
+    # res = pd.merge(init_df, df, how="outer", on=on, suffixes=("", "_x"))
+    # res = (res.drop(del_l, axis=1))
+
+
+
     return res
 
 
@@ -173,7 +184,7 @@ def merge_initialized_table(dataframe):
         else:
             # 更新数据
             res = make_df_res(df_dict, df_list, df_list, '')
-            result_df = update_df(df, df_list, update_data, res)
+            result_df = update_df(df_dict, df, df_list, update_data, res)
             return result_df
 
 
