@@ -1,7 +1,6 @@
 import os
 
 import pandas as pd
-import numpy as np
 import random
 import itertools
 import copy
@@ -40,17 +39,12 @@ def update_df(df_dict, df, df_list, update_data, init_df):
         del_l.append(s + "_x")
     res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
-
+    res = (res.drop(del_l, axis=1))
     # res = (res.drop(del_l, axis=1)).fillna(0)
-
     res[s] = res[s].apply(lambda x: eval(df_dict.get(s)[0]) if pd.isna(x) else x)
-
 
     # res = pd.merge(init_df, df, how="outer", on=on, suffixes=("", "_x"))
     # res = (res.drop(del_l, axis=1))
-
-
-
     return res
 
 
@@ -138,7 +132,7 @@ def merge_initialized_table(dataframe):
         [df_short_list.append(i) for i in df_list if i not in txt_columns_lists]
         # 将初始化的数据和列名组成dict格式   # 更新数据
         res = make_df_res(df_dict, df_list, df_short_list, text_value_lists)
-        result_df = update_df(df, df_list, update_data, res)
+        result_df = update_df(df_dict, df, df_list, update_data, res)
         return result_df
     else:
         txt_col = []
@@ -164,12 +158,12 @@ def merge_initialized_table(dataframe):
                 new_df_list = df_short_list + txt_col  # 初始化df表的列名 ['day', 'xfjc', ’sjnr']
                 # 将初始化的数据和列名组成dict格式   # 更新数据
                 res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
-                result_df = update_df(df, df_list, update_data, res)
+                result_df = update_df(df_dict, df, df_list, update_data, res)
                 return result_df
             else:
                 if txt_col[0] in df_dict.keys():
                     res = make_df_res(df_dict, df_list, df_list, '')
-                    result_df = update_df(df, df_list, update_data, res)
+                    result_df = update_df(df_dict, df, df_list, update_data, res)
                     return result_df
                 else:
                     [txt_l2.append(i[-1]) for i in txt_l1]
@@ -179,7 +173,7 @@ def merge_initialized_table(dataframe):
                     new_df_list = df_short_list + txt_col  # 初始化df表的列名 ['day', 'xfjc', ’sjnr']
                     # 将初始化的数据和列名组成dict格式   # 更新数据
                     res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
-                    result_df = update_df(df, df_list, update_data, res)
+                    result_df = update_df(df_dict, df, df_list, update_data, res)
                     return result_df
         else:
             # 更新数据
