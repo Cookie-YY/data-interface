@@ -9,9 +9,29 @@ INITIALIZATION = {
     "shij_02": ["广州市", "深圳市", "佛山市", "东莞市", "中山市", "珠海市", "江门市", "肇庆市", "惠州市", "汕头市", "潮州市", "揭阳市", "汕尾市", "湛江市", "茂名市", "阳江市", "韶关市", "清远市", "云浮市", "梅州市", "河源市"],
     # "xj_02": "D:\\Study\\PKUSE\\all-through\\产品\\指标表初始化\\xj_02.txt",
 
-    # 20200909新增
+    # 20200903新增
     "bljc": ["random.randint(100,999)"],
     "sljc": ["random.randint(100,999)"],
+
+    # 20200904新增
+    "dljc": ["random.randint(100,999)"],
+    "dbjc": ["random.randint(100,999)"],
+    "cqwbjjc": ["random.randint(100,999)"],
+    "bmyjc": ["random.randint(100,999)"],
+    "jbmyjc": ["random.randint(100,999)"],
+    "ypjjc": ["random.randint(100,999)"],
+    "cqwpjjc": ["random.randint(100,999)"],
+    "dpjjc": ["random.randint(100,999)"],
+    "jssljc": ["random.randint(100,999)"],
+    "cqsljc": ["random.randint(100,999)"],
+    "cqwsljc": ["random.randint(100,999)"],
+    # 20200907新增
+    "xfrqxfjc": ["random.randint(100,999)"],
+    "djrqxfjc": ["random.randint(100,999)"],
+    "jhrqxfjc": ["random.randint(100,999)"],
+    "xfrqxfrc": ["random.randint(100,999)"],
+    "djrqxfrc": ["random.randint(100,999)"],
+    "jhrqxfrc": ["random.randint(100,999)"],
 
     "cfxfbz": ["初件", "重件"],
     "lmj": ["联名件", "非联名件"],
