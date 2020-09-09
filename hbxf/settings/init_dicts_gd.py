@@ -1,7 +1,8 @@
 # 初始化指标需要的值
 INITIALIZATION = {
     "wtsd": ["省级", "市级", "县级", "乡级"],
-    "year": [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    # "year": [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    "year": ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "month": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     # "day": ["date:2016-2020"],
 
@@ -33,6 +34,11 @@ INITIALIZATION = {
     "djrqxfrc": ["random.randint(100,999)"],
     "jhrqxfrc": ["random.randint(100,999)"],
 
+    # 20200909新增
+    "xb": ["男性", "女性"],
+    "yjzt": ["告警", "异常", "平稳"],
+    "mdgjyjzt": ["告警", "异常", "平稳"],
+
     "cfxfbz": ["初件", "重件"],
     "lmj": ["联名件", "非联名件"],
     "jjf": ["进京访", "非进京访"],
@@ -44,7 +50,7 @@ INITIALIZATION = {
     "xfjc": ["random.randint(100,999)"],
     "zb": ["round(random.random(),4)"],
     "hjlv": ["round(random.random(),4)"],
-    "xfrc": ["round(random.random(),4)"],
+    "xfrc": ["random.randint(100,999)"],
     "zjlv": ["round(random.random(),4)"],
     "tb": ["round(random.random(),4)"],
     "hb": ["round(random.random(),4)"],
