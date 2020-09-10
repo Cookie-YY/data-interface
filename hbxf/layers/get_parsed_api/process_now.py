@@ -1,4 +1,5 @@
-from datetime import datetime
+import re
+from datetime import datetime, timedelta
 
 from utils.parse_compute import parse_compute
 
@@ -19,6 +20,21 @@ def process_now(api_dict):
             value = value.replace("now", str(datetime.now().year))
         elif k == "month":
             value = value.replace("now", str(datetime.now().month))
+
+        elif k == "day":
+            res = re.search('(?:\+|-)\d*', v)
+            if res:
+                update_num = res.group()
+                now_time = datetime.now().strftime("%Y-%m-%d")  # 现在时间
+                now_time_str = datetime.strptime(now_time, "%Y-%m-%d")  # 转化为字符串
+                update_days = timedelta(days=int(update_num))
+                update_time = (now_time_str+update_days).strftime("%Y-%m-%d")  # str
+                if "-" in v:
+                    value = update_time + "," + now_time
+                if "+" in v:
+                    value = now_time + "," + update_time
+                update_dict[k] = value
+
         if value.startswith("[") and value.endswith("]"):
             min_value = value.strip("[").strip("]").split(",")[0]  # "2020-1"
             max_value = value.strip("[").strip("]").split(",")[1]  # "2020"
