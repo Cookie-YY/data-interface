@@ -1,5 +1,6 @@
 from layers.api_gateway.authentication import authentication
 from layers.api_gateway.get_dispatched_apis import get_dispatched_apis
+from layers.api_gateway.get_plugined_apis import get_plugined_apis
 
 
 def api_gateway(realm, index, request_args):
@@ -17,7 +18,15 @@ def api_gateway(realm, index, request_args):
     if code != 200:
         return code, msg, {}
 
-    # 2. apis 分发
+    # 2. 插件化开发
+    code, msg, result = get_plugined_apis(request_args)
+    if code == 202:  # 说明走的是插件的过程，不需要走后面了
+        return code, msg, result
+    if code != 200:
+        return code, msg, {}
+
+
+    # 3. apis 分发
     code, msg, api_dict = get_dispatched_apis(request_args)
     if code != 200:
         return code, msg, {}

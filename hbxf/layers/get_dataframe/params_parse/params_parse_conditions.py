@@ -1,8 +1,8 @@
 import re
 
 def get_conditions(ex_table, conditions_dict):
-    if not conditions_dict:
-        return 400, "There must be some conditions in the url", {}
+    # if not conditions_dict:
+    #     return 400, "There must be some conditions in the url", {}
     conditions = []
 
     for k, value in conditions_dict.items():

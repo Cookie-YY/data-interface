@@ -4,14 +4,16 @@ from flask_cors import CORS
 
 from layers import parse_data  # get_parsed_data是所有的入口
 
-# app = Flask(__name__)
+from settings import *
 
-app = Flask(__name__, template_folder="hbxfdp", static_folder="hbxfdp")
+app = Flask(__name__, template_folder=DP_DIR, static_folder=DP_DIR)
 app.config.from_object("settings")
+project = app.config["PROJECT"]
 # app.config.from_object("settings.apis_dispatch_hb")
-app.config.from_object("settings.apis_dispatch_gd")
-# app.config.from_object("settings.init_dicts_hb")
-app.config.from_object("settings.init_dicts_gd")
+app.config.from_object(f"settings.{project}")
+app.config.from_object(f"settings.{project}.init_dicts")
+app.config.from_object(f"settings.{project}.apis_dispatch")
+app.config.from_object(f"settings.{project}.apis_plugins")
 CORS(app, supports_credentials=True)
 
 
@@ -28,6 +30,10 @@ def data_index_api(realm, index):
 
     # 得到解析的结果
     code, msg, parsed_data = parse_data(realm, index, request_args)
+    if code == 202:
+        parsed_data["code"] = 200
+        parsed_data["msg"] = msg
+        return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
     if code != 200:
         parsed_data = {"code": code, "msg": msg, "data": {}}
     return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
@@ -44,7 +50,7 @@ def hbxfdp():
     return render_template("index.html")
 
 
-@app.route("/refresh/")
+@app.route(f"/{DP_URL}/")
 def refresh_all():
     from refresh import refresh
     refresh()

@@ -29,8 +29,11 @@ def params_search(waiting_for_search, order, limit):
             return 400, f"The table {search_one_table['table']} has no specific columns {e.args}", []
         # 当前表中的多组条件
         for conditions in search_one_table["conditions"]:  # 第一组条件
-            results = session.query(*tar_vs).filter(*conditions)
-            # .order_by(*order).limit(limit)  # results直接print是sql语句
+            results = session.query(*tar_vs).filter(*conditions)  # results直接print是sql语句
+            if order:
+                results = results.order_by(order)
+            if limit:
+                results = results.limit(limit)
             data = [dict(zip(result.keys(), result)) for result in results]
             if RETURN_ZERO_DATA and not data:  # 空数据需要返回初始化的0，并且是空数据
                 data = [dict(zip(columns, [None]*len(columns)))]  # 返回的结果只有一行，全是None

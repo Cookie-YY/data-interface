@@ -23,6 +23,8 @@ def get_dataframe_for_each_api(apis):
     name = apis.pop("name", "")                         # 查询的字段 & 转成pd.df时将这一列命名为 name
     value = apis.pop("value", index.split("_")[0])      # 查询的字段 & 转成pd.df时将这一列命名为 value
     stack = apis.pop("stack", "")                       # 查询的字段 & 给到转换层
+    direct_order = apis.pop("direct_order", "")         # 直接在查数据库时就限制，提升性能
+    direct_limit = apis.pop("direct_limit", "")         # 直接在查数据库时就限制，提升性能
 
     transformer = apis.pop("transformer", "")           # 可能的额外的操作，处理 累加/同比/环比/占比
     # 辅助查询条件
@@ -34,10 +36,10 @@ def get_dataframe_for_each_api(apis):
     full = apis.pop("full", "")
     makeup = apis.pop("makeup", "")                        # (补零) 避免条件中存在 & 给到包装层
     strictorder = apis.pop("strictorder", "")              # (排序) 避免条件中存在 & 给到包装层
-    # limit_inner = apis.pop("limit_inner", "999999999")     # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
-    # limit_outer = apis.pop("limit_outer", "999999999")     # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
-    name_limit = apis.pop("name_limit", "999999999")  # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
-    stack_limit = apis.pop("stack_limit", "999999999")  # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
+    # limit_inner = apis.pop("limit_inner", "999999999")   # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
+    # limit_outer = apis.pop("limit_outer", "999999999")   # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
+    name_limit = apis.pop("name_limit", "999999999")       # 避免条件中存在 & 给到包装层  limit_inner=10  limit_inner=10+其他
+    stack_limit = apis.pop("stack_limit", "999999999")     # 避免条件中存在 & 给到包装层  limit_outer=10  limit_outer=10+其他
     # ceil 和 ceil_value
     ceil = apis.pop("ceil", "")                            # 数值上限
     ceil_value = apis.pop("ceil_value", ceil)              # 达到上限后显示的内容
@@ -69,11 +71,11 @@ def get_dataframe_for_each_api(apis):
 
     # 数据库查询
     from layers.get_dataframe.params_search import params_search
-    code, msg, results = params_search(waiting_for_search, order, limit)
+    code, msg, results = params_search(waiting_for_search, direct_order, direct_limit)
     if code != 200:
         return code, msg, {}
     if results == [[[]]]:
-        return 400, "empty data", {}
+        return 201, "empty data", {}
 
     # 得到最终dataframe
     from layers.get_dataframe.params2dataframe import params2dataframe
