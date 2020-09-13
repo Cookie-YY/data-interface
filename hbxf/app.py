@@ -1,22 +1,25 @@
 import json
 from flask import Flask, request, Response, render_template, jsonify
-from flask_cors import CORS
-
 from layers import parse_data  # get_parsed_data是所有的入口
+from settings import PROJECT   # 导入项目名称
+project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_DIR", "DP_URL"])  # 导入前端配置
 
-from settings import *
+DP_DIR, DP_URL = project_settings.DP_DIR, project_settings.DP_URL
 
 app = Flask(__name__, template_folder=DP_DIR, static_folder=DP_DIR)
-app.config.from_object("settings")
-project = app.config["PROJECT"]
-# app.config.from_object("settings.apis_dispatch_hb")
-app.config.from_object(f"settings.{project}")
-app.config.from_object(f"settings.{project}.init_dicts")
-app.config.from_object(f"settings.{project}.apis_dispatch")
-app.config.from_object(f"settings.{project}.apis_plugins")
+
+# 读取项目配置
+app.config.from_object(f"settings.{PROJECT}")
+app.config.from_object(f"settings.{PROJECT}.init_dicts")
+app.config.from_object(f"settings.{PROJECT}.apis_dispatch")
+app.config.from_object(f"settings.{PROJECT}.apis_plugins")
+
+# 跨域配置
+from flask_cors import CORS
 CORS(app, supports_credentials=True)
 
 
+# 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/')
 def data_index_api(realm, index):
     """
@@ -39,18 +42,21 @@ def data_index_api(realm, index):
     return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
 
 
+# 兼容数据接口路由
 @app.route("/api/<string:realm>/", methods=['GET'])
 def data_index_api_noindex(realm):
     index = "none"  # 如果路径中没有 index， 请求参数中必须有index
     return data_index_api(realm, index)
 
 
-@app.route("/hbxfdp/")
+# 前端大屏路由
+@app.route(f"{DP_URL}")
 def hbxfdp():
     return render_template("index.html")
 
 
-@app.route(f"/{DP_URL}/")
+# 定时刷新任务的路由
+@app.route("/refresh/")
 def refresh_all():
     from refresh import refresh
     refresh()

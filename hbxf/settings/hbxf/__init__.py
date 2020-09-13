@@ -12,6 +12,10 @@ SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
 # 初始化指标需要的txt文件夹位置
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
+# 前端大屏相关
+DP_DIR = "hbxfdp"    # 大屏的路径
+DP_URL = "/hbxfdp/"  # 访问大屏的url
+
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
