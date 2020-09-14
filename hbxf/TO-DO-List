@@ -13,5 +13,9 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 【已解决】插件化开发的时间需要修改
 - 嵌套格式
 - 增加TIME_FORMAT参数，针对指标修改时间显示格式
+- 【已解决】插件过程map需要严格对应
+- 整理现有参数：注意，ceil系列，unit
+- 项目配置模板文件夹
+- 插件过程的不匹配怎么办（merge的方式）
 
 - 广东各个率的计算
