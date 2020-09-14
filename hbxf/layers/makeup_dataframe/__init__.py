@@ -6,6 +6,7 @@ from layers.makeup_dataframe.add_unit import add_unit
 
 def makeup_dataframe(dataframe_list):
     """
+    0. 时间格式化
     1. 排  序 / 补  零
     2. order / limit
     3. value 的单位
@@ -17,6 +18,11 @@ def makeup_dataframe(dataframe_list):
         name = dataframe.get("name")
         stack = dataframe.get("stack")
         value = dataframe.get("value")
+        # 时间格式化
+        from utils.time_format import df_formated_time
+        df = df_formated_time(dataframe["df"])
+        dataframe["df"] = df
+
         # 排序补零：
         if dataframe.get("full"):
             df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题

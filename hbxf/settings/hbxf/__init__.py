@@ -20,6 +20,9 @@ DP_URL = "/hbxfdp/"  # 访问大屏的url
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
 
+# 默认显示的时间格式：当name=day时生效
+TIME_FORMAT = "%Y-%m-%d"
+
 # 设定判断超时的时间
 TIMEOUT = 3
 

@@ -15,8 +15,8 @@ app.config.from_object(f"settings.{PROJECT}.apis_dispatch")
 app.config.from_object(f"settings.{PROJECT}.apis_plugins")
 
 # 跨域配置
-from flask_cors import CORS
-CORS(app, supports_credentials=True)
+# from flask_cors import CORS
+# CORS(app, supports_credentials=True)
 
 
 # 核心数据接口路由
@@ -39,7 +39,12 @@ def data_index_api(realm, index):
         return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
     if code != 200:
         parsed_data = {"code": code, "msg": msg, "data": {}}
-    return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    return response
+    # return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
 
 
 # 兼容数据接口路由

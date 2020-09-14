@@ -14,7 +14,7 @@ from layers.makeup_dataframe.year_initialized import year_initialized
 
 
 def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
-    val_str = ""  # txt_str为需要初始化话的数据
+    val_str = ""  # txt_str为需要初始化的数据
     for i in df_short_list:
         val_list = df_dict[i]
         val_str += str(val_list) + ','
@@ -103,7 +103,6 @@ def merge_initialized_table(dataframe):
     file_root_path = app.config.get("INITIALIZATION_FILE_PATH")
 
     if name == "day":
-        df["day"] = df["day"].apply(lambda x: str(x).split(" ")[0])
         day = dataframe.get("day")  # 当name=day时需要
         day_list = day_initialized(day)
         df_dict["day"] = day_list

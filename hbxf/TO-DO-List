@@ -1,7 +1,17 @@
 - 广东项目有的空表的接口的数据是null
 - full@exclude
 - format=report   excel
-- 插件化开发，如果sql跨数据库如何写
-- year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来（待测试）
-- hangye=!公安（待测试）
-- year的初始化如果是数字 join时会有问题
+- 【已解决】插件化开发，如果sql跨数据库如何写
+- 【已解决】year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来（待测试）
+- 【待测试】hangye=!公安
+- 【不用数字一切正常，但是用数字还没有解决】year的初始化如果是数字 join时会有问题
+year_initialized.py文件
+http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
+- 所有可能取值用sql语句（需要定期更新，没必要每次都从库里取）
+- 加一个项目参数随机初始化还是0初始化
+- 【已解决】name=day时  不加full，相当于不走时间格式化的部分，timestamp无法格式化会报错
+- 【已解决】插件化开发的时间需要修改
+- 嵌套格式
+- 增加TIME_FORMAT参数，针对指标修改时间显示格式
+
+- 广东各个率的计算

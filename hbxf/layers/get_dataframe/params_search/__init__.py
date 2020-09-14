@@ -34,8 +34,8 @@ def params_search(waiting_for_search, order, limit):
                 results = results.order_by(order)
             if limit:
                 results = results.limit(limit)
-            from utils.results2df import results2df
-            data = results2df(results)
+            from utils.results2df import results2df_ready
+            data = results2df_ready(results, columns)
             # data = [dict(zip(result.keys(), result)) for result in results]
             # if RETURN_ZERO_DATA and not data:  # 空数据需要返回初始化的0，并且是空数据
             #     data = [dict(zip(columns, [None]*len(columns)))]  # 返回的结果只有一行，全是None
