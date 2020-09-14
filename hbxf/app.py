@@ -60,7 +60,7 @@ def hbxfdp():
 def refresh_all():
     from refresh import refresh
     refresh()
-    return jsonify({200, "success", {}})
+    return jsonify({200, "success", []})
 
 
 if __name__ == '__main__':

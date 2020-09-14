@@ -10,6 +10,9 @@ from layers.makeup_dataframe.day_initialized import day_initialized
 # df_list: 输入的df列名
 # df_short_list: 输入的df列名不包含存在txt中的列名
 # text_value_lists: 初始化内容中再加上txt中的内容
+from layers.makeup_dataframe.year_initialized import year_initialized
+
+
 def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
     val_str = ""  # txt_str为需要初始化话的数据
     for i in df_short_list:
@@ -92,18 +95,23 @@ def merge_initialized_table(dataframe):
     df = dataframe["df"]
     update_data = [dataframe["value"]]
     name = dataframe.get("name")
-    day = dataframe.get("day")
-    day_list = []
-    if name == "day":
-        df["day"] = df["day"].apply(lambda x: str(x).split(" ")[0])
-        day_list = day_initialized(day)
-    df_list = list(df)  # 输入的df列名列表
 
     # 加载字段可能取值 & 联动字段文件的目录
     from app import app
     df_dict = app.config.get("INITIALIZATION")
-    df_dict["day"] = day_list
+
     file_root_path = app.config.get("INITIALIZATION_FILE_PATH")
+
+    if name == "day":
+        df["day"] = df["day"].apply(lambda x: str(x).split(" ")[0])
+        day = dataframe.get("day")  # 当name=day时需要
+        day_list = day_initialized(day)
+        df_dict["day"] = day_list
+    if name == "year":
+        year = dataframe.get("year")
+        year_list = year_initialized(year)
+        df_dict["year"] = year_list
+    df_list = list(df)  # 输入的df列名列表
 
     # 获取所有文件
     file_path_list = [os.path.join(file_root_path, i) for i in os.listdir(file_root_path)]

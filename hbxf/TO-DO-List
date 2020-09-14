@@ -2,3 +2,6 @@
 - full@exclude
 - format=report   excel
 - 插件化开发，如果sql跨数据库如何写
+- year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来（待测试）
+- hangye=!公安（待测试）
+- year的初始化如果是数字 join时会有问题
