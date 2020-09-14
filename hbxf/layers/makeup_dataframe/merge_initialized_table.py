@@ -29,6 +29,18 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
 # df_list: 输入df列名的 list
 # update_data: 需要更新数据的列名
 # init_df: 初始化的df
+
+def fill_random_or_real(x, df_dict, s):
+    if pd.isna(x):
+        if str(df_dict.get(s)[0]).startswith("random"):
+            return eval(df_dict.get(s)[0])
+        else:
+            return df_dict.get(s)[0]
+    else:
+        return x
+
+
+
 def update_df(df_dict, df, df_list, update_data, init_df):
     on = []
     for l in df_list:
@@ -41,7 +53,7 @@ def update_df(df_dict, df, df_list, update_data, init_df):
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
     res = (res.drop(del_l, axis=1))
     # res = (res.drop(del_l, axis=1)).fillna(0)
-    res[s] = res[s].apply(lambda x: eval(df_dict.get(s)[0]) if pd.isna(x) else x)
+    res[s] = res[s].apply(lambda x: fill_random_or_real(x, df_dict, s))
 
     # res = pd.merge(init_df, df, how="outer", on=on, suffixes=("", "_x"))
     # res = (res.drop(del_l, axis=1))

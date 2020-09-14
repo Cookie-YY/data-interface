@@ -7,5 +7,8 @@ APIS_PLUGIN = [
         ORDER BY create_time DESC  LIMIT 1
         """,
         "db": "FX_DB",  # FX_DB 或者 ZB_DB
-        "map": {"xbmc": "性别", "sjh": "电话", "hkszd": "户口所在地", "zzmcxq": "居住地", "age": "年龄"}},
+        "map": {"xbmc": "性别", "sjh": "电话", "hkszd": "户口所在地", "zzmcxq": "居住地", "age": "年龄"}
+    },
+
+
 ]
