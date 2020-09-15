@@ -28,3 +28,7 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 
 - 广东各个率的计算：需要表
 - 广东的弹窗问题，需要xf_org/xf_region的表
+
+- 三个饼 跨域
+- 因为只有一个数，不能用full
+- makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'

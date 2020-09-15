@@ -1,3 +1,5 @@
+import numpy as np
+
 from layers.makeup_dataframe.add_ceil import add_ceil
 from layers.makeup_dataframe.merge_initialized_table import merge_initialized_table
 from layers.makeup_dataframe.order_limit import order_limit, name_stack_limit
@@ -20,8 +22,10 @@ def makeup_dataframe(dataframe_list):
         value = dataframe.get("value")
         # 时间格式化
         from utils.time_format import df_formated_time
-        df = df_formated_time(dataframe["df"])
-        dataframe["df"] = df
+        # if not np.issubdtype(dataframe["df"], np.int):
+        if not isinstance(dataframe["df"], np.int):
+            df = df_formated_time(dataframe["df"])
+            dataframe["df"] = df
 
         # 排序补零：
         if dataframe.get("full"):
