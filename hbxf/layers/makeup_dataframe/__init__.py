@@ -22,8 +22,7 @@ def makeup_dataframe(dataframe_list):
         value = dataframe.get("value")
         # 时间格式化
         from utils.time_format import df_formated_time
-        # if not np.issubdtype(dataframe["df"], np.int):
-        if not isinstance(dataframe["df"], np.int):
+        if type(dataframe["df"]) != np.int64:
             df = df_formated_time(dataframe["df"])
             dataframe["df"] = df
 

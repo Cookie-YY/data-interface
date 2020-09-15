@@ -112,7 +112,7 @@ def merge_initialized_table(dataframe):
         df_dict["year"] = year_list
     df_list = list(df)  # 输入的df列名列表
 
-    # 如果只有一列，说明只取了value
+    # 如果只有一列，说明只取了value,也只能有一行
     if len(df_list) == 1:
         column = df_list[0]
         df[column] = df[column].apply(lambda x: fill_random_or_real(x, df_dict, column))
