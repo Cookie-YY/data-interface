@@ -1,4 +1,4 @@
-from refresh.search_init import write_search_xfbm_jb, write_search_qh_zrdw_jb
+from .search_init import write_search_xfbm_jb, write_search_qh_zrdw_jb
 
 
 def refresh():

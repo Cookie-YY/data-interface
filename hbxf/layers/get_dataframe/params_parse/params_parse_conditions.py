@@ -23,8 +23,8 @@ def get_conditions(ex_table, conditions_dict):
             if not hasattr(ex_table.columns, k):
                 return 400, f"the {ex_table.fullname} has no condition columns [{k}]", {}
 
-            if value.startswith("!"):  # 不等于条件
-                conditions.append(getattr(ex_table.columns, k) != value.strip("!"))
+            if str(value).startswith("!"):  # 不等于条件
+                conditions.append(getattr(ex_table.columns, k) != str(value).strip("!"))
             else:  # 等于条件
                 conditions.append(getattr(ex_table.columns, k) == value)
     return 200, "success", conditions
