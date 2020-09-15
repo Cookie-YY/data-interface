@@ -1,12 +1,11 @@
 import datetime
-import locale
+# import locale
 
-from pandas.core.dtypes.common import is_datetime64_any_dtype, is_datetime_arraylike
-import numpy as np
+from pandas.core.dtypes.common import is_datetime64_any_dtype
 from app import app
 
-TIME_FORMAT = app.config["TIME_FORMAT"]
-locale.setlocale(locale.LC_CTYPE,'chinese')
+TIME_FORMAT = app.config.get("TIME_FORMAT", "%Y-%m-%d")
+# locale.setlocale(locale.LC_CTYPE,'chinese')
 
 # def list_formated_time(results, time_format=TIME_FORMAT):
 #     time_format = time_format or TIME_FORMAT

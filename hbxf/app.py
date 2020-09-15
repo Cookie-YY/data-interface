@@ -33,17 +33,33 @@ def data_index_api(realm, index):
 
     # 得到解析的结果
     code, msg, parsed_data = parse_data(realm, index, request_args)
-    if code == 202:
-        parsed_data["code"] = 200
-        parsed_data["msg"] = msg
-        return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
-    if code != 200:
+    if not code in [200, 201, 202]:
         parsed_data = {"code": code, "msg": msg, "data": {}}
+    else:
+        if code == 202:
+            parsed_data["code"] = 200
+            parsed_data["msg"] = msg
     response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = '*'
     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
     return response
+    # if code == 202:
+    #     parsed_data["code"] = 200
+    #     parsed_data["msg"] = msg
+    #     response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    #     response.headers['Access-Control-Allow-Origin'] = '*'
+    #     response.headers['Access-Control-Allow-Methods'] = '*'
+    #     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    #     return response
+    #     # return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    # if code != 200:
+    #     parsed_data = {"code": code, "msg": msg, "data": {}}
+    # response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    # response.headers['Access-Control-Allow-Origin'] = '*'
+    # response.headers['Access-Control-Allow-Methods'] = '*'
+    # response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    # return response
     # return Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
 
 

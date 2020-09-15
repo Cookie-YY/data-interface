@@ -1,32 +1,70 @@
 APIS_PLUGIN = [
+    # 第一条为仅作为示例
     {
-        # 根据正则匹配url，问号前的\是转义
-        "url": "/api/xf/\?gd_id=hb_xfrfx_jbxx&zjhm=.*",   # 河北_信访人分析_基本信息
+        # 根据正则匹配url
+        # 注意：问号前需要有\是转义
+        "url":"/api/xf/\?gd_id=YOUR ID",
         # 最终要的字段，以及匹配取值
-        # 当只有一个sql的时候，返回的数据和map不做校验
-        # 当有两个sql的时候，会在融合后的数据表中将map包含的字段抽取出来再返回
-        "map": {"xbmc": "性别", "sjh": "电话", "hkszd": "户口所在地", "zzmcxq": "居住地", "age": "年龄", "zjhm": "证件号码","xfjc":"信访件次","day":"最新信访日期"},
+        # 注意：map的键需要全部出现在返回的最终数据表中，并且按照map的获取相应的列
+        "map":"",
         # 分析库（输入库）的SQL
-        "fx_db_url": """
-        SELECT zjhm, xbmc, sjh, hkszd, zzmcxq, age FROM xf_xfrxx 
-        WHERE zjhm = '{zjhm}' AND xbmc IS NOT NULL AND age IS NOT NULL 
-        ORDER BY create_time DESC LIMIT 1
-        """,
+        # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
+        "fx_db_sql":"",
         # 指标库（输出库）的SQL
-        "zb_db_url": """
-        SELECT xf_xfr_cy_zjhm_xm_xfjc.xfjc, xf_xfr_cy_zjhm_xm_xfjc.zjhm,xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day FROM xf_xfr_cy_zjhm_xm_xfjc 
-        join xf_xfr_cd_zjhm_xfrq_xfsx_xfjc on xf_xfr_cy_zjhm_xm_xfjc.zjhm=xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.zjhm 
-        WHERE xf_xfr_cy_zjhm_xm_xfjc.zjhm ='{zjhm}' 
-        order by xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day desc limit 1;
-        """,
+        # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
+        "zb_db_sql":"",
         # 用哪个字段进行连接
-        # 只有一个sql的时候，on字段没有用
-        # 当有两个sql的时候，on字段为空，或者没有，自动寻找两个数据表中一样的字段进行匹配
-        # 当有两个sql的时候，on字段不为空，以on字段为准进行匹配，其他相同的字段，用_x 和_y进行标识
+        # 注意： 1. 字符串或者列表均可
+        #       2. 只有一个sql的时候，on字段没有用
+        #       3. 当有两个sql的时候，on字段为空，或者没有，自动寻找两个数据表中一样的字段进行匹配
+        #       4. 当有两个sql的时候，on字段不为空，以on字段为准进行匹配，其他相同的字段，用_x 和_y进行标识
+        "on":"",
+        # 时间格式化
+        # 注意：如果出现了时间，需要指定格式化的形式，否则按照项目默认格式化规范
+        "time_format": "%Y年%m月%d日"
+    },
+    {
+        # 河北_信访人分析_基本信息
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=hb_xfrfx_jbxx&zjhm=130623197709052130
+        "url": "/api/xf/\?gd_id=hb_xfrfx_jbxx",
+        "map": {"xbmc": "性别", "sjh": "电话", "hkszd": "户口所在地", "zzmcxq": "居住地", "age": "年龄", "zjhm": "证件号码","xfjc":"信访件次","day":"最新信访日期"},
+        "fx_db_sql": """
+        SELECT xm, xbmc, age, sjh,zjhm, hkszd, zzmcxq FROM xf_xfrxx WHERE zjhm = '{zjhm}' AND xbmc IS NOT NULL AND age IS NOT NULL ORDER BY create_time DESC LIMIT 1;
+        """,
+        "zb_db_sql": """
+        SELECT xf_xfr_cy_zjhm_xm_xfjc.xfjc, xf_xfr_cy_zjhm_xm_xfjc.zjhm,xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day FROM xf_xfr_cy_zjhm_xm_xfjc join xf_xfr_cd_zjhm_xfrq_xfsx_xfjc on xf_xfr_cy_zjhm_xm_xfjc.zjhm=xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.zjhm WHERE xf_xfr_cy_zjhm_xm_xfjc.zjhm ='{zjhm}' order by xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day desc limit 1;
+        """,
+        "on": "zjhm",
+        # "time_format": "%Y年%m月%d日"
+    },
+
+{
+        # 河北_信访人分析_信访轨迹分析内容
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=hb_xfrfx_xfgjfxnr&xfsxid=20695617
+        "url": "/api/xf/\?gd_id=hb_xfrfx_xfgjfxnr",
+        "map": {"xfjbh": "信访编号", "xfrq": "信访日期", "nrflmc": "内容分类", "xfxsmc": "信访形式", "xfmdmc": "信访目的", "wtsdmc": "问题属地","djjgmc":"登记单位","xfjztmc":"信访状态"},
+        "fx_db_sql": """
+        SELECT xfjbh,xfrq,nrflmc,xfxsmc,xfmdmc,wtsdmc,djjgmc,xfjztmc FROM xf_xfjxx WHERE xfsxid = '{xfsxid}' AND check_flag = 0;
+
+        """,
+        "zb_db_sql": """
+         """,
         # "on": "zjhm"
-        # 时间格式
         "time_format": "%Y年%m月%d日"
     },
 
+    {
+        # 河北_信访人分析_信访轨迹分析时间轴
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=hb_xfrfx_xfgjfxsjz&zjhm=130623197709052130
+        "url": "/api/xf/\?gd_id=hb_xfrfx_xfgjfxsjz",
+        "map": {"xfjc": "重复信访次数", "day": "信访日期", "xfsx": "信访事项id"},
+        "fx_db_sql": """
+         """,
+        "zb_db_sql": """
+        select xfjc, day, xfsx from ((select xfjc, day, xfsx from xf_xfr_cd_zjhm_xfrq_xfsx_xfjc where zjhm = '{zjhm}' order by day desc limit 3) union (select xfjc, day, xfsx from xf_xfr_cd_zjhm_xfrq_xfsx_xfjc where zjhm = '{zjhm}' order by day limit 1)) as tb order by day;
+         """,
+        # "on": "zjhm"
+        "time_format": "%Y年%m月%d日"
+    },
 
 ]

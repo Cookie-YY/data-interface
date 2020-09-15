@@ -1,5 +1,7 @@
+
 import re
 import pandas as pd
+
 from flask import request
 
 
@@ -33,6 +35,9 @@ def get_data_from_dbs(results, kwargs):
     """
     fx_db_sql = results.get("fx_db_sql")
     zb_db_sql = results.get("zb_db_sql")
+    # from app import app
+    # TIME_FORMAT = app.config["TIME_FORMAT"]
+    # time_format = results.get("time_format", TIME_FORMAT)
     time_format = results.get("time_format")
     mapping = results.get("mapping")
     fx_db_sql = fx_db_sql.format(**kwargs)
@@ -45,6 +50,7 @@ def get_data_from_dbs(results, kwargs):
 
     from utils.check_sql import check_sql
     num = check_sql(fx_db_sql) + check_sql(zb_db_sql)
+
     if check_sql(fx_db_sql):  # 需要走分析库
         try:
             fx_db_results = fx_engine.execute(fx_db_sql)
@@ -52,10 +58,15 @@ def get_data_from_dbs(results, kwargs):
             return 400, "PluginSQLError: There must be some error in the fx_db_sql", {}
         fx_db_results = results2df(fx_db_results, fx_db_results.keys())
         fx_db_results = df_formated_time(fx_db_results, time_format)
-        if num==1 and (not set(mapping.keys()) <= set(fx_db_results.columns)):
-            return 400, f"PluginMapError: There are some errors in the param 'map', " \
-                        f"These columns are not in df: [{set(mapping.keys()) - set(fx_db_results.columns)}]", {}
-        fx_db_results = df2results(fx_db_results)
+        if num == 1:
+            if not set(mapping.keys()) <= set(fx_db_results.columns):
+                return 400, f"PluginMapError: There are some errors in the param 'map', " \
+                            f"These columns are not in df: [{set(mapping.keys()) - set(fx_db_results.columns)}]", {}
+            else:
+                fx_db_results = fx_db_results[[*mapping.keys()]]
+                fx_db_results = df2results(fx_db_results)
+        else:
+            fx_db_results = df2results(fx_db_results)
     if check_sql(zb_db_sql):  # 需要走指标库
         try:
             zb_db_results = zb_engine.execute(zb_db_sql)
@@ -63,10 +74,16 @@ def get_data_from_dbs(results, kwargs):
             return 400, "PluginSQLError: There must be some error in the zb_db_sql", {}
         zb_db_results = results2df(zb_db_results, zb_db_results.keys())
         zb_db_results = df_formated_time(zb_db_results, time_format)
-        if num==1 and (not set(mapping.keys()) <= set(zb_db_results.columns)):
-            return 400, f"PluginMapError: There are some errors in the param 'map', " \
-                        f"These columns are not in df: [{set(mapping.keys()) - set(zb_db_results.columns)}]", {}
-        zb_db_results = df2results(zb_db_results)
+
+        if num == 1:
+            if not set(mapping.keys()) <= set(zb_db_results.columns):
+                return 400, f"PluginMapError: There are some errors in the param 'map', " \
+                            f"These columns are not in df: [{set(mapping.keys()) - set(zb_db_results.columns)}]", {}
+            else:
+                zb_db_results = zb_db_results[[*mapping.keys()]]
+                zb_db_results = df2results(zb_db_results)
+        else:
+            zb_db_results = df2results(zb_db_results)
     return 200, "success", {"fx_db_results": fx_db_results, "zb_db_results": zb_db_results}
 
 
@@ -81,7 +98,6 @@ def merge_and_select_data(fx_db_data, zb_db_data, results):
     zb_db_df = pd.DataFrame(zb_db_data)
     if not on:
         on = list(set(fx_db_df.columns) & set(zb_db_df.columns))
-    print(on)
     result_df = pd.merge(fx_db_df, zb_db_df, on=on)
     if not set(mapping.keys()) <= set(result_df.columns):
         return 400, f"PluginMapError: There are some errors in the param 'map', " \
