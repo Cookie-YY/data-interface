@@ -28,12 +28,14 @@ def data_index_api(realm, index):
     request_args = {**request_args_list, **request_args_str}
 
     # 得到解析的结果
+    # convert层直接返回封装好的结果
+    # 如果走插件过程，需要手动补充code和msg
     code, msg, parsed_data = parse_data(realm, index, request_args)
     if not code in [200, 201, 202]:
         parsed_data = {"code": code, "msg": msg, "data": {}}
     else:
         if code == 202:
-            parsed_data["code"] = 200
+            parsed_data["code"] = 202
             parsed_data["msg"] = msg
     response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
     response.headers['Access-Control-Allow-Origin'] = '*'
@@ -58,9 +60,9 @@ def hbxfdp():
 # 定时刷新任务的路由
 @app.route("/refresh/")
 def refresh_all():
-    from refresh import refresh
-    refresh()
-    return jsonify({200, "success", []})
+    refresh = __import__(f"settings.{PROJECT}.refresh", globals(), locals(), ["refresh"])  # 导入前端配置
+    refresh.refresh()
+    return jsonify({"code": 200, "msg": "done", "data": {}})
 
 
 if __name__ == '__main__':
