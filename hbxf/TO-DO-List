@@ -12,15 +12,19 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 加一个项目参数随机初始化还是0初始化
 - 【已解决】name=day时  不加full，相当于不走时间格式化的部分，timestamp无法格式化会报错
 - 【已解决】插件化开发的时间需要修改
-- 嵌套格式
+- 嵌套格式（第五种数据格式，里面可以写之前的四种格式）
 - 增加TIME_FORMAT参数，针对指标修改时间显示格式
 - 【已解决】插件过程map需要严格对应
 - 整理现有参数：注意，ceil系列，unit
+- full=true的逻辑重构
 - 项目配置模板文件夹
 - 插件过程的不匹配怎么办（merge的方式）
-- 插件过程的配置文件加一个必填项
+- 插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
 - 插件过程的get_data_from_dbs拆分
+- 插件过程code202的 app.py中的代码合并
 - app.py中 统一代码
 - time-format.py中windows下格式化时间有中文会报错需要用local，linux下正常，但是linux用local会报错
+- name_limit和stack_limit在件次/件次占比/人次/人次占比上好像没区别
 
-- 广东各个率的计算
+- 广东各个率的计算：需要表
+- 广东的弹窗问题，需要xf_org/xf_region的表
