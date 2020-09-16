@@ -53,6 +53,7 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
     get_dataframe_for_each_api中加入的table，table是个list，需要挨个查一遍
 - LIKE-xm:字段用模糊查询
     FUZZY-xm: 字段用分词查询
+    插件过程
 - full=true在yy_jj_fz_jt表中失效
 - 如果是多个列怎么求占比yy_jj_fz_jt
 - 【已解决】插件过程的sql为空需要有默认值
