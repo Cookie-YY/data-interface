@@ -86,7 +86,7 @@ URL_DISPATCH_MAP = {
     # 全局业务监控_信访形式分布
     "全局业务监控_信访形式分布1_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
     "全局业务监控_信访形式分布1_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
-    "全局业务监控_信访形式分布1_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_信访形式分布1_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
 
     "全局业务监控_信访形式分布2_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
     "全局业务监控_信访形式分布2_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
@@ -114,8 +114,8 @@ URL_DISPATCH_MAP = {
 
     # 全局业务监控_内容分类
     "全局业务监控_内容分类1_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
-    "全局业务监控_内容分类1_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
-    "全局业务监控_内容分类1_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_内容分类1_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_内容分类1_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
 
     "全局业务监控_内容分类2_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_shej_yjnr_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
     "全局业务监控_内容分类2_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
@@ -132,7 +132,7 @@ URL_DISPATCH_MAP = {
 
     # 全局业务监控_问题属地1 地图
     "全局业务监控_问题属地2_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfrqxfjc&name=shij_02&value=xfrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_问题属地2_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfrqxfjc&name=shij_02&value=xfrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
+    "全局业务监控_问题属地2_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_djrqxfjc&name=shij_02&value=djrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
     "全局业务监控_问题属地2_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_jhrqxfjc&name=shij_02&value=jhrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
 
     # 全局业务监控_问题属地1 折线
@@ -145,6 +145,6 @@ URL_DISPATCH_MAP = {
     "全局业务监控_问题属地4_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_nlrange_jhrqxfjc&name=nlrange&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
 
     "全局业务监控_问题属地5_信访日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xb_xfrqxfjc&name=xb&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_问题属地5_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xb_xfrqxfjc&name=xb&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
+    "全局业务监控_问题属地5_登记日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xb_djrqxfjc&name=xb&value=djrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
     "全局业务监控_问题属地5_交换日期": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xb_jhrqxfjc&name=xb&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true"
 }
