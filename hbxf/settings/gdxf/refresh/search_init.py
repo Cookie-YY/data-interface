@@ -24,9 +24,9 @@ sql2 = """
     );
 """
 
-# 创建表search_qh_gd
+# 创建表search_qh
 sql3 = """
-    create table search_qh_gd(
+    create table search_qh(
     shej_01 varchar(255),
     shej_02 varchar(255),
     shij_01 varchar(255),
@@ -124,13 +124,13 @@ def write_search_qh_zrdw_jb():
                 db.rollback()
 
 
-def write_search_qh_gd():
-    create_table("DROP TABLE IF EXISTS search_qh_gd", "已存在的search_qh_gd已删除")
+def write_search_qh():
+    create_table("DROP TABLE IF EXISTS search_qh", "已存在的search_qh已删除")
     create_table(sql3, '数据表创建成功：search_xfbm_jb')
     db = db2
     cursor = db.cursor()
     query_sql = """select `region_name`,`region_code` from xf_region where region_code like '44____000000' ORDER BY region_code asc"""
-    insert_sql = """insert into search_qh_gd (shej_01, shej_02, shij_01, shij_02 , xj_01, xj_02) values (%s,%s,%s,%s,%s,%s)"""
+    insert_sql = """insert into search_qh (shej_01, shej_02, shij_01, shij_02 , xj_01, xj_02) values (%s,%s,%s,%s,%s,%s)"""
     rows = fetch_data(query_sql)
     total = len(rows)
     for ind, row in enumerate(rows):

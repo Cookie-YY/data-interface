@@ -44,6 +44,8 @@ def get_dataframe_for_each_api(apis):
     ceil = apis.pop("ceil", "")                            # 数值上限
     ceil_value = apis.pop("ceil_value", ceil)              # 达到上限后显示的内容
 
+    query_data = apis.pop("query_data")
+
     # 将字段的默认值赋予参数字典
     apis_copy["busin"] = busin
     apis_copy["value"] = value

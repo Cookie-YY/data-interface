@@ -57,7 +57,7 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - full=true在yy_jj_fz_jt表中失效
 - 如果是多个列怎么求占比yy_jj_fz_jt
 - 【已解决】插件过程的sql为空需要有默认值
-
+- query_data的删除位置
 - 检查配置：
     init_dicts  dict/list
     plugins 的检查  value_map
