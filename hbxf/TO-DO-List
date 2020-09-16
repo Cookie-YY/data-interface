@@ -46,4 +46,5 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 【已解决】三个饼 跨域
 - 【已解决】因为只有一个数，不能用full
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
-- 广东的小弹窗问题，需要xf_org/xf_region的表
+- 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
+    异步写入数据库的方法

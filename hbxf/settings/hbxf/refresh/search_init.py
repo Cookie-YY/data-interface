@@ -63,7 +63,7 @@ def write_search_xfbm_jb():
     rows = fetch_data(query_sql)
     total = len(rows)
     for ind, row in enumerate(rows):
-        print(f"\b\b\b\b\b\b\b\b\b{ind+1}/{total}", end="", flush=True)
+        print(f"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b{ind+1}/{total}", end="", flush=True)
         jb = int(row[1]) - 1
         xfbm = row[0]
         xfbm_alpha = (lazy_pinyin(xfbm[0]))[0][0]
@@ -96,7 +96,7 @@ def write_search_qh_zrdw_jb():
     region_dict['139800000000'] = '雄安新区'
     total = len(rows)
     for ind, row in enumerate(rows):
-        print(f"\b\b\b\b\b\b\b\b\b{ind + 1}/{total}", end="", flush=True)
+        print(f"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b{ind + 1}/{total}", end="", flush=True)
         qh_code = row[-1]
         if region_dict.get(qh_code):
             jb = int(row[1]) - 1
