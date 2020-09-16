@@ -25,7 +25,6 @@ def api_gateway(realm, index, request_args):
     if code != 200:
         return code, msg, {}
 
-
     # 3. apis 分发
     code, msg, api_dict = get_dispatched_apis(request_args)
     if code != 200:

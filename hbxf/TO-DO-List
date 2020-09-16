@@ -1,34 +1,49 @@
-- 【已解决+full即可】有的空表的接口的数据是null
+- 【已解决】有的空表的接口的数据是null
 （河北）http://127.0.0.1:3389/api/xf/xfjc_zb/?timetype=cy&lx=xfmd&order=-xfjc&name=xfmd&value=xfjc&year=11
 - full@exclude
-- format=report   excel
 - 【已解决】插件化开发，如果sql跨数据库如何写
 - 【已解决】year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来（待测试）
 - 【待测试】hangye=!公安
 - 【不用数字一切正常，但是用数字还没有解决】year的初始化如果是数字 join时会有问题
 year_initialized.py文件
 http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
-- 所有可能取值用sql语句（需要定期更新，没必要每次都从库里取）
+- （写在产品的refresh里面）所有可能取值用sql语句（需要定期更新，没必要每次都从库里取）
 - 加一个项目参数随机初始化还是0初始化
 - 【已解决】name=day时  不加full，相当于不走时间格式化的部分，timestamp无法格式化会报错
 - 【已解决】插件化开发的时间需要修改
 - 嵌套格式（第五种数据格式，里面可以写之前的四种格式）
 - 增加TIME_FORMAT参数，针对指标修改时间显示格式
 - 【已解决】插件过程map需要严格对应
-- 整理现有参数：注意，ceil系列，unit
+- 整理现有参数：注意，ceil系列，unit需要实现
 - full=true的逻辑重构
 - 项目配置模板文件夹
 - 插件过程的不匹配怎么办（merge的方式）
 - 插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
 - 插件过程的get_data_from_dbs拆分
 - 插件过程code202的 app.py中的代码合并
-- app.py中 统一代码
-- time-format.py中windows下格式化时间有中文会报错需要用local，linux下正常，但是linux用local会报错
+- 【暂不解决，和指标/指标名字联动时解决】app.py中 统一代码
 - name_limit和stack_limit在件次/件次占比/人次/人次占比上好像没区别
 
-- 广东各个率的计算：需要表
-- 广东的弹窗问题，需要xf_org/xf_region的表
+# 金鸿
+- time-format.py中windows下格式化时间有中文会报错需要用local，linux下正常，但是linux用local会报错
+    datetime.datetime.strftime(x,"%Y年%m月%d日") 在win下报错，需要用local包，设置语言
+    在linux下不报错，但是设置市区的命令会报错
+- 离线安装uwsgi和pypinyin，pymysql, ox_oracle【win+linux】
+- uwsgi 在win下怎么用【不重要】
+- 监听一个进程的运行时间，超时就报错【不重要】
+    自己想一个方法
+    修改windows下的signal
 
-- 三个饼 跨域
+# 广东项目
+- 【*】预警状态的判断（transformer=@yjzt
+- 【*】广东各个率的计算：需要表（transformer=@mylv   @cplv   @jslllv  @bjlv  @asbjlv）
+    产品的extensions和项目的extensions【单表的transformer的扩展】
+    产品的refresh 和 项目的refresh
+    项目的apis_plugins【多表的查询】
+- 【*】表格的大弹窗问题【增加一个字段】：怎么加【写sql】，怎么给，怎么解析【判断，然后用format格式化sql】
+- 插件过程增加一个字段：columns_value_mapping: 支持正则：{问题属地：广东省广州市}
+- 【*】format=report   excel
+- 【已解决】三个饼 跨域
 - 【已解决】因为只有一个数，不能用full
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
+- 广东的小弹窗问题，需要xf_org/xf_region的表
