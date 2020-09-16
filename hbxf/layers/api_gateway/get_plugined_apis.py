@@ -5,6 +5,7 @@ import pandas as pd
 from flask import request
 
 
+
 def check_plugin_args(plugin_apis):
     """
     检查用户配置的 apis_plugins文件
@@ -18,7 +19,8 @@ def check_plugin_args(plugin_apis):
     mapping = plugin_api.get("map")
     on = plugin_api.get("on")
     time_format = plugin_api.get("time_format")
-    if not map:
+    value_map = plugin_api.get("value_map")
+    if not mapping:
         return 400, "PluginMapError: No 'map' Found", {}
     if not fx_db_sql and not zb_db_sql:
         return 400, "PluginURLError: At least one URL, specify fx_db_sql or zb_db_sql"
@@ -26,7 +28,21 @@ def check_plugin_args(plugin_apis):
                             "zb_db_sql": zb_db_sql,
                             "mapping": mapping,
                             "on": on,
-                            "time_format": time_format}
+                            "time_format": time_format,
+                            "value_map": value_map}
+
+def get_value_mapped(df, value_map, kwargs):
+    from app import app
+    for rule in value_map:
+        if len(rule) == 4:
+            new_column, old_column, rule_one, default = rule
+        else:
+            column, rule_one, default = rule
+            new_column, old_column = column, column
+        default = default.format(**kwargs, **app.config)
+        if old_column in df:
+            df[new_column] = df[old_column].apply(lambda x: rule_one.format(value=x or default, **app.config, **kwargs))
+    return df
 
 
 def get_data_from_dbs(results, kwargs):
@@ -40,8 +56,10 @@ def get_data_from_dbs(results, kwargs):
     # time_format = results.get("time_format", TIME_FORMAT)
     time_format = results.get("time_format")
     mapping = results.get("mapping")
-    fx_db_sql = fx_db_sql.format(**kwargs)
-    zb_db_sql = zb_db_sql.format(**kwargs)
+    value_map = results.get("value_map")
+    from app import app
+    fx_db_sql = fx_db_sql.format(**kwargs, **app.config)
+    zb_db_sql = zb_db_sql.format(**kwargs, **app.config)
     fx_db_results, zb_db_results = [], []
     from utils.db_connection import fx_engine, zb_engine
     from utils.results2df import results2df
@@ -57,6 +75,8 @@ def get_data_from_dbs(results, kwargs):
         except:
             return 400, "PluginSQLError: There must be some error in the fx_db_sql", {}
         fx_db_results = results2df(fx_db_results, fx_db_results.keys())
+        if value_map:
+            fx_db_results = get_value_mapped(fx_db_results, value_map, kwargs)
         fx_db_results = df_formated_time(fx_db_results, time_format)
         if num == 1:
             if not set(mapping.keys()) <= set(fx_db_results.columns):
@@ -73,6 +93,8 @@ def get_data_from_dbs(results, kwargs):
         except:
             return 400, "PluginSQLError: There must be some error in the zb_db_sql", {}
         zb_db_results = results2df(zb_db_results, zb_db_results.keys())
+        if value_map:
+            zb_db_results = get_value_mapped(zb_db_results, value_map, kwargs)
         zb_db_results = df_formated_time(zb_db_results, time_format)
 
         if num == 1:

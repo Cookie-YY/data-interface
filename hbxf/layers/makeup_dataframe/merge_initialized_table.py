@@ -33,14 +33,25 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
 # update_data: 需要更新数据的列名
 # init_df: 初始化的df
 
-def fill_random_or_real(x, df_dict, s):
+def fill_random_or_real(x, df_dict, s, table):
     if pd.isna(x):
-        if str(df_dict.get(s)[0]).startswith("random"):
+        if isinstance(df_dict.get(s), dict):
+            t = df_dict.get(s)
+            value_list = df_dict.get(s).get(table[0])
+        else:
+            value_list = df_dict.get(s)
+        if str(value_list[0]).startswith("random"):
             return eval(df_dict.get(s)[0])
         else:
-            return df_dict.get(s)[0]
-    else:
-        return x
+            return value_list[0]
+    return x
+
+    #     if str(df_dict.get(s)[0]).startswith("random"):
+    #         return eval(df_dict.get(s)[0])
+    #     else:
+    #         return df_dict.get(s)[0]
+    # else:
+    #     return x
 
 
 
@@ -93,6 +104,7 @@ def merge_initialized_table(dataframe):
     融合两个数据框，更新 update_data中的数据
     """
     df = dataframe["df"]
+    table = dataframe["table"]
     update_data = [dataframe["value"]]
     name = dataframe.get("name")
 
@@ -115,7 +127,7 @@ def merge_initialized_table(dataframe):
     # 如果只有一列，说明只取了value,也只能有一行
     if len(df_list) == 1:
         column = df_list[0]
-        df[column] = df[column].apply(lambda x: fill_random_or_real(x, df_dict, column))
+        df[column] = df[column].apply(lambda x: fill_random_or_real(x, df_dict, column, table))
         return df
 
     # 获取所有文件
