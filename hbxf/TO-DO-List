@@ -2,7 +2,7 @@
 （河北）http://127.0.0.1:3389/api/xf/xfjc_zb/?timetype=cy&lx=xfmd&order=-xfjc&name=xfmd&value=xfjc&year=11
 - full@exclude
 - 【已解决】插件化开发，如果sql跨数据库如何写
-- 【已解决】year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来（待测试）
+- 【已解决】year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来
 - 【待测试】hangye=!公安
 - 【不用数字一切正常，但是用数字还没有解决】year的初始化如果是数字 join时会有问题
 year_initialized.py文件
@@ -14,15 +14,27 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 嵌套格式（第五种数据格式，里面可以写之前的四种格式）
 - 增加TIME_FORMAT参数，针对指标修改时间显示格式
 - 【已解决】插件过程map需要严格对应
-- 整理现有参数：注意，ceil系列，unit需要实现
+- 整理现有参数：注意，ceil系列，和插件过程结合问题，unit需要实现
 - full=true的逻辑重构
 - 项目配置模板文件夹
 - 插件过程的不匹配怎么办（merge的方式）
-- 插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
+- # 插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
 - 插件过程的get_data_from_dbs拆分
 - 插件过程code202的 app.py中的代码合并
-- 【暂不解决，和指标/指标名字联动时解决】app.py中 统一代码
+- 【暂不解决，和指标/指标名字联动时解决】app.py中 统一代码，想不起来了
 - name_limit和stack_limit在件次/件次占比/人次/人次占比上好像没区别
+- 同名列的不同取值
+    get_dataframe_for_each_api中加入的table，table是个list，需要挨个查一遍
+- LIKE-xm:字段用模糊查询（已解决）
+    FUZZY-xm: 字段用分词查询
+    插件过程
+- full=true在yy_jj_fz_jt表中失效（已解决）
+- 如果是多个列（宽表）怎么求占比yy_jj_fs_jt
+- 【已解决】插件过程的sql为空需要有默认值
+- 【也许不用删，不会走name/value/stack的查询过程】query_data的删除位置, query_data改成query
+- 检查配置：
+    init_dicts  dict/list
+    plugins 的检查  value_map
 
 # 金鸿
 - time-format.py中windows下格式化时间有中文会报错需要用local，linux下正常，但是linux用local会报错
@@ -33,9 +45,11 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 监听一个进程的运行时间，超时就报错【不重要】
     自己想一个方法
     修改windows下的signal
+- 指标表命名，如果
 
 # 广东项目
-- 【*】预警状态的判断（transformer=@yjzt
+- *****广东的重点人员的表，和河北的不太一样
+- 【*】预警状态的判断（transformer=@yjzt）
 - 【*】广东各个率的计算：需要表（transformer=@mylv   @cplv   @jslllv  @bjlv  @asbjlv）
     产品的extensions和项目的extensions【单表的transformer的扩展】
     产品的refresh 和 项目的refresh
@@ -48,16 +62,3 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
 - 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
     异步写入数据库的方法
-
-- 同名列的不同取值
-    get_dataframe_for_each_api中加入的table，table是个list，需要挨个查一遍
-- LIKE-xm:字段用模糊查询
-    FUZZY-xm: 字段用分词查询
-    插件过程
-- full=true在yy_jj_fz_jt表中失效
-- 如果是多个列怎么求占比yy_jj_fz_jt
-- 【已解决】插件过程的sql为空需要有默认值
-- query_data的删除位置
-- 检查配置：
-    init_dicts  dict/list
-    plugins 的检查  value_map
