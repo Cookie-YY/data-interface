@@ -34,6 +34,7 @@ def check_plugin_args(plugin_apis):
 
 def get_value_mapped(df, value_map, kwargs, query_data):
     from app import app
+    df = df.fillna("")
     for rule in value_map:
         if len(rule) == 4:
             new_column, old_column, rule_one, default = rule
@@ -78,8 +79,8 @@ def get_data_from_dbs(results, kwargs):
         except:
             return 400, "PluginSQLError: There must be some error in the fx_db_sql", {}
         fx_db_results = results2df(fx_db_results, fx_db_results.keys())
-        if value_map:
-            fx_db_results = get_value_mapped(fx_db_results, value_map, kwargs, query_data)
+        # if value_map:
+        fx_db_results = get_value_mapped(fx_db_results, value_map, kwargs, query_data)
         fx_db_results = df_formated_time(fx_db_results, time_format)
         if num == 1:
             if not set(mapping.keys()) <= set(fx_db_results.columns):
@@ -96,8 +97,8 @@ def get_data_from_dbs(results, kwargs):
         except:
             return 400, "PluginSQLError: There must be some error in the zb_db_sql", {}
         zb_db_results = results2df(zb_db_results, zb_db_results.keys())
-        if value_map:
-            zb_db_results = get_value_mapped(zb_db_results, value_map, kwargs, query_data)
+        # if value_map:
+        zb_db_results = get_value_mapped(zb_db_results, value_map, kwargs, query_data)
         zb_db_results = df_formated_time(zb_db_results, time_format)
 
         if num == 1:

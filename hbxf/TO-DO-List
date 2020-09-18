@@ -65,3 +65,4 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 
 - 插件过程，的url中如果出现了on/time_format等参数会报错，应该会覆盖
 - 【已完成，晚上看是否有log文件】day_from,  day_to 的字段，增加执行权限
+- 插件过程的默认map和默认为空补空串
