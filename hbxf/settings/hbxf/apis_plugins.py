@@ -71,7 +71,7 @@ APIS_PLUGIN = [
         """,
         "on": "zjhm",
         # "time_format": "%Y年%m月%d日"
-        "value_map": [("tx", "{FILE_PATH}{value}", "default.png")]
+        "value_map": [("tx", "{FILE_URL}{value}", "default.png")]
     },
 
 {

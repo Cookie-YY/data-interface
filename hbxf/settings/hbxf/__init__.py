@@ -16,7 +16,7 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 DP_DIR = "client/hbxfdp"        # 大屏的路径
 DP_URL = "/hbxfdp/"             # 访问大屏的url
 # 头像等获取的文件的地址
-FILE_PATH = "http://39.107.240.28:3389/hbxfdp/file/"
+FILE_URL = "http://39.107.240.28:3389/hbxfdp/file/"
 
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4

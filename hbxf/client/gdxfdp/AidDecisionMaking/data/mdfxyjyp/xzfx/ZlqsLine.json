@@ -1,0 +1,55 @@
+{
+  "code": "200",
+  "msg": "success",
+  "map": {
+    "value_g0_1": "总量",
+    "value_g1_1": "化解"
+  },
+  "data":[
+    {
+      "name": "2015",
+      "value_g0_1": 142,
+      "value_g1_1": 100,
+      "value_g2_1": 150,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2016",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2017",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2018",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    },
+    {
+      "name": "2019",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190,
+      "value_g3_1": 142,
+      "value_g4_1": 100,
+      "value_g5_1": 150
+    }
+  ]
+}

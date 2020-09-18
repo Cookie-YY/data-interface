@@ -1,0 +1,42 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "name": "王东峰",
+      "value": 98
+    },
+    {
+      "name": "许勤",
+      "value": 85
+    },
+    {
+      "name": "袁桐利",
+      "value": 77
+    },
+    {
+      "name": "陈刚",
+      "value": 69
+    },
+    {
+      "name": "徐建培",
+      "value": 62
+    },
+    {
+      "name": "刘凯",
+      "value": 58
+    },
+    {
+      "name": "夏延军",
+      "value": 45
+    },
+    {
+      "name": "时清霜",
+      "value": 33
+    },
+    {
+      "name": "葛海蛟",
+      "value": 23
+    }
+  ]
+}

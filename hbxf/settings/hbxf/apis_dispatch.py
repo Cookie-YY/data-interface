@@ -31,12 +31,12 @@ URL_DISPATCH_MAP = {
 
     # 重点人员姓名列表
     "信访人分析_重点人员_全部":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xm_xfjc&name=xm&value=zjhm&direct_order=-xfjc&direct_limit=100",
-    "信访人分析_重点人员_来信":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=来信&direct_limit=100",
-    "信访人分析_重点人员_来访":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=来访&direct_limit=100",
-    "信访人分析_重点人员_网信":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=网信&direct_limit=100",
+    "信访人分析_重点人员_来信":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=来信&direct_limit=100",
+    "信访人分析_重点人员_来访":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=来访&direct_limit=100",
+    "信访人分析_重点人员_网信":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xm_xfxs_xfjc&name=xm&value=zjhm&direct_order=-xfjc&xfxs=网信&direct_limit=100",
     # 暂时没有扬言的数据表
     "信访人分析_重点人员_扬言":"",
-    "信访人分析_重点人员_专项":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_zxbz_xfjc&name=xm&value=zjhm&direct_order=-xfjc&direct_limit=100"
+    "信访人分析_重点人员_专项":"http://39.107.240.28:3389/api/xf/?table=xf_xfr_cy_zjhm_xm_zxbz_xfjc&name=xm&value=zjhm&direct_order=-xfjc&direct_limit=100"
 
 
 }

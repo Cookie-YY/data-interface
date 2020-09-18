@@ -1,0 +1,22 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "name": "国家",
+      "value": 700
+    },
+    {
+      "name": "省级",
+      "value": 300
+    },
+    {
+      "name": "市级",
+      "value": 700
+    },
+    {
+      "name": "县级",
+      "value": 300
+    }
+  ]
+}

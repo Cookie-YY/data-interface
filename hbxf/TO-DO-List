@@ -62,3 +62,6 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
 - 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
     异步写入数据库的方法
+
+- 插件过程，的url中如果出现了on/time_format等参数会报错，应该会覆盖
+- 【已完成，晚上看是否有log文件】day_from,  day_to 的字段，增加执行权限

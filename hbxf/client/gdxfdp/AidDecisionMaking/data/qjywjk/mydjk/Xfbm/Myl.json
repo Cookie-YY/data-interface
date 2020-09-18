@@ -1,0 +1,12 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "value": 10
+    },
+    {
+      "value": 90
+    }
+  ]
+}

@@ -184,7 +184,7 @@ def merge_initialized_table(dataframe):
             for i in d:
                 txt_l1.append((i.strip("\n")).split("\t"))
             txt_l2 = []  # ['法制宣传', '立法规划', '司法改革'] 文件中根据条件筛选出的部分内容
-            screen_codition = txt_l1[0][1]  # 从文件中获得的筛选条件 ejnr/shj_02
+            screen_codition = txt_l1[0][0]  # 从文件中获得的筛选条件 ejnr/shj_02
             screen_ccontent = dataframe.get(screen_codition)  # 筛选的条件内容 法制建设/None
             [txt_l2.append(i[-1]) for i in txt_l1 if screen_ccontent in i]
             if len(txt_l2) > 0 and screen_ccontent != None:

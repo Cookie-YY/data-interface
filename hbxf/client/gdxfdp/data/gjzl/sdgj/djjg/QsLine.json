@@ -1,0 +1,41 @@
+{
+  "code": "200",
+  "msg": "success",
+  "map": {
+    "value_g0_1": "总量",
+    "value_g1_1": "化解",
+    "value_g2_1": "办结"
+  },
+  "data":[
+    {
+      "name": "2016",
+      "value_g0_1": 142,
+      "value_g1_1": 100,
+      "value_g2_1": 150
+    },
+    {
+      "name": "2017",
+      "value_g0_1": 351,
+      "value_g1_1": 273,
+      "value_g2_1": 190
+    },
+    {
+      "name": "2018",
+      "value_g0_1": 623,
+      "value_g1_1": 535,
+      "value_g2_1": 300
+    },
+    {
+      "name": "2019",
+      "value_g0_1": 536,
+      "value_g1_1": 623,
+      "value_g2_1": 400
+    },
+    {
+      "name": "2020",
+      "value_g0_1": 638,
+      "value_g1_1": 754,
+      "value_g2_1": 500
+    }
+  ]
+}

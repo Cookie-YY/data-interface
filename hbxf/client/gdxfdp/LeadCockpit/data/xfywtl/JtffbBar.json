@@ -1,0 +1,90 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    },
+    {
+      "name": "广州市",
+      "value": 68
+    },
+    {
+      "name": "深圳市",
+      "value": 77
+    },
+    {
+      "name": "东莞市",
+      "value": 70
+    }
+  ]
+}
