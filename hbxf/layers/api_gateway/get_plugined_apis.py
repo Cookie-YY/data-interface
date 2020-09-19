@@ -23,7 +23,7 @@ def check_plugin_args(plugin_apis):
     if not mapping:
         return 400, "PluginMapError: No 'map' Found", {}
     if not fx_db_sql and not zb_db_sql:
-        return 400, "PluginURLError: At least one URL, specify fx_db_sql or zb_db_sql"
+        return 400, "PluginURLError: At least one SQL, specify fx_db_sql or zb_db_sql"
     return 200, "success", {"fx_db_sql": fx_db_sql,
                             "zb_db_sql": zb_db_sql,
                             "mapping": mapping,
@@ -32,7 +32,7 @@ def check_plugin_args(plugin_apis):
                             "value_map": value_map}
 
 
-def get_value_mapped(df, value_map, kwargs, query_data):
+def get_value_mapped(df, value_map, kwargs, query):
     from app import app
     df = df.fillna("")
     for rule in value_map:
@@ -41,7 +41,7 @@ def get_value_mapped(df, value_map, kwargs, query_data):
         else:
             column, rule_one, default = rule
             new_column, old_column = column, column
-        default = default.format(**kwargs, **app.config, query_data=query_data)
+        default = default.format(**kwargs, **app.config, query=query)
         if old_column in df:
             df[new_column] = df[old_column].apply(lambda x: rule_one.format(value=x or default, **app.config, **kwargs))
     return df
@@ -59,11 +59,11 @@ def get_data_from_dbs(results, kwargs):
     time_format = results.get("time_format")
     mapping = results.get("mapping")
     value_map = results.get("value_map")
-    query_data = kwargs.pop("query_data", "")
-    query_data = query_data.replace(",", "AND").replace(":", "=")
+    query = kwargs.pop("query", "")
+    query = query.replace(",", "AND").replace(":", "=")
     from app import app
-    fx_db_sql = fx_db_sql.format(query_data=query_data, **kwargs, **app.config)
-    zb_db_sql = zb_db_sql.format(query_data=query_data, **kwargs, **app.config)
+    fx_db_sql = fx_db_sql.format(query=query, **kwargs, **app.config)
+    zb_db_sql = zb_db_sql.format(query=query, **kwargs, **app.config)
     fx_db_results, zb_db_results = [], []
     from utils.db_connection import fx_engine, zb_engine
     from utils.results2df import results2df
@@ -77,10 +77,10 @@ def get_data_from_dbs(results, kwargs):
         try:
             fx_db_results = fx_engine.execute(fx_db_sql)
         except:
-            return 400, "PluginSQLError: There must be some error in the fx_db_sql", {}
+            return 400, f"PluginSQLError: There must be some error in the fx_db_sql {fx_db_sql}", {}
         fx_db_results = results2df(fx_db_results, fx_db_results.keys())
         # if value_map:
-        fx_db_results = get_value_mapped(fx_db_results, value_map, kwargs, query_data)
+        fx_db_results = get_value_mapped(fx_db_results, value_map, kwargs, query)
         fx_db_results = df_formated_time(fx_db_results, time_format)
         if num == 1:
             if not set(mapping.keys()) <= set(fx_db_results.columns):
@@ -95,10 +95,10 @@ def get_data_from_dbs(results, kwargs):
         try:
             zb_db_results = zb_engine.execute(zb_db_sql)
         except:
-            return 400, "PluginSQLError: There must be some error in the zb_db_sql", {}
+            return 400, f"PluginSQLError: There must be some error in the zb_db_sql {zb_db_sql}", {}
         zb_db_results = results2df(zb_db_results, zb_db_results.keys())
         # if value_map:
-        zb_db_results = get_value_mapped(zb_db_results, value_map, kwargs, query_data)
+        zb_db_results = get_value_mapped(zb_db_results, value_map, kwargs, query)
         zb_db_results = df_formated_time(zb_db_results, time_format)
 
         if num == 1:
@@ -147,6 +147,13 @@ def get_plugined_apis(request_args):
         if code != 200:
             return code, msg, {}
         mapping = results.get("mapping")
+
+        # 处理now问题【需要处理才能拿到from和to】
+        from layers.api_gateway.process_api import process_api
+        code, msg, request_args = process_api(request_args)
+        if code != 200:
+            return code, msg, {}
+
         # 从数据库获取数据
         code, msg, data = get_data_from_dbs(results, request_args)
         if code != 200:

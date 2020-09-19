@@ -9,11 +9,11 @@ APIS_PLUGIN = [
         # 注意：map的键需要全部出现在返回的最终数据表中，并且按照map的获取相应的列
         "map":"",
 
-        # 分析库（输入库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. url中的query_data字段的拆分出来的参数
+        # 分析库（输入库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. from/to  4. url中的query字段的拆分出来的参数
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "fx_db_sql":"",
 
-        # 指标库（输出库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. url中的query_data字段的拆分出来的参数
+        # 指标库（输出库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. from/to  4. url中的query字段的拆分出来的参数
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "zb_db_sql":"",
 
@@ -34,9 +34,12 @@ APIS_PLUGIN = [
         # {}可以包含四类值
         # 1. settings中的变量
         # 2. url中的参数
-        # 3. url中的query_data字段的拆分出来的参数
-        # 4. map/map.lower/map.upper/ 在提前定义好的字典里寻找匹配的映射
-        # 5. value 当前值
+        # 3. from/to
+        #### 4. url中的query字段的拆分出来的参数
+        # 5. map/map.lower/map.upper/ 在提前定义好的字典里寻找匹配的映射
+        # 6. value 当前值
+        # 7. 反查的大表格需要有query字段，并且严格匹配数据库的字段
+
         "value_map": [("tx", "{FILE_PATH}{value}", "default.png")]
     },
     # 用于测试query_data的样例
@@ -102,5 +105,40 @@ APIS_PLUGIN = [
         # "on": "zjhm"
         "time_format": "%Y年%m月%d日"
     },
+
+    {
+        # 河北_攻坚治理_包案领导
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=hb_gjzl_bald&day=[2019-09-01,2020-09-01]
+        "url": "/api/xf/\?gd_id=hb_gjzl_bald&",
+        "map": {"xm": "姓名", "id": "id", "xfjc": "信访件次"},
+        "fx_db_sql": """
+         """,
+        "zb_db_sql": """
+        select xm, id, xfjc from xf_ba_cd_shej_id_xm_px_xfjc WHERE day >= '{from}' AND day <= '{to}' order by px;
+         """,
+        # "on": "zjhm",
+        # "time_format": "%Y年%m月%d日",
+        "value_map": [("xfjc", "{value}", "0")],
+    },
+
+    {
+        # 河北_信访形式_受信人名单
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=hb_xfxs_sxrmd&day=[2019-09-01,2020-09-01]
+        "url": "/api/xf/\?gd_id=hb_xfxs_sxrmd&",
+        "map": {"xm": "姓名", "xfjc": "信访件次"},
+        "fx_db_sql": """
+     """,
+        "zb_db_sql": """
+        SELECT x1.xm, x2.xfjc FROM xf_sxr_cy_xm_sx x1
+        LEFT JOIN ( SELECT sxr, sum( xfjc ) xfjc FROM xf_sxr_cd_shej_cfxfbz_xfjc 
+        WHERE `day` >= '{from}' AND `day` <= '{to}' GROUP BY sxr ) x2 
+        ON x1.xm = x2.sxr ORDER BY x1.sx
+     """,
+        # "on": "zjhm"
+        # "time_format": "%Y年%m月%d日"
+        "value_map": [("xfjc", "{value}", "0")],
+
+    },
+
 
 ]

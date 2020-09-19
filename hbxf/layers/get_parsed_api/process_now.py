@@ -22,31 +22,9 @@ def process_now(api_dict):
                 update_dict[k] = value  # 直接赋值，如果是范围的，在后面可以覆盖
             elif k == "month":
                 value = value.replace("now", str(datetime.now().month))
-
             elif k == "day":
-                now_time = datetime.now().strftime("%Y-%m-%d")  # 现在时间
-                now_time_str = datetime.strptime(now_time, "%Y-%m-%d")  # 转化为字符串
-                res = re.findall('(?:\s|-)\d+', v)   #  ['-20', ' 30']  ['7']  ['-30']
-                if len(res) == 2:
-                    num0 = res[0]
-                    num1 = res[1]
-                    num0_time0 = timedelta(days=int(num0))
-                    num0_time1 = timedelta(days=int(num1))
-                    update_time0 = (now_time_str + num0_time0).strftime("%Y-%m-%d")
-                    update_time1 = (now_time_str + num0_time1).strftime("%Y-%m-%d")
-                    if int(num0) > int(num1):
-                        value = update_time1 + "," + update_time0
-                    else:
-                        value = update_time0 + "," + update_time1
-                else:
-                    update_num = res[0]
-                    update_days = timedelta(days=int(update_num))
-                    update_time = (now_time_str+update_days).strftime("%Y-%m-%d")  # str
-                    if "-" in update_num:
-                        value = update_time + "," + now_time
-                    else:
-                        value = now_time + "," + update_time
-                update_dict[k] = value
+                value = value.replace(" ", "+")  # +会被解析成空格
+                value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
 
         if value.startswith("[") and value.endswith("]"):
             min_value = value.strip("[").strip("]").split(",")[0]  # "2020-1"

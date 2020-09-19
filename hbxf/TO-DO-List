@@ -1,19 +1,30 @@
+################################################ 已解决 ################################################
 - 【已解决】有的空表的接口的数据是null
 （河北）http://127.0.0.1:3389/api/xf/xfjc_zb/?timetype=cy&lx=xfmd&order=-xfjc&name=xfmd&value=xfjc&year=11
-- full@exclude
 - 【已解决】插件化开发，如果sql跨数据库如何写
 - 【已解决】year=[now-5, now]之后需要full的时候，目前full会把所有年都弄出来
-- 【待测试】hangye=!公安
-- 【不用数字一切正常，但是用数字还没有解决】year的初始化如果是数字 join时会有问题
-year_initialized.py文件
-http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
-- （写在产品的refresh里面）所有可能取值用sql语句（需要定期更新，没必要每次都从库里取）
-- 加一个项目参数随机初始化还是0初始化
 - 【已解决】name=day时  不加full，相当于不走时间格式化的部分，timestamp无法格式化会报错
 - 【已解决】插件化开发的时间需要修改
+- 【已解决】插件过程map需要严格对应
+- 【已解决】同名列的不同取值
+- 【已解决】LIKE-xm:字段用模糊查询（已解决）
+    【待解决】FUZZY-xm: 字段用分词查询
+- 【已解决】full=true在yy_jj_fz_jt表中失效（已解决）
+- 【已解决】插件过程的sql为空需要有默认值
+- 【已解决】河北的两个姓名的插件过程需要实现天的方法
+    【已解决】网关层的get_plugin增加参数解析功能，解析时间判断中的now
+- 【已完成，晚上看是否有log文件】day_from,  day_to 的字段，增加执行权限
+- 【已解决】插件过程的默认map和默认为空补空串
+
+
+################################################ 待解决 ################################################
+- 插件过程，的url中如果出现了on/time_format等参数会报错，应该会覆盖
 - 嵌套格式（第五种数据格式，里面可以写之前的四种格式）
 - 增加TIME_FORMAT参数，针对指标修改时间显示格式
-- 【已解决】插件过程map需要严格对应
+- full@exclude
+- 【待测试】hangye=!公安
+- （写在产品的refresh里面）所有可能取值用sql语句（需要定期更新，没必要每次都从库里取）
+- 加一个项目参数随机初始化还是0初始化
 - 整理现有参数：注意，ceil系列，和插件过程结合问题，unit需要实现
 - full=true的逻辑重构
 - 项目配置模板文件夹
@@ -23,18 +34,37 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
 - 插件过程code202的 app.py中的代码合并
 - 【暂不解决，和指标/指标名字联动时解决】app.py中 统一代码，想不起来了
 - name_limit和stack_limit在件次/件次占比/人次/人次占比上好像没区别
-- 同名列的不同取值
-    get_dataframe_for_each_api中加入的table，table是个list，需要挨个查一遍
-- LIKE-xm:字段用模糊查询（已解决）
-    FUZZY-xm: 字段用分词查询
-    插件过程
-- full=true在yy_jj_fz_jt表中失效（已解决）
 - 如果是多个列（宽表）怎么求占比yy_jj_fs_jt
-- 【已解决】插件过程的sql为空需要有默认值
 - 【也许不用删，不会走name/value/stack的查询过程】query_data的删除位置, query_data改成query
 - 检查配置：
     init_dicts  dict/list
     plugins 的检查  value_map
+- 【不用数字一切正常，但是用数字还没有解决】year的初始化如果是数字 join时会有问题
+    year_initialized.py文件
+    http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
+    不能把数字和object结合起来merge的时候
+
+
+
+################################################ 广东项目 ################################################
+- *****广东的重点人员的表，和河北的不太一样
+- 【*】预警状态的判断（transformer=@yjzt）
+- 【*】广东各个率的计算：需要表（transformer=@mylv   @cplv   @jslllv  @bjlv  @asbjlv）
+    产品的extensions和项目的extensions【单表的transformer的扩展】
+    产品的refresh 和 项目的refresh
+    项目的apis_plugins【多表的查询】
+- 【*】表格的大弹窗问题【增加一个字段】：怎么加【写sql】，怎么给，怎么解析【判断，然后用format格式化sql】
+    插件过程，增加一个自定义数值映射的参数，settings中增加一个字段下的内容映射，在插件过程查询的结果自动转换（无需显式调用$map） : 支持正则：{问题属地：广东省广州市}
+- 【已解决】插件过程增加一个字段：columns_value_mapping
+- 【*】format=report   excel
+- 【已解决】三个饼 跨域
+- 【已解决】因为只有一个数，不能用full
+- 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
+- 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
+    异步写入数据库的方法
+
+
+
 
 # 金鸿
 - time-format.py中windows下格式化时间有中文会报错需要用local，linux下正常，但是linux用local会报错
@@ -47,22 +77,4 @@ http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack
     修改windows下的signal
 - 指标表命名，如果
 
-# 广东项目
-- *****广东的重点人员的表，和河北的不太一样
-- 【*】预警状态的判断（transformer=@yjzt）
-- 【*】广东各个率的计算：需要表（transformer=@mylv   @cplv   @jslllv  @bjlv  @asbjlv）
-    产品的extensions和项目的extensions【单表的transformer的扩展】
-    产品的refresh 和 项目的refresh
-    项目的apis_plugins【多表的查询】
-- 【*】表格的大弹窗问题【增加一个字段】：怎么加【写sql】，怎么给，怎么解析【判断，然后用format格式化sql】
-- 插件过程增加一个字段：columns_value_mapping: 支持正则：{问题属地：广东省广州市}
-- 【*】format=report   excel
-- 【已解决】三个饼 跨域
-- 【已解决】因为只有一个数，不能用full
-- 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
-- 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
-    异步写入数据库的方法
 
-- 插件过程，的url中如果出现了on/time_format等参数会报错，应该会覆盖
-- 【已完成，晚上看是否有log文件】day_from,  day_to 的字段，增加执行权限
-- 插件过程的默认map和默认为空补空串
