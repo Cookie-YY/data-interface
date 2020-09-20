@@ -1,30 +1,23 @@
 import datetime
-# import locale
+import platform
 
 from pandas.core.dtypes.common import is_datetime64_any_dtype
 from app import app
 
 TIME_FORMAT = app.config.get("TIME_FORMAT", "%Y-%m-%d")
-# locale.setlocale(locale.LC_CTYPE,'chinese')
 
-# def list_formated_time(results, time_format=TIME_FORMAT):
-#     time_format = time_format or TIME_FORMAT
-#     if not results:
-#         return results
-#     result = list(results)[0]
-#     date_keys = [key for key in result if isinstance(result[key], datetime.datetime)]
-#     final_results = []
-#     for i in results:
-#         for date_key in date_keys:
-#             i[date_key] = datetime.datetime.strftime(i[date_key], time_format)
-#             final_results.append(i)
-#     return final_results
+if platform.system() == "Windows":
+    import locale
+    locale.setlocale(locale.LC_ALL, "en")         # 兼容win7（winserver2012）下会报embedded null type的错误
+    locale.setlocale(locale.LC_CTYPE, 'chinese')  # 使得windows下datetime的时间格式化出现中文
+
 
 def date2datetime(date):
     if type(date) == datetime.date:
         return datetime.datetime.strptime(str(date), "%Y-%m-%d")
     else:
         return date
+
 
 def df_formated_time(results, time_format=TIME_FORMAT):
     time_format = time_format or TIME_FORMAT

@@ -1,7 +1,22 @@
 {
   "code": "200",
   "msg": "success",
-  "data":[
+  "data": [
+    {
+      "name": "徐欣荣1",
+      "code": 0,
+      "value": 493
+    },
+    {
+      "name": "徐欣荣2",
+      "code": 0,
+      "value": 493
+    },
+    {
+      "name": "徐欣荣",
+      "code": 0,
+      "value": 493
+    },
     {
       "name": "徐欣荣",
       "code": 0,
@@ -12,25 +27,6 @@
       "code": 0,
       "value": 493
     },
-
-    {
-      "name": "徐欣荣",
-      "code": 0,
-      "value": 493
-    },
-
-    {
-      "name": "徐欣荣",
-      "code": 0,
-      "value": 493
-    },
-
-    {
-      "name": "徐欣荣",
-      "code": 0,
-      "value": 493
-    },
-
     {
       "name": "梁柱",
       "code": 2,

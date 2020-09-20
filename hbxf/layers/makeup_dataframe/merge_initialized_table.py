@@ -62,7 +62,12 @@ def update_df(df_dict, df, df_list, update_data, init_df, table):
     del_l = []
     for s in update_data:
         del_l.append(s + "_x")
-    res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
+    try:
+        # 如果直接merge出错，说明出现了int64和object不能merge的情况，直接全部变成字符串
+        res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
+    except:
+        df = df.astype("str")
+        res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
     res = (res.drop(del_l, axis=1))
     # res = (res.drop(del_l, axis=1)).fillna(0)

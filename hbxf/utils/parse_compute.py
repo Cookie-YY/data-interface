@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import re
 
+
 def parse_date_add_or_sub(now, operator, content):
     now = datetime.strptime(now, "%Y/%m/%d")
     if operator == "+":
@@ -23,21 +24,21 @@ def parse_compute(express):
         express_list = express.split("+")
         if len(express_list) != 2:
             return 400, f"the length of calculation [{express}] must be 2", 0
-        if express_list[0].isdigit():
+        if express_list[0].isdigit():  # 简单的数字加减
             result = int(express_list[0])+int(express_list[1])
-        else:
+        else:  # 走时间处理的过程
             result = parse_date_add_or_sub(express_list[0], "+", express_list[1])
 
     elif "-" in express:
         express_list = express.split("-")
         if len(express_list) != 2:
             return 400, f"the length of calculation [{express}] must be 2", 0
-        if express_list[0].isdigit():
-            result = int(express_list[0]) + int(express_list[1])
-        else:
+        if express_list[0].isdigit():  # 简单的数字加减
+            result = int(express_list[0]) - int(express_list[1])
+        else:  # 走时间处理的过程
             result = parse_date_add_or_sub(express_list[0], "-", express_list[1])
     else:
-        if not express.isdigit():
+        if not express.isdigit():  # 不是时间格式，没有+-，不是数字
             return 400, f"unsupported calculator [{express}]", 0
         return 200, "success", int(express)
     return 200, "success", result

@@ -13,10 +13,6 @@ def params_search(waiting_for_search, order, limit):
     session = Session(zb_engine)
     searched = []
 
-    # # 获取返回零数据还是空对象的配置
-    # from app import app
-    # RETURN_ZERO_DATA = app.config["RETURN_ZERO_DATA"]
-
     # 开始查库
     for search_one_table in waiting_for_search:  # 第一张表
         columns = search_one_table["columns"]
@@ -31,14 +27,14 @@ def params_search(waiting_for_search, order, limit):
         for conditions in search_one_table["conditions"]:  # 第一组条件
             results = session.query(*tar_vs).filter(*conditions)  # results直接print是sql语句
             if order:
-                results = results.order_by(order)
+                if "-" in order:  # sqlalchemy新版本中order_by 的用法需要用字段.desc()
+                    results = results.order_by(getattr(ex_table.columns, order.replace("-", "")).desc())
+                else:
+                    results = results.order_by(order)
             if limit:
                 results = results.limit(limit)
             from utils.results2df import results2df_ready
             data = results2df_ready(results, columns)
-            # data = [dict(zip(result.keys(), result)) for result in results]
-            # if RETURN_ZERO_DATA and not data:  # 空数据需要返回初始化的0，并且是空数据
-            #     data = [dict(zip(columns, [None]*len(columns)))]  # 返回的结果只有一行，全是None
             search_table.append(data)
         searched.append(search_table)
     session.close()
