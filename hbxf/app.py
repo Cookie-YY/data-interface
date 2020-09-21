@@ -1,5 +1,7 @@
 import json
-from flask import Flask, request, Response, render_template, jsonify
+import os
+
+from flask import Flask, request, Response, render_template, jsonify, send_from_directory
 from layers import parse_data  # get_parsed_data是所有的入口
 from settings import PROJECT   # 导入项目名称
 project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_DIR", "DP_URL"])  # 导入前端配置
@@ -55,6 +57,12 @@ def data_index_api_noindex(realm):
 @app.route(f"{DP_URL}")
 def hbxfdp():
     return render_template("index.html")
+
+
+@app.route(f"/api/<string:realm>/data/<path:filename>")
+def dead_api(realm, filename):
+    dead_json_path = os.path.join(app.root_path, DP_DIR, "data")
+    return send_from_directory(dead_json_path, filename)
 
 
 # 定时刷新任务的路由
