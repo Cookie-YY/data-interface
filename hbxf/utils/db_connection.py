@@ -1,5 +1,6 @@
 import re
 
+import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy import MetaData
 
@@ -21,6 +22,12 @@ FX_DB = app.config.get("FX_DB")
 FX_DB_DICT = get_db_dict(FX_DB)
 ZB_DB_DICT = get_db_dict(ZB_DB)
 
+
+# pymysql的数据库连接
+fx_pymysql = pymysql.connect(**FX_DB_DICT)
+zb_pymysql = pymysql.connect(**ZB_DB_DICT)
+
+# sqlalchemy的数据库连接
 zb_engine = create_engine(ZB_DB,
                           pool_recycle=-1,
                           pool_size=100,

@@ -4,11 +4,11 @@ import os
 from flask import Flask, request, Response, render_template, jsonify, send_from_directory
 from layers import parse_data  # get_parsed_data是所有的入口
 from settings import PROJECT   # 导入项目名称
-project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_DIR", "DP_URL"])  # 导入前端配置
+project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_CONTAINER", "DP_ROOT"])  # 导入前端配置
 
-DP_DIR, DP_URL = project_settings.DP_DIR, project_settings.DP_URL
+DP_CONTAINER, DP_ROOT = project_settings.DP_CONTAINER, project_settings.DP_ROOT
 
-app = Flask(__name__, template_folder=DP_DIR, static_folder=DP_DIR)
+app = Flask(__name__, template_folder=os.path.join(DP_CONTAINER, DP_ROOT), static_folder=os.path.join(DP_CONTAINER, DP_ROOT))
 
 # 读取项目配置
 app.config.from_object(f"settings.{PROJECT}")
@@ -54,15 +54,33 @@ def data_index_api_noindex(realm):
 
 
 # 前端大屏路由
-@app.route(f"{DP_URL}")
-def hbxfdp():
-    return render_template("index.html")
+dp_dirs = [app.config[i] for i in dict(app.config) if i.startswith("DP_DIR")]
 
 
-@app.route(f"/api/<string:realm>/data/<path:filename>")
-def dead_api(realm, filename):
-    dead_json_path = os.path.join(app.root_path, DP_DIR, "data")
-    return send_from_directory(dead_json_path, filename)
+# index.html
+@app.route(f"/<string:dp>/")
+def get_index(dp):
+    if dp in dp_dirs:
+        return render_template(f"{dp}/index.html")
+    if dp == "favicon.ico":
+        return send_from_directory(os.path.join(app.root_path, DP_CONTAINER), "favicon.ico")
+    else:
+        return render_template(f"index.html")
+
+# static resource (static/font/map)
+def get_static_path(dp_dir, resource_type):
+    return os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp_dir, resource_type)
+@app.route(f"/<string:dp_dir>/<string:resource_type>/<path:filename>")
+def get_static(dp_dir, resource_type, filename):
+    return send_from_directory(get_static_path(dp_dir, resource_type), filename)
+# url.js
+@app.route(f"/<string:dp_dir>/url.js")
+def get_urljs(dp_dir):
+    return send_from_directory(os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp_dir), "url.js")
+# dead json
+@app.route("/api/<string:realm>/<string:dp_dir>/<path:filename>")
+def get_deadjson(realm, dp_dir, filename):
+    return send_from_directory(os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp_dir, "data"), filename)
 
 
 # 定时刷新任务的路由

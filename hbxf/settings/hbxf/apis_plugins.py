@@ -9,11 +9,11 @@ APIS_PLUGIN = [
         # 注意：map的键需要全部出现在返回的最终数据表中，并且按照map的获取相应的列
         "map":"",
 
-        # 分析库（输入库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. from/to  4. url中的query字段的拆分出来的参数
+        # 分析库（输入库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. start/end  4. url中的query字段的拆分出来的参数
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "fx_db_sql":"",
 
-        # 指标库（输出库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. from/to  4. url中的query字段的拆分出来的参数
+        # 指标库（输出库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. start/end  4. url中的query字段的拆分出来的参数
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "zb_db_sql":"",
 
@@ -34,7 +34,7 @@ APIS_PLUGIN = [
         # {}可以包含四类值
         # 1. settings中的变量
         # 2. url中的参数
-        # 3. from/to
+        # 3. start/end
         #### 4. url中的query字段的拆分出来的参数
         # 5. map/map.lower/map.upper/ 在提前定义好的字典里寻找匹配的映射
         # 6. value 当前值
@@ -54,8 +54,6 @@ APIS_PLUGIN = [
     """,
         "zb_db_sql": """
         select xfjc, zjhm, day from (
-
-
 				SELECT xf_xfr_cy_zjhm_xm_xfjc.xfjc, xf_xfr_cy_zjhm_xm_xfjc.zjhm,xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day FROM xf_xfr_cy_zjhm_xm_xfjc join xf_xfr_cd_zjhm_xfrq_xfsx_xfjc on xf_xfr_cy_zjhm_xm_xfjc.zjhm=xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.zjhm ) as t WHERE {query_data} order by day desc limit 1;    """,
         "on": "zjhm",
         # "time_format": "%Y年%m月%d日"
@@ -137,8 +135,5 @@ APIS_PLUGIN = [
         # "on": "zjhm"
         # "time_format": "%Y年%m月%d日"
         "value_map": [("xfjc", "{value}", "0")],
-
     },
-
-
 ]

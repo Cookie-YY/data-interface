@@ -13,8 +13,14 @@ SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 前端大屏相关
-DP_DIR = "client/gdxfdp"    # 大屏的路径
-DP_URL = "/gdxfdp/"         # 访问大屏的url
+DP_CONTAINER = "client"    # 大屏的路径
+DP_ROOT = "gdxfdp"
+
+DP_DIR_1 = "AidDecisionMaking"                 # url 就是 /DP_ROOT/DP_DIR1
+DP_URL_1 = "/AidDecisionMaking"                # 访问大屏的url
+
+DP_DIR_2 = "LeadCockpit"                       # url 就是 /DP_ROOT/DP_DIR2
+DP_URL_2 = "/LeadCockpit"
 
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4
@@ -31,12 +37,12 @@ DEBUG = True
 
 # 分析库：业务表和码表的位置
 FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
-# FX_DB = 'mysql+pymysql://root:Beidas0ft@193.168.15.25:3306/pt_dev_dabot'
+# FX_DB = 'mysql+pymysql://admin_xfxx3:S65@aG3c@19.15.64.203:15133/zhxf_pre'
 # FX_DB = 'mysql+pymysql://root:Beidas0ft@127.0.0.1:3306/pt_dev_test'
 
 # 指标库：指标表的位置
 ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot_gd'
-# ZB_DB = 'mysql+pymysql://root:Beidas0ft@193.168.15.25:3306/pt_dev_dabot_zb'
+# ZB_DB = 'mysql+pymysql://admin_xfxx8:8cU5XQ%D@19.15.64.203:15152/zhxf_fzjc'
 # ZB_DB = 'mysql+pymysql://root:Beidas0ft@127.0.0.1:3306/test'
 
 # 如果没有数据---1：返回零数据 0：返回一个空对象

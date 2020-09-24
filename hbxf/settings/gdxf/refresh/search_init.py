@@ -1,9 +1,8 @@
 import re
 
-import pymysql
 from pypinyin import lazy_pinyin
 
-from utils.db_connection import ZB_DB_DICT, FX_DB_DICT
+from utils.db_connection import fx_pymysql, zb_pymysql
 # 创建表search_xfbm_jb
 sql1 = """
     create table search_xfbm_jb(
@@ -37,8 +36,8 @@ sql3 = """
 """
 
 # 写入数据的库
-db2 = pymysql.connect(**ZB_DB_DICT)
-db1 = pymysql.connect(**FX_DB_DICT)
+db2 = zb_pymysql
+db1 = fx_pymysql
 
 
 # 获取源数据

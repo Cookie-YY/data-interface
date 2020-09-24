@@ -7,5 +7,5 @@ def process_api(api):
         return code, msg, {}
     span = [v for v in api.values() if "," in v]
     if span:
-        api["from"], api["to"] = span[0].split(",")[0], span[0].split(",")[1]
+        api["start"], api["end"] = span[0].split(",")[0], span[0].split(",")[1]
     return 200, "success", api

@@ -22,6 +22,7 @@
 3. 各个项目的配置文件如下
     - `init_files 文件夹`  用于存放需要联动的字段取值
     - `refresh 文件夹`     用于存放需要定时执行的脚本
+    - `custom 文件夹`      用于存放自定义的脚本过程，在插件过程中选择mode: "custom"
     - `__init__.py`       用于存放项目的基础配置，可以通过settings/init.template拷贝得到
     - `apis_dispatch.py`  用于存放指标分发的配置
     - `apis_plugins.py`   用于存放指定sql的查询结果

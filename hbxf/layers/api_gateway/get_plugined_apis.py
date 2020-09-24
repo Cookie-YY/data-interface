@@ -1,4 +1,4 @@
-
+import os
 import re
 import pandas as pd
 
@@ -20,16 +20,30 @@ def check_plugin_args(plugin_apis):
     on = plugin_api.get("on")
     time_format = plugin_api.get("time_format")
     value_map = plugin_api.get("value_map", [])
-    if not mapping:
-        return 400, "PluginMapError: No 'map' Found", {}
-    if not fx_db_sql and not zb_db_sql:
-        return 400, "PluginURLError: At least one SQL, specify fx_db_sql or zb_db_sql"
+    mode = plugin_api.get("mode", "sql")  # 默认模式是sql，支持sql/custom/
+    file = ""
+    if mode == "custom":
+        file = plugin_api.get("file", "")
+        file = file if file.endswith(".py") else file + ".py"
+        from app import app
+        if not file or not os.path.exists(os.path.join(app.config["SETTINGS_DIR"], "custom", file)):
+            return 400, "PluginCustomError: The param 'file' must be specified and exist", {}
+    if mode == "sql":
+        if not mapping:
+            return 400, "PluginMapError: No 'map' Found", {}
+        if not fx_db_sql and not zb_db_sql:
+            return 400, "PluginURLError: At least one SQL, specify fx_db_sql or zb_db_sql"
+
+    if mode not in ["sql", "custom"]:
+        return 400, "PluginModeError: Wrong mode", {}
     return 200, "success", {"fx_db_sql": fx_db_sql,
                             "zb_db_sql": zb_db_sql,
                             "mapping": mapping,
                             "on": on,
                             "time_format": time_format,
-                            "value_map": value_map}
+                            "value_map": value_map,
+                            "mode": mode,
+                            "file": file}
 
 
 def get_value_mapped(df, value_map, kwargs, query):
@@ -137,6 +151,31 @@ def merge_and_select_data(fx_db_data, zb_db_data, results):
     return 200, "success", res_list
 
 
+def get_sql_apis(request_args, results):
+    """
+    SQL 模式：
+    request_args: 请求参数
+    results: 解析到的配置
+    """
+    # 从数据库获取数据
+    code, msg, data = get_data_from_dbs(results, request_args)
+    if code != 200:
+        return code, msg, {}
+    fx_db_data, zb_db_data = data.get("fx_db_results"), data.get("zb_db_results")
+
+    # 如果只有一个sql有效，说明可以直接返回
+    from utils.check_sql import check_sql
+    if check_sql(results.get("fx_db_sql")) + check_sql(results.get("zb_db_sql")) == 1:
+        data = fx_db_data or zb_db_data
+    # 两个sql都有数据，需要融合两个数据表
+    else:
+        code, msg, data = merge_and_select_data(fx_db_data, zb_db_data, results)
+        if code != 200:
+            return code, msg, data
+    return 200, "success", data
+
+
+
 def get_plugined_apis(request_args):
     from app import app
     plugin_apis = [i for i in app.config.get("APIS_PLUGIN", []) if re.match(i.get("url"), request.full_path)]
@@ -146,7 +185,6 @@ def get_plugined_apis(request_args):
         code, msg, results = check_plugin_args(plugin_apis)
         if code != 200:
             return code, msg, {}
-        mapping = results.get("mapping")
 
         # 处理now问题【需要处理才能拿到from和to】
         from layers.api_gateway.process_api import process_api
@@ -154,20 +192,29 @@ def get_plugined_apis(request_args):
         if code != 200:
             return code, msg, {}
 
-        # 从数据库获取数据
-        code, msg, data = get_data_from_dbs(results, request_args)
-        if code != 200:
-            return code, msg, {}
-        fx_db_data, zb_db_data = data.get("fx_db_results"), data.get("zb_db_results")
+        mapping = results.get("mapping")
+        mode = results.get("mode")
+        file = results.get("file")
 
-        # 如果只有一个sql有效，说明可以直接返回
-        from utils.check_sql import check_sql
-        if check_sql(results.get("fx_db_sql")) + check_sql(results.get("zb_db_sql")) == 1:
-            data = fx_db_data or zb_db_data
-        # 两个sql都有数据，需要融合两个数据表
-        else:
-            code, msg, data = merge_and_select_data(fx_db_data, zb_db_data, results)
+        # custom模式
+        if mode == "custom":
+            from settings import PROJECT
+            file = file.strip(".py")
+            project_settings = __import__(f"settings.{PROJECT}.custom.{file}", globals(), locals(),
+                                          ["run"])  # 导入前端配置
+            run = project_settings.run
+            code, msg, data = run(**request_args)
             if code != 200:
-                return code, msg, data
-        return 202, "success", {"map": mapping, "data": data}
+                return code, msg, {}
+            res = {"data": data}
+
+        elif mode == "sql":
+            code, msg, data = get_sql_apis(request_args, results)
+            if code != 200:
+                return code, msg, {}
+            res = {"map": mapping, "data": data}
+
+        else:
+            return 400, "", {}
+        return 202, "success", res
     return 200, "success", {}

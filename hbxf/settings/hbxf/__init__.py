@@ -13,8 +13,14 @@ SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 前端大屏相关
-DP_DIR = "client/hbxfdp"        # 大屏的路径
-DP_URL = "/hbxfdp/"             # 访问大屏的url
+DP_CONTAINER = "client"    # 大屏的路径
+DP_ROOT = "hbxfdp"
+
+DP_DIR = ""
+DP_URL = "/hbxfdp"         # 访问大屏的url
+# # 前端大屏相关
+# DP_DIR = "client/hbxfdp"        # 大屏的路径
+# DP_URL = "/hbxfdp/"             # 访问大屏的url
 # 头像等获取的文件的地址
 FILE_URL = "http://39.107.240.28:3389/hbxfdp/file/"
 
