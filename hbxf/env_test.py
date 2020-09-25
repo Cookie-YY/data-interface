@@ -5,7 +5,7 @@ from utils.timeout import timeout
 TIMEOUT = app.config["TIMEOUT"]
 
 
-@timeout(TIMEOUT, error_message="ConnectionError")  # windows系统需要注释掉这一行
+# @timeout(TIMEOUT, error_message="ConnectionError")  # windows系统需要注释掉这一行
 def connect_db_test(engine, name):
     engine.connect()
     print(f"{name}：{engine.url}")

@@ -192,29 +192,34 @@ def get_plugined_apis(request_args):
         if code != 200:
             return code, msg, {}
 
-        mapping = results.get("mapping")
+        # 获取mode，并判断模式
         mode = results.get("mode")
-        file = results.get("file")
 
         # custom模式
         if mode == "custom":
+            file = results.get("file")
             from settings import PROJECT
             file = file.strip(".py")
             project_settings = __import__(f"settings.{PROJECT}.custom.{file}", globals(), locals(),
                                           ["run"])  # 导入前端配置
+
             run = project_settings.run
-            code, msg, data = run(**request_args)
+            from utils.db_connection import fx_pymysql, zb_pymysql
+            code, msg, data = run(**request_args, fx_pymysql=fx_pymysql, zb_pymysql=zb_pymysql)
             if code != 200:
                 return code, msg, {}
-            res = {"data": data}
+            mapping = data.pop("mapping", "")
+            data = data.pop("data", [])
 
+        # sql模式
         elif mode == "sql":
+            mapping = results.get("mapping")
             code, msg, data = get_sql_apis(request_args, results)
             if code != 200:
                 return code, msg, {}
-            res = {"map": mapping, "data": data}
 
         else:
             return 400, "", {}
+        res = {"map": mapping, "data": data} if mapping else  {"data": data}
         return 202, "success", res
     return 200, "success", {}

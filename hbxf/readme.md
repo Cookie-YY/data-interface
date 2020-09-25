@@ -7,6 +7,7 @@
 - 400 报错
 ### 环境准备：
 1. 需要离线安装的包
+- anaconda: python3以及flask 和 sqlalchemy等依赖包
 - pymysql: mysql的驱动**使用mysql必须装**
 - uwsgi：生产环境，可以先用开发环境代替**使用生产环境必须装**
 - pypinyin: 弹窗索引中存在字母拼音，需要安装
@@ -44,12 +45,16 @@
     - DP_URL中需要和 前端的url.js文件中的BASE_API保持一致
 
 ### 启动步骤（CentOS）
-1. 检查数据库连接，执行
+1. 修改数据库连接
+- 在`settings/$PROJECT/__init__.py`中修改FX_DB, ZB_DB的值，分别对应，输入库和输出库
+- 注意如果密码中包含特殊值时的写法
+
+2. 检查数据库连接，执行
 `/root/anaconda3/bin/python3 env_test.py`
 - 若成功，返回数据库的URL，检查是否正确
 - 若失败，报错退出
 
-2. 启动代码程序后台运行
+3. 启动代码程序后台运行
 - 开发模式`/root/anaconda3/bin/python3 app.py`
 - 生产模式
     - 启动：`uwsgi --ini uwsgi.ini`(需要安装uwsgi)

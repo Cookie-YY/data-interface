@@ -5,6 +5,7 @@
 # @File    : settings.py
 # @Software: PyCharm
 import os
+import urllib.parse
 
 # 项目的根目录
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -37,13 +38,13 @@ DEBUG = True
 
 # 分析库：业务表和码表的位置
 FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
-# FX_DB = 'mysql+pymysql://admin_xfxx3:S65@aG3c@19.15.64.203:15133/zhxf_pre'
-# FX_DB = 'mysql+pymysql://root:Beidas0ft@127.0.0.1:3306/pt_dev_test'
+# FX_DB = 'mysql+pymysql://admin_xfxx3:%s@19.15.64.203:15133/zhxf_pre' % urllib.parse.unquote_plus('S65@aG3c')
+# FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
 ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot_gd'
-# ZB_DB = 'mysql+pymysql://admin_xfxx8:8cU5XQ%D@19.15.64.203:15152/zhxf_fzjc'
-# ZB_DB = 'mysql+pymysql://root:Beidas0ft@127.0.0.1:3306/test'
+# ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
+# ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 如果没有数据---1：返回零数据 0：返回一个空对象
 RETURN_ZERO_DATA = 1

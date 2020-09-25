@@ -4,11 +4,18 @@ APIS_PLUGIN = [
         # 根据正则匹配url
         # 注意：问号前需要有\是转义
         "url":"/api/xf/\?gd_id=YOUR ID$",
+        
+        # 模式
+        "mode": "sql",  # 模式匹配，目前有两种模式  sql/custom  sql模式是默认模式，custom模式需要执行执行文件
 
-        # 最终要的字段，以及匹配取值
+        # 文件名【custom模式必须】
+        "file": "ztfxgb", # custom模式时，需要指定执行的文件，该文件需要在settings/$project/custom/目录下，后缀.py可有可无，需要实现run方法
+        
+        # 最终要的字段，以及匹配取值【sql模式必须】
         # 注意：map的键需要全部出现在返回的最终数据表中，并且按照map的获取相应的列
         "map":"",
 
+        # 【sql模式下，至少有一条sql起作用】
         # 分析库（输入库）的SQL：{}包裹的，可以写三种值：1. settings中的变量  2. url的参数  3. start/end  4. url中的query字段的拆分出来的参数
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "fx_db_sql":"",
@@ -17,6 +24,7 @@ APIS_PLUGIN = [
         # 注意：如果无效，程序自动跳过，判断有效标准为是否含有select关键字，两条SQL至少一条要有效
         "zb_db_sql":"",
 
+        # 【sql模式下可选】
         # 进行连接的字段
         # 注意： 1. 字符串或者列表均可
         #       2. 只有一个sql的时候，on字段没有用
@@ -24,10 +32,12 @@ APIS_PLUGIN = [
         #       4. 当有两个sql的时候，on字段不为空，以on字段为准进行匹配，其他相同的字段，用_x 和_y进行标识
         "on":"",
 
+        # 【sql模式下可选】
         # 时间格式化
         # 注意：如果出现了时间，需要指定格式化的形式，否则按照项目默认格式化规范
         "time_format": "%Y年%m月%d日",
 
+        # 【sql模式下可选】
         # 内容映射：列表，包含多个元组，如果没有或不写，默认就是空字符串
         # 如果元组的长度为4：(新列, 旧列, 更改的内容, 如果内容为空时的默认值)  旧列不会删除，可以由map进行筛选
         # 如果元组的长度为3：(列名, 更改的内容, 如果内容为空时的默认值)
@@ -42,19 +52,19 @@ APIS_PLUGIN = [
 
         "value_map": [("tx", "{FILE_PATH}{value}", "default.png")]
     },
-    # 用于测试query_data的样例
+    # 用于测试query的样例
     {
         # 河北_信访人分析_基本信息
-        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=h&query_data=zjhm:130623197709052130
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=h&query=zjhm:130623197709052130
         "url": "/api/xf/\?gd_id=test_query_data&",
         "map": {"tx": "头像", "xm": "姓名", "xbmc": "性别", "age": "年龄", "sjh": "电话", "zjhm": "身份证号", "hkszd": "户籍地",
                 "zzmcxq": "居住地", "xfjc": "信访件次", "day": "最新信访时间"},
         "fx_db_sql": """
-    SELECT tx, xm, xbmc, age, sjh,zjhm, hkszd, zzmcxq FROM xf_xfrxx WHERE {query_data} AND xbmc IS NOT NULL AND age IS NOT NULL ORDER BY create_time DESC LIMIT 1;
+    SELECT tx, xm, xbmc, age, sjh,zjhm, hkszd, zzmcxq FROM xf_xfrxx WHERE {query} AND xbmc IS NOT NULL AND age IS NOT NULL ORDER BY create_time DESC LIMIT 1;
     """,
         "zb_db_sql": """
         select xfjc, zjhm, day from (
-				SELECT xf_xfr_cy_zjhm_xm_xfjc.xfjc, xf_xfr_cy_zjhm_xm_xfjc.zjhm,xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day FROM xf_xfr_cy_zjhm_xm_xfjc join xf_xfr_cd_zjhm_xfrq_xfsx_xfjc on xf_xfr_cy_zjhm_xm_xfjc.zjhm=xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.zjhm ) as t WHERE {query_data} order by day desc limit 1;    """,
+				SELECT xf_xfr_cy_zjhm_xm_xfjc.xfjc, xf_xfr_cy_zjhm_xm_xfjc.zjhm,xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.day FROM xf_xfr_cy_zjhm_xm_xfjc join xf_xfr_cd_zjhm_xfrq_xfsx_xfjc on xf_xfr_cy_zjhm_xm_xfjc.zjhm=xf_xfr_cd_zjhm_xfrq_xfsx_xfjc.zjhm ) as t WHERE {query} order by day desc limit 1;    """,
         "on": "zjhm",
         # "time_format": "%Y年%m月%d日"
         "value_map": [("tx", "{FILE_PATH}{value}", "default.png")]

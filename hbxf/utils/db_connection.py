@@ -1,4 +1,5 @@
 import re
+import urllib.parse
 
 import pymysql
 from sqlalchemy import create_engine
@@ -6,12 +7,12 @@ from sqlalchemy import MetaData
 
 
 def get_db_dict(url):
-    pattern = "(.*?)\+(.*?)://(.*?):(.*?)@(.*?):(.*?)/(.*)"
+    pattern = "(.*?)\+(.*?)://(.*?):(.*)@(.*?):(.*?)/(.*)"
     res = re.findall(pattern, url)
     if not res:
         exit("请检查url拼写")
     dbtype, driver, user, passwd, ip, port, dbname = res[0]
-    return {"host": ip, "port": int(port), "user": user, "passwd": passwd, "db": dbname, "charset": "utf8"}
+    return {"host": ip, "port": int(port), "user": user, "passwd": urllib.parse.unquote_plus(passwd), "db": dbname, "charset": "utf8"}
 
 # INDEX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot'
 from app import app

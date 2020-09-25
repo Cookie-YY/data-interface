@@ -60,8 +60,25 @@
 - 【已解决】三个饼 跨域
 - 【已解决】因为只有一个数，不能用full
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
+    try一下，不行就全变成str
 - 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
     异步写入数据库的方法
+
+- 报告
+- 参考1：https://www.cnblogs.com/onemorepoint/p/7449512.html
+- 参考2：https://www.jb51.net/article/160638.htm
+- 参考3：http://cn.voidcc.com/question/p-dcdbhlmr-dn.html
+- 参考4：https://www.cnblogs.com/xiaowenshu/p/9916719.html
+- 参考重点：https://blog.csdn.net/qw_xingzhe/article/details/80607283
+- 参考5：https://blog.csdn.net/dyang129/article/details/79914696
+
+wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+tar xvfJ wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+cd wkhtmltox/bin
+sudo mv ./wkhtmltopdf /usr/bin/wkhtmltopdf
+sudo chmod +x /usr/bin/wkhtmltopdf
+
+【测试】wkhtmltopdf http://www.baidu.com ./test.pdf
 
 
 
@@ -78,3 +95,9 @@
 - 指标表命名，如果
 
 
+
+- custom开发
+- 必须有run方法，
+    输入：fx_pymysql, zb_pymysql, start, end, **kwargs
+    输出1：return 200, "success", {"data": data, "mapping": map}
+    输出2：return 200, "success", {"data": data}
