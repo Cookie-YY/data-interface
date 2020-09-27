@@ -62,7 +62,7 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxsjz&sfzhm=44082519581025149X
         "url": "/api/xf/\?gd_id=gd_xfrfx_xfgjfxsjz&",
         "map": {"xfrq": "信访日期", "xfjbh": "信访件编号"},
-        "fx_db_sql": """select xfrq, xfjbh from((select xfrq, count(*),   group_concat(xfjbh) as xfjbh from (select xf_xfjxx.xfrq, xf_xfjxx.xfjbh from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm=131121198706171471) tb group by xfrq order by xfrq limit 1) union (select xfrq, count(*),   group_concat(xfjbh) as xfjbh from (select xf_xfjxx.xfrq, xf_xfjxx.xfjbh from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb group by xfrq order by xfrq desc limit 3
+        "fx_db_sql": """select xfrq, xfsxid from((select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb group by xfrq order by xfrq limit 1) union (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb group by xfrq order by xfrq desc limit 3
 ))  as sjz order by xfrq""",
         "zb_db_sql": """""",
         # "on": "sfzhm"
