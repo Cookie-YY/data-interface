@@ -101,3 +101,7 @@ sudo chmod +x /usr/bin/wkhtmltopdf
     输入：fx_pymysql, zb_pymysql, start, end, **kwargs
     输出1：return 200, "success", {"data": data, "mapping": map}
     输出2：return 200, "success", {"data": data}
+
+- 离线安装flask_cashing
+- 离线安装redis
+    https://blog.csdn.net/u013014761/article/details/100052139

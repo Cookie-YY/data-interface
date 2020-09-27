@@ -18,9 +18,14 @@ DP_ROOT = "hbxfdp"
 
 DP_DIR = ""
 DP_URL = "/hbxfdp"         # 访问大屏的url
-# # 前端大屏相关
-# DP_DIR = "client/hbxfdp"        # 大屏的路径
-# DP_URL = "/hbxfdp/"             # 访问大屏的url
+
+# CACHE_TYPE = "redis"
+CACHE_TYPE = "null"
+CACHE_REDIS_HOST = '127.0.0.1'
+CACHE_REDIS_PORT = 6379
+CACHE_REDIS_DB = ''
+CACHE_REDIS_PASSWORD = ''
+
 # 头像等获取的文件的地址
 FILE_URL = "http://39.107.240.28:3389/hbxfdp/file/"
 
@@ -31,7 +36,7 @@ SIGNIFICANT_DIGITS = 4
 # 项目默认的时间格式：当name=day时生效，如果不写或为空：%Y-%m-%d
 TIME_FORMAT = "%Y-%m-%d"
 
-# 设定判断超时的时间
+# 设定判断超时的时间（用于数据库连接测试）：Windows下该参数没有用
 TIMEOUT = 3
 
 # DEBUG模式开关（仅开发模式有用）

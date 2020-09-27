@@ -23,6 +23,18 @@ DP_URL_1 = "/AidDecisionMaking"                # 访问大屏的url
 DP_DIR_2 = "LeadCockpit"                       # url 就是 /DP_ROOT/DP_DIR2
 DP_URL_2 = "/LeadCockpit"
 
+
+# CACHE_TYPE = "redis"
+CACHE_TYPE = "null"
+CACHE_REDIS_HOST = '127.0.0.1'
+CACHE_REDIS_PORT = 6379
+CACHE_REDIS_DB = ''
+CACHE_REDIS_PASSWORD = ''
+
+
+# 头像等获取的文件的地址
+FILE_URL = "http://39.107.240.28:3389/gdxfdp/file/"
+
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4
 # SQLALCHEMY_ECHO = True
@@ -30,8 +42,8 @@ SIGNIFICANT_DIGITS = 4
 # 项目默认的时间格式：当name=day时生效，如果不写或为空：%Y-%m-%d
 TIME_FORMAT = "%Y-%m-%d"
 
-# 设定判断超时的时间
-TIMEOUT = 3
+# 设定判断超时的时间（用于数据库连接测试）：Windows下该参数没有用
+TIMEOUT = 5
 
 # DEBUG模式开关（仅开发模式有用）
 DEBUG = True

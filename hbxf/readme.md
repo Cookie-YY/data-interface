@@ -62,8 +62,6 @@
     - 停止：`uwsgi --stop uwsgi.pid`
 
 ### 注意事项
-1. windows下检查数据库连接需要在`env_test.py`中注释掉以下内容掉
-- `@timeout(TIMEOUT, error_message="ConnectionError")`
-2. windows下生产环境启动
+1. windows下生产环境启动
 - 安装tornado
 - `/root/anaconda3/bin/python3 win-server.py`

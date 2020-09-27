@@ -4,6 +4,8 @@ import os
 from flask import Flask, request, Response, render_template, jsonify, send_from_directory
 from layers import parse_data  # get_parsed_data是所有的入口
 from settings import PROJECT   # 导入项目名称
+from flask_caching import Cache
+
 project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_CONTAINER", "DP_ROOT"])  # 导入前端配置
 
 DP_CONTAINER, DP_ROOT = project_settings.DP_CONTAINER, project_settings.DP_ROOT
@@ -16,9 +18,12 @@ app.config.from_object(f"settings.{PROJECT}.init_dicts")
 app.config.from_object(f"settings.{PROJECT}.apis_dispatch")
 app.config.from_object(f"settings.{PROJECT}.apis_plugins")
 
+cache = Cache()
+cache.init_app(app)
 
 # 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/')
+@cache.cached(timeout=60*60*24, key_prefix=lambda : request.full_path)  # 60s * 60min * 24h
 def data_index_api(realm, index):
     """
     :param xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shej&lx=xfxs
@@ -48,6 +53,7 @@ def data_index_api(realm, index):
 
 # 兼容数据接口路由
 @app.route("/api/<string:realm>/", methods=['GET'])
+@cache.cached(timeout=60*60*24, key_prefix=lambda : request.full_path)  # 60s * 60min * 24h
 def data_index_api_noindex(realm):
     index = "none"  # 如果路径中没有 index， 请求参数中必须有index
     return data_index_api(realm, index)
