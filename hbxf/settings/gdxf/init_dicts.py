@@ -34,6 +34,10 @@ INITIALIZATION = {
     "djrqxfrc": ["random.randint(100,999)"],
     "jhrqxfrc": ["random.randint(100,999)"],
 
+    # 20200927新增
+    "xfbmxfjc": ["random.randint(100,999)"],
+    "zrdwxfjc": ["random.randint(100,999)"],
+
     # 20200909新增
     "xb": ["男性", "女性"],
     "yjzt": ["告警", "异常", "平稳"],

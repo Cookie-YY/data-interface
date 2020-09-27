@@ -28,4 +28,50 @@ APIS_PLUGIN = [
         "mode": "custom",
         "file": "bgtc",
     },
+
+
+    # 广东_重点人员消息
+    {
+        # 广东_信访人分析_基本信息
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_jbxx&sfzhm=44082519581025149X
+        "url": "/api/xf/\?gd_id=gd_xfrfx_jbxx&",
+        "map": {"tx": "头像", "xm": "姓名", "xbmc": "性别", "age": "年龄", "sjh": "电话", "sfzhm": "身份证号","hkszd": "户籍地", "zzmcxq": "居住地", "xfjc":"信访件次","day":"最新信访时间"},
+        "fx_db_sql": """
+        SELECT tx, xm, xbmc, age, sjh,sfzhm, hkszd, zzmcxq FROM xf_xfrxx WHERE sfzhm = '{sfzhm}' AND xbmc IS NOT NULL AND age IS NOT NULL ORDER BY create_time DESC LIMIT 1;
+        """,
+        "zb_db_sql": """ """,
+        "on": "sfzhm",
+        # "time_format": "%Y年%m月%d日"
+        "value_map": [("tx", "{FILE_URL}{value}", "default.png")]
+    },
+    {
+        # 广东_信访人分析_信访轨迹分析内容
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxnr&xfjbh=20695617
+        "url": "/api/xf/\?gd_id=gd_xfrfx_xfgjfxnr&",
+        "map": {"xfjbh": "信访编号", "xfrq": "信访日期", "nrflmc": "内容分类", "xfxsmc": "信访形式", "xfmdmc": "信访目的", "wtsdmc": "问题属地","djjgmc":"登记单位","xfjztmc":"信访状态"},
+        "fx_db_sql": """
+        SELECT xfjbh,xfrq,nrflmc,xfxsmc,xfmdmc,wtsdmc,djjgmc,xfjztmc FROM xf_xfjxx WHERE xfjbh = '{xfjbh}' AND check_flag = 0;
+
+        """,
+        "":"""""",
+        "zb_db_sql": """
+         """,
+        # "on": "sfzhm"
+        "time_format": "%Y年%m月%d日"
+    },
+{
+        # 广东_信访人分析_信访轨迹分析时间轴
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxsjz&sfzhm=44082519581025149X
+        "url": "/api/xf/\?gd_id=gd_xfrfx_xfgjfxsjz&",
+        "map": {"day": "信访日期", "xfsx": "信访事项id"},
+        "fx_db_sql": """select * from ((select xfrq, count(*),  group_concat(xfjbh) as xfjbh  from  (select xf_xfjxx.xfrq, xf_xfrxx.sfzhm, xf_xfjxx.xfjbh from xf_xfjxx,  xf_xfrxx  where  xf_xfrxx.sfzhm=131121198706171471 limit 50000) tb  group by xfrq order by xfrq desc limit 3) union (select xfrq, count(*),  group_concat(xfjbh) as xfjbh  from  (select xf_xfjxx.xfrq, xf_xfrxx.sfzhm, xf_xfjxx.xfjbh from xf_xfjxx,  xf_xfrxx  where  xf_xfrxx.sfzhm=131121198706171471 limit 50000) tb  group by xfrq order by xfrq  limit 1)) as sjz order by xfrq;
+         """,
+        "zb_db_sql": """""",
+        # "on": "sfzhm"
+        "time_format": "%Y年%m月%d日"
+    },
+
+
+
+
 ]
