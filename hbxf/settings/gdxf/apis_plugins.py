@@ -44,11 +44,11 @@ APIS_PLUGIN = [
     },
     {
         # 广东_信访人分析_信访轨迹分析内容
-        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxnr&xfjbh=20695617
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxnr&xfsxid=
         "url": "/api/xf/\?gd_id=gd_xfrfx_xfgjfxnr&",
         "map": {"xfjbh": "信访编号", "xfrq": "信访日期", "nrflmc": "内容分类", "xfxsmc": "信访形式", "xfmdmc": "信访目的", "wtsdmc": "问题属地","djjgmc":"登记单位","xfjztmc":"信访状态"},
         "fx_db_sql": """
-        SELECT xfjbh,xfrq,nrflmc,xfxsmc,xfmdmc,wtsdmc,djjgmc,xfjztmc FROM xf_xfjxx WHERE xfjbh = '{xfjbh}' AND check_flag = 0;
+        SELECT xfjbh,xfrq,nrflmc,xfxsmc,xfmdmc,wtsdmc,djjgmc,xfjztmc FROM xf_xfjxx WHERE xfsxid = '{xfsxid}' AND check_flag = 0
 
         """,
         "":"""""",
@@ -61,7 +61,7 @@ APIS_PLUGIN = [
         # 广东_信访人分析_信访轨迹分析时间轴
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxsjz&sfzhm=44082519581025149X
         "url": "/api/xf/\?gd_id=gd_xfrfx_xfgjfxsjz&",
-        "map": {"xfrq": "信访日期", "xfjbh": "信访件编号"},
+        "map": {"xfrq": "信访日期", "xfsxid": "信访事项id"},
         "fx_db_sql": """select xfrq, xfsxid from((select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb group by xfrq order by xfrq limit 1) union (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb group by xfrq order by xfrq desc limit 3
 ))  as sjz order by xfrq""",
         "zb_db_sql": """""",
