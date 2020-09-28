@@ -28,6 +28,12 @@ def process_drop(api_dict):
                 update_dict["table"] = api_dict.get("table", "").replace(f"_{k_strip}", "").replace(f"{k_strip}_", "").replace(f"{k_strip}", "")
                 if api_dict.get("name") == k_strip:
                     remove_list.append("name")
+            elif k.strip("C") in api_dict.get("table", ""):
+                k_strip = k.strip("C")
+                update_dict["table"] = api_dict.get("table", "").replace(f"_{k_strip}", "").replace(f"{k_strip}_",                                                                               "").replace(
+                    f"{k_strip}", "")
+                if api_dict.get("name") == k_strip:
+                    remove_list.append("name")
             else:
                 remove_list.append(k)
 

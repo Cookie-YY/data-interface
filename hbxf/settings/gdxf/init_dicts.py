@@ -58,7 +58,7 @@ INITIALIZATION = {
     "hjlv": ["round(random.random(),4)"],
     "xfrc": ["random.randint(100,999)"],
     "zjlv": ["round(random.random(),4)"],
-    "tb": ["round(random.random(),4)"],
+    "tb_hb": ["round(random.random(),4)"],
     "hb": ["round(random.random(),4)"],
     "gfrc": ["random.randint(100,999)"],
     "jtfrc": ["random.randint(100,999)"],

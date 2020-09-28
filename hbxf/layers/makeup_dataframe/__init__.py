@@ -28,8 +28,9 @@ def makeup_dataframe(dataframe_list):
 
         # 排序补零：
         if dataframe.get("full"):
-            df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
-            dataframe["df"] = df
+            if type(dataframe["df"]) != np.int64:
+                df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
+                dataframe["df"] = df
 
         # 重新排序+limit
         if dataframe.get("order") or dataframe.get("limit"):

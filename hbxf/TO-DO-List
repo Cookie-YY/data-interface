@@ -105,3 +105,12 @@ sudo chmod +x /usr/bin/wkhtmltopdf
 - 离线安装flask_cashing
 - 离线安装redis
     https://blog.csdn.net/u013014761/article/details/100052139
+
+
+- 要求@tb/@hb/@zb生成随机数字【太奇怪了，先这样】
+要求init_dicts中必须有zb和tb_hb两对数据
+    - 1. init_dicts增加 tbhb/zb
+    - 2. get_dataframe_for_each_api 中 api_copy中增加value_new/value_old
+    - 4. merge_initialized_table 中 114-118行 增加 如果有value_new，重命名value_old
+    - 5. parse_one_dataframe 中 10行 增加 判断pop value
+    - 6. 河北的配置文件同步增加 tbhb/zb的内容

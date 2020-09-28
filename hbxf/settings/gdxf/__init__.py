@@ -30,10 +30,11 @@ CACHE_REDIS_HOST = '127.0.0.1'
 CACHE_REDIS_PORT = 6379
 CACHE_REDIS_DB = ''
 CACHE_REDIS_PASSWORD = ''
-
+CACHE_TIMEOUT = 60 * 60 * 24  # 60s * 60min * 24h
 
 # 头像等获取的文件的地址
-FILE_URL = "http://39.107.240.28:3389/gdxfdp/file/"
+FILE_URL = f"/{DP_ROOT}/file/"
+FILE_PATH = os.path.join(BASE_DIR, DP_CONTAINER, DP_ROOT, "file")
 
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4

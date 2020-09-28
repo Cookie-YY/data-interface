@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
+import os
+
+import pypandoc
 
 
 def search_sb(conn, sql, value1, value2):
@@ -55,16 +58,20 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     # jtf
     total_num_jtf, tb_jtf = search_sb(zb_pymysql, sql_jtf, (s_time, e_time), (last_s_time, last_e_time))  # 集体访
 
+    from app import app
+    report_url = app.config["FILE_URL"] + f"report-{total_time}.docx"
+    path = app.config["FILE_PATH"]
 
     # 标题
     title = f'<h class="wrapper_title" style="display: block;width: 100%;font-size: 0.4rem;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align: center">广东省{zt}信访专题分析报告</h></h>'
     # 导出
-    dc = '<span class="dc" style="width: 1.2rem;height: 0.4rem;line-height: 0.4rem;position: fixed;right: 4rem;top: 2.2rem;font-size: 0.2rem;border-radius: 3rem;border: 1px solid #155E95;background:#010816;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align:center;">导出</span>'
+    dc = f'<a class="dc" href="{report_url}" style="width: 1.2rem;height: 0.4rem;line-height: 0.4rem;position: fixed;right: 4rem;top: 2.2rem;font-size: 0.2rem;border-radius: 3rem;border: 1px solid #155E95;background:#010816;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align:center;">导出</a>'
     # 生成时间
     report_time = f'<span class="wrapper_time" style="display: block;color: #DBFFFF; font-size: 0.25rem;text-align: center;margin: 0.3rem">{now_time}</span>'
 
     # 第一部分
-    begin = f'<div class="report">{title}{dc}{report_time}</div>'
+    begin_html = f'<div class="report">{title}{dc}{report_time}</div>'
+    begin_docx = f'<div class="report">{title}</div>'
     #####################################################################################################################
 
     # para1
@@ -109,9 +116,13 @@ def run(start, end, zt, zb_pymysql, **kwargs):
 
     ending = f'<p class="report_time" style="text-align: end;font-weight: 400;font-size: 0.2rem;color: #DAFFFF;">报告生成时间：{str(now_time)}</p>'
 
-    data = begin + para1 + para2 + para3 + para4 + ending
+    data_for_html = begin_html + para1 + para2 + para3 + para4 + ending
+    data_for_docx = begin_docx + para1 + para2 + para3 + para4 + ending
 
-
+    # 生成docx和html报告文件
+    with open(os.path.join(path, f"report-{total_time}.html"), "w", encoding="utf8") as f:
+        f.write(data_for_docx)
+    pypandoc.convert_file(os.path.join(path, f"report-{total_time}.html"), 'docx', outputfile=os.path.join(path, f"report-{total_time}.docx"))
 
     # # data = '广东省'+ zt + '信访专题分析报告' + data1 + '\n' + data2 + '\n' + data3 + '\n' + data4 + '\n' + '  '*55 + '报告生成时间：' + str(now_time)
     # data = '<span class="title">' + '广东省'+ zt + '信访专题分析报告' + '</span><span class="date">'+now_time + '</span>' + data1 + data2 + data3 + data4 + '<span class="report_time">' + '报告生成时间：' + str(now_time) + '</span>'
@@ -119,10 +130,10 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     # from app import app
     # pdf_path = os.path.join(app.config["BASE_DIR"], "client", "gdxfdp", "file", "ztfxbg.pdf")
     # pdfkit.from_string('Hello!', 'ztfxdg.pdf')
-    return 200, "success", {"data": data}
+    return 200, "success", {"data": data_for_html}
 
 
 if __name__ == '__main__':
-    request = {"day": ["2020-01-01","2020-01-03"], "zt": "涉众型经济案件", "start": "2020-01-01", "end": "2020-01-03"}
+    request = {"day": ["2020-01-01", "2020-01-03"], "zt": "涉众型经济案件", "start": "2020-01-01", "end": "2020-01-03"}
     code, msg, res = run(**request)
     print(res)

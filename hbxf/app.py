@@ -20,10 +20,11 @@ app.config.from_object(f"settings.{PROJECT}.apis_plugins")
 
 cache = Cache()
 cache.init_app(app)
+cache_timeout = app.config.get("CACHE_TIMEOUT", 60 * 60 * 24)
 
 # 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/')
-@cache.cached(timeout=60*60*24, key_prefix=lambda : request.full_path)  # 60s * 60min * 24h
+@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.full_path)
 def data_index_api(realm, index):
     """
     :param xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shej&lx=xfxs
@@ -53,7 +54,7 @@ def data_index_api(realm, index):
 
 # 兼容数据接口路由
 @app.route("/api/<string:realm>/", methods=['GET'])
-@cache.cached(timeout=60*60*24, key_prefix=lambda : request.full_path)  # 60s * 60min * 24h
+@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.full_path)
 def data_index_api_noindex(realm):
     index = "none"  # 如果路径中没有 index， 请求参数中必须有index
     return data_index_api(realm, index)

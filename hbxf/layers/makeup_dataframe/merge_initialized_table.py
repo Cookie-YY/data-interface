@@ -39,7 +39,7 @@ def fill_random_or_real(x, df_dict, s, table):
             value_list = df_dict.get(s).get(table[0])
         else:
             value_list = df_dict.get(s)
-        if str(value_list[0]).startswith("random"):
+        if str(value_list[0]).startswith("random") or str(value_list[0]).startswith("round"):
             return eval(df_dict.get(s)[0])
         else:
             return value_list[0]
@@ -111,6 +111,11 @@ def merge_initialized_table(dataframe):
     table = dataframe["table"]
     update_data = [dataframe["value"]]
     name = dataframe.get("name")
+    value_new = dataframe.get("value_new", "")
+    value_old = dataframe.get("value", "")
+    if value_new:
+        df = df.rename(columns={value_old: value_new})
+        update_data = [value_new]
 
     # 加载字段可能取值 & 联动字段文件的目录
     from app import app

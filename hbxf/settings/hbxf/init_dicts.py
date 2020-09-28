@@ -21,7 +21,7 @@ INITIALIZATION = {
     "jt": [0],
     "yy": {"xf_xfr_cy_zjhm_jj_fs_jt_yy_yj_xfjc": [0], "xf_xfr_cy_shej_yy_xfrc": ["扬言", "非扬言"]},
     "yj": [0],
-
+    "tb_hb": [0],
     "xfjc": [0],
     "zb": [0],
     "hjlv": [0],
