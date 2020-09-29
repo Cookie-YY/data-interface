@@ -87,7 +87,9 @@ def get_dataframe_for_each_api(apis):
     code, msg, df = params2dataframe(results, apis_copy)
     if code != 200:
         return code, msg, {}
-
+    import numpy as np
+    if type(df) != np.int64:
+        df = df.fillna("")
     # return 200, "success", results
     dataframe = {**apis_copy, **{"df": df}}
     dataframe["table"] = [i.get("table") for i in waiting_for_search if "table" in i]
