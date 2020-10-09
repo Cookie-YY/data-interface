@@ -88,9 +88,11 @@ def get_dataframe_for_each_api(apis):
     if code != 200:
         return code, msg, {}
     import numpy as np
-    if type(df) != np.int64:
+
+    # 如果df是dataframe（不是np.int64） 且不只是一个列（一个列是只有value的情况）
+    if type(df) != np.int64 and len(df.columns) > 1:
         df = df.fillna("")
-    # return 200, "success", results
+
     dataframe = {**apis_copy, **{"df": df}}
     dataframe["table"] = [i.get("table") for i in waiting_for_search if "table" in i]
     return 200, "success", dataframe
