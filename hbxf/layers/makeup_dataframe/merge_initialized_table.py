@@ -45,14 +45,6 @@ def fill_random_or_real(x, df_dict, s, table):
             return value_list[0]
     return x
 
-    #     if str(df_dict.get(s)[0]).startswith("random"):
-    #         return eval(df_dict.get(s)[0])
-    #     else:
-    #         return df_dict.get(s)[0]
-    # else:
-    #     return x
-
-
 
 def update_df(df_dict, df, df_list, update_data, init_df, table):
     on = []

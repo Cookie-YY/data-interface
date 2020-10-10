@@ -43,7 +43,8 @@
     year_initialized.py文件
     http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
     不能把数字和object结合起来merge的时候
-
+- 【****】月的同比环比
+- 【****】sql模式增加full参数
 
 
 ################################################ 广东项目 ################################################
@@ -64,22 +65,6 @@
 - 【已解决】广东的小弹窗问题，需要xf_org/xf_region的表
     异步写入数据库的方法
 
-- 报告
-- 参考1：https://www.cnblogs.com/onemorepoint/p/7449512.html
-- 参考2：https://www.jb51.net/article/160638.htm
-- 参考3：http://cn.voidcc.com/question/p-dcdbhlmr-dn.html
-- 参考4：https://www.cnblogs.com/xiaowenshu/p/9916719.html
-- 参考重点：https://blog.csdn.net/qw_xingzhe/article/details/80607283
-- 参考5：https://blog.csdn.net/dyang129/article/details/79914696
-
-wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-tar xvfJ wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
-cd wkhtmltox/bin
-sudo mv ./wkhtmltopdf /usr/bin/wkhtmltopdf
-sudo chmod +x /usr/bin/wkhtmltopdf
-
-【测试】wkhtmltopdf http://www.baidu.com ./test.pdf
-
 
 
 
@@ -96,11 +81,7 @@ sudo chmod +x /usr/bin/wkhtmltopdf
 
 
 
-- custom开发
-- 必须有run方法，
-    输入：fx_pymysql, zb_pymysql, start, end, **kwargs
-    输出1：return 200, "success", {"data": data, "mapping": map}
-    输出2：return 200, "success", {"data": data}
+
 
 - 离线安装flask_cashing
 - 离线安装redis
@@ -114,3 +95,33 @@ sudo chmod +x /usr/bin/wkhtmltopdf
     - 4. merge_initialized_table 中 114-118行 增加 如果有value_new，重命名value_old
     - 5. parse_one_dataframe 中 10行 增加 判断pop value
     - 6. 河北的配置文件同步增加 tbhb/zb的内容
+
+
+- transformer的extension
+    - 1.
+
+
+
+
+name/stack/value：
+    指定table的情况下可以通过timetype/qh/index参数操作table（realm/busin/lx不作支持）
+    指定table的情况下shij_02=drop/xj_02=drop/month=drop/xfxs=drop均有效
+    可以通过$来获取任意参数的实际值 如 table=xf_xfj_cd_xfxs_xfjc&index=xfrc&value=$index
+        注意：table=xf_xfj_cd_xfxs_xfjc&value=$index会报错（不指定index，却有index的引用）
+        注意：timetype=cy&name=$timetype 此时name=year（由settings中的URL_REFERENCE参数控制）
+    可以通过任意参数=invalid，使该参数失效
+    可以通过now获取当前日期，如day=[now-7,now]   day=now   year=now   month=now
+        注意：now可以和日期混用 如day=[now-7,2020-02-02]
+
+插件过程
+    custom自定义模式
+    - custom开发
+        必须有run方法：
+            输入：fx_pymysql, zb_pymysql, start, end, **kwargs
+            输出1：return 200, "success", {"data": data, "mapping": map}
+            输出2：return 200, "success", {"data": data}
+    sql模式
+
+transformer的extension
+    1. 增加 transformer_int 和 transformer_float 取值（取代zb/tbhb）
+    2.

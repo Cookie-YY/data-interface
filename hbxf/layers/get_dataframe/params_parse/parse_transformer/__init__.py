@@ -18,12 +18,12 @@ def parse_transformer_conditions(transformer, real_table, apis):
         if day_condition is None:
             return 400, "if use ':day' in groupby transformer, there must be the conditions about day"
         if "@tb" in transformer:
-            condition1_2 = params_parse_tb_or_hb("tb", apis)
+            condition1_2 = params_parse_tb_or_hb("tb", apis)  # 得到 {列: 字符串} 形式的条件  {"day": "2020-01-01,2020-01-02"}
         else:
-            condition1_2 = params_parse_tb_or_hb("hb", apis)
+            condition1_2 = params_parse_tb_or_hb("hb", apis)  # 得到 {列: 字符串} 形式的条件  {"day": "2020-01-01,2020-01-02"}
         code, msg, condition1_2 = get_conditions(real_table.get("ex_table"), condition1_2)
         if code != 200:
             return code, msg, {}
 
-    return condition1_2
+    return 200, "success", condition1_2
 

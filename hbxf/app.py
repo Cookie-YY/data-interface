@@ -56,7 +56,7 @@ def data_index_api(realm, index):
 @app.route("/api/<string:realm>/", methods=['GET'])
 @cache.cached(timeout=cache_timeout, key_prefix=lambda : request.full_path)
 def data_index_api_noindex(realm):
-    index = "none"  # 如果路径中没有 index， 请求参数中必须有index
+    index = ""  # 如果路径中没有 index， 请求参数中必须有index
     return data_index_api(realm, index)
 
 

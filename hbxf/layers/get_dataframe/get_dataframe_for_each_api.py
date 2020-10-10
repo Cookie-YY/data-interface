@@ -57,7 +57,6 @@ def get_dataframe_for_each_api(apis):
     # if transformer in ["@tb", "@hb", "@zb"]:
     #     apis_copy["value"] = transformer.strip("@")
 
-
     # 参数校验
     from layers.get_dataframe.params_check import params_check
     code, msg, parsed_check_content = params_check(**locals())
@@ -81,15 +80,12 @@ def get_dataframe_for_each_api(apis):
 
     # 得到最终dataframe
     from layers.get_dataframe.params2dataframe import params2dataframe
-    # 1. limit=10+其他/limit_inner=10+其他/limit_outer=10+其他
-    # 2. name/value/stack
-    # 3. makeup/strictorder
     code, msg, df = params2dataframe(results, apis_copy)
     if code != 200:
         return code, msg, {}
-    import numpy as np
 
-    # 如果df是dataframe（不是np.int64） 且不只是一个列（一个列是只有value的情况）
+    # 如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
+    import numpy as np
     if type(df) != np.int64 and len(df.columns) > 1:
         df = df.fillna("")
 

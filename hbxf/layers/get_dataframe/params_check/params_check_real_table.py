@@ -1,6 +1,24 @@
 import re
 from sqlalchemy import Table
 
+def get_table_when_table(table, realm, busin, timetype, qh, lx, index):
+    if realm:  # pass
+        pass
+    if busin:  # pass
+        pass
+    if timetype:  # cm/cy之间的变动
+        table = table.replace("_cm", f'_{timetype}').replace("_cy", f'_{timetype}')
+    if qh:  # shej/shij/xj之间的变动
+        table = table.replace("_shej", f'_{qh}').replace("_shij", f'_{qh}').replace("_xj", f'_{qh}')
+    if lx:  # pass
+        pass
+    if index:  # 肯定是最后一个有变动：zb/tb/hb除外
+        components = table.split("_")
+        if table.endswith("_zb") or table.endswith("_tb") or table.endswith("_hb"):
+            table = f'{"_".join(components[:-2])}_{index}'
+        else:
+            table = f'{"_".join(components[:-1])}_{index}'
+    return table
 
 
 def get_candidate_tables(table, realm, busin, timetype, qh, lx, index):
@@ -9,6 +27,7 @@ def get_candidate_tables(table, realm, busin, timetype, qh, lx, index):
 
     # table: 如果存在table参数，table指定唯一的表
     if table:
+        table = get_table_when_table(table, realm, busin, timetype, qh, lx, index)
         return [table]
 
     shej = ["shej", ""]

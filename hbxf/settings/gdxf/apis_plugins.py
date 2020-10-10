@@ -22,7 +22,7 @@ APIS_PLUGIN = [
         "file": "ztfxbg",
     },
     {
-        # 广东_自定义主题分析_主题分析报告
+        # 广东_全局业务监控_表格弹窗
         # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=gd_qjywjk_bgtc&query=来信&query_date=信访日期&day=[2019-01-01,2020-01-03]
         "url": "/api/xf/\?gd_id=gd_qjywjk_bgtc&",
         "mode": "custom",
@@ -30,7 +30,7 @@ APIS_PLUGIN = [
     },
 
 
-    # 广东_重点人员消息
+    ###################### 广东_信访人分析（重点人员）######################
     {
         # 广东_信访人分析_基本信息
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_jbxx&sfzhm=44082519581025149X
@@ -72,8 +72,22 @@ APIS_PLUGIN = [
         # "on": "sfzhm"
         "time_format": "%Y年%m月%d日"
     },
-
-
+    ###################### 广东_全局业务监控的弹窗（饼图/一级内容/地图）######################
+    {
+        # 广东_全局业务监控_信访形式的饼图弹窗
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxsjz&sfzhm=44082519581025149X
+        "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc$",
+        "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
+        "fx_db_sql": """select xfrq, xfsxid from(
+        (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from 
+        (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb where xfrq between '{start}' and '{end}'  group by xfrq order by xfrq limit 1) 
+        union (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb 
+        where xfrq between '{start}' and '{end}'  group by xfrq order by xfrq desc limit 3
+        ))  as sjz order by xfrq;""",
+        "zb_db_sql": """""",
+        # "on": "sfzhm"
+        "time_format": "%Y年%m月%d日"
+    }
 
 
 ]

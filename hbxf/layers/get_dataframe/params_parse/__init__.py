@@ -1,6 +1,5 @@
 import re
 
-from layers.get_dataframe.params_check.params_check_real_table import get_real_table
 from .params_parse_conditions import get_conditions
 from .parse_transformer import parse_transformer_conditions
 
@@ -33,12 +32,7 @@ def params_parse(**kwargs):
     table1["ex_table"] = real_table.get("ex_table")
 
     # 1.2 解析第一张表的字段[columns]
-    if kwargs.get("name") == kwargs.get("stack"):
-        columns = f'{kwargs.get("name")},{kwargs.get("value")}'
-    else:
-        name_splited = re.split(r"[-]", kwargs.get("name"))  # name可以用  yjnr-ejnr来表示
-        name_join = ",".join(name_splited)
-        columns = f'{name_join},{kwargs.get("stack")},{kwargs.get("value")}'
+    columns = f'{kwargs.get("name")},{kwargs.get("stack")},{kwargs.get("value")}'
     columns = [i for i in columns.split(",") if i]  # 从参数中得到第一张表的字段
     table1["columns"] = columns
 
@@ -49,7 +43,7 @@ def params_parse(**kwargs):
         return code, msg, {}
     table1["conditions"].append(condition1_1)
 
-    # 1.3 解析第一张表的其他条件[conditions]
+    # 1.3 解析第一张表的transformer条件[conditions]
     transformer = kwargs.get("transformer")  # 重点解析对象
     apis = kwargs.get("apis")  # 用于搜索的条件
     """
@@ -57,7 +51,9 @@ def params_parse(**kwargs):
     {"realm": "xf", "index": "xfjc", "name": "cfxfbz", "transformer": "@groupby:cfxfbz+@zb:cfxfbz/cfxfbz", "day":"[2020-02-02,2020-02-03]"}
     {"realm": "xf", "index": "xfjc", "name": "djjg", "transformer": "@groupby:djjg+@tb", "day":"[2020-02-02,2020-02-03]"}
     """
-    condition1_2 = parse_transformer_conditions(transformer, real_table, apis)
+    code, msg, condition1_2 = parse_transformer_conditions(transformer, real_table, apis)
+    if code != 200:
+        return code, msg, {}
     if condition1_2:
         table1["conditions"].append(condition1_2)
 
