@@ -43,3 +43,29 @@ def parse_compute(express):
         return 200, "success", int(express)
     return 200, "success", result
 
+
+def parse_judge(express):
+    if "==" in express:
+        pre, post = express.split("==")
+        return 200, "success", pre == post
+    elif "<" in express:
+        pre, post = express.split("<")
+        if not pre.isdigit() or not post.isdigit():
+            return 400, "if use <, the ones must be numbers", {}
+        return 200, "success", int(pre) < int(post)
+    elif ">" in express:
+        pre, post = express.split(">")
+        if not pre.isdigit() or not post.isdigit():
+            return 400, "if use >, the ones must be numbers", {}
+        return 200, "success", int(pre) > int(post)
+    elif "<=" in express:
+        pre, post = express.split("<=")
+        if not pre.isdigit() or not post.isdigit():
+            return 400, "if use <=, the ones must be numbers", {}
+        return 200, "success", int(pre) <= int(post)
+    elif ">=" in express:
+        pre, post = express.split(">=")
+        if not pre.isdigit() or not post.isdigit():
+            return 400, "if use >=, the ones must be numbers", {}
+        return 200, "success", int(pre) >= int(post)
+    return 400, f"unsupported calculator [{express}]", {}

@@ -1,7 +1,7 @@
 from layers.get_parsed_api.process_now import process_now
 
 
-def process_api(api):
+def preprocess_api(api):
     code, msg, api = process_now(api)
     if code != 200:
         return code, msg, {}

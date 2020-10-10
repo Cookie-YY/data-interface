@@ -29,8 +29,8 @@
 - full=true的逻辑重构
 - 项目配置模板文件夹
 - 插件过程的不匹配怎么办（merge的方式）
-- # 插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
-- 插件过程的get_data_from_dbs拆分
+- 【暂不解决】插件过程的配置文件加一个必填项字段，需要在sql语句中引用的，如果没传够，直接报错返回
+- 【已解决】插件过程的get_data_from_dbs拆分
 - 插件过程code202的 app.py中的代码合并
 - 【暂不解决，和指标/指标名字联动时解决】app.py中 统一代码，想不起来了
 - name_limit和stack_limit在件次/件次占比/人次/人次占比上好像没区别
@@ -44,20 +44,21 @@
     http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_shej_mdgjxfjc&value=mdgjxfjc&stack=year&name=year&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_mdgjhjjc;value@to:mdgjhjjc&main_name=%E6%80%BB%E9%87%8F,%E5%8C%96%E8%A7%A3&year=[now-3,now]&full=true
     不能把数字和object结合起来merge的时候
 - 【****】月的同比环比
-- 【****】sql模式增加full参数
-
+- 【****】sql模式增加full参数（当有两个一样的字段，取值相同，应该自动判断为这两个不做笛卡尔积）
+- 【已解决】sql模式增加variables参数
+- extension的各个率   大弹窗的小弹窗   大弹窗之前的图增加query
+- 【没有表的时候报错还是用一个字段控制不报错】
 
 ################################################ 广东项目 ################################################
-- *****广东的重点人员的表，和河北的不太一样
 - 【*】预警状态的判断（transformer=@yjzt）
 - 【*】广东各个率的计算：需要表（transformer=@mylv   @cplv   @jslllv  @bjlv  @asbjlv）
     产品的extensions和项目的extensions【单表的transformer的扩展】
     产品的refresh 和 项目的refresh
     项目的apis_plugins【多表的查询】
-- 【*】表格的大弹窗问题【增加一个字段】：怎么加【写sql】，怎么给，怎么解析【判断，然后用format格式化sql】
+- 【已解决】表格的大弹窗问题【增加一个字段】：怎么加【写sql】，怎么给，怎么解析【判断，然后用format格式化sql】
     插件过程，增加一个自定义数值映射的参数，settings中增加一个字段下的内容映射，在插件过程查询的结果自动转换（无需显式调用$map） : 支持正则：{问题属地：广东省广州市}
 - 【已解决】插件过程增加一个字段：columns_value_mapping
-- 【*】format=report   excel
+- 【暂不解决custom已解决】format=report   excel
 - 【已解决】三个饼 跨域
 - 【已解决】因为只有一个数，不能用full
 - 【已解决】makeup层__init__.py 判断np.int AttributeError: 'numpy.int64' object has no attribute 'columns'
@@ -120,7 +121,28 @@ name/stack/value：
             输入：fx_pymysql, zb_pymysql, start, end, **kwargs
             输出1：return 200, "success", {"data": data, "mapping": map}
             输出2：return 200, "success", {"data": data}
+    - custom使用
+        "url":"/api/xf/\?gd_id=YOUR ID&",
+        "mode": "custom",
+        "file": "ztfxgb", # settings/$project/custom/目录下，后缀.py可有可无，需要实现run方法
+
     sql模式
+    - sql开发
+
+    - sql使用
+        "url":"/api/xf/\?gd_id=YOUR ID$",
+        [option]"mode": "sql",                    # 模式匹配，默认sql模式
+        "map":"",
+        [option]"variables":""
+        [option]"fx_db_sql":"",
+        [option]"zb_db_sql":"",
+        [option]"on":"",                          # 字段名
+        [option]"time_format": "%Y年%m月%d日",
+        [option]"value_map":                      # 列表，每一条规则是一个元组(新列名,旧列名,映射规则,默认值)
+            [("tx", "{FILE_PATH}{value}", "default.png")],
+        [option]"full":                           # 如果没有，不做补全，如果为True，做补全，如果有一个字典，把字典的值放到之前规定好的映射中
+            {"xfxs": ["来信", "来访", "网信"]}
+    },
 
 transformer的extension
     1. 增加 transformer_int 和 transformer_float 取值（取代zb/tbhb）

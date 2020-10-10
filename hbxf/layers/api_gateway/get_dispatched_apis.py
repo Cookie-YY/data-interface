@@ -38,7 +38,7 @@ def get_dispatched_apis(request_args):
     request_args = {k: v for k, v in request_args.items() if not (v == "invalid" and k.startswith("gd_id"))}
     request_args_copy = request_args.copy()  # 备份，方便遍历
 
-    graph_id_dict = {i: request_args.pop(str(i), "") for i in request_args_copy if i.startswith("gd_id")}
+    graph_id_dict = {i: request_args.pop(str(i), "") for i in request_args_copy if re.match(r"gd_id[-]?\d+", i)}
     # graph_id_dict: {"gd_id0": "全部", "gd_id1": "件次"}
     # request_args: 去掉 invalid 和 gd_id开头的项
 

@@ -55,9 +55,9 @@ FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 # FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
-ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot_gd'
+# ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_dev_dabot_gd'
 # ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
-# ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
+ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_gd_test54' % urllib.parse.quote_plus("Beidas0ft")
 
 # 如果没有数据---1：返回零数据 0：返回一个空对象
 RETURN_ZERO_DATA = 1

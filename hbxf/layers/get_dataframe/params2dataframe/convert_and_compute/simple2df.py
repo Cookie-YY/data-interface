@@ -1,4 +1,5 @@
 import pandas as pd
+import decimal
 
 
 # def process_one_df(data_list, name, stack):
@@ -24,7 +25,12 @@ def simple2df(results):
     for table in results:
         one = []
         for data_list in table:
-            one.append(pd.DataFrame(data_list))
+            res = pd.DataFrame(data_list)
+            for col in res:
+                if isinstance(res[col][0], decimal.Decimal):
+                    res[col] = res[col].astype(float)
+                    break
+            one.append(res)
         df_list.append(one)
     return df_list
 

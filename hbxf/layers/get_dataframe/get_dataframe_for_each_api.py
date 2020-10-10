@@ -85,8 +85,8 @@ def get_dataframe_for_each_api(apis):
         return code, msg, {}
 
     # 如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
-    import numpy as np
-    if type(df) != np.int64 and len(df.columns) > 1:
+    import pandas as pd
+    if isinstance(df, pd.DataFrame) and len(df.columns) > 1:
         df = df.fillna("")
 
     dataframe = {**apis_copy, **{"df": df}}

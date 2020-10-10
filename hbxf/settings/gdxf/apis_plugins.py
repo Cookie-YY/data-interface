@@ -75,18 +75,39 @@ APIS_PLUGIN = [
     ###################### 广东_全局业务监控的弹窗（饼图/一级内容/地图）######################
     {
         # 广东_全局业务监控_信访形式的饼图弹窗
-        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_xfrfx_xfgjfxsjz&sfzhm=44082519581025149X
-        "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc$",
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期
+        "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc&",
         "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
-        "fx_db_sql": """select xfrq, xfsxid from(
-        (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from 
-        (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb where xfrq between '{start}' and '{end}'  group by xfrq order by xfrq limit 1) 
-        union (select xfrq, count(*),   group_concat(xfsxid) as xfsxid from (select xf_xfjxx.xfrq, xf_xfjxx.xfsxid from xf_xfjxx join xf_xfrxx on xf_xfjxx.xfjbh=xf_xfrxx.xfjbh where  xf_xfrxx.sfzhm='{sfzhm}') tb 
-        where xfrq between '{start}' and '{end}'  group by xfrq order by xfrq desc limit 3
-        ))  as sjz order by xfrq;""",
-        "zb_db_sql": """""",
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_djjg_xfxs_xfrqxfjc;"
+                                 "{query_date}==登记日期 then xf_xfj_cd_djjg_xfxs_djrqxfjc;"
+                                 "{query_date}==交换日期 then xf_xfj_cd_djjg_xfxs_jhrqxfjc;",
+                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                                  "{query_date}==登记日期 then djrqxfjc;"
+                                  "{query_date}==交换日期 then jhrqxfjc;"},
+        "fx_db_sql": """""",
+        "zb_db_sql": """
+        select xfxs as name, xfxs as query, sum({v_select}) as value from {v_table} group by xfxs 
+        """,
         # "on": "sfzhm"
-        "time_format": "%Y年%m月%d日"
+        "full": {"name": "xfxs", "value": [0], "query": "xfxs"}
+    },
+    {
+        # 广东_全局业务监控_信访形式的一级内容弹窗
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期
+        "url": "/api/xf/\?gd_id=gd_qjywjk_yjnrtc&",
+        "map": {"name": "一级内容", "value": "信访件次", "query": "查询id"},
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_shej_yjnr_xfrqxfjc;"
+                                 "{query_date}==登记日期 then xf_xfj_cd_shej_yjnr_djrqxfjc;"
+                                 "{query_date}==交换日期 then xf_xfj_cd_shej_yjnr_jhrqxfjc;",
+                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                                  "{query_date}==登记日期 then djrqxfjc;"
+                                  "{query_date}==交换日期 then jhrqxfjc;"},
+        "fx_db_sql": """""",
+        "zb_db_sql": """
+    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} group by yjnr 
+    """,
+        # "on": "sfzhm"
+        "full": {"name": "yjnr", "value": [0]}
     }
 
 

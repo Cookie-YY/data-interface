@@ -11,7 +11,7 @@ def parse_one_dataframe(dataframe, groupid=0):
     # value = dataframe.get("value")
     stack = dataframe.get("stack")
     main_name = dataframe.get("main_name")
-    if isinstance(df, np.int64):
+    if isinstance(df, np.int64) or isinstance(df, np.float):
         df = pd.DataFrame({value: [df]})
     data = df.to_dict(orient='records')
 
