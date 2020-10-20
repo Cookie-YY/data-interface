@@ -1,0 +1,42 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "1次",
+      "id": "01",
+      "type": "XZQXFCS",
+      "value": 100
+    },
+    {
+      "name": "1次-5次",
+      "id": "02",
+      "type": "XZQXFCS",
+      "value": 200
+    },
+    {
+      "name": "5次-10次",
+      "id": "03",
+      "type": "XZQXFCS",
+      "value": 100
+    },
+    {
+      "name": "10次-30次",
+      "id": "04",
+      "type": "XZQXFCS",
+      "value": 90
+    },
+    {
+      "name": "30次-50次",
+      "id": "05",
+      "type": "XZQXFCS",
+      "value": 60
+    },
+    {
+      "name": "50次以上",
+      "id": "06",
+      "type": "XZQXFCS",
+      "value": 30
+    }
+  ]
+}

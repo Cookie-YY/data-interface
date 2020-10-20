@@ -1,0 +1,60 @@
+{
+  "code": "200",
+  "msg": "success",
+  "map": {
+    "value_g0_1": "个坊",
+    "value_g1_1": "集体访"
+  },
+  "data":[
+    {
+      "name": "1",
+      "value_g0_1": 142,
+      "value_g1_1": 100
+    },
+    {
+      "name": "2",
+      "value_g0_1": 351,
+      "value_g1_1": 273
+    },
+    {
+      "name": "3",
+      "value_g0_1": 623,
+      "value_g1_1": 535
+    },
+    {
+      "name": "4",
+      "value_g0_1": 536,
+      "value_g1_1": 623
+    },
+    {
+      "name": "5",
+      "value_g0_1": 638,
+      "value_g1_1": 754
+    },
+    {
+      "name": "6",
+      "value_g0_1": 142,
+      "value_g1_1": 100
+    },
+    {
+      "name": "7",
+      "value_g0_1": 351,
+      "value_g1_1": 273
+    },
+    {
+      "name": "8",
+      "value_g0_1": 623,
+      "value_g1_1": 535
+    },
+    {
+      "name": "4",
+      "value_g0_1": 536,
+      "value_g1_1": 623
+    },
+    {
+      "name": "5",
+      "value_g0_1": 638,
+      "value_g1_1": 754
+    }
+  ]
+}

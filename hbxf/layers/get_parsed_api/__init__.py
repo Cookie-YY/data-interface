@@ -32,6 +32,9 @@ def get_parsed_apis(api_dicts):
         if code != 200:
             return code, msg, {}
 
+        from utils.value_mapped import value_mapped
+        result_this = value_mapped(result_this)                    # 处理参数映射
+
         result[main_name] = result_this
     return 200, "success", result
 

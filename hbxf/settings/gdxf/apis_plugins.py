@@ -1,18 +1,18 @@
 APIS_PLUGIN = [
-    # 用于测试大弹窗的样例
-    {
-        # 河北_信访人分析_基本信息
-        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=h&query_data=zjhm:130623197709052130
-        "url": "/api/xf/\?gd_id=test_dtc&",
-        "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
-        "fx_db_sql": """
-        """,
-        "zb_db_sql": """
-        select xfxs as name, xfrqjc as value, xfxs as query from xf_xxx""",
-        # "on": "zjhm",
-        # "time_format": "%Y年%m月%d日"
-        "value_map": [("query", "cfxfbz:1,yjnr_code:{map}", "")]
-    },
+    # # 用于测试大弹窗的样例
+    # {
+    #     # 河北_信访人分析_基本信息
+    #     # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=h&query_data=zjhm:130623197709052130
+    #     "url": "/api/xf/\?gd_id=test_dtc&",
+    #     "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
+    #     "fx_db_sql": """
+    #     """,
+    #     "zb_db_sql": """
+    #     select xfxs as name, xfrqjc as value, xfxs as query from xf_xxx""",
+    #     # "on": "zjhm",
+    #     # "time_format": "%Y年%m月%d日"
+    #     "value_map": [("query", "cfxfbz:1,yjnr_code:{map}", "")]
+    # },
 
     {
         # 广东_自定义主题分析_主题分析报告
@@ -69,13 +69,12 @@ APIS_PLUGIN = [
         where xfrq between '{start}' and '{end}'  group by xfrq order by xfrq desc limit 3
         ))  as sjz order by xfrq;""",
         "zb_db_sql": """""",
-        # "on": "sfzhm"
         "time_format": "%Y年%m月%d日"
     },
     ###################### 广东_全局业务监控的弹窗（饼图/一级内容/地图）######################
     {
         # 广东_全局业务监控_信访形式的饼图弹窗
-        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc&",
         "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
         "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_djjg_xfxs_xfrqxfjc;"
@@ -86,14 +85,13 @@ APIS_PLUGIN = [
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-        select xfxs as name, xfxs as query, sum({v_select}) as value from {v_table} group by xfxs 
+        select xfxs as name, xfxs as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' group by xfxs 
         """,
-        # "on": "sfzhm"
-        "full": {"name": "xfxs", "value": [0], "query": "xfxs"}
+        "full": {"name": "xfxs", "value": [0], "query": "$name"}
     },
     {
-        # 广东_全局业务监控_信访形式的一级内容弹窗
-        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期
+        # 广东_全局业务监控_一级内容弹窗
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_yjnrtc&",
         "map": {"name": "一级内容", "value": "信访件次", "query": "查询id"},
         "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_shej_yjnr_xfrqxfjc;"
@@ -104,11 +102,42 @@ APIS_PLUGIN = [
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} group by yjnr 
+    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' group by yjnr 
     """,
-        # "on": "sfzhm"
-        "full": {"name": "yjnr", "value": [0]}
-    }
+        "full": {"name": "yjnr", "value": [0], "query": "$name"}
+    },
+    {
+        # 广东_全局业务监控_地图弹窗
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_dttc&query_date=信访日期&day=[2019-01-01,2020-01-01]
+        "url": "/api/xf/\?gd_id=gd_qjywjk_dttc&",
+        "map": {"name": "区划", "value": "信访件次", "query": "查询id"},
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfrqxfjc;"
+                                 "{query_date}==登记日期 then xf_xfj_cd_xj_djrqxfjc;"
+                                 "{query_date}==交换日期 then xf_xfj_cd_xj_jhrqxfjc;",
+                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                                  "{query_date}==登记日期 then djrqxfjc;"
+                                  "{query_date}==交换日期 then jhrqxfjc;",
+                      "v_qhwhere": "{name}==xj_02 then shij_02;"
+                                   "{name}==shij_02 then shej_02",
+                      "v_qhwhere_value": "{name}==shij_02 then '广东省';"
+                                         "{name}==xj_02 then {shij_02}"},
+        "fx_db_sql": """""",
+        "zb_db_sql": """
+select {name} as name, {name} as query, sum({v_select}) as value from {v_table} where {v_qhwhere}='{v_qhwhere_value}' AND day between '{start}' and '{end}' group by {name}
+""",
+        "full": {"name": "zb_db_sql:select {name} from {v_table} where {v_qhwhere}='{v_qhwhere_value}'", "value": [0], "query": "$name"}
+    },
+
+    {
+        # 广东_全局业务监控_地图弹窗后的小弹窗
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_tcaftertc&xfjbh=LX0000002019102900499
+        "url": "/api/xf/\?gd_id=gd_qjywjk_tcaftertc&",
+        "map": {"xfjztmc": "信访件状态", "xfrq": "信访日期", "bjsj": "办结日期",
+                "bljg": "办理机构", "blfs": "办理方式", "qxjg": "去向机构"},
+        "fx_db_sql": """select a.xfjztmc, a.xfrq, a.bjsj, b.xfjbh, b.bljg, b.blfs, b.qxjg from xf_xfjxx a LEFT JOIN xf_blfsxx b on a.xfjbh=b.xfjbh where b.xfjbh='{xfjbh}';""",
+        "zb_db_sql": """""",
+    },
+
 
 
 ]

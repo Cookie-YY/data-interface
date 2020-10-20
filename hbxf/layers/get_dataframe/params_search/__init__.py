@@ -1,13 +1,20 @@
 from sqlalchemy.orm import Session
+import pandas as pd
 
-
-def params_search(waiting_for_search, order, limit):
+def params_search(waiting_for_search, apis_copy):
     """
     waiting_for_search: [
         {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]},
         {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]}
     ]
     """
+    if not waiting_for_search:
+        columns = [apis_copy.get("name",""), apis_copy.get("stack",""), apis_copy.get("value","")]
+        columns = [i for i in columns if i]
+        df = [[pd.DataFrame([None]*len(columns), columns=columns)]]
+        return 200, "success", df
+    # 获取order, limit
+    order, limit = apis_copy["direct_order"], apis_copy["direct_limit"]
     # 获取数据库连接
     from utils.db_connection import zb_engine
     session = Session(zb_engine)
@@ -33,8 +40,8 @@ def params_search(waiting_for_search, order, limit):
                     results = results.order_by(order)
             if limit:
                 results = results.limit(limit)
-            from utils.results2df import results2df_ready
-            data = results2df_ready(results, columns)
+            from utils.results2df import results2df
+            data = results2df(results, columns, apis_copy)
             search_table.append(data)
         searched.append(search_table)
     session.close()

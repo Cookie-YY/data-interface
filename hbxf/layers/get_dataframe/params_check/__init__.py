@@ -1,8 +1,8 @@
-from .params_chech_each import params_chech_each
+from .params_check_each import params_check_each
 from .params_check_real_table import get_real_table
 
 
-def params_check(**kwargs):
+def params_check(apis_copy, special):
     """
     检测所有的参数的合法性，kwargs就是所有参数的字典
     规则：
@@ -14,24 +14,17 @@ def params_check(**kwargs):
                 # 3. @zb:yjnr        # 相当于 yjnr/yjnr   这里必须保证是 name
                 4. @zb             # 相当于 $name / $name
     """
-    parsed_content = {}
     # 1. 参数逐一校验
-    code, msg, checked_params = params_chech_each(kwargs)
+    code, msg, apis_copy_after_check = params_check_each(apis_copy, special)
     if code != 200:
         return code, msg, {}
-    parsed_content["checked_params"] = checked_params
+    # apis_copy.update(checked_params)  # 检查后的参数可能会有改动，更新给apis_copy
 
     # 2. 表是否存在
-    code, msg, real_table = get_real_table(kwargs.get("table"),
-                                           kwargs.get("realm"),
-                                           kwargs.get("busin"),
-                                           kwargs.get("timetype"),
-                                           kwargs.get("qh"),
-                                           kwargs.get("lx"),
-                                           kwargs.get("index"))
+    code, msg, real_table = get_real_table(apis_copy_after_check)
     if code != 200:
         return code, msg, {}
 
-    parsed_content["real_table"] = real_table
+    apis_copy_after_check.update(real_table)  # {"table": "", "ex_table": }
 
-    return 200, "success", parsed_content
+    return 200, "success", apis_copy_after_check

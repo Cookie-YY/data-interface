@@ -1,6 +1,7 @@
 import re
 from sqlalchemy import Table
 
+
 def get_table_when_table(table, realm, busin, timetype, qh, lx, index):
     if realm:  # pass
         pass
@@ -21,7 +22,14 @@ def get_table_when_table(table, realm, busin, timetype, qh, lx, index):
     return table
 
 
-def get_candidate_tables(table, realm, busin, timetype, qh, lx, index):
+def get_candidate_tables(apis_copy):
+    table, realm, busin, timetype, qh, lx, index = apis_copy.get("table", ""), \
+                                                   apis_copy.get("realm", ""), \
+                                                   apis_copy.get("busin", ""), \
+                                                   apis_copy.get("timetype", ""), \
+                                                   apis_copy.get("qh", ""), \
+                                                   apis_copy.get("lx", ""), \
+                                                   apis_copy.get("index", "")
     # qh=shej但是库里没有shej    qh是空，但是库里有shej
     # index 有_zb，但是库里没有 _zb    qh没有zb但是库里有占比
 
@@ -54,16 +62,22 @@ def get_candidate_tables(table, realm, busin, timetype, qh, lx, index):
     return [table1, table3]
 
 
-def get_real_table(table, realm, busin, timetype, qh, lx, index):
-    candidate_tables = get_candidate_tables(table, realm, busin, timetype, qh, lx, index)
+def get_real_table(apis_copy):
+    db_engine = apis_copy.get("db_engine")
+    candidate_tables = get_candidate_tables(apis_copy)
     from utils.db_connection import metadata
-    from utils.db_connection import zb_engine
-    metadata.reflect(bind=zb_engine)
+    if db_engine == "zb_db":
+        from utils.db_connection import zb_engine as engine
+    else:
+        from utils.db_connection import fx_engine as engine
+    metadata.reflect(bind=engine)
     tables = metadata.tables.keys()
     for table in candidate_tables:
         if table in tables:
-            ex_table = Table(table, metadata, autoload=True, autoload_with=zb_engine)
+            ex_table = Table(table, metadata, autoload=True, autoload_with=engine)
             return 200, "success", {"table": table, "ex_table": ex_table}
 
-        # return 400, f"ConnectionError: Please check for net connection or check for driver for database(eg: pymysql for mysql)", {}
+    from app import app
+    if not app.config.get("NOTABLE_ERROR", True):
+        return 200, "success", {"table": "test", "ex_table": "test"}
     return 400, f" NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {}

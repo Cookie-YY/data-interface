@@ -19,9 +19,14 @@ def get_variables_from_sql_mode(results, format_pool_sql):
                     "{query_date}==交换日期 then jhrqxfjc;"},
     """
     variables = results.get("variables", {})
+    variables_copy = {}
     for k, v in variables.items():
-        v = v.format(**format_pool_sql)
+        # v = v.format(**format_pool_sql)
         for combine in v.split(";"):
+            try:
+                combine = combine.format(**format_pool_sql)
+            except:
+                return 400, f"PluginSQLError: combine [{combine}] need the value", {}
             if "then" in combine:
                 condition, value = combine.split("then")
                 condition = condition.strip()
@@ -29,32 +34,21 @@ def get_variables_from_sql_mode(results, format_pool_sql):
                 if code != 200:
                     return code, msg, res
                 if res:
-                    variables[k] = value
-    if "then" in "".join(variables.values()):
-        return 400, "there are no-match variables in sql mode ", {}
-    return 200, "success", variables
-
-
-def get_initdict_from_sql_mode(results, format_pool_sql):
-    """
-     "full": {"name": "{INITIALIZATION}['xfxs']", "value": [0], "query": "{INITIALIZATION}['xfxs']"}
-    """
-    full = results.get("full", {})
-    for k, v in full.items():  # {"name": "xfxs", "query": "xfxs"}
-        if isinstance(v, list):
-            pass
-        elif isinstance(v, str):
-            from app import app
-            if v not in app.config.get("INITIALIZATION"):
-                return 400, f"PluginSQLModeError: full params point to wrong direction {v}", {}
-            full[k] = app.config.get("INITIALIZATION").get(v)
-        else:
-            return 400, f"PluginSQLModeError: full params contains invalid key {k}", {}
-    return 200, "success", full
+                    variables_copy[k] = value.strip()
+                    break
+    if len(variables_copy) != len(variables):  # 说明遍历完没有找到符合要求的内容
+        return 400, "PluginSQLError: The variables in params 'variables' must all be assigned", {}
+    return 200, "success", variables_copy
 
 
 def get_value_mapped(df, value_map, format_pool_sql):
     df = df.fillna("")
+    # 这里先注释掉，不走项目的映射配置
+    # 项目配置中的map
+    from utils.df_value_mapped import df_value_mapped
+    df = df_value_mapped(df, map_type="VALUE_MAP_FOR_PLUGIN_SQL")
+
+    # sql模式中配置的value_map
     for rule in value_map:
         if len(rule) == 4:
             new_column, old_column, rule_one, default = rule
@@ -63,40 +57,93 @@ def get_value_mapped(df, value_map, format_pool_sql):
             new_column, old_column = column, column
         default = default.format(**format_pool_sql)
         if old_column in df:
-            from app import app
-            df[new_column] = df[old_column].apply(lambda x: rule_one.format(value=x or default, **app.config, **kwargs))
+            df[new_column] = df[old_column].apply(lambda x: rule_one.format(value=x or default, **format_pool_sql))
     return df
 
 
-def df_after_full(db_results, init_dicts):
-    seen = init_dicts.pop("seen", {})  # {"name": ["query"]}
+def get_initdict_from_sql_mode(results, format_pool_sql):
+    """
+     "full": {"name": "{INITIALIZATION}['xfxs']", "value": [0], "query": "{INITIALIZATION}['xfxs']"}
+    """
+    full = results.get("full", {})
+    init_dicts = {}    # 最终的需要做笛卡尔积映射的字段取值字典
+    followers = {}  # 这里面的字段不用做笛卡尔积，和前面字段取值相同如    {"query": "$name"}  query的取值和name的取值相同
+    for k, v in full.items():  # {"name": "xfxs", "query": "xfxs"}
+        if isinstance(v, list):
+            init_dicts[k] = v
+        elif isinstance(v, str):
+            from app import app
+            if v.startswith("$"):
+                followers.setdefault(v[1:], [])
+                followers[v[1:]].append(k)
+            elif v.startswith("fx_db_sql:"):
+                sql = v.replace("fx_db_sql:", "").format(**format_pool_sql)
+                from utils.db_connection import fx_engine
+                try:
+                    res = fx_engine.execute(sql)
+                except:
+                    return 400, f"PluginSQLError: There must be some error in the sql {sql}", {}
+                from utils.get_unilist import get_unilist
+                init_dicts[k] = get_unilist([i[0] for i in res if i[0]])
+            elif v.startswith("zb_db_sql:"):
+                sql = v.replace("zb_db_sql:", "").format(**format_pool_sql)
+                from utils.db_connection import zb_engine
+                try:
+                    res = zb_engine.execute(sql)
+                except:
+                    return 400, f"PluginSQLError: There must be some error in the sql {sql}", {}
+                from utils.get_unilist import get_unilist
+                init_dicts[k] = get_unilist([i[0] for i in res if i[0]])
+
+            elif v not in app.config.get("INITIALIZATION"):
+                return 400, f"PluginSQLModeError: full params point to wrong direction {v}", {}
+            else:
+                init_dicts[k] = app.config.get("INITIALIZATION").get(v)
+        else:
+            return 400, f"PluginSQLModeError: full params contains invalid key {k}", {}
+    return 200, "success", {"init_dicts": init_dicts, "followers": followers}
+
+
+def df_after_full(db_results, fulled):
+    """
+    init_dicts: {"full" {"name": ["", ""], "value": [0]}, "followers": ["name": ["query"]]}
+    """
+    init_dicts = fulled.get("init_dicts")
+    followers = fulled.get("followers")
+
     init_df = pd.DataFrame(product(*[init_dicts.get(i, [""]) for i in db_results.columns]), columns=db_results.columns)
+    for master, slaves in followers.items():
+        for slave in slaves:
+            init_df[slave] = init_df[master]
     if "value" in db_results.columns:
         on = list(db_results.columns)
         on.remove("value")
         res = pd.merge(init_df, db_results, how="left", on=on)
         res["value"] = res["value_y"].apply(lambda x: init_dicts["value"][0] if pd.isna(x) else x)
         return res[db_results.columns]
-    else:
-        return init_df
+    return init_df
 
 
-def get_data_from_db(sql, db, results, format_pool_sql, num, init_dicts):
+def get_data_from_db(sql, db, results, format_pool_sql, num, fulled):
     time_format = results.get("time_format")
     mapping = results.get("mapping")
     value_map = results.get("value_map")
-    sql = sql.format(**format_pool_sql)
+    try:
+        sql = sql.format(**format_pool_sql)
+    except:
+        return 400, f"PluginSQLError: sql [{sql}] needs enough variables to format", {}
 
     try:
         db_results = db.execute(sql)
     except:
         return 400, f"PluginSQLError: There must be some error in the sql {sql}", {}
 
-    db_results = results2df(db_results, db_results.keys())                 # 转df
-    db_results = get_value_mapped(db_results, value_map, format_pool_sql)  # 做映射
+    db_results = results2df(db_results, db_results.keys())                 # 转df：包括项目的映射
+    db_results = get_value_mapped(db_results, value_map, format_pool_sql)  # 做映射：sql模式中自定义的映射方法
     from utils.time_format import df_formated_time
     db_results = df_formated_time(db_results, time_format)                 # 格式化时间
-    db_results = df_after_full(db_results, init_dicts)                     # full之后的df
+    if fulled:
+        db_results = df_after_full(db_results, fulled)                     # full之后的df
     if num == 1:
         if not set(mapping.keys()) <= set(db_results.columns):
             return 400, f"PluginMapError: There are some errors in the param 'map', " \
@@ -109,7 +156,7 @@ def get_data_from_db(sql, db, results, format_pool_sql, num, init_dicts):
     return 200, "success", db_results
 
 
-def get_data_from_dbs(results, format_pool_sql, init_dicts):
+def get_data_from_dbs(results, format_pool_sql, fulled):
     """
     从数据库中获取数据，按照df的格式返回
     """
@@ -119,11 +166,11 @@ def get_data_from_dbs(results, format_pool_sql, init_dicts):
     fx_db_results, zb_db_results = [], []
     from utils.db_connection import fx_engine, zb_engine
     if check_sql(fx_db_sql):  # 需要走分析库
-        code, msg, fx_db_results = get_data_from_db(fx_db_sql, fx_engine, results, format_pool_sql, num, init_dicts)
+        code, msg, fx_db_results = get_data_from_db(fx_db_sql, fx_engine, results, format_pool_sql, num, fulled)
         if code != 200:
             return code, msg, {}
     if check_sql(zb_db_sql):  # 需要走指标库
-        code, msg, zb_db_results = get_data_from_db(zb_db_sql, zb_engine, results, format_pool_sql, num, init_dicts)
+        code, msg, zb_db_results = get_data_from_db(zb_db_sql, zb_engine, results, format_pool_sql, num, fulled)
         if code != 200:
             return code, msg, {}
     return 200, "success", {"fx_db_results": fx_db_results, "zb_db_results": zb_db_results}
@@ -162,15 +209,18 @@ def get_sql_apis(results, format_pool_sql):
     code, msg, variables = get_variables_from_sql_mode(results, format_pool_sql)
     if code != 200:
         return code, msg, {}
+    variables = {k:v.replace("'", "") for k,v in variables.items()}
     format_pool_sql.update(**variables)
 
     # 处理sql模式中的full
-    code, msg, init_dicts = get_initdict_from_sql_mode(results, format_pool_sql)
-    if code != 200:
-        return code, msg, {}
+    fulled = []
+    if results.get("full"):
+        code, msg, fulled = get_initdict_from_sql_mode(results, format_pool_sql)
+        if code != 200:
+            return code, msg, {}
 
     # 从数据库获取数据
-    code, msg, data = get_data_from_dbs(results, format_pool_sql, init_dicts)
+    code, msg, data = get_data_from_dbs(results, format_pool_sql, fulled)
     if code != 200:
         return code, msg, {}
     fx_db_data, zb_db_data = data.get("fx_db_results"), data.get("zb_db_results")
@@ -183,6 +233,7 @@ def get_sql_apis(results, format_pool_sql):
         code, msg, data = merge_and_select_data(fx_db_data, zb_db_data, results)
         if code != 200:
             return code, msg, data
+
     return 200, "success", data
 
 

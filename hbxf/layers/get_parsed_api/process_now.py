@@ -6,7 +6,7 @@ from utils.parse_compute import parse_compute
 
 def process_now(api_dict):
     """
-    输入：{'day': "[2020-06-22, 2020-06-24]"}          day 不支持 now
+    输入：{'day': "[2020-06-22, now-4]"}
     输入：{'month': "[now-2, now]"}
     输入：{'year': "[now-2, now]"}
     输出：{'day': "2020-06-22, 2020-06-24"}

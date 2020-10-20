@@ -3,7 +3,7 @@ import os
 
 from flask import Flask, request, Response, render_template, jsonify, send_from_directory
 from layers import parse_data  # get_parsed_data是所有的入口
-from settings import PROJECT   # 导入项目名称
+from settings import PROJECT   # 导入项目名称、内置extensions
 from flask_caching import Cache
 
 project_settings = __import__(f"settings.{PROJECT}", globals(), locals(), ["DP_CONTAINER", "DP_ROOT"])  # 导入前端配置
@@ -13,6 +13,8 @@ DP_CONTAINER, DP_ROOT = project_settings.DP_CONTAINER, project_settings.DP_ROOT
 app = Flask(__name__, template_folder=os.path.join(DP_CONTAINER, DP_ROOT), static_folder=os.path.join(DP_CONTAINER, DP_ROOT))
 
 # 读取项目配置
+app.config["PROJECT"] = PROJECT
+app.config.from_object(f"settings.global")
 app.config.from_object(f"settings.{PROJECT}")
 app.config.from_object(f"settings.{PROJECT}.init_dicts")
 app.config.from_object(f"settings.{PROJECT}.apis_dispatch")

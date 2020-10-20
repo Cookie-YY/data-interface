@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "msg": "success",
+  "map": {
+    "xfjbh": "信访编号",
+    "xfrq": "信访日期",
+    "nrflmc": "内容分类",
+    "xfxsmc": "信访形式",
+    "xfmdmc": "信访目的",
+    "wtsdmc": "问题属地",
+    "djjgmc": "登记单位",
+    "xfjztmc": "信访状态"
+  },
+  "data": [
+    {
+      "xfjbh": "LF130000201511300320",
+      "xfrq": "2015年11月30日",
+      "nrflmc": "民政/复退安置/转业退伍安置",
+      "xfxsmc": "来访",
+      "xfmdmc": "求决",
+      "wtsdmc": "河北省保定市涞水县",
+      "djjgmc": "民政部",
+      "xfjztmc": "已作出处理意见"
+    }
+  ]
+}

@@ -18,8 +18,8 @@ def check_plugin_args(plugin_apis):
     time_format = plugin_api.get("time_format")
     value_map = plugin_api.get("value_map", [])
     mode = plugin_api.get("mode", "sql")  # 默认模式是sql，支持sql/custom/
-    full = plugin_api.get("full", False)
-    variables = plugin_api.get("variables", False)
+    full = plugin_api.get("full", {})
+    variables = plugin_api.get("variables", {})
     file = ""
     if mode == "custom":
         file = plugin_api.get("file", "")
@@ -30,7 +30,9 @@ def check_plugin_args(plugin_apis):
         if not mapping:
             return 400, "PluginMapError: No 'map' Found", {}
         if not fx_db_sql and not zb_db_sql:
-            return 400, "PluginURLError: At least one SQL, specify fx_db_sql or zb_db_sql"
+            return 400, "PluginURLError: At least one SQL, specify fx_db_sql or zb_db_sql", {}
+        if full and "value" not in full:
+            return 400, "PluginFullError: When using param 'full', please specify 'value'", {}
 
     if mode not in ["sql", "custom"]:
         return 400, "PluginModeError: Wrong mode", {}

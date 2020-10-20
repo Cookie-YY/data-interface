@@ -17,7 +17,6 @@ def get_plugined_apis(request_args):
         if re.search(r'gd_id=(.*)&', i.get("url")).groups():  # 如果是转发过来的
             if re.search(r'gd_id=(.*)&', i.get("url")).groups()[0] == request_args.get("gd_id", ""):
                 plugin_apis.append(i); break
-
     # 如果能够匹配到url，就需要走插件过程，否则直接返回
     if plugin_apis:
         # 检查url

@@ -47,19 +47,19 @@ import sqlalchemy
 #
 # class Table():
 #     shej_01 = Column(32, )
-
-import pandas as pd
-from pandas import CategoricalDtype
-
-init_dicts = {"a": ["ni", "bu", "hao"], "value": [0]}
-
-df = pd.DataFrame({"a": ["ni", "hao"], "value": [1,2]})
-
-# for col in df.columns:
-on = list(df.columns)
-on.remove("value")
-init_df = pd.DataFrame(product(*[init_dicts[i] for i in df.columns]), columns=df.columns)
-# init_df.columns =
-res = pd.merge(init_df, df, how="left", on=on)
-res["value"] =
-print(res)
+#
+# import pandas as pd
+# from pandas import CategoricalDtype
+#
+# init_dicts = {"a": ["ni", "bu", "hao"], "value": [0]}
+#
+# df = pd.DataFrame({"a": ["ni", "hao"], "value": [1,2]})
+#
+# # for col in df.columns:
+# on = list(df.columns)
+# on.remove("value")
+# init_df = pd.DataFrame(product(*[init_dicts[i] for i in df.columns]), columns=df.columns)
+# # init_df.columns =
+# res = pd.merge(init_df, df, how="left", on=on)
+# res["value"] =
+# print(res)

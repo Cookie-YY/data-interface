@@ -1,0 +1,20 @@
+{
+  "code": 200,
+  "msg": "success",
+  "map": {
+    "value_g0_1": "value",
+    "value_g1_1": "precent"
+  },
+  "data": [
+    {
+      "name": "联名件",
+      "value_g0_1": 4,
+      "value_g1_1": 0.79
+    },
+    {
+      "name": "非联名件",
+      "value_g0_1": 500,
+      "value_g1_1": 0.9921
+    }
+  ]
+}

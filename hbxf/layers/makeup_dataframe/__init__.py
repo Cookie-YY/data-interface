@@ -20,6 +20,7 @@ def makeup_dataframe(dataframe_list):
             name = dataframe.get("name")
             stack = dataframe.get("stack")
             value = dataframe.get("value")
+
             # 时间格式化
             from utils.time_format import df_formated_time
             df = df_formated_time(dataframe["df"])

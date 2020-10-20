@@ -20,8 +20,7 @@ def parse_condition(ex_table, k, value):
     else:
         if str(value).startswith("!"):  # 不等于条件
             return getattr(ex_table.columns, k) != str(value).strip("!")
-        else:  # 等于条件
-            return getattr(ex_table.columns, k) == value
+        return getattr(ex_table.columns, k) == value
 
 
 def get_conditions(ex_table, conditions_dict):

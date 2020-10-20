@@ -35,10 +35,9 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
 
 def fill_random_or_real(x, df_dict, s, table):
     if pd.isna(x):
-        if isinstance(df_dict.get(s), dict):
+        value_list = df_dict.get(s)  # 默认 所有取值可能 是一个list
+        if isinstance(df_dict.get(s), dict):  # {"yy": {"table1": [], "table2": []}}
             value_list = df_dict.get(s).get(table[0])
-        else:
-            value_list = df_dict.get(s)
         if str(value_list[0]).startswith("random") or str(value_list[0]).startswith("round"):
             return eval(df_dict.get(s)[0])
         else:
@@ -93,6 +92,25 @@ def update_df(df_dict, df, df_list, update_data, init_df, table):
 'main_name': ''
 }
 """
+
+def get_random_or_zero(df_dict):
+    from app import app
+    value_dict = {k: [0] for k, v in df_dict.items() if len(v) == 1 and "VALUE_" in str(v[0])}
+    if app.config.get("RANDOM_OR_ZERO", "ZERO") == "RANDOM":
+        efficient_digits = app.config.get("EFFICIENT_DIGITS", 4)
+        random_int_lower = app.config.get("RANDOM_INT_LOWER", 100)
+        random_int_upper = app.config.get("RANDOM_INT_UPPER", 999)
+        random_dict = {"random_int_lower": str(random_int_lower),
+                       "random_int_upper": str(random_int_upper),
+                       "efficient_digits": str(efficient_digits)}
+        random_int = "random.randint({random_int_lower},{random_int_upper})".format(**random_dict)
+        random_float = "round(random.random(),{efficient_digits})".format(**random_dict)
+        temp = lambda x: random_float if "VALUE_FLOAT" in x else random_int
+        value_dict = {k: temp(str(v[0])) for k, v in df_dict.items() if len(v) == 1 and "VALUE_" in str(v[0])}
+
+    return {**df_dict, **value_dict}
+
+
 def merge_initialized_table(dataframe):
     # print(dataframe)
     """
@@ -111,7 +129,10 @@ def merge_initialized_table(dataframe):
 
     # 加载字段可能取值 & 联动字段文件的目录
     from app import app
-    df_dict = app.config.get("INITIALIZATION")
+    cus_init = app.config.get("CUS_INITIALIZATION")
+    global_init = app.config.get("INITIALIZATION")  # extension_float 和 extension_int
+    df_dict = {**global_init, **cus_init}
+    df_dict = get_random_or_zero(df_dict)
 
     file_root_path = app.config.get("INITIALIZATION_FILE_PATH")
 

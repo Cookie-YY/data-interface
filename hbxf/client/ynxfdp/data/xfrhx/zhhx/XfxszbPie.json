@@ -1,0 +1,18 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "来信",
+      "value": 36
+    },
+    {
+      "name": "来访",
+      "value": 24
+    },
+    {
+      "name": "网信",
+      "value": 86
+    }
+  ]
+}

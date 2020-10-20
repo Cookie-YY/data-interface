@@ -40,7 +40,7 @@ def order_limit(dataframe):
     #         limit = limit.split("+")[0]
     #         df = df.head(int(limit))
     #         print(limit)
-    if limit and limit != "":
+    if limit and limit != "-1":
         if int(limit) < rows:
             df = df.head(int(limit))
         else:

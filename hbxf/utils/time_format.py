@@ -15,8 +15,7 @@ if platform.system() == "Windows":
 def date2datetime(date):
     if type(date) == datetime.date:
         return datetime.datetime.strptime(str(date), "%Y-%m-%d")
-    else:
-        return date
+    return date
 
 
 def df_formated_time(results, time_format=TIME_FORMAT):
