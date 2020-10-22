@@ -85,7 +85,9 @@ APIS_PLUGIN = [
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-        select xfxs as name, xfxs as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' group by xfxs 
+        SELECT a.name, a.name as query, sum(a.value) as value from (select (CASE WHEN xfxs = '来信' THEN '来信'
+        WHEN xfxs = '来访' THEN '来访'
+        ELSE '网信' END) as name, {v_select} as value, day from {v_table}) a where a.day between '{start}' and '{end}'group by a.name
         """,
         "full": {"name": "xfxs", "value": [0], "query": "$name"}
     },
@@ -137,6 +139,8 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
         "fx_db_sql": """select a.xfjztmc, a.xfrq, a.bjsj, b.xfjbh, b.bljg, b.blfs, b.qxjg from xf_xfjxx a LEFT JOIN xf_blfsxx b on a.xfjbh=b.xfjbh where b.xfjbh='{xfjbh}';""",
         "zb_db_sql": """""",
     },
+
+    ###################### 广东_复杂业务指标（及时受理率/受理率/答复率）######################
 
 
 

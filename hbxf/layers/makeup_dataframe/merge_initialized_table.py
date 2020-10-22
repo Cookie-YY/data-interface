@@ -13,10 +13,12 @@ from layers.makeup_dataframe.day_initialized import day_initialized
 from layers.makeup_dataframe.year_initialized import year_initialized
 
 
-def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
+def make_df_res(df_dict, df_list, df_short_list, text_value_lists):
     val_str = ""  # txt_str为需要初始化的数据
     for i in df_short_list:
-        val_list = df_dict[i]
+        val_list = df_dict.get(i)
+        if not val_list:
+            return 400, f"The Column {i} is not registered", {}
         val_str += str(val_list) + ','
     val_str += str(text_value_lists)  # val_str 是dict和txt文件内容
     val_str.strip(',')
@@ -25,7 +27,7 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
         rows_l.append(i)
     rows = [dict(zip(df_list, d)) for d in rows_l]
     res = pd.DataFrame(rows)
-    return res
+    return 200, "success", res
 
 # 更新df数据
 # df: 输入的df
@@ -34,7 +36,7 @@ def make_df_res(df_dict, df_list,df_short_list, text_value_lists):
 # init_df: 初始化的df
 
 def fill_random_or_real(x, df_dict, s, table):
-    if pd.isna(x):
+    if pd.isna(x) or not x:
         value_list = df_dict.get(s)  # 默认 所有取值可能 是一个list
         if isinstance(df_dict.get(s), dict):  # {"yy": {"table1": [], "table2": []}}
             value_list = df_dict.get(s).get(table[0])
@@ -57,7 +59,7 @@ def update_df(df_dict, df, df_list, update_data, init_df, table):
         # 如果直接merge出错，说明出现了int64和object不能merge的情况，直接全部变成字符串
         res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     except:
-        df = df.astype("str")
+        df = df.astype("str"); init_df = init_df.astype("str")
         res = pd.merge(init_df, df, how="outer", on=on, suffixes=("_x", ""))
     res = res.dropna(subset=[s + "_x"])  # 删除df中不在初始化表中的数据
     res = (res.drop(del_l, axis=1))
@@ -106,7 +108,7 @@ def get_random_or_zero(df_dict):
         random_int = "random.randint({random_int_lower},{random_int_upper})".format(**random_dict)
         random_float = "round(random.random(),{efficient_digits})".format(**random_dict)
         temp = lambda x: random_float if "VALUE_FLOAT" in x else random_int
-        value_dict = {k: temp(str(v[0])) for k, v in df_dict.items() if len(v) == 1 and "VALUE_" in str(v[0])}
+        value_dict = {k: [temp(str(v[0]))] for k, v in df_dict.items() if len(v) == 1 and "VALUE_" in str(v[0])}
 
     return {**df_dict, **value_dict}
 
@@ -150,7 +152,7 @@ def merge_initialized_table(dataframe):
     if len(df_list) == 1:
         column = df_list[0]
         df[column] = df[column].apply(lambda x: fill_random_or_real(x, df_dict, column, table))
-        return df
+        return 200, "success", df
 
     # 获取所有文件
     file_path_list = [os.path.join(file_root_path, i) for i in os.listdir(file_root_path)]
@@ -189,9 +191,11 @@ def merge_initialized_table(dataframe):
         df_short_list = []  # df_short_list为输入列名中不包含txt列名的列表
         [df_short_list.append(i) for i in df_list if i not in txt_columns_lists]
         # 将初始化的数据和列名组成dict格式   # 更新数据
-        res = make_df_res(df_dict, df_list, df_short_list, text_value_lists)
+        code, msg, res = make_df_res(df_dict, df_list, df_short_list, text_value_lists)
+        if code != 200:
+            return code, msg, {}
         result_df = update_df(df_dict, df, df_list, update_data, res, table)
-        return result_df
+        return 200, "success", result_df
     else:
         txt_col = []
         txt_name = ''  # C:\Users\bdsoft130\Desktop\hbxf01\hbxf\init_files\sjnr.txt
@@ -215,14 +219,18 @@ def merge_initialized_table(dataframe):
                 [df_short_list.append(i) for i in df_list if i != txt_col[0]]
                 new_df_list = df_short_list + txt_col  # 初始化df表的列名 ['day', 'xfjc', ’sjnr']
                 # 将初始化的数据和列名组成dict格式   # 更新数据
-                res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
+                code, msg, res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
+                if code != 200:
+                    return code, msg, {}
                 result_df = update_df(df_dict, df, df_list, update_data, res,table)
-                return result_df
+                return 200, "success", result_df
             else:
                 if txt_col[0] in df_dict.keys():
-                    res = make_df_res(df_dict, df_list, df_list, '')
+                    code, msg, res = make_df_res(df_dict, df_list, df_list, '')
+                    if code != 200:
+                        return code, msg, {}
                     result_df = update_df(df_dict, df, df_list, update_data, res,table)
-                    return result_df
+                    return 200, "success", result_df
                 else:
                     [txt_l2.append(i[-1]) for i in txt_l1]
                     txt_l2 = txt_l2[1:]
@@ -230,14 +238,18 @@ def merge_initialized_table(dataframe):
                     [df_short_list.append(i) for i in df_list if i != txt_col[0]]
                     new_df_list = df_short_list + txt_col  # 初始化df表的列名 ['day', 'xfjc', ’sjnr']
                     # 将初始化的数据和列名组成dict格式   # 更新数据
-                    res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
+                    code, msg, res = make_df_res(df_dict, new_df_list, df_short_list, txt_l2)
+                    if code != 200:
+                        return code, msg, {}
                     result_df = update_df(df_dict, df, df_list, update_data, res,table)
-                    return result_df
+                    return 200, "success", result_df
         else:
             # 更新数据
-            res = make_df_res(df_dict, df_list, df_list, '')
+            code, msg, res = make_df_res(df_dict, df_list, df_list, '')
+            if code != 200:
+                return code, msg, {}
             result_df = update_df(df_dict, df, df_list, update_data, res, table)
-            return result_df
+            return 200, "success", result_df
 
 
 if __name__ == '__main__':

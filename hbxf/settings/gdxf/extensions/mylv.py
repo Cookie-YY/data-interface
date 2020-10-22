@@ -24,15 +24,22 @@ class Mylv(Extension):
         stack = self.apis_copy.get("stack", "")
         # value = self.apis_copy.get("value", "")
 
+        # 处理目标字段
+        target = table.split("_")[-1]
+        base = "_".join(table.split("_")[:-1])
+        self.value_my = target.replace("bmyjc", "myjc").replace("jbmyjc", "myjc")
+        self.value_bmy = target.replace("myjc", "bmyjc").replace("jbmyjc", "bmyjc")
+        self.value_jbmy = target.replace("bmyjc", "jbmyjc").replace("myjc", "jbmyjc")
+
         # 处理 table
-        table_my = table.replace("_bmyjc", "_myjc").replace("_jbmyjc", "_myjc")
-        table_bmy = table.replace("_myjc", "_bmyjc").replace("_jbmyjc", "_bmyjc")
-        table_jbmy = table.replace("_bmyjc", "_jbmyjc").replace("_myjc", "_jbmyjc")
+        table_my = f"{base}_{self.value_my}"
+        table_bmy = f"{base}_{self.value_bmy}"
+        table_jbmy = f"{base}_{self.value_jbmy}"
 
         # 处理 columns
-        columns_my = f"{name},{stack},myjc"
-        columns_bmy = f"{name},{stack},bmyjc"
-        columns_jbmy = f"{name},{stack},jbmyjc"
+        columns_my = f"{name},{stack},{self.value_my}"
+        columns_bmy = f"{name},{stack},{self.value_bmy}"
+        columns_jbmy = f"{name},{stack},{self.value_jbmy}"
 
         #
         before_waiting_for_search = [
@@ -49,20 +56,36 @@ class Mylv(Extension):
         :return:
         """
         # 获取结果
-        df_my = self.db_results[0][0]
-        df_bmy = self.db_results[1][0]
-        df_jbmy = self.db_results[2][0]
+        df_my = Extension.groupby_and_sum(self.db_results[0][0], self.value_my)
+        df_bmy = Extension.groupby_and_sum(self.db_results[1][0], self.value_bmy)
+        df_jbmy = Extension.groupby_and_sum(self.db_results[2][0], self.value_jbmy)
+        self.apis_copy["value"] = "mylv"
+        if isinstance(df_my, pd.DataFrame) and isinstance(df_bmy, pd.DataFrame) and isinstance(df_jbmy, pd.DataFrame):
+            # 融合
+            df_my[self.value_my] = df_my[self.value_my].apply(lambda x: 0 if x is None else x)
+            df_bmy[self.value_bmy] = df_bmy[self.value_bmy].apply(lambda x: 0 if x is None else x)
+            df_jbmy[self.value_jbmy] = df_jbmy[self.value_jbmy].apply(lambda x: 0 if x is None else x)
 
-        # 融合
-        columns = list(df_my.columns)
-        columns.remove("myjc")
-        temp = pd.merge(pd.merge(df_my, df_bmy, on=columns, how="inner"), df_jbmy, on=columns, how="inner")
+            columns = list(df_my.columns)
+            columns.remove(self.value_my)
+            if not columns:
+                value = (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]) / (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]+df_bmy[self.value_bmy][0])
+                self.df = pd.DataFrame({"mylv": [value]})
+            else:
+                temp = pd.merge(pd.merge(df_my, df_bmy, on=columns, how="inner"), df_jbmy, on=columns, how="inner")
+                # 计算
+                df_my["mylv"] = (temp[self.value_my]+temp[self.value_jbmy])/(temp[self.value_my]+temp[self.value_jbmy]+temp[self.value_bmy])
 
-        # 计算
-        df_my["extension_float"] = (temp["myjc"]+temp["jbmyjc"])/(temp["myjc"]+temp["jbmyjc"]+temp["bmyjc"])
-        self.apis_copy["value"] = "extension_float"
-        # 处理计算结果
-        df_my.drop("myjc", axis=1, inplace=True)
-        df = df_my.replace(np.nan, 0)
-        df = df.replace([np.inf, -np.inf], 0)
-        self.final_res = {"df": df, "apis_copy": self.apis_copy}
+                # 处理计算结果
+                df_my.drop(self.value_my, axis=1, inplace=True)
+                df = df_my.replace(np.nan, 0)
+                df = df.replace([np.inf, -np.inf], 0)
+                self.df = df
+        else:
+            df_my = 0 if isinstance(df_my, pd.DataFrame) else df_my
+            df_bmy = 0 if isinstance(df_bmy, pd.DataFrame) else df_bmy
+            df_jbmy = 0 if isinstance(df_jbmy, pd.DataFrame) else df_jbmy
+
+            value = (df_my+df_jbmy) / (df_my+df_jbmy+df_bmy)
+            self.df = pd.DataFrame({"mylv": [value]})
+            # self.final_res = {"df": pd.DataFrame({"mylv": [value]}), "apis_copy": self.apis_copy}

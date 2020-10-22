@@ -21,6 +21,8 @@ def groupby_and_sum(df, value):
     # 1. value列是数字      对 groupby_list 做 groupby 对 value 做 sum
     # 2. value列是汉字      对 groupby_list 做 groupby 对 value 做 concatenate
 
+    if df[value][0] is None:
+        return df
     if np.issubdtype(df[value].dtype, np.number):  # 判断这一列是否是数字
         if groupby_list:
             grouped = df.groupby(groupby_list, as_index=False)[value].sum()

@@ -22,11 +22,19 @@ class Cplv(Extension):
         stack = self.apis_copy.get("stack", "")
         # value = self.apis_copy.get("value", "")
 
-        table_yp = table.replace("_cqwpjjc", "_ypjjc")
-        table_wp = table.replace("_ypjjc", "_cqwpjjc")
+        # 处理目标字段
+        target = table.split("_")[-1]
+        base = "_".join(table.split("_")[:-1])
+        self.value_yp = target.replace("cqwpjjc", "ypjjc")
+        self.value_wp = target.replace("ypjjc", "cqwpjjc")
 
-        columns_yp = f"{name},{stack},ypjjc"
-        columns_wp = f"{name},{stack},cqwpjjc"
+        # 处理 table
+        table_yp = f"{base}_{self.value_yp}"
+        table_wp = f"{base}_{self.value_wp}"
+
+        # 处理 columns
+        columns_yp = f"{name},{stack},{self.value_yp}"
+        columns_wp = f"{name},{stack},{self.value_wp}"
 
         before_waiting_for_search = [
             {"table": table_yp, "columns": columns_yp, "conditions": [self.apis]},
@@ -41,19 +49,33 @@ class Cplv(Extension):
         :return:
         """
         # 获取结果
-        df_yp = self.db_results[0][0]
-        df_wp = self.db_results[1][0]
+        df_yp = Extension.groupby_and_sum(self.db_results[0][0], self.value_yp)
+        df_wp = Extension.groupby_and_sum(self.db_results[1][0], self.value_wp)
+        self.apis_copy["value"] = "cplv"
+        if isinstance(df_yp, pd.DataFrame) and isinstance(df_wp, pd.DataFrame):
+            # 融合
+            df_yp[self.value_yp] = df_yp[self.value_yp].apply(lambda x: 0 if x is None else x)
+            df_wp[self.value_wp] = df_wp[self.value_wp].apply(lambda x: 0 if x is None else x)
 
-        # 融合
-        columns = list(df_yp.columns)
-        columns.remove("ypjjc")
-        temp = pd.merge(df_yp, df_wp, on=columns, how="inner")
+            columns = list(df_yp.columns)
+            columns.remove(self.value_yp)
+            if not columns:
+                value = (df_yp[self.value_yp][0]) / (df_yp[self.value_yp][0] + df_wp[self.value_wp][0])
+                self.df = pd.DataFrame({"cplv": [value]})
+            else:
+                temp = pd.merge(df_yp, df_wp, on=columns, how="inner")
 
-        # 计算
-        df_yp["extension_float"] = (temp["ypjjc"])/(temp["ypjjc"]+temp["cqwpjjc"])
-        self.apis_copy["value"] = "extension_float"
-        # 处理计算结果
-        df_yp.drop("ypjjc", axis=1, inplace=True)
-        df = df_yp.replace(np.nan, 0)
-        df = df.replace([np.inf, -np.inf], 0)
-        self.final_res = {"df": df, "apis_copy": self.apis_copy}
+                # 计算
+                df_yp["cplv"] = (temp[self.value_yp])/(temp[self.value_yp]+temp[self.value_wp])
+                # 处理计算结果
+                df_yp.drop(self.value_yp, axis=1, inplace=True)
+                df = df_yp.replace(np.nan, 0)
+                df = df.replace([np.inf, -np.inf], 0)
+                self.df = df
+            # self.final_res = {"df": df, "apis_copy": self.apis_copy}
+        else:
+            df_yp = 0 if isinstance(df_yp, pd.DataFrame) else df_yp
+            df_wp = 0 if isinstance(df_wp, pd.DataFrame) else df_wp
+            value = df_yp / (df_yp + df_wp)
+            self.df = pd.DataFrame({"cplv": [value]})
+            # self.final_res = {"df": pd.DataFrame({"cplv": [value]}), "apis_copy": self.apis_copy}

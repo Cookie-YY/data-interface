@@ -1,6 +1,14 @@
 from sqlalchemy.orm import Session
 import pandas as pd
 
+def get_none_df(apis_copy):
+    from utils.get_unilist import get_unilist
+    columns = [apis_copy.get("name", ""), apis_copy.get("stack", ""), apis_copy.get("value", "")]
+    columns = get_unilist(columns)
+    nonedf = [[pd.DataFrame([[None]*len(columns)], columns=columns)]]
+    return nonedf
+
+
 def params_search(waiting_for_search, apis_copy):
     """
     waiting_for_search: [
@@ -9,10 +17,8 @@ def params_search(waiting_for_search, apis_copy):
     ]
     """
     if not waiting_for_search:
-        columns = [apis_copy.get("name",""), apis_copy.get("stack",""), apis_copy.get("value","")]
-        columns = [i for i in columns if i]
-        df = [[pd.DataFrame([None]*len(columns), columns=columns)]]
-        return 200, "success", df
+        nonedf = get_none_df(apis_copy)
+        return 200, "success", nonedf
     # 获取order, limit
     order, limit = apis_copy["direct_order"], apis_copy["direct_limit"]
     # 获取数据库连接
@@ -26,10 +32,17 @@ def params_search(waiting_for_search, apis_copy):
         ex_table = search_one_table["ex_table"]
         # 查找表格中的字段
         search_table = []
-        try:
-            tar_vs = [getattr(ex_table.columns, i) for i in columns]
-        except AttributeError as e:
-            return 400, f"The table {search_one_table['table']} has no specific columns {e.args}", []
+        for col in columns:
+            hascol = hasattr(ex_table.columns, col)
+            if not hascol:
+                from app import app
+                NOCOLUMN_ERROR = app.config.get("NOCOLUMN_ERROR", True)
+                if NOCOLUMN_ERROR:
+                    return 400, f"NoSuchColumnError: The table {search_one_table['table']} has no specific columns [{col}]", []
+                nonedf = get_none_df(apis_copy)
+                return 200, f"NoSuchColumnError: the {ex_table.fullname} has no condition columns [{col}]", nonedf
+
+        tar_vs = [getattr(ex_table.columns, i) for i in columns]
         # 当前表中的多组条件
         for conditions in search_one_table["conditions"]:  # 第一组条件
             results = session.query(*tar_vs).filter(*conditions)  # results直接print是sql语句

@@ -15,11 +15,18 @@ def parse_one_dataframe(dataframe, groupid=0):
         df = pd.DataFrame({value: [df]})
     data = df.to_dict(orient='records')
 
+
+
     # 处理name和value【可处理一个数和name value对的情况】
     if name:   # 处理name问题
         [i.update({"name": i.pop(name)}) for i in data]
     if value:  # 处理value问题
         [i.update({"value": i.pop(value)}) for i in data]
+
+    # 处理main_name问题
+    if main_name and not stack:
+        data[0]["name"] = main_name
+
     if stack:  # 处理堆叠问题
         data_stack = []
 

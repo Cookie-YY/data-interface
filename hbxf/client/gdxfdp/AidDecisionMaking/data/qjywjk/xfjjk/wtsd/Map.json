@@ -1,62 +1,94 @@
 {
   "code": "200",
   "msg": "success",
-  "data": [
+  "data":[
     {
-      "name": "石家庄市",
-      "value": 6800
+      "name": "汕尾市",
+      "value":100
     },
     {
-      "name": "保定市",
-      "value": 13000
+      "name": "揭阳市",
+      "value":100
     },
     {
-      "name": "唐山市",
-      "value": 3000
+      "name": "汕头市",
+      "value":100
     },
     {
-      "name": "秦皇岛市",
-      "value": 6000
+      "name": "佛山市",
+      "value":100
     },
     {
-      "name": "邯郸市",
-      "value": 4000
+      "name": "潮州市",
+      "value":500
     },
     {
-      "name": "邢台市",
-      "value": 12000
+      "name": "梅州市",
+      "value":1000
     },
     {
-      "name": "张家口市",
-      "value": 14000
+      "name": "河源市",
+      "value":100
     },
     {
-      "name": "承德市",
-      "value": 15000
+      "name": "惠州市",
+      "value":100
     },
     {
-      "name": "沧州市",
-      "value": 12000
+      "name": "韶关市",
+      "value":100
     },
     {
-      "name": "廊坊市",
-      "value": 12000
+      "name": "清远市",
+      "value":100
     },
     {
-      "name": "衡水市",
-      "value": 12000
+      "name": "东莞市",
+      "value":100
     },
     {
-      "name": "定州市",
-      "value": 8000
+      "name": "广州市",
+      "value":400
     },
     {
-      "name": "辛集市",
-      "value": 12000
+      "name": "深圳市",
+      "value":100
     },
     {
-      "name": "雄安新区",
-      "value": 8000
+      "name": "珠海市",
+      "value":100
+    },
+    {
+      "name": "湛江市",
+      "value":100
+    },
+    {
+      "name": "茂名市",
+      "value":100
+    },
+    {
+      "name": "阳江市",
+      "value":100
+    },
+    {
+      "name": "云浮市",
+      "value":100
+    },
+    {
+      "name": "肇庆市",
+      "value":100
+    },
+    {
+      "name": "江门市",
+      "value":800
+    },
+    {
+      "name": "中山市",
+      "value":70
+    },
+    {
+      "name": "东沙群岛",
+      "value":50
     }
   ]
 }

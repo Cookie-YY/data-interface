@@ -25,7 +25,8 @@
 - 【已解决】参数默认值的设置位置，职责要明确【在params_check_each中做默认值，并添加参数控制】
 - 【已解决】特殊参数的含义和注册位置（一个全局变量）
 - 【已解决】设置settings/global.py:【1. 特殊参数的设置以及功能性说明 2. 全局的transformer可用的内容】
-
+- 【已解决】关闭 NoTableError的时候，有表但是字段会报错
+- 【已解决】系统的参数和项目的参数的融合，需要统一
 
 
 ################################################ 待解决 ################################################
@@ -71,6 +72,81 @@
 - 异步写入数据库的方法
 - groupby/tb/hb/zb 写成 extension的形式
 - extension可以多个继承
+- 写一个部署脚本（注意，数据库连接需要同时指定多个）
+    以该项目为模板，生成一个项目名的文件夹
+        1. 删除其他项目的配置文件/前端大屏
+        2. 需要动态指定数据库连接
+        3. win-server.py和uwsgi.ini需要修改
+- 部分接口不能加full参数，不会过滤init_files中的行
+    http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_myjc&name=zrdw&transformer=@mylv&Cqh=广东省&full=true&day=[2020-01-01,2020-10-09]
+- gd_id的分发 可以直接写返回的数据，用于占位，之后实现
+- 转交办效率【groupby  mean(value)】+预警状态的实现
+- 网信占比 （transformer）
+- shij_02=某个市之后可能会在指标表中没有这个字段，需要在别的地方做地图的映射，去表中筛县级
+    xf_xfjg_cd_bmjb_qh_xfbm_myjc【信访绩效考核区划分布的地图的下钻】
+    mode_sql:
+- year参数是[now-5,now] 的gd_id传递数值year
+- 只写table默认就有value并且有index
+    index 的默认是table的最后
+    value 的默认是搭配transformer之后的结果
+        如 table=myjc&transformer=mylv，此时  index=myjc  value=mylv
+- 信访事项（xf_xfjmx)  需要去重计数groupby unicount
+- transformer的传递不带@
+- msg参数改成字典，写每一步的步骤名和参数
+- 规范code  和  msg用一个系统的类统一控制
+- g变量   msg  code  apis_copy   apis   权限
+- app --> current_app
+- 只有一个数字的时候，也可以写main_name
+- 在程序最开始也要做参数校验[只对CUS_SPECIAL检验] 目前会报错，检验所有special
+- extension的覆盖问题（CUS中覆盖了系统的extension）
+- authentication 中对 request_args也做了拷贝，不好
+- name=year&full=true时，不写year的范围会报错，需要有个默认值  加一个项目参数：year的默认时间跨度
+- full=true 可以让接口处指定自己的范围
+- 接口处可以指定自己的value_map
+- extension只有继承才能获得相应的功能
+    如：继承Groupby  才能用groupby的方法
+- 返回值增加log参数 [{"stage": "", "msg": "", "last": "10s"}, {}]
+- 添加是否显示log的项目参数
+- init_project()函数不能写到请求里面
+- 环境初始化脚本（win+Linux)   win的脚本安装
+    1. 安装所有依赖：进度提示
+        依赖软件：redis+knime+anaconda
+        依赖python包：uwsgi+pypinyin+pandoc+....
+    2. 写入环境变量：DABOT_STATE=PRO    选择数据库时先看环境变量
+- 空表的随机化策略和补零的随机化策略
+- 有个gd_id报错
+    http://127.0.0.1:3389/api/xf/?gd_id1=%E7%9F%9B%E7%9B%BE%E5%88%86%E6%9E%90%E9%A2%84%E8%AD%A6%E9%A2%84%E5%88%A4&gd_id2=%E5%9B%BD%E5%AE%B6%E4%B8%93%E9%A1%B9%E7%9D%A3%E5%8A%9E%E4%BF%A1%E8%AE%BF%E6%80%BB%E9%87%8F
+- nlrange在接口处定义  xfcsrange 在接口处定义
+- 初始化值去去数据库查
+- extra_index和gd_id的插件过程结合
+- refresh之后的返回值提供refresh过程的成功数/失败数/时间
+- 批量测试接口：可以拿到接口的log/msg/table/data
+- 批量测试要求的数据表，没有表报出来，没有数据也报错，并可选是否建表，是否填数，是否随机化填数字
+- 蓝图化：/api   /大屏    /refresh    /test
+
+################################################ 影响广东项目 ################################################
+- 【已完成】单个数值搭配main_name指定名称
+- 预警预测/信访事项/转交办效率/
+- 看0Y000089
+- 报告同比
+- 【已完成】apis 分发过程加一个format gd_id4=来信来访网信drop
+- 区划信息用一个字段qh存储时
+    1. name=qh 时full怎么加
+    2. 下钻到县级时，怎么知道是哪几个县
+- 【在sql处解决了】sql的map过程有问题， name/query/value，字段不对了用不上xfxs
+    需要想一个完美的方法
+        1. 网信做条件时 无法完成映射【做展示时可以】
+        2. 做展示时也只有name=xfxs时可以，sql模式 custom模式都不可以
+- 【已解决】main_name会覆盖？
+    http://127.0.0.1:3389/api/xf/?gd_id1=%E5%85%A8%E5%B1%80%E4%B8%9A%E5%8A%A1%E7%9B%91%E6%8E%A7&gd_id2=%E4%BF%A1%E8%AE%BF%E5%BD%A2%E5%BC%8F%E5%88%86%E5%B8%832&gd_id3=%E4%BF%A1%E8%AE%BF%E6%97%A5%E6%9C%9F&day=[2020-09-22,2020-10-22]
+- 参评评价的数字对不上
+- 矛盾分析预警预测   预测都是0和平稳
+- 分发过程
+    【已解决】可以用大括号做字符串的format
+    $开头表示和之前写过的一样【用于占位，测试】
+    不是字符串表示直接返回这个数据
+    明确写需要的字段，多余的字段无视
+- 排名是河北的，先让显示广东的，full=True  bmjb=市级，会不起作用
 
 
 ################################################ 广东项目 ################################################
@@ -199,3 +275,27 @@ xf_blfsxx：
 3391 云南项目
 
 8880 广东移动端
+
+
+1. request_args = {"a": 1}   作为参数传到函数中，函数中对字典的修改会影响外面的request_args
+2. flask的g变量   设置：g.xxx = a         g["xxx"] = a会报错
+3. render_tempalte返回的是一个字符串，直接Response(render_template的返回值)
+4. cookie： res.set_cookie({})    request.cookie.get()
+
+
+
+10-21晚
+1. 检查所有已对接的接口【接口文档中已完成的部分】
+2. 研究sql接口的条件sql写法（用一个函数）
+3. 解决大屏权限的bug
+4. 解决转交办效率+事项数量（groupby的扩展）
+5. 解决预警/预测（基于extension）
+6. 解决微信端的接口
+**写完接口后，关掉报错，部署一版，让前端开始对接
+
+10-22早
+1. 解决微信端的权限
+2. 获得最新的流程开始跑
+3.
+
+

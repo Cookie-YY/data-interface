@@ -1,6 +1,7 @@
 import numpy as np
 
 
+
 class Extension:
     """
     transformer 下的 extension的基类
@@ -13,6 +14,7 @@ class Extension:
     """
     from layers.get_dataframe.params_check import get_real_table
     from layers.get_dataframe.params_parse.params_parse_conditions import get_conditions
+    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_groupby import groupby_and_sum
 
     def __init__(self, apis_copy, apis):  # apis_copy中可以拿到ex_table
         """实现除了transformer其他的条件解析"""
@@ -38,6 +40,7 @@ class Extension:
 
     def after_search(self):
         df = self.db_results[0][0]
+        df = Extension.groupby_and_sum(df, self.apis_copy.get("value"))
         df = df.replace(np.nan, 0)
         df = df.replace([np.inf, -np.inf], 0)
         self.final_res = {"df": df, "apis_copy": self.apis_copy}

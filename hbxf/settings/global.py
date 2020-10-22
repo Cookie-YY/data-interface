@@ -13,8 +13,8 @@ EXTENSIONS = ["groupby", "tb", "hb", "zb"]  # 系统内置extension
 
 # extension过程中的初始化值
 INITIALIZATION = {
-    "extension_float": ["VALUE_FLOAT"],
-    "extension_int": ["VALUE_FLOAT"]
+    "ext_int": ["VALUE_FLOAT"],
+    "ext_float": ["VALUE_FLOAT"]
 }
 
 # 特殊参数，除这些参数以外，其他参数会在数据库中当作条件

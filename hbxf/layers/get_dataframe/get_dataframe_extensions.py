@@ -1,4 +1,4 @@
-def get_dataframe_extensions(apis_copy, apis, special):
+def get_dataframe_extensions(apis):
     """
         ###########获取相关信息（解析参数）##########
         apis：
@@ -9,20 +9,22 @@ def get_dataframe_extensions(apis_copy, apis, special):
         输入一个 apis(字典)     输出一个 dataframe
         """
     # 初始化：加载自定义extension
-    extension_name = apis_copy["transformer"][1:]
+    extension_name = apis["transformer"][1:]
     extension_class = extension_name.capitalize()
     from app import app
     extension_setting = __import__(f"settings.{app.config['PROJECT']}.extensions.{extension_name}", globals(), locals(), [extension_class])  # 导入extension
     Ext = getattr(extension_setting, extension_class)
-    ext = Ext(apis_copy, apis)
+
 
     # 1. 参数逐一校验（数据表是否存在，在extension中校验）
     from layers.get_dataframe.params_check import params_check_each
-    code, msg, apis_copy = params_check_each(apis_copy, special)
+    code, msg, apis_and_apis_copy_after_check = params_check_each(apis)
     if code != 200:
         return code, msg, {}
+    apis_copy, apis = apis_and_apis_copy_after_check["apis_copy"], apis_and_apis_copy_after_check["apis"]
 
     # 2. extension的before_search
+    ext = Ext(apis_copy, apis)
     ext.before_search()
     if ext.code != 200:
         return ext.code, ext.msg, {}
@@ -39,7 +41,7 @@ def get_dataframe_extensions(apis_copy, apis, special):
     ext.after_search()
     if ext.code != 200:
         return ext.code, ext.msg, {}
-    df, apis_copy = ext.final_res["df"], ext.final_res["apis_copy"]
+    df, apis_copy = ext.df, ext.apis_copy
 
     # 如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
     import pandas as pd

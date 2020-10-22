@@ -14,8 +14,10 @@ def parse_condition(ex_table, k, value):
     # like条件
     elif str(k).startswith("LIKE-"):
         k = k.replace("LIKE-", "")
-        return getattr(ex_table.columns, k).like(f"%{value}%")
-
+        k = k.strip("C")
+        if "%" not in value:
+            return getattr(ex_table.columns, k).like(f"%{value}%")
+        return getattr(ex_table.columns, k).like(value)
     # 等或不等条件
     else:
         if str(value).startswith("!"):  # 不等于条件
@@ -27,8 +29,14 @@ def get_conditions(ex_table, conditions_dict):
     conditions = []
     for k, value in conditions_dict.items():
         k = k.strip("C")
-        if not hasattr(ex_table.columns, k) and not hasattr(ex_table.columns, k.strip("LIKE-")):
-            return 400, f"the {ex_table.fullname} has no condition columns [{k}]", {}
+
+        if not hasattr(ex_table.columns, k) and not hasattr(ex_table.columns, k.strip("LIKE-").lstrip("C")):
+            from app import app
+            NOCOLUMN_ERROR = app.config.get("NOCOLUMN_ERROR", True)
+            if NOCOLUMN_ERROR:
+                return 400, f"NoSuchColumnError: the {ex_table.fullname} has no condition columns [{k}]", {}
+            return 200, f"NoSuchColumnError: the {ex_table.fullname} has no condition columns [{k}]", []
+
         conditions.append(parse_condition(ex_table, k, value))
 
     return 200, "success", conditions

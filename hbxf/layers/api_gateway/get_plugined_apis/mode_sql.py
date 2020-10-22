@@ -45,8 +45,8 @@ def get_value_mapped(df, value_map, format_pool_sql):
     df = df.fillna("")
     # 这里先注释掉，不走项目的映射配置
     # 项目配置中的map
-    from utils.df_value_mapped import df_value_mapped
-    df = df_value_mapped(df, map_type="VALUE_MAP_FOR_PLUGIN_SQL")
+    from utils.value_mapped import value_mapped
+    df = value_mapped(df, map_type="VALUE_MAP_FOR_PLUGIN_SQL")
 
     # sql模式中配置的value_map
     for rule in value_map:
@@ -111,7 +111,7 @@ def df_after_full(db_results, fulled):
     init_dicts = fulled.get("init_dicts")
     followers = fulled.get("followers")
 
-    init_df = pd.DataFrame(product(*[init_dicts.get(i, [""]) for i in db_results.columns]), columns=db_results.columns)
+    init_df = pd.DataFrame(list(product(*[init_dicts.get(i, [""]) for i in db_results.columns])), columns=db_results.columns)
     for master, slaves in followers.items():
         for slave in slaves:
             init_df[slave] = init_df[master]

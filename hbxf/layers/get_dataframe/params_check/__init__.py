@@ -2,7 +2,7 @@ from .params_check_each import params_check_each
 from .params_check_real_table import get_real_table
 
 
-def params_check(apis_copy, special):
+def params_check(apis):
     """
     检测所有的参数的合法性，kwargs就是所有参数的字典
     规则：
@@ -15,11 +15,10 @@ def params_check(apis_copy, special):
                 4. @zb             # 相当于 $name / $name
     """
     # 1. 参数逐一校验
-    code, msg, apis_copy_after_check = params_check_each(apis_copy, special)
+    code, msg, apis_and_apis_copy_after_check = params_check_each(apis)
     if code != 200:
         return code, msg, {}
-    # apis_copy.update(checked_params)  # 检查后的参数可能会有改动，更新给apis_copy
-
+    apis_copy_after_check, apis = apis_and_apis_copy_after_check["apis_copy"], apis_and_apis_copy_after_check["apis"]
     # 2. 表是否存在
     code, msg, real_table = get_real_table(apis_copy_after_check)
     if code != 200:
@@ -27,4 +26,4 @@ def params_check(apis_copy, special):
 
     apis_copy_after_check.update(real_table)  # {"table": "", "ex_table": }
 
-    return 200, "success", apis_copy_after_check
+    return 200, "success", apis_and_apis_copy_after_check

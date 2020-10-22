@@ -28,7 +28,9 @@ def makeup_dataframe(dataframe_list):
 
             # 排序补零：
             if dataframe.get("full"):
-                df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
+                code, msg, df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
+                if code != 200:
+                    return 400, msg, {}
                 dataframe["df"] = df
 
             # 重新排序+limit

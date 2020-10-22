@@ -14,11 +14,12 @@ def get_table_when_table(table, realm, busin, timetype, qh, lx, index):
     if lx:  # pass
         pass
     if index:  # 肯定是最后一个有变动：zb/tb/hb除外
-        components = table.split("_")
-        if table.endswith("_zb") or table.endswith("_tb") or table.endswith("_hb"):
-            table = f'{"_".join(components[:-2])}_{index}'
-        else:
-            table = f'{"_".join(components[:-1])}_{index}'
+        if not table.startswith("search"):
+            components = table.split("_")
+            if table.endswith("_zb") or table.endswith("_tb") or table.endswith("_hb"):
+                table = f'{"_".join(components[:-2])}_{index}'
+            else:
+                table = f'{"_".join(components[:-1])}_{index}'
     return table
 
 
@@ -79,5 +80,5 @@ def get_real_table(apis_copy):
 
     from app import app
     if not app.config.get("NOTABLE_ERROR", True):
-        return 200, "success", {"table": "test", "ex_table": "test"}
+        return 200, "NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {"table": "test", "ex_table": "test"}
     return 400, f" NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {}

@@ -1,4 +1,4 @@
-def get_dataframe_common(apis_copy, apis, special):
+def get_dataframe_common(apis):
     """
     ###########获取相关信息（解析参数）##########
     apis：
@@ -10,9 +10,10 @@ def get_dataframe_common(apis_copy, apis, special):
     """
     # 参数校验
     from layers.get_dataframe.params_check import params_check
-    code, msg, apis_copy = params_check(apis_copy, special)
+    code, msg, apis_and_apis_copy_after_check = params_check(apis)
     if code != 200:
         return code, msg, {}
+    apis_copy, apis = apis_and_apis_copy_after_check["apis_copy"], apis_and_apis_copy_after_check["apis"]
 
     # 参数解析
     waiting_for_search = []

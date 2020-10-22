@@ -3,6 +3,7 @@ from layers.convert_dataframe import convert_dataframe
 from layers.get_dataframe import get_dataframe
 from layers.get_parsed_api import get_parsed_apis
 from layers.get_splited_apis import get_splited_apis
+from layers.init_project import init_project
 from layers.makeup_dataframe import makeup_dataframe
 
 
@@ -17,6 +18,9 @@ def parse_data(realm, index, request_args):
     5. 补充层 [makeup_dataframe]:    按照标准的格式排序补零                                         dataframes   -> dataframes
     6. 转换层 [convert_dataframe]:   将 pandas转成需要的格式                                       dataframes   -> json
     """
+    # 初始化项目
+    init_project()
+
     # 0.网关层(apis -> apis)
     # 1. 权限验证
     # 2. 插件化开发

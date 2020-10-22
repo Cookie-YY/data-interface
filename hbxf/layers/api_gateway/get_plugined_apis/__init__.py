@@ -14,7 +14,7 @@ def get_plugined_apis(request_args):
     for i in app.config.get("APIS_PLUGIN", []):
         if re.match(i.get("url"), request.full_path):  # 如果能够匹配到全路径
             plugin_apis.append(i); break
-        if re.search(r'gd_id=(.*)&', i.get("url")).groups():  # 如果是转发过来的
+        if re.search(r'gd_id=(.*)&', i.get("url")):  # 如果是转发过来的
             if re.search(r'gd_id=(.*)&', i.get("url")).groups()[0] == request_args.get("gd_id", ""):
                 plugin_apis.append(i); break
     # 如果能够匹配到url，就需要走插件过程，否则直接返回

@@ -30,6 +30,7 @@ def get_splited_apis(realm, index, request_args):
             for condition in group.split(";"):  # condition = "lx:to-xfxs"
                 'condition = "lx@to:xfxs"'
                 target, operation = condition.split("@", 1)
+                operation = operation if ":" in operation else operation+":"
                 operator, op_content = operation.split(":")
                 # target:     表名：busin/index/timetype/qh/lx
                 #                  name/value
@@ -54,7 +55,7 @@ def get_splited_apis(realm, index, request_args):
                     return 400, "unsupported operator", {}
             request_args_set.append(request_args_for_each_group)
         return 200, "success", dict(zip(main_name, request_args_set))
-    return 200, "success", {"": {**request_args, **base_dict}}
+    return 200, "success", {main_name[0]: {**request_args, **base_dict}}
 
 
 if __name__ == '__main__':

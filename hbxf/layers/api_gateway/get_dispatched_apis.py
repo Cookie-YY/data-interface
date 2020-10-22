@@ -12,10 +12,10 @@ def url2dict(url):
 
 
 def check_graph_id_dict(graph_id_dict):
-    # 检查是否所有key都是 gd_id0 的格式
-    for graph_id in graph_id_dict:
-        if not re.match(r"gd_id[-]?\d+", graph_id):
-            return 400, f"GRAPHIDERROR: The structure must be graph_id and number {graph_id}", {}
+    # # 检查是否所有key都是 gd_id0 的格式
+    # for graph_id in graph_id_dict:
+    #     if not re.match(r"gd_id[-]?\d+", graph_id):
+    #         return 400, f"GRAPHIDERROR: The structure must be graph_id and number {graph_id}", {}
 
     # 按照数字排序
     graph_id_list = sorted(graph_id_dict, key=lambda x: int(x.strip("gd_id")))
@@ -26,9 +26,14 @@ def check_graph_id_dict(graph_id_dict):
     from app import app
     url_dispatch_map = app.config["URL_DISPATCH_MAP"]
 
-    if graph_id not in url_dispatch_map:
+    url = None
+    for graph_id_assigned in url_dispatch_map:
+        if re.match(graph_id_assigned, graph_id):
+            url = url_dispatch_map[graph_id_assigned]
+    if url is None:
+    # if graph_id not in url_dispatch_map:
         return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
-    url = url_dispatch_map[graph_id]
+    # url = url_dispatch_map[graph_id]
 
     return 200, "success", url
 
@@ -46,6 +51,7 @@ def get_dispatched_apis(request_args):
         code, msg, url = check_graph_id_dict(graph_id_dict)  # 得到映射后的url
         if code != 200:
             return code, msg, {}
+        url = url.format(**request_args_copy)   # 做一个填空
         graph_id_url_dict = url2dict(url)       # url --> dict
         graph_id_url_dict.update(request_args)  # 用剩余参数更新dict
         return 200, "success", graph_id_url_dict

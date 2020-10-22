@@ -16,24 +16,33 @@ def get_parsed_apis(api_dicts):
     """
     result = {}
     for main_name, api_dict in api_dicts.items():
-        code, msg, result_this = process_drop(api_dict)           # 处理drop问题
+        # 处理drop问题
+        code, msg, result_this = process_drop(api_dict)
         if code != 200:
             return code, msg, {}
 
-        code, msg, result_this = process_dollar(result_this)      # 处理$引用问题
+        # 处理$引用问题
+        code, msg, result_this = process_dollar(result_this)
         if code != 200:
             return code, msg, {}
 
-        code, msg, result_this = process_now(result_this)         # 处理now问题
+        # 处理now问题
+        code, msg, result_this = process_now(result_this)
         if code != 200:
             return code, msg, {}
 
-        code, msg, result_this = process_invalid(result_this)     # 处理invalid问题
+        # 处理invalid问题
+        code, msg, result_this = process_invalid(result_this)
         if code != 200:
             return code, msg, {}
 
+        # 处理参数映射
         from utils.value_mapped import value_mapped
-        result_this = value_mapped(result_this)                    # 处理参数映射
+        result_this = value_mapped(result_this)
+
+        # 处理权限问题
+        from layers.get_parsed_api.process_auth import process_auth
+        result_this = process_auth(result_this)
 
         result[main_name] = result_this
     return 200, "success", result
