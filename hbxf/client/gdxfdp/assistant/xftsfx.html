@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/xftsfx.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+    <script src="./js/echarts.min.js"></script>
+    <!--模态框-->
+    <link rel="stylesheet" type="text/css" href="css/edbox.css"/>
+		<!-- 日期选择器样式 -->
+	<link rel="stylesheet" type="text/css" href="css/dateTime.css"/>
+	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/arrange.js"></script>
+	<style type="text/css">
+			.modal{
+				background-color: #fff;
+				padding: 10px 20px;
+				min-height: 400px;
+			}
+			.modal-body{
+				position: relative;
+				height: 300px;
+			}
+			.modal .modal-body input[type="text"]{
+				display:inline-block;
+				height:25px;
+				text-align:center;
+				color:#333;
+			}
+			.modal-title{
+				font-size:16px;
+				text-align: center;
+				height:30px;
+				line-height: 30px;
+			}
+			.btn {
+				font-size: 14px;
+				display: block;
+				width:60px;
+				line-height: 25px;
+				text-align: center;
+				color: #FFFFFF;
+				height: 25px;
+				background:#5099FC;
+				margin-right: 15px;
+    		margin-top: 8px;
+			}
+			.edbox .edbox-body .edbox-close{
+				top: auto;
+				bottom: 20px;
+			}
+			.edbox .edbox-close::before{
+				content: '';
+				transform: rotate(0);
+				font-size: 14px;
+				display: block;
+			}
+			.dateTimeWrap{
+				top: 30px !important;
+				left: 0 !important;
+			}
+			.inner {
+				display: flex;
+    		justify-content: flex-end;
+			}
+		</style>
+</head>
+<body>
+    <div class="title">
+        <img class="fh" src="./image/fh.png" alt="">
+        <p>信访态势分析</p>
+        <p class="riqi" id="riqi">
+				<a href="javascript:;" edbox data-box-target="#modal" data-box-after-close="closeDateSelect" id="showModal">
+					<img src="image/abc_05.png"/>
+				</a>
+		</p>
+    </div>
+    <div class="xftsfx_nav">
+        <img src="./image/bj1.png" alt="">
+        <div>
+            <p>信访量</p>
+            <p id="num">0</p>
+            <p>单位：件次</p>
+        </div>
+    </div>
+    <div class="xftsfx_mian">
+        <div class="xftsfx_index">
+            <p class="xftsfx_index_title">
+                <span>信访形势分布</span>
+            </p>
+            <div id="main1" class="xftsfx_index_titlea" style="height:300px;"></div>
+        </div>
+        <div class="xftsfx_index" style="margin-bottom: 200px;">
+	    		<div class="xftsfx_index_title">
+	    			<span>信访量走势</span>
+	    		</div>
+	    		<div>
+	    			<!--<div class="tabs">
+		    				<span class="active">月度</span>
+		    				<span>年度</span>
+			    	</div>-->
+			    	<!--<div class="content" style="width: 100%;">-->
+				    		<div id="main2" class="active" style="width:100%;height:340px;"></div>
+				    		<!--<div id="main3" style="width:340px;height:340px;"></div>-->
+				    <!--</div>-->
+	    		</div>
+	    	</div>
+    </div>
+    <div class="footer">
+    	<a href="home.html">
+    		<p><img src="./image/kh.png" alt=""><span>考核</span></p>
+    	</a>
+        <a href="gzyxfx.html">
+        	<p><img src="./image/yx.png" alt=""><span>运行</span></p>
+        </a>
+        <a href="xftsfx.html">
+        	<p><img src="./image/ts1.png"  alt=""><span style="background: linear-gradient(to right, #54c3fd, #4c73fc);-webkit-background-clip: text;color: transparent;">态势</span></p>
+        </a>
+        <a href="yjxxfx.html">
+        	<p><img src="./image/yj.png" alt=""><span>预警</span></p>
+        </a>
+    </div>
+    <!-- 模态框 -->
+		<div id="modal" class="modal" style="display: none;">
+			<p class="modal-title">时间选择</p>
+			<div class="modal-body">
+				<input type="text" placeholder="请选择日期" class="date-select" id="startDate">
+				-
+				<input type="text" placeholder="请选择日期" class="date-select" id="endDate">
+			</div>
+			<div class="inner">
+				<span class="btn">确认</span>
+			</div>
+		</div>
+</body>
+
+<!-- 模态框行为 -->
+<script src="./js/jquery.edbox.js" type="text/javascript" charset="utf-8"></script>
+<!-- 日期选择器行为 -->
+<script src="./js/dateTime.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var day = '[now-30,now]'
+	$("#startDate").datetime({
+		type:"date",
+		value:[2020,10,01],
+		success:function(res){
+		}
+	})
+	$("#endDate").datetime({
+		type:"date",
+		value:[2020,10,20],
+		success:function(res){
+		}
+	})
+	
+	// 默认开启第一个时间选择器
+	$('#showModal').click(function() {
+		// $('.date-select').eq(0).focus()
+		$('.date-select').eq(0).click()
+	})
+	
+	// 模态框关闭后 关闭时间选择器
+	function closeDateSelect(){
+		$('.dateTimeWrap').hide()
+	}
+	$('.btn').click(function() {
+		let startDate = $('#startDate').val();
+		let endDate = $('#endDate').val();
+		if (!startDate && !endDate) {
+			day = '[now-30,now]'
+		} else {
+			let arrS = startDate.split('-');
+			let arrE = endDate.split('-');
+			for(let i=0;i< arrS.length;i++) {
+				arrS[i] = arrS[i] < 10 ? '0'+ arrS[i] : arrS[i]
+			}
+			arrS = arrS.join('-')
+
+			for(let i=0;i< arrE.length;i++) {
+				arrE[i] = arrE[i] < 10 ? '0'+ arrE[i] : arrE[i]
+			}
+			arrE = arrE.join('-')
+			day = `[${arrS}, ${arrE}]`;
+		}
+		getAPI()
+		$.edbox('close')
+	})
+
+	$(function() {　　
+			$(".xftsfx_index .tabs span").click(function()　　 {　　　　 //获取点击的元素给其添加样式，讲其兄弟元素的样式移除
+				　　　　
+				$(this).addClass("active").siblings().removeClass("active");　　　　 //获取选中元素的下标
+				　　　　
+				var index = $(this).index();　　　　
+				$(this).parent().siblings().children().eq(index).addClass("active").siblings().removeClass("active");　　
+			});
+	});
+</script>
+<script type="text/javascript" src="./js/xftsfx.js"></script>
+</html>

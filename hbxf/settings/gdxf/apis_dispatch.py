@@ -192,13 +192,13 @@ URL_DISPATCH_MAP = {
     # 【待完成】按期答复率+网信占比【暂时只有一个】
     "信访绩效考核_区划分布_总体_drop": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&xfxs=drop&transformer=@mylv&Cqh=广东省&full=true&day=[2020-01-01,2020-10-09]&extra_index=transformer@to:@mylv&main_name=按期答复率,网信占比",
     "信访绩效考核_区划分布_总体_全部": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&xfxs=drop&transformer=@mylv&Cqh=广东省&full=true&day=[2020-01-01,2020-10-09]&extra_index=transformer@to:@mylv&main_name=按期答复率,网信占比",
-    "信访绩效考核_区划分布_总体_(?!全部)(?!drop)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&xfxs={gd_id4}&transformer=@mylv&Cqh=广东省&full=true&full=true&day=[2020-01-01,2020-10-09]&main_name=满意率",
+    "信访绩效考核_区划分布_总体_(?!全部)(?!drop)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&xfxs={gd_id4}&transformer=@mylv&Cqh=广东省&full=true&full=true&day=[2020-01-01,2020-10-09]&main_name=按期答复率",
     # 【待完成】参评率+满意率+及时受理率【区划下钻未完成】
-    "信访绩效考核_区划分布_信访部门_全部": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率",
-    "信访绩效考核_区划分布_信访部门_(?!全部)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&xfxs={gd_id4}&transformer=@cplv&Cqh=广东省&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率",
+    "信访绩效考核_区划分布_信访部门_全部": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率,及时受理率",
+    "信访绩效考核_区划分布_信访部门_(?!全部)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&xfxs={gd_id4}&transformer=@cplv&Cqh=广东省&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率,及时受理率",
     # 【待完成】参评率+满意率+及时受理率【区划下钻未完成】
-    "信访绩效考核_区划分布_责任单位_全部": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率",
-    "信访绩效考核_区划分布_责任单位_(?!全部)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率&day=[2020-01-01,2020-10-01]",
+    "信访绩效考核_区划分布_责任单位_全部": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv,table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率,及时受理率",
+    "信访绩效考核_区划分布_责任单位_(?!全部)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&xfxs=drop&transformer=@cplv&Cqh=广东省&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv,table@to:xf_xfjg_cd_qh_zrdw_xfxs_myjc;transformer@to:@mylv&main_name=参评率,满意率,及时受理率&day=[2020-01-01,2020-10-01]",
 
     # 地图
     # 【整体基本都要待开发，因为qh只有一个字段，需要单独维护区划映射】
@@ -286,7 +286,7 @@ URL_DISPATCH_MAP = {
     "全局业务监控_责任单位_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]",
 
     # 需要传Cqh
-    "全局业务监控_责任单位_满意率排名": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_myjc&name=zrdw&transformer=@mylv&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&Cqh=广州市",
+    "全局业务监控_责任单位_满意率排名": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_myjc&full=true&name=zrdw&transformer=@mylv&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&Cqh=广州市",
 
     # 矛盾分析预警预判-现状分析
     "矛盾分析预警预判_专项督办信访总量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_zxdbxfjc&value=zxdbxfjc&year=2020",
@@ -331,8 +331,8 @@ URL_DISPATCH_MAP = {
 
     "态势_信访量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfxs_xfjc&value=xfjc&transformer=@groupby&full=true&day=[now-30,now]",
     "态势_信访形式分布": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfxs_xfjc&value=xfjc&name=xfxs&transformer=@groupby&full=true&day=[now-30,now]",
-    "态势_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfxs_xfjc&value=xfjc&name=day&transformer=@groupby&full=true&day=[now-30,now]",
+    "态势_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfxs_xfjc&transformer=@groupby&value=xfjc&name=day&transformer=@groupby&full=true&day=[now-30,now]",
 
-    "预警_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&value=xfjc&name=day&full=true&day=[now-30,now]",
+    "预警_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&transformer=@groupby&value=xfjc&name=day&full=true&day=[now-30,now]",
 
 }

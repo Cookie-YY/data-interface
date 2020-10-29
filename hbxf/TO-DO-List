@@ -96,7 +96,7 @@
 - 规范code  和  msg用一个系统的类统一控制
 - g变量   msg  code  apis_copy   apis   权限
 - app --> current_app
-- 只有一个数字的时候，也可以写main_name
+- 【已完成】只有一个数字的时候，也可以写main_name
 - 在程序最开始也要做参数校验[只对CUS_SPECIAL检验] 目前会报错，检验所有special
 - extension的覆盖问题（CUS中覆盖了系统的extension）
 - authentication 中对 request_args也做了拷贝，不好
@@ -111,7 +111,7 @@
 - 环境初始化脚本（win+Linux)   win的脚本安装
     1. 安装所有依赖：进度提示
         依赖软件：redis+knime+anaconda
-        依赖python包：uwsgi+pypinyin+pandoc+....
+        依赖python包：uwsgi+pymysql+cx_Oracle+flask_caching+pypinyin+pypandoc[+pandoc]+redis....
     2. 写入环境变量：DABOT_STATE=PRO    选择数据库时先看环境变量
 - 空表的随机化策略和补零的随机化策略
 - 有个gd_id报错
@@ -123,6 +123,8 @@
 - 批量测试接口：可以拿到接口的log/msg/table/data
 - 批量测试要求的数据表，没有表报出来，没有数据也报错，并可选是否建表，是否填数，是否随机化填数字
 - 蓝图化：/api   /大屏    /refresh    /test
+- 比率的数字，控制一下上下限，和数字的随机数一样
+
 
 ################################################ 影响广东项目 ################################################
 - 【已完成】单个数值搭配main_name指定名称
@@ -287,7 +289,7 @@ xf_blfsxx：
 10-21晚
 1. 检查所有已对接的接口【接口文档中已完成的部分】
 2. 研究sql接口的条件sql写法（用一个函数）
-3. 解决大屏权限的bug
+3. 【已解决】解决大屏权限的bug
 4. 解决转交办效率+事项数量（groupby的扩展）
 5. 解决预警/预测（基于extension）
 6. 解决微信端的接口

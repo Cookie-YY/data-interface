@@ -6,7 +6,7 @@ def xfj_xx(conn, sql):
     try:
         # conn = pymysql.connect(host=DB_HOST, user=DB_USER, passwd=DB_PASSWD, port=DB_PORT, db=DB_DBNAME, charset='utf8')
         cur = conn.cursor()       # 建立游标
-        cur.execute(sql)
+        cur.execute(sql+"limit 20")
         return cur
     except Exception as e:
         print(e)

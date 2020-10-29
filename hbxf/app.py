@@ -92,9 +92,14 @@ def get_index(dp):
 def get_urljs(dp):
     return send_from_directory(os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp), "url.js")
 
+# html静态页面
+@app.route(f"/<re({dp_url_re}):dp>/<re('.*\.html'):html>")
+def get_html(dp, html):
+    return send_from_directory(os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp), html)
+
 
 # static resource (static/font/map)
-@app.route(f"/<re({dp_url_re}):dp>/<re(r'data|font|map|static|'):resource_type>/<path:filename>")
+@app.route(f"/<re({dp_url_re}):dp>/<re(r'data|font|map|static|js|image|css'):resource_type>/<path:filename>")
 def get_static(dp, resource_type, filename):
     return send_from_directory(os.path.join(app.root_path, DP_CONTAINER, DP_ROOT, dp, resource_type), filename)
 

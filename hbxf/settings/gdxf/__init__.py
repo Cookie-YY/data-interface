@@ -45,6 +45,9 @@ DP_URL_1 = "AidDecisionMaking"  # 访问大屏的url（不用写/）
 DP_DIR_2 = "LeadCockpit"
 DP_URL_2 = "LeadCockpit"        # 访问大屏的url（不用写/）
 
+DP_DIR_3 = "assistant"
+DP_URL_3 = "assistant"        # 访问大屏的url（不用写/）
+
 # 头像等获取的文件的地址
 FILE_URL = f"/{DP_ROOT}/file/"
 FILE_PATH = os.path.join(BASE_DIR, DP_CONTAINER, DP_ROOT, "file")
