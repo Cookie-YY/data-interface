@@ -32,7 +32,7 @@ URL_DISPATCH_MAP = {
     # a.地域分布
     "信访态势统计分析_内容分类_地域分布_一级内容分类信访量": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=shej_02&value=xfjc&transformer=@groupby&full=true&day=[2020-10-01,2020-10-20]",
     "信访态势统计分析_内容分类_地域分布_三类指数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=yjnr&value=xfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
-    "信访态势统计分析_内容分类_地域分布_饼图": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=yjnr&value=xfjc&stack=yjnr&transformer=@groupby&full=true&day=[2019-01-01,2020-12-10]",
+    "信访态势统计分析_内容分类_地域分布_饼图": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=yjnr&value=xfjc&transformer=@groupby&full=true&day=[2019-01-01,2020-12-10]",
     "信访态势统计分析_内容分类_地域分布_**信访量分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_yjnr_xfjc&name=shij_02&value=xfjc&stack=shij_02&transformer=@groupby&extra_index=table@to:xf_xfj_cd_shij_yjnr_xfrc;value@to:xfrc&main_name=件次,人次,&day=[2019-01-01,2020-12-10]&yjnr=卫生计生&full=true",
     # b.问题分类
     "信访态势统计分析_内容分类_问题分类_二级内容分类信访量?": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_ejnr_xfjc&name=shej_02&value=xfjc&stack=shej_02&transformer=@groupby&year=2020&order=-xfjc&extra_index=transformer@to:@tb;order@drop;month@to:now&main_name=件次,同比&full=true?",
