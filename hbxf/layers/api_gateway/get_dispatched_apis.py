@@ -5,9 +5,10 @@ def url2dict(url):
     url = url.split("?")[1]
     request_args = {}
     for item in url.split("&"):
-        k, v = item.split("=", 1)
-        if k:
-            request_args[k] = v
+        if item:
+            k, v = item.split("=", 1)
+            if k:
+                request_args[k] = v
     return request_args
 
 

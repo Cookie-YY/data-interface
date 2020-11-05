@@ -70,6 +70,7 @@ class Mylv(Extension):
             columns.remove(self.value_my)
             if not columns:
                 value = (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]) / (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]+df_bmy[self.value_bmy][0])
+                value = 0 if np.isnan(value) else value
                 self.df = pd.DataFrame({"mylv": [value]})
             else:
                 temp = pd.merge(pd.merge(df_my, df_bmy, on=columns, how="inner"), df_jbmy, on=columns, how="inner")

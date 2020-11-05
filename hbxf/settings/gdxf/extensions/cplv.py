@@ -61,6 +61,7 @@ class Cplv(Extension):
             columns.remove(self.value_yp)
             if not columns:
                 value = (df_yp[self.value_yp][0]) / (df_yp[self.value_yp][0] + df_wp[self.value_wp][0])
+                value = 0 if np.isnan(value) else value
                 self.df = pd.DataFrame({"cplv": [value]})
             else:
                 temp = pd.merge(df_yp, df_wp, on=columns, how="inner")
