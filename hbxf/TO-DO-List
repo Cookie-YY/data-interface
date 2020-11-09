@@ -343,13 +343,13 @@ xf_blfsxx：
     2. 信访部门 + 责任单位  的排行  和 对应的饼图/比率
     ⭐解决方案1：transformer=@jssllv  在extension中实现search方法（基类）
     ⭐解决方案2：走插件过程，计算的数据和之前name/value/stack的方式做一个extra_index
-- 告警的同比环比20%的判断
+- 预警状态的同比环比20%的判断  10%异常
     问题：如何利用tb/hb
-    ⭐方案：封装tb/hb的方法，引入到@gj中，before_search 和 after_search都得用
+    ⭐方案：封装tb/hb的方法，引入到@yjzt中，before_search 和 after_search都得用
 - 权限
     信访部门 + 责任单位 的弹窗
     地图 以及 地图现在full的问题
-    ⭐方案：在api_gateway层加入cookie之后，在parse_api层 通过cookie加入cond_trans参数
+    ⭐方案：在api_gateway层加入cookie之后，在parse_api层 通过cookie加入 param_trans 参数
 - 信访部门+责任单位的排名策略不同
     信访部门
     ⭐方案：增加cond_trans   xfbm=广东省信访局&cond_trans=xfbm@trimXfbm【可以在里面判断是否需要真的做trim】
@@ -361,3 +361,10 @@ xf_blfsxx：
 
     信访部门和责任单位都有一个full的问题
     ⭐方案：重写full过程
+- 近十二个月的接口开发
+- 新页面的接口开发（今日动态）
+
+关于extension
+    拆分 BaseSearch类  和 Extension类
+    Base_Search类有完整的before_search   search   after_search
+    Extension类是一个工具包，提供基础的groupbysum   groupbyunicount   tb    hb   方法

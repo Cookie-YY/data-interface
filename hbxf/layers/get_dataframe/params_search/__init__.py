@@ -54,7 +54,8 @@ def params_search(waiting_for_search, apis_copy):
             if limit:
                 results = results.limit(limit)
             from utils.results2df import results2df
-            data = results2df(results, columns, apis_copy)
+            from utils.get_unilist import get_unilist
+            data = results2df(results, get_unilist(columns), apis_copy)
             search_table.append(data)
         searched.append(search_table)
     session.close()

@@ -23,24 +23,33 @@ def get_dataframe_extensions(apis):
         return code, msg, {}
     apis_copy, apis = apis_and_apis_copy_after_check["apis_copy"], apis_and_apis_copy_after_check["apis"]
 
-    # 2. extension的before_search
+    # 2. extension的before_search/search/after_search
     ext = Ext(apis_copy, apis)
-    ext.before_search()
+    ext.before_search()   # search 前准备
     if ext.code != 200:
         return ext.code, ext.msg, {}
-    waiting_for_search = ext.waiting_for_search
-
-    # 3. 数据库查询，得到dataframe
-    from layers.get_dataframe.params_search import params_search
-    code, msg, results = params_search(waiting_for_search, apis_copy)
-    if code != 200:
-        return code, msg, {}
-    ext.db_results = results
-
-    # 4. 将多个dataframe合并成一个（transformer）
-    ext.after_search()
+    ext.search()          # search 查询
     if ext.code != 200:
         return ext.code, ext.msg, {}
+    ext.after_search()    # search 后聚合
+    if ext.code != 200:
+        return ext.code, ext.msg, {}
+
+
+
+    # waiting_for_search = ext.waiting_for_search
+    #
+    # # 3. 数据库查询，得到dataframe
+    # from layers.get_dataframe.params_search import params_search
+    # code, msg, results = params_search(waiting_for_search, apis_copy)
+    # if code != 200:
+    #     return code, msg, {}
+    # ext.db_results = results
+    #
+    # # 4. 将多个dataframe合并成一个（transformer）
+    # ext.after_search()
+    # if ext.code != 200:
+    #     return ext.code, ext.msg, {}
     df, apis_copy = ext.df, ext.apis_copy
 
     # 如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
@@ -49,7 +58,7 @@ def get_dataframe_extensions(apis):
         df = df.fillna("")
 
     dataframe = {**apis_copy, **{"df": df}}
-    dataframe["table"] = [i.get("table") for i in waiting_for_search if "table" in i]
+    dataframe["table"] = [i.get("table") for i in ext.waiting_for_search if "table" in i]
     return 200, "success", dataframe
 
 

@@ -2,7 +2,7 @@ import json
 import os
 
 from flask import Flask, request, Response, render_template, jsonify, send_from_directory, g
-from layers import parse_data  # get_parsed_data是所有的入口
+from layers import parse_data, init_project  # get_parsed_data是所有的入口
 from settings import PROJECT   # 导入项目名称、内置extensions
 from flask_caching import Cache
 
@@ -26,7 +26,7 @@ app.config.from_object(f"settings.{PROJECT}.auth")
 cache = Cache()
 cache.init_app(app)
 cache_timeout = app.config.get("CACHE_TIMEOUT", 60 * 60 * 24)
-
+init_project.init_project()  # 初始化项目
 
 ############################### /api/开头的接口路由 ###############################
 # 核心数据接口路由

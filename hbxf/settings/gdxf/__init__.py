@@ -93,7 +93,7 @@ VALUE_MAP_FOR_PLUGIN_SQL = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt"]
 
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
