@@ -1,0 +1,12 @@
+{
+    "code": "200",
+    "msg": "success",
+    "data":[
+      {
+        "name": "联名件",
+        "value": 1234,
+        "percent": 0.24
+      }
+    ]
+  }
+  

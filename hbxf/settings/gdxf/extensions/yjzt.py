@@ -1,5 +1,6 @@
 from extensions import Extension
 import pandas as pd
+import numpy as np
 
 
 class Yjzt(Extension):
@@ -47,14 +48,24 @@ class Yjzt(Extension):
         :return:
         """
         # 获取结果
-        self.value = self.apis_copy.get("value").split("_")[-1]
+        self.value = self.apis_copy.get("table").split("_")[-1]
         self.db_results[0][0] = Extension.groupby_and_sum(self.db_results[0][0], self.value)
         self.db_results[0][1] = Extension.groupby_and_sum(self.db_results[0][1], self.value)
         self.db_results[1][0] = Extension.groupby_and_sum(self.db_results[1][0], self.value)
         self.db_results[1][1] = Extension.groupby_and_sum(self.db_results[1][1], self.value)
-        self.apis_copy["value"] = "yjzt"
+        self.apis_copy["value"] = self.value
+
+        if self.db_results[0][0][self.value][0] is None:
+            self.db_results[0][0] = np.int32(0)
+        if self.db_results[0][1][self.value][0] is None:
+            self.db_results[0][1] = np.int32(0)
+        if self.db_results[1][0][self.value][0] is None:
+            self.db_results[1][0] = np.int32(0)
+        if self.db_results[1][1][self.value][0] is None:
+            self.db_results[1][1] = np.int32(0)
 
         df_tb, df_hb = Yjzt.parse_tb_and_hb(self.db_results, self.apis_copy)
+        self.apis_copy["value"] = "yjzt"
         res = "平稳"
         if df_tb > 0.2 or df_hb > 0.2:
             res = "告警"

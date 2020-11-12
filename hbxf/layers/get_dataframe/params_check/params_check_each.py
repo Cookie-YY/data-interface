@@ -43,10 +43,13 @@ def params_check_each(apis, special_name="SPECIAL_PARAMS"):
     # 4.2 transformer 的特殊情况
     from app import app
     transformer = checked_params["transformer"]
-    if transformer in ["@tb", "@hb"]:
-        checked_params["value_new"] = "tb_hb"
+    if transformer == "@tb":
+        checked_params["value_new"] = "tb"
+    if transformer == "@tb":
+        checked_params["value_new"] = "hb"
     elif transformer == "@zb":
         checked_params["value_new"] = "zb"
+        pass
     elif transformer[1:] in app.config["EXTENSIONS"]:
         pass
     elif transformer[1:] == "":

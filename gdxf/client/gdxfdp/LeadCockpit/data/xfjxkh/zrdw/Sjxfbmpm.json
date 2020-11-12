@@ -1,0 +1,66 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "广州市信访局",
+      "id": "01",
+      "type": "XFMD",
+      "value": 98
+    },
+    {
+      "name": "珠海市信访局",
+      "id": "02",
+      "type": "XFMD",
+      "value": 77
+    },
+    {
+      "name": "深圳市信访局",
+      "id": "03",
+      "type": "XFMD",
+      "value": 70
+    },
+    {
+      "name": "湛江市信访局",
+      "id": "04",
+      "type": "XFMD",
+      "value": 50
+    },
+    {
+      "name": "梅州市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 40
+    },
+    {
+      "name": "清远市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 30
+    },
+    {
+      "name": "韶关市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 20
+    },
+    {
+      "name": "河源市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 12
+    },
+    {
+      "name": "汕尾市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 10
+    },
+    {
+      "name": "汕头市信访局",
+      "id": "99",
+      "type": "XFMD",
+      "value": 5
+    }
+  ]
+}
