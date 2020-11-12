@@ -3,8 +3,6 @@ import pandas as pd
 from sqlalchemy.orm import Session
 
 
-
-
 class Extension:
     """
     transformer 下的 extension的基类
@@ -21,8 +19,8 @@ class Extension:
 
     from layers.get_dataframe.params_parse.parse_transformer.params_parse_hb import params_parse_hb
     from layers.get_dataframe.params_parse.parse_transformer.params_parse_tb import params_parse_tb
-    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_tb_or_hb import parse_tb_or_hb, parse_tb_and_hb
-
+    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_tb_or_hb import parse_tb_or_hb, \
+        parse_tb_and_hb
 
     def __init__(self, apis_copy, apis):  # apis_copy中可以拿到ex_table
         """实现除了transformer其他的条件解析"""
@@ -31,9 +29,9 @@ class Extension:
         self.apis_copy = apis_copy
         self.apis = apis
         self.before_waiting_for_search = None  # [自己调用方法后]调用before_search后，提供该属性用于查库
-        self.waiting_for_search = None         # 外界必须实现将before_waiting_for_search转成waiting_for_search的方法
-        self.db_results = None                 # [外界传递]当完成数据库查库后获得该属性
-        self.final_res = None                  # [自己调用方法后]调用after_search后，提供该属性作为最终结果{"df": df, "apis_copy": apis_copy}
+        self.waiting_for_search = None  # 外界必须实现将before_waiting_for_search转成waiting_for_search的方法
+        self.db_results = None  # [外界传递]当完成数据库查库后获得该属性
+        self.df = None  # [自己调用方法后]调用after_search后，提供该属性作为最终结果
 
     def before_search(self):
         code, msg, real_table = Extension.get_real_table(self.apis_copy)
@@ -51,7 +49,7 @@ class Extension:
     @staticmethod
     def _get_none_df(apis_copy):
         columns = [apis_copy.get("name", ""), apis_copy.get("stack", ""), apis_copy.get("value", "")]
-        from utils import get_unilist
+        from utils.get_unilist import get_unilist
         columns = get_unilist(columns)
         nonedf = [[pd.DataFrame([[None] * len(columns)], columns=columns)]]
         return nonedf
@@ -117,7 +115,8 @@ class Extension:
         df = Extension.groupby_and_sum(df, self.apis_copy.get("value"))
         df = df.replace(np.nan, 0)
         df = df.replace([np.inf, -np.inf], 0)
-        self.final_res = {"df": df, "apis_copy": self.apis_copy}
+        self.df = df
+        # self.final_res = {"df": df, "apis_copy": self.apis_copy}
 
     @classmethod
     def get_waiting_for_search(cls, before_waiting_for_search):
@@ -140,7 +139,7 @@ class Extension:
             ex_table = waiting_for_search_each.get("ex_table")
             if ex_table is None:
                 db_engine = waiting_for_search_each.get("db_engine", "zb_db")
-                code, msg, real_table = cls.get_real_table({"table":table, "db_engine": db_engine})
+                code, msg, real_table = cls.get_real_table({"table": table, "db_engine": db_engine})
                 if code != 200:
                     return code, msg, {}
                 ex_table = real_table["ex_table"]
@@ -166,4 +165,3 @@ class Extension:
             for_search_done.append(for_search_each_done)
 
         return 200, "success", for_search_done
-
