@@ -23,7 +23,7 @@ def params_check_each(apis, special_name="SPECIAL_PARAMS"):
     for k, v in apis_copy.items():
         if k in SPECIAL_PARAMS:  # 如果需要检验该参数: special={"timetype": ("", "cy|cm|cd")}
             condition = SPECIAL_PARAMS[k][1]
-            if condition:  # 如果该参数有条件
+            if condition and v:  # 如果该参数有条件 并且 v 有值
                 if not re.match(condition, v):  # 如果不满足条件
                     return 400, f"ParamsStructureError: [{k}] must match {condition}", {}
     checked_params.update(apis_copy)

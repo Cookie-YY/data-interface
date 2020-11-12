@@ -17,3 +17,5 @@ def init_project():
     CUS_EXTENSIONS = app.config.get("CUS_EXTENSIONS", [])
     EXTENSIONS.extend(CUS_EXTENSIONS)
     app.config["EXTENSIONS"] = EXTENSIONS
+
+    # 2. 加载区划df

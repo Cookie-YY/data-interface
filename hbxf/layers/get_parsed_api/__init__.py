@@ -16,8 +16,15 @@ def get_parsed_apis(api_dicts):
     """
     result = {}
     for main_name, api_dict in api_dicts.items():
+        # 处理默认值问题
+        from layers.get_parsed_api.process_default import process_default
+        code, msg, result_this = process_default(api_dict)
+        if code != 200:
+            return code, msg, {}
+
+
         # 处理drop问题
-        code, msg, result_this = process_drop(api_dict)
+        code, msg, result_this = process_drop(result_this)
         if code != 200:
             return code, msg, {}
 
@@ -43,6 +50,10 @@ def get_parsed_apis(api_dicts):
         # 处理权限问题
         from layers.get_parsed_api.process_auth import process_auth
         result_this = process_auth(result_this)
+
+        # 处理parm_trans
+        from layers.get_parsed_api.process_paramtrans import process_paramtrans
+        result_this = process_paramtrans(result_this)
 
         result[main_name] = result_this
     return 200, "success", result
