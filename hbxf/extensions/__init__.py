@@ -33,7 +33,7 @@ class Extension:
         self.db_results = None  # [外界传递]当完成数据库查库后获得该属性
         self.df = None  # [自己调用方法后]调用after_search后，提供该属性作为最终结果
 
-    def before_search(self):
+    def get_before_waiting_for_search(self):
         code, msg, real_table = Extension.get_real_table(self.apis_copy)
         table, ex_table = real_table["table"], real_table["ex_table"]
         columns = f"{self.apis_copy['name']},{self.apis_copy['stack']},{self.apis_copy['value']}"
@@ -44,7 +44,11 @@ class Extension:
         self.before_waiting_for_search = before_waiting_for_search
         # self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(before_waiting_for_search)
 
-        return 200, "success", []
+
+    def before_search(self):
+        self.get_before_waiting_for_search()
+        self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(self.before_waiting_for_search)
+
 
     @staticmethod
     def _get_none_df(apis_copy):

@@ -55,7 +55,7 @@ def get_sql_map():
 
 
 class Aqdflv(Extension):
-    """及时受理率"""
+    """按期答复率"""
     """
     计算公式：使用已提供的SQL语句进行计算
     """
@@ -67,7 +67,7 @@ class Aqdflv(Extension):
         self.df = pd.DataFrame([None], columns=["aqdflv"])
 
     def search(self):
-        sql_item = self.apis['ext'].split('/')[0]
+        sql_item = self.apis_copy['ext'].split('/')[0]
         sql_map = get_sql_map()
 
         # 按期答复率为3-4（市）3-2（省）
@@ -77,7 +77,7 @@ class Aqdflv(Extension):
 
         sql, columns = sql_map[sql_item]
         self.apis_copy['value'] = 'aqdflv'
-        results = fx_engine.execute(sql)
+        results = fx_engine.execute(sql.format(**self.apis_copy))
         data = results2df(results, columns)
         self.df = data
 

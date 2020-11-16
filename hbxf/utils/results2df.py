@@ -1,6 +1,7 @@
 import decimal
 
 import pandas as pd
+from datetime import datetime
 
 
 def results2df_ready(results, columns):
@@ -19,7 +20,7 @@ def results2df_ready(results, columns):
     return data
 
 
-def results2df(results, columns, apis_copy=""):  # sql模式的get_data_from_db和params_search中
+def results2df(results, columns, apis_copy=None):  # sql模式的get_data_from_db和params_search中
     df = pd.DataFrame(results2df_ready(results, columns), columns=columns)
 
     # 转换decimal类型
@@ -34,6 +35,9 @@ def results2df(results, columns, apis_copy=""):  # sql模式的get_data_from_db�
     # 时间处理
     if "day" in df.columns:
         df["day"] = df["day"].apply(lambda x: str(x).split()[0])
+    if "date" in df.columns and isinstance(apis_copy, dict):
+        df["date"] = df["date"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
+        df["date"] = df["date"].apply(lambda x: datetime.strftime(x, apis_copy.get("time_format")))
     return df
 
 

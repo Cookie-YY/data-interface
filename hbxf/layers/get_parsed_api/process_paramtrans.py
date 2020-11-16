@@ -1,14 +1,26 @@
-def process_paramtrans(api_dict):
-    param_trans = api_dict.get("param_trans", "")
-    param_trans_list = param_trans.replace("@", "").split(",")
+import re
 
+
+def process_paramtrans(api_dict):
     from settings import PROJECT
     project_settings = __import__(f"settings.{PROJECT}.param_trans", globals(), locals(), ["ParamTrans"])
     PT = project_settings.ParamTrans
     pt = PT(api_dict)
 
-    for param_trans_one in param_trans_list:
-        if param_trans_one not in pt.methods:
-            return
-        pt = getattr(pt, param_trans_one)()
+    pt.after_begin()
+    param_trans = api_dict.get("param_trans", "")  # black_list(a;b;b),qh_godown,black_list(a;b;b),qh2sheshixj(a;b;c)
+    param_trans = param_trans.replace(")", "")
+    for param_trans_one in param_trans.split(","):
+        param_trans_one = param_trans_one + "(" if "(" not in param_trans_one else param_trans_one
+        func, args = param_trans_one.split("(")
+        args = args.split(";")
+
+
+    # for param_trans_one in param_trans_list:
+        if func != "black_list":
+            if func not in pt.methods:
+                return
+            if pt.STOP == False:
+                pt = getattr(pt, func)(*args)
+    pt.before_finish()
     return pt.apis_copy

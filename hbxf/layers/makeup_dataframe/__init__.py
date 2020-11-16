@@ -23,7 +23,7 @@ def makeup_dataframe(dataframe_list):
 
             # 时间格式化
             from utils.time_format import df_formated_time
-            df = df_formated_time(dataframe["df"])
+            df = df_formated_time(dataframe["df"], time_format=dataframe.get("time_format"))
             dataframe["df"] = df
 
             # 排序补零：

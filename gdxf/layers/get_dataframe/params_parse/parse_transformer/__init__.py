@@ -19,8 +19,8 @@ def parse_transformer_conditions(transformer, ex_table, apis):
         day_condition = apis.get("day")
         year_condition = apis.get("year")
         month_condition = apis.get("month")
-        if day_condition is None or (year_condition is None and month_condition is None):
-            return 400, "if use '@tb or @hb' in transformer, there must be the conditions about day or (year and month)"
+        if day_condition is None and (year_condition is None and month_condition is None):
+            return 400, "if use '@tb or @hb' in transformer, there must be the conditions about day or (year and month)", {}
         if "@tb" in transformer:
             condition1_2 = params_parse_tb(apis)  # 得到 {列: 字符串} 形式的条件  {"day": "2020-01-01,2020-01-02"}
         else:

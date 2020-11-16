@@ -1,5 +1,6 @@
 import numpy as np
-
+import pandas as pd
+from sqlalchemy.orm import Session
 
 
 class Extension:
@@ -16,34 +17,110 @@ class Extension:
     from layers.get_dataframe.params_parse.params_parse_conditions import get_conditions
     from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_groupby import groupby_and_sum
 
+    from layers.get_dataframe.params_parse.parse_transformer.params_parse_hb import params_parse_hb
+    from layers.get_dataframe.params_parse.parse_transformer.params_parse_tb import params_parse_tb
+    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_tb_or_hb import parse_tb_or_hb, \
+        parse_tb_and_hb
+
     def __init__(self, apis_copy, apis):  # apis_copy中可以拿到ex_table
         """实现除了transformer其他的条件解析"""
         self.code = 200
         self.msg = "success"
         self.apis_copy = apis_copy
         self.apis = apis
-        self.waiting_for_search = None  # [自己调用方法后]调用before_search后，提供该属性用于查库
-        self.db_results = None          # [外界传递]当完成数据库查库后获得该属性
-        self.final_res = None           # [自己调用方法后]调用after_search后，提供该属性作为最终结果{"df": df, "apis_copy": apis_copy}
+        self.before_waiting_for_search = None  # [自己调用方法后]调用before_search后，提供该属性用于查库
+        self.waiting_for_search = None  # 外界必须实现将before_waiting_for_search转成waiting_for_search的方法
+        self.db_results = None  # [外界传递]当完成数据库查库后获得该属性
+        self.df = None  # [自己调用方法后]调用after_search后，提供该属性作为最终结果
 
-    def before_search(self):
-        real_table = Extension.get_real_table(self.apis_copy)
+    def get_before_waiting_for_search(self):
+        code, msg, real_table = Extension.get_real_table(self.apis_copy)
         table, ex_table = real_table["table"], real_table["ex_table"]
         columns = f"{self.apis_copy['name']},{self.apis_copy['stack']},{self.apis_copy['value']}"
         conditions = [self.apis]
         before_waiting_for_search = [
             {"table": table, "ex_table": ex_table, "columns": columns, "conditions": conditions},
         ]
-        self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(before_waiting_for_search)
+        self.before_waiting_for_search = before_waiting_for_search
+        # self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(before_waiting_for_search)
 
-        return 200, "success", []
+
+    def before_search(self):
+        self.get_before_waiting_for_search()
+        self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(self.before_waiting_for_search)
+
+
+    @staticmethod
+    def _get_none_df(apis_copy):
+        columns = [apis_copy.get("name", ""), apis_copy.get("stack", ""), apis_copy.get("value", "")]
+        from utils.get_unilist import get_unilist
+        columns = get_unilist(columns)
+        nonedf = [[pd.DataFrame([[None] * len(columns)], columns=columns)]]
+        return nonedf
+
+    def search(self):
+        """
+        waiting_for_search: [
+            {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]},
+            {"table": "", "ex_table": ex_table, "columns": ["year", "month", "xfjc"], "conditions": [ [ ],[ ] ]}
+        ]
+        """
+        # self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(self.before_waiting_for_search)
+
+        if not self.waiting_for_search:
+            nonedf = Extension._get_none_df(self.apis_copy)
+            self.db_results = nonedf
+            return
+        # 获取order, limit
+        order, limit = self.apis_copy["direct_order"], self.apis_copy["direct_limit"]
+        # 获取数据库连接
+        from utils.db_connection import zb_engine
+        session = Session(zb_engine)
+        searched = []
+
+        # 开始查库
+        for search_one_table in self.waiting_for_search:  # 第一张表
+            columns = search_one_table["columns"]
+            ex_table = search_one_table["ex_table"]
+            # 查找表格中的字段
+            search_table = []
+            for col in columns:
+                hascol = hasattr(ex_table.columns, col)
+                if not hascol:
+                    from app import app
+                    NOCOLUMN_ERROR = app.config.get("NOCOLUMN_ERROR", True)
+                    if NOCOLUMN_ERROR:
+                        self.code, self.msg = 400, f"NoSuchColumnError: The table {search_one_table['table']} has no specific columns [{col}]"
+                        return
+                    nonedf = Extension._get_none_df(self.apis_copy)
+                    self.db_results = nonedf
+
+            tar_vs = [getattr(ex_table.columns, i) for i in columns]
+            # 当前表中的多组条件
+            for conditions in search_one_table["conditions"]:  # 第一组条件
+                results = session.query(*tar_vs).filter(*conditions)  # results直接print是sql语句
+                if order:
+                    if "-" in order:  # sqlalchemy新版本中order_by 的用法需要用字段.desc()
+                        results = results.order_by(getattr(ex_table.columns, order.replace("-", "")).desc())
+                    else:
+                        results = results.order_by(order)
+                if limit:
+                    results = results.limit(limit)
+                from utils.results2df import results2df
+                data = results2df(results, columns, self.apis_copy)
+                search_table.append(data)
+            searched.append(search_table)
+        session.close()
+        self.db_results = searched
+        # return 200, "success", searched
 
     def after_search(self):
         df = self.db_results[0][0]
         df = Extension.groupby_and_sum(df, self.apis_copy.get("value"))
         df = df.replace(np.nan, 0)
         df = df.replace([np.inf, -np.inf], 0)
-        self.final_res = {"df": df, "apis_copy": self.apis_copy}
+        self.df = df
+        # self.final_res = {"df": df, "apis_copy": self.apis_copy}
 
     @classmethod
     def get_waiting_for_search(cls, before_waiting_for_search):
@@ -64,9 +141,9 @@ class Extension:
 
             # 处理 ex_table
             ex_table = waiting_for_search_each.get("ex_table")
-            if not ex_table:
+            if ex_table is None:
                 db_engine = waiting_for_search_each.get("db_engine", "zb_db")
-                code, msg, real_table = cls.get_real_table({"table":table, "db_engine": db_engine})
+                code, msg, real_table = cls.get_real_table({"table": table, "db_engine": db_engine})
                 if code != 200:
                     return code, msg, {}
                 ex_table = real_table["ex_table"]
@@ -92,4 +169,3 @@ class Extension:
             for_search_done.append(for_search_each_done)
 
         return 200, "success", for_search_done
-

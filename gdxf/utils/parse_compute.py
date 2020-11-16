@@ -5,9 +5,23 @@ import re
 def parse_date_add_or_sub(now, operator, content):
     now = datetime.strptime(now, "%Y/%m/%d")
     if operator == "+":
-        res = now + timedelta(days=int(content))
+        if "m" in content:
+            content = content.replace("m", "")
+            res = now + timedelta(days=int(content)*30)
+        elif "y" in content:
+            content = content.replace("y", "")
+            res = now + timedelta(days=int(content)*365)
+        else:
+            res = now + timedelta(days=int(content))
     else:
-        res = now - timedelta(days=int(content))
+        if "m" in content:
+            content = content.replace("m", "")
+            res = now - timedelta(days=int(content) * 30)
+        elif "y" in content:
+            content = content.replace("y", "")
+            res = now - timedelta(days=int(content) * 365)
+        else:
+            res = now - timedelta(days=int(content))
     res = datetime.strftime(res, "%Y-%m-%d")
     return res
 

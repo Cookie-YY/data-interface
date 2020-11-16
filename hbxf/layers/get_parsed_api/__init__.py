@@ -22,6 +22,9 @@ def get_parsed_apis(api_dicts):
         if code != 200:
             return code, msg, {}
 
+        # 处理parm_trans
+        from layers.get_parsed_api.process_paramtrans import process_paramtrans
+        result_this = process_paramtrans(result_this)
 
         # 处理drop问题
         code, msg, result_this = process_drop(result_this)
@@ -51,9 +54,7 @@ def get_parsed_apis(api_dicts):
         from layers.get_parsed_api.process_auth import process_auth
         result_this = process_auth(result_this)
 
-        # 处理parm_trans
-        from layers.get_parsed_api.process_paramtrans import process_paramtrans
-        result_this = process_paramtrans(result_this)
+
 
         result[main_name] = result_this
     return 200, "success", result

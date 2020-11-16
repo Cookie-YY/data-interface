@@ -26,7 +26,7 @@ class Yjzt(Extension):
         super(Yjzt, self).__init__(apis_copy, apis)  # 执行父类方法，获得self.apis/self.apis_copy
 
     def before_search(self):
-        super(Yjzt, self).before_search()  # 此时self.before_waiting_for_search中就有了最基本的内容
+        self.get_before_waiting_for_search()  # 此时self.before_waiting_for_search中就有了最基本的内容
         condition_tb = Yjzt.params_parse_tb(self.apis.copy())
         condition_hb = Yjzt.params_parse_hb(self.apis.copy())
 
@@ -55,20 +55,20 @@ class Yjzt(Extension):
         self.db_results[1][1] = Extension.groupby_and_sum(self.db_results[1][1], self.value)
         self.apis_copy["value"] = self.value
 
-        if self.db_results[0][0][self.value][0] is None:
+        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0][self.value][0] is None:
             self.db_results[0][0] = np.int32(0)
-        if self.db_results[0][1][self.value][0] is None:
+        if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1][self.value][0] is None:
             self.db_results[0][1] = np.int32(0)
-        if self.db_results[1][0][self.value][0] is None:
+        if isinstance(self.db_results[1][0], pd.DataFrame) and self.db_results[1][0][self.value][0] is None:
             self.db_results[1][0] = np.int32(0)
-        if self.db_results[1][1][self.value][0] is None:
+        if isinstance(self.db_results[1][1], pd.DataFrame) and self.db_results[1][1][self.value][0] is None:
             self.db_results[1][1] = np.int32(0)
 
         df_tb, df_hb = Yjzt.parse_tb_and_hb(self.db_results, self.apis_copy)
         self.apis_copy["value"] = "yjzt"
         res = "平稳"
-        if df_tb > 0.2 or df_hb > 0.2:
+        if abs(df_tb) > 0.2 or abs(df_hb) > 0.2:
             res = "告警"
-        elif df_tb > 0.1 or df_hb > 0.1:
+        elif abs(df_tb) > 0.1 or abs(df_hb) > 0.1:
             res = "异常"
         self.df = pd.DataFrame({"yjzt": [res]})

@@ -23,7 +23,7 @@ def params_check_each(apis, special_name="SPECIAL_PARAMS"):
     for k, v in apis_copy.items():
         if k in SPECIAL_PARAMS:  # 如果需要检验该参数: special={"timetype": ("", "cy|cm|cd")}
             condition = SPECIAL_PARAMS[k][1]
-            if condition:  # 如果该参数有条件
+            if condition and v:  # 如果该参数有条件 并且 v 有值
                 if not re.match(condition, v):  # 如果不满足条件
                     return 400, f"ParamsStructureError: [{k}] must match {condition}", {}
     checked_params.update(apis_copy)
@@ -43,10 +43,13 @@ def params_check_each(apis, special_name="SPECIAL_PARAMS"):
     # 4.2 transformer 的特殊情况
     from app import app
     transformer = checked_params["transformer"]
-    if transformer in ["@tb", "@hb"]:
-        checked_params["value_new"] = "tb_hb"
+    if transformer == "@tb":
+        checked_params["value_new"] = "tb"
+    if transformer == "@tb":
+        checked_params["value_new"] = "hb"
     elif transformer == "@zb":
         checked_params["value_new"] = "zb"
+        pass
     elif transformer[1:] in app.config["EXTENSIONS"]:
         pass
     elif transformer[1:] == "":

@@ -4,7 +4,7 @@ from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_zb
 from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_tb_or_hb import parse_tb_or_hb
 # from layers.get_dataframe.params2dataframe.convert_and_compute.parse_divide import parse_divide
 # from layers.get_dataframe.params2dataframe.convert_and_compute.parse_no_transformer import parse_no_transformer
-
+import pandas as pd
 
 def merge_serached_dataframes(df_list, apis_copy):
     """
@@ -65,8 +65,10 @@ def merge_serached_dataframes(df_list, apis_copy):
 
     elif "@tb" in transformer or "@hb" in transformer:  # tb/hb 情况，数据库只涉及到一张表，有两个df，需要拼接后计算tb/hb
         df = parse_tb_or_hb(df_list, apis_copy)
-        df[apis_copy.get("value")] = df[apis_copy.get("value")].round(decimals=sig_digits)
-
+        if isinstance(df, pd.DataFrame):
+            df[apis_copy.get("value")] = df[apis_copy.get("value")].round(decimals=sig_digits)
+        else:
+            df = round(df, sig_digits)
     # divide 涉及到的 hjlv 存在业务问题，暂缓
     # elif "@divide" in transformer:  # hjlv 情况，数据库中两张表，有两个条件，需要拼接后计算 hjlv
     #     df = parse_divide(df_list, apis_copy)

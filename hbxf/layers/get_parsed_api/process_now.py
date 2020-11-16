@@ -26,6 +26,8 @@ def process_now(api_dict):
             elif k == "day":
                 value = value.replace(" ", "+")  # +会被解析成空格
                 value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
+            elif k == "date":
+                value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
             if "," not in value:  # 说明不是范围
                 code, msg, value = parse_compute(value)  # 直接赋值，如果是范围的，在后面可以覆盖
                 if code != 200:

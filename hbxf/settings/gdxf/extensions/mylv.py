@@ -27,9 +27,9 @@ class Mylv(Extension):
         # 处理目标字段
         target = table.split("_")[-1]
         base = "_".join(table.split("_")[:-1])
-        self.value_my = target.replace("bmyjc", "myjc").replace("jbmyjc", "myjc")
-        self.value_bmy = target.replace("myjc", "bmyjc").replace("jbmyjc", "bmyjc")
-        self.value_jbmy = target.replace("bmyjc", "jbmyjc").replace("myjc", "jbmyjc")
+        self.value_my = target
+        self.value_bmy = target.replace("myjc", "bmyjc")
+        self.value_jbmy = target.replace("myjc", "jbmyjc")
 
         # 处理 table
         table_my = f"{base}_{self.value_my}"

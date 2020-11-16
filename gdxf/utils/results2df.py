@@ -1,4 +1,3 @@
-import datetime
 import decimal
 
 import pandas as pd
@@ -21,7 +20,7 @@ def results2df_ready(results, columns):
 
 
 def results2df(results, columns, apis_copy=""):  # sql模式的get_data_from_db和params_search中
-    df = pd.DataFrame(results2df_ready(results, columns))
+    df = pd.DataFrame(results2df_ready(results, columns), columns=columns)
 
     # 转换decimal类型
     for col in df:

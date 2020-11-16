@@ -78,6 +78,7 @@ CUS_INITIALIZATION = {
     "aqdflv":["VALUE_FLOAT"],
     "cplv": ["VALUE_FLOAT"],
     "mylv": ["VALUE_FLOAT"],
+    "wxzb": ["VALUE_FLOAT"],
     "blxfjc": ["VALUE_INT"],
     "dwjc": ["VALUE_INT"],
     "bmjc": ["VALUE_INT"],

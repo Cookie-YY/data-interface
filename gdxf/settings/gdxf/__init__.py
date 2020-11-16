@@ -18,7 +18,7 @@ FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gd130'
 # ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
 # ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_1021' % urllib.parse.unquote_plus("cDhZ2@zR")
-# ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_gd_test54' % urllib.parse.quote_plus("Beidas0ft")
+# ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
 
 
 ############################### 缓存配置 ###############################
@@ -93,7 +93,7 @@ VALUE_MAP_FOR_PLUGIN_SQL = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
 
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
@@ -106,4 +106,4 @@ DEBUG = True
 # 键：特殊参数
 # 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
-CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}")}
+CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj", None), "time_format": (False, None), "ext": (False, None)}

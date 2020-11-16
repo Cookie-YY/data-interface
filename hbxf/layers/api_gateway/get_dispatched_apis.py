@@ -1,5 +1,13 @@
 import re
 
+def after_black_list(url, request_args_copy):
+    black_list = re.search(r"black_list\((.*?)\)", url)
+    if black_list:
+        bk_list = black_list.groups()[0].split(";")
+        for i in bk_list:
+            request_args_copy.pop(i, "")
+    return request_args_copy
+
 
 def url2dict(url):
     url = url.split("?")[1]
@@ -52,8 +60,10 @@ def get_dispatched_apis(request_args):
         code, msg, url = check_graph_id_dict(graph_id_dict)  # 得到映射后的url
         if code != 200:
             return code, msg, {}
+
         url = url.format(**request_args_copy)   # 做一个填空
         graph_id_url_dict = url2dict(url)       # url --> dict
+        request_args = after_black_list(url, request_args)
         graph_id_url_dict.update(request_args)  # 用剩余参数更新dict
         return 200, "success", graph_id_url_dict
     return 200, "success", request_args

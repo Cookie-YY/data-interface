@@ -141,7 +141,15 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
     },
 
     ###################### 广东_复杂业务指标（及时受理率/受理率/答复率）######################
-
+    {
+        # 广东_1-1
+        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_tcaftertc&xfjbh=LX0000002019102900499
+        "url": "/api/xf/\?gd_id=gd_1-1&",
+        "map": {"xfjztmc": "信访件状态", "xfrq": "信访日期", "bjsj": "办结日期",
+                "bljg": "办理机构", "blfs": "办理方式", "qxjg": "去向机构"},
+        "fx_db_sql": """select a.xfjztmc, a.xfrq, a.bjsj, b.xfjbh, b.bljg, b.blfs, b.qxjg from xf_xfjxx a LEFT JOIN xf_blfsxx b on a.xfjbh=b.xfjbh where b.xfjbh='{xfjbh}';""",
+        "zb_db_sql": """""",
+    },
 
 
 ]

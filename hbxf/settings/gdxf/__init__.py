@@ -83,7 +83,7 @@ TIME_FORMAT = "%Y-%m-%d"
 PARAM_MAP = {}
 
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
-# get_dataframe阶段的第一步simpele2df时执行
+# get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
 VALUE_MAP = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
 
 # plugin过程中的sql模式中的内容映射，主要用于大表格的反查，支持正则，格式和VALUE_MAP一样
@@ -93,7 +93,7 @@ VALUE_MAP_FOR_PLUGIN_SQL = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt","aqdflv","wxzb"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
 
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
@@ -106,4 +106,4 @@ DEBUG = True
 # 键：特殊参数
 # 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
-CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj", None)}
+CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "time_format": (False, None), "ext": (False, None)}

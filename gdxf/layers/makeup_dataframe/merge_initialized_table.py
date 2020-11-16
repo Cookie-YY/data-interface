@@ -4,6 +4,8 @@ import pandas as pd
 import random  # eval有可能会用到随机数
 import itertools
 import copy
+
+from layers.makeup_dataframe.date_initialized import date_initialized
 from layers.makeup_dataframe.day_initialized import day_initialized
 
 # df_dict: 输入的dict
@@ -146,6 +148,10 @@ def merge_initialized_table(dataframe):
         year = dataframe.get("year")
         year_list = year_initialized(year)
         df_dict["year"] = year_list
+    if name == "date":
+        date = dataframe.get("date")
+        date_list = date_initialized(date, dataframe.get("time_format"))
+        df_dict["date"] = date_list
     df_list = list(df)  # 输入的df列名列表
 
     # 如果只有一列，说明只取了value,也只能有一行
