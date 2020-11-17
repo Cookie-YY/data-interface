@@ -29,6 +29,7 @@ def parse_one_dataframe(dataframe, groupid=0):
 
     if stack:  # 处理堆叠问题
         data_stack = []
+        [i.update({stack: i.get(stack, i.get("name"))}) for i in data]
 
         stack_list = [i.get(stack) for i in data]  # 内层嵌套的内容
         stack_uni = get_unilist(stack_list)  # 内层嵌套的内容去重
@@ -46,6 +47,7 @@ def parse_one_dataframe(dataframe, groupid=0):
             dic_one = {"name": main_one}
             for value_index, stack_one in enumerate(stack_uni):
                 if name == stack:  # 是为了处理原来只是name&value，不堆叠，但是制定了extra_index，最终需要堆叠的情况，所以即使自己就是一维的键值对也需要改成嵌套形式
+                    value_index = 0
                     stack_value = [tar_one.get("value") for tar_one in data if  # 核心：找到name是这个，stack是这个的value值
                                    tar_one.get("name") == main_one and tar_one.get(name) == stack_one]
                 else:  # 正常情况

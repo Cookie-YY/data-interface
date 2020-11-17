@@ -2,6 +2,7 @@ from layers.get_parsed_api.process_drop import process_drop
 from layers.get_parsed_api.process_dollar import process_dollar
 from layers.get_parsed_api.process_now import process_now
 from layers.get_parsed_api.process_invalid import process_invalid
+from flask import g
 
 
 def get_parsed_apis(api_dicts):
@@ -21,8 +22,9 @@ def get_parsed_apis(api_dicts):
         code, msg, result_this = process_default(api_dict)
         if code != 200:
             return code, msg, {}
+        g.before_param_trans = result_this  # 将没有经过param_trans的内容放到g变量中，保存一份完整的用户参数
 
-        # 处理parm_trans
+        # 处理param_trans
         from layers.get_parsed_api.process_paramtrans import process_paramtrans
         result_this = process_paramtrans(result_this)
 
