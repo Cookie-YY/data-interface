@@ -7,8 +7,8 @@ def params_parse_hb(conditions_dict):
     month_condition = conditions_dict.get("month")
     if day_condition:
         min_value, max_value = day_condition.strip("[").strip("]").split(",")
-        min_date = datetime.datetime.strptime(min_value, "%Y-%m-%d")
-        max_date = datetime.datetime.strptime(max_value, "%Y-%m-%d")
+        min_date = datetime.datetime.strptime(min_value, "%Y-%m-%d %H:%M:%S")
+        max_date = datetime.datetime.strptime(max_value, "%Y-%m-%d %H:%M:%S")
         diff = max_date - min_date
         last_min_date = min_date - diff - datetime.timedelta(days=1)
         last_max_date = max_date - diff - datetime.timedelta(days=1)

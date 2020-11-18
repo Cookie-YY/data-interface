@@ -403,3 +403,10 @@ xf_blfsxx：
 - 【已完成】有效数字的统一处理
 - 【已完成】拆分param_trans
 - 信访绩效考核的地图没有table参数，通过sql计算完的df没有qh列
+- process_dollar 应该在 param_trans 后面
+    其他process 和 auth的处理都在 param_trans前面
+- 【已完成】day/date等参数，兼容数据库中可能存在的字符串形式
+- api_gateway
+    把插件过程拿出来
+    参数保护单独做一个部分
+    参数校验部分的重构

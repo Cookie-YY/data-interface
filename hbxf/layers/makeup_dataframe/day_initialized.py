@@ -9,8 +9,8 @@ def day_initialized(day):
     date_list = []
     from app import app
     TIME_FORMAT = app.config["TIME_FORMAT"]
-    begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")
-    end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
+    begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d %H:%M:%S")
+    end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d %H:%M:%S")
     while begin_date <= end_date:
         date_str = begin_date.strftime(TIME_FORMAT)
         date_list.append(date_str)

@@ -88,6 +88,10 @@ SIGNIFICANT_DIGITS = 4
 # 项目默认的时间格式：当name=day时生效，如果不写或为空：%Y-%m-%d
 TIME_FORMAT = "%Y-%m-%d"
 
+# 时间的精确配置
+DATE_START = "00:00:00"
+DATE_END = "00:00:00"
+
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
 # get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
 VALUE_MAP = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
