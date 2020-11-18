@@ -17,7 +17,7 @@ class PT(ParamTrans):
     def before_finish(self):
         super(PT, self).before_finish()  # 处理qh的尾巴：当有IN-Cqh时，删除qh
 
-        # 1. 存在OR-xfxs时 删掉网信
+        # 1. 存在OR-xfxs时 删掉xfxs
         or_xfxs = self.apis_copy.get("OR-xfxs", "")
         if or_xfxs:
             self.apis_copy.pop("xfxs", "")

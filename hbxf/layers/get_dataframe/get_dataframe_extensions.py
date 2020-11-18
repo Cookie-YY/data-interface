@@ -35,21 +35,6 @@ def get_dataframe_extensions(apis):
     if ext.code != 200:
         return ext.code, ext.msg, {}
 
-
-
-    # waiting_for_search = ext.waiting_for_search
-    #
-    # # 3. 数据库查询，得到dataframe
-    # from layers.get_dataframe.params_search import params_search
-    # code, msg, results = params_search(waiting_for_search, apis_copy)
-    # if code != 200:
-    #     return code, msg, {}
-    # ext.db_results = results
-    #
-    # # 4. 将多个dataframe合并成一个（transformer）
-    # ext.after_search()
-    # if ext.code != 200:
-    #     return ext.code, ext.msg, {}
     df, apis_copy = ext.df, ext.apis_copy
 
     # 如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）

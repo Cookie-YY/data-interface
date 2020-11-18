@@ -383,7 +383,7 @@ xf_blfsxx：
     b. 随机初始化的上下限
     c. 字段自定义上下限
 
-- white_list
+- 【已完成】white_list
 - xfxs=网信时需要处理   param_trans  xfxs
 - 信访事项预警-->省局集体访量-->两个满意率为0
 - g变量添加full【param_trans里面的qh_godown】
@@ -394,7 +394,7 @@ xf_blfsxx：
 
 
 - 连接数的问题
-- xfxs=网信统一加 wx_map
+- 【已完成】xfxs=网信统一加 wx_map
 - qh_godown在 绩效考核的按期答复率的地图，不起作用，不会将name改掉
     condition_dict    apis_copy  都放到g变量中
 
@@ -403,10 +403,15 @@ xf_blfsxx：
 - 【已完成】有效数字的统一处理
 - 【已完成】拆分param_trans
 - 信访绩效考核的地图没有table参数，通过sql计算完的df没有qh列
-- process_dollar 应该在 param_trans 后面
+- 【已完成】process_dollar 应该在 param_trans 后面
     其他process 和 auth的处理都在 param_trans前面
 - 【已完成】day/date等参数，兼容数据库中可能存在的字符串形式
 - api_gateway
     把插件过程拿出来
     参数保护单独做一个部分
     参数校验部分的重构
+- *******完成full的重构，遗留问题
+    单独使用同比/环比 存在问题
+    http://127.0.0.1:3389/api/xf/?gd_id1=%E4%BF%A1%E8%AE%BF%E4%BA%8B%E9%A1%B9%E9%A2%84%E8%AD%A6&gd_id2=%E8%B5%B4%E7%9C%81%E8%AE%BF&gd_id3=%E9%A2%84%E8%AD%A6%E7%8A%B6%E6%80%81&Cqh=%E5%B9%BF%E4%B8%9C%E7%9C%81&day=[2020-10-19,2020-11-18]
+    预警状态的图：当是同比的时候，value=xfjc
+    ⭐解决方案：将groupby/同比/环比/占比 过程抽象出来

@@ -27,31 +27,34 @@ def parse_data(realm, index, request_args):
 
     # 1.拆分层(apis -> apis)
     # 返回 api_dicts = {
-    #     "1": "http://host:port/xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shej&lx=xfxs&value=xfjc@zb",
-    #     "2": "http://host:port/xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shij&lx=xfxs&value=xfjc@zb"}
+    #     "总数": {"name": "", "value": ""},
+    #     "2": {"name": "", "value": ""}}
     code, msg, api_dicts = get_splited_apis(realm, index, api_dicts_or_result)
     if code != 200:
         return code, msg, {}
 
-    # 2.解析层(apis   -> apis)
-    # 返回 api_dicts = {
-    #     "1": "http://host:port/xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shej&lx=xfxs&value=xfjc.....",
-    #     "2": "http://host:port/xf/xfjc_zb/?busin=xfj&timetype=cy&qh=shij&lx=xfxs&value=xfjc....."}
-    code, msg, api_dicts = get_parsed_apis(api_dicts)      # 处理 =drop/$引用问题/=now的解析
-    if code != 200:
-        return code, msg, {}
+    # 开始分流，逐一对每一个拆出来的请求做处理
+    data_frame_list = []
+    for main_name, api_dict in api_dicts.items():
+        # 2.解析层(apis   -> apis)
+        # 对请求参数做解析，拿到最终的请求字典
+        code, msg, api_dict = get_parsed_apis(api_dict)      # 处理 =drop/$引用问题/=now的解析
+        if code != 200:
+            return code, msg, {}
 
-    # 3.查询层(apis   -> pandas)
-    # 返回 data_frame_list = [{"name": "", "value": "", "df": df, "stack": ""}, {"name": "", "value": "", "df": df}]
-    code, msg, data_frame_list = get_dataframe(api_dicts)
-    if code != 200:
-        return code, msg, []
+        # 3.查询层(apis   -> pandas)
+        code, msg, dataframe = get_dataframe(api_dict)  # 返回df
+        if code != 200:
+            return code, msg, []
 
-    # 4.补充层(pandas -> pandas)
-    # 返回data = pd.DataFrame()
-    code, msg, data_frame_list = makeup_dataframe(data_frame_list)
-    if code != 200:
-        return code, msg, {}
+        # 4.补充层(pandas -> pandas)
+        # 返回data = pd.DataFrame()
+        code, msg, dataframe = makeup_dataframe(dataframe)
+        if code != 200:
+            return code, msg, {}
+
+        data_frame = dict(**{"main_name": main_name}, **dataframe)
+        data_frame_list.append(data_frame)
 
     # 5.转换层(pandas -> json)
     # 返回data = [{"name": "", "value": ""}, {"name": "", "value": ""}]

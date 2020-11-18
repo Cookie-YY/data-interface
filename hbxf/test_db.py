@@ -107,3 +107,7 @@ import pandas as pd
 #
 #
 # print(t)
+
+
+t = dict(zip(["a", "b"], [{"1":1, "2":2}, {"2":1, "1":2}]))
+print(t)

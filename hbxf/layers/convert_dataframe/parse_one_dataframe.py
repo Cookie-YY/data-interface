@@ -7,8 +7,7 @@ from utils.get_unilist import get_unilist
 def parse_one_dataframe(dataframe, groupid=0):
     df = dataframe["df"]
     name = dataframe.get("name")
-    value = dataframe.get("value_new", dataframe.get("value"))
-    # value = dataframe.get("value")
+    value = dataframe.get("value")
     stack = dataframe.get("stack")
     main_name = dataframe.get("main_name")
     if isinstance(df, np.int64) or isinstance(df, np.float) or isinstance(df, int) or isinstance(df, float):

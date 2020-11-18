@@ -15,10 +15,10 @@ FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 # FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
-# ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gd130'
+ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gd144'
 # ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
 # ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_1021' % urllib.parse.unquote_plus("cDhZ2@zR")
-ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
+# ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
 
 
 ############################### 缓存配置 ###############################
@@ -101,9 +101,12 @@ VALUE_MAP_FOR_PLUGIN_SQL = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
 
 # 初始化指标需要的txt文件夹位置
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
+INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
 CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
+
+RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
