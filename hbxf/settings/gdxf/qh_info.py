@@ -183,8 +183,10 @@ QH_INFO = [
     ("广东省", "云浮市", "罗定市"),
 ]
 
+# 用于做param_trans中qh相关的部分
 QH_INFO = pd.DataFrame(QH_INFO, columns=["shej_02", "shij_02", "xj_02"])
 
+# 用于做区划代码名称（权限控制）
 QH_CODE_INFO = [
 
 ]

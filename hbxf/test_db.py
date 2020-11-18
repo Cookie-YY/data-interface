@@ -62,29 +62,48 @@ import sqlalchemy
 # # init_df.columns =
 # res = pd.merge(init_df, df, how="left", on=on)
 # res["value"] =
-# print(res)
+# # print(res)
+#
+# import pandas as pd
+# #
+# def take_smaller(*args):
+#     if 1<2:
+#         return s1
+#     else:
+#         return s2
+#     # return s1 if s1.sum() < s2.sum() else s2
+# #
+# #
+# # df1 = pd.DataFrame({'A': ["0", "1"], 'B': [100, 200]})
+# # df2 = pd.DataFrame({'A': ["0"], 'B': [50]})
+# # # take_smaller = lambda s1, s2: s1 if s1.sum() < s2.sum() else s2
+# # t = df1.combine(df2, take_smaller)
+# # t
+#
+#
+# df1 = pd.DataFrame({'A': ["0", "1", "2"], 'B': [None, None, None]})
+# df2 = pd.DataFrame({'A': ["1"], 'B': [50]})
+#
+# print(df2.combine_first(df1))
+#
+# # take_smaller = lambda s1, s2: s1
+# # print(df1.combine(df2, take_smaller))
+
 
 import pandas as pd
+
+
+
+# def test(x):
+#      return x.sort_values(by=['xfxs'],ascending=False)[:2]
+# df = pd.DataFrame({'name':['China','China', 'India', 'India', 'America', 'Japan', 'China', 'India'],
+#                    'stack':["lx", "lf", "lx", "lf", "lx", "lf", "wx", "wx"],
+#                     'value':[5000, 4320, 1234, 4010, 250, 250, 4500, 4321]})
 #
-def take_smaller(*args):
-    if 1<2:
-        return s1
-    else:
-        return s2
-    # return s1 if s1.sum() < s2.sum() else s2
 #
 #
-# df1 = pd.DataFrame({'A': ["0", "1"], 'B': [100, 200]})
-# df2 = pd.DataFrame({'A': ["0"], 'B': [50]})
-# # take_smaller = lambda s1, s2: s1 if s1.sum() < s2.sum() else s2
-# t = df1.combine(df2, take_smaller)
-# t
-
-
-df1 = pd.DataFrame({'A': ["0", "1", "2"], 'B': [None, None, None]})
-df2 = pd.DataFrame({'A': ["1"], 'B': [50]})
-
-print(df2.combine_first(df1))
-
-# take_smaller = lambda s1, s2: s1
-# print(df1.combine(df2, take_smaller))
+#
+# t = df.groupby(['name'])[['stack']].apply(lambda x:x.sort_values(by=['stack'],ascending=False)[:2])
+#
+#
+# print(t)

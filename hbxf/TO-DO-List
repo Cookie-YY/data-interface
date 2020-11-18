@@ -398,4 +398,8 @@ xf_blfsxx：
 - qh_godown在 绩效考核的按期答复率的地图，不起作用，不会将name改掉
     condition_dict    apis_copy  都放到g变量中
 
-- 真实的请求也放到返回值中
+- 真实的请求也放到返回值中[g变量]  before_param_trans
+- 微信+转交办效率
+- 【已完成】有效数字的统一处理
+- 【已完成】拆分param_trans
+- 信访绩效考核的地图没有table参数，通过sql计算完的df没有qh列

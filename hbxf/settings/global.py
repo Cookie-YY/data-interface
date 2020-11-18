@@ -8,14 +8,16 @@ URL_REFERENCE = {
     "shij": "shij_02",
     "shej": "shej_02"
 }
-# 程序内置transformer，可以直接transformer=@xx使用
+# 程序内置extension，可以直接transformer=@xx使用
 EXTENSIONS = ["groupby", "tb", "hb", "zb"]  # 系统内置extension
 
-# extension过程中的初始化值
-INITIALIZATION = {
-    "ext_int": ["VALUE_FLOAT"],
-    "ext_float": ["VALUE_FLOAT"]
-}
+# 程序内置param_trans
+PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
+# # extension过程中的初始化值
+# INITIALIZATION = {
+#     "ext_int": ["VALUE_FLOAT"],
+#     "ext_float": ["VALUE_FLOAT"]
+# }
 
 # 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
 # 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
@@ -44,10 +46,11 @@ SPECIAL_PARAMS = {
     "limit": ("", "\d+|\d\s其他"),  # +会被浏览器转义成空格
     
     # 高级属性
-    "transformer": ("", "^@"),
+    "transformer": ("@groupby", "^@"),
     "full": ("", None),
     "name_limit": ("", "\d+"),
     "stack_limit": ("", "\d+"),
     "ceil": ("", "\d+"),
     "ceil_value": (False, None),
+    "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)")
 }

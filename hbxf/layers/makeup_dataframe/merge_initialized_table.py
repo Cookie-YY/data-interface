@@ -134,9 +134,9 @@ def merge_initialized_table(dataframe):
 
     # 加载字段可能取值 & 联动字段文件的目录
     from app import app
-    cus_init = app.config.get("CUS_INITIALIZATION")
-    global_init = app.config.get("INITIALIZATION")  # extension_float 和 extension_int
-    df_dict = {**global_init, **cus_init}
+    # cus_init = app.config.get("CUS_INITIALIZATION")
+    df_dict = app.config.get("INITIALIZATION")  # extension_float 和 extension_int
+    # df_dict = {**global_init, **cus_init}
     df_dict = get_random_or_zero(df_dict)
 
     file_root_path = app.config.get("INITIALIZATION_FILE_PATH")

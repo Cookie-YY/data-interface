@@ -61,6 +61,15 @@ LEVEL_AUTH_COOKIE = "xzqhdm"  # cookie中控制权限的参数（写到cookie中
 LEVEL_AUTH_ENCRYPT = False
 
 
+############################### 参数配置 ###############################
+# 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
+# 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
+# 键：特殊参数
+# 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
+# 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
+CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "time_format": (False, None), "ext": (False, None)}
+CUS_PARAM_TRANS = ["wx_map"]
+
 ############################### 数据配置 ###############################
 # 随机化配置
 RANDOM_OR_ZERO = "ZERO"
@@ -78,9 +87,6 @@ SIGNIFICANT_DIGITS = 4
 
 # 项目默认的时间格式：当name=day时生效，如果不写或为空：%Y-%m-%d
 TIME_FORMAT = "%Y-%m-%d"
-
-# url的参数映射，只要见到这个参数有目标值，就映射，主要用于少数民族的区划有多种说法
-PARAM_MAP = {}
 
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
 # get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
@@ -101,9 +107,3 @@ CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
 # DEBUG模式开关（仅开发模式有用）
 DEBUG = True
 
-# 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
-# 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
-# 键：特殊参数
-# 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
-# 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
-CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "time_format": (False, None), "ext": (False, None)}

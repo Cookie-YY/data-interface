@@ -15,8 +15,6 @@ def parse_one_dataframe(dataframe, groupid=0):
         df = pd.DataFrame({value: [df]})
     data = df.to_dict(orient='records')
 
-
-
     # 处理name和value【可处理一个数和name value对的情况】
     if name:   # 处理name问题
         [i.update({"name": i.pop(name)}) for i in data]

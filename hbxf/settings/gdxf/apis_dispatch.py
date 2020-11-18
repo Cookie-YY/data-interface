@@ -184,16 +184,16 @@ URL_DISPATCH_MAP = {
     "信访事项预警_集体访_信访量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&order=-xfjc&jtf=集体访&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfbmmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_zrdwmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
-    "信访事项预警_集体访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_jtf_xfjc&jtf=集体访&name=date&transformer=@groupby&full=true&param_trans=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_集体访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_trans=black_list(day;Cqh)",
+    "信访事项预警_集体访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_jtf_xfjc&jtf=集体访&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
+    "信访事项预警_集体访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
 
 
 
     "信访事项预警_进京访_信访量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&order=-gjjxfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfbmgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
-    "信访事项预警_进京访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_gjjxfjc&name=date&transformer=@groupby&full=true&param_trans=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_进京访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_trans=black_list(day;Cqh)",
+    "信访事项预警_进京访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_gjjxfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
+    "信访事项预警_进京访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
     "信访事项预警_进京访_内容分类": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_gjjxfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_进京访_信访目的": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_gjjxfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 
@@ -201,8 +201,8 @@ URL_DISPATCH_MAP = {
     "信访事项预警_赴省访_信访量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&order=-xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_myjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
-    "信访事项预警_赴省访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_xfjc&name=date&transformer=@groupby&full=true&param_trans=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_赴省访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_trans=black_list(day;Cqh)",
+    "信访事项预警_赴省访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_xfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
+    "信访事项预警_赴省访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
     "信访事项预警_赴省访_内容分类": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_xfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_赴省访_信访目的": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_xfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 

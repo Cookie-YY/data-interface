@@ -1,4 +1,4 @@
-from extensions import Extension
+from libs.extensions import Extension
 import pandas as pd
 
 def get_base_sql_map():
