@@ -44,7 +44,7 @@ def get_splited_apis(realm, index, request_args):
                 if operator == "to":      # lx@to:xfxs
                     request_args_for_each_group[target] = op_content
                 elif operator == "drop":  # lx@drop
-                    request_args_for_each_group.pop(target)
+                    request_args_for_each_group.pop(target, "")
                 elif operator == "math":  # year@math:-1
                     from utils.parse_compute import parse_compute
                     code, msg, result = parse_compute(f"{request_args_for_each_group[target]}{op_content}")

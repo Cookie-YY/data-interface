@@ -16,6 +16,7 @@ def process_now(api_dict):
     update_dict = {}
     for k, v in api_dict.items():
         value = str(v)
+        # 解析now
         if "now" in value:
             if k == "year":
                 value = value.replace("now", str(datetime.now().year))
@@ -33,16 +34,17 @@ def process_now(api_dict):
                 if code != 200:
                     return code, msg, {}
             update_dict[k] = value
+        # 解析范围（同时去掉中括号）
         if value.startswith("[") and value.endswith("]"):
             min_value = value.strip("[").strip("]").split(",")[0]  # "2020-1"
             max_value = value.strip("[").strip("]").split(",")[1]  # "2020"
-            code, msg, result1 = parse_compute(min_value)
+            code, msg, start = parse_compute(min_value)
             if code != 200:
                 return code, msg, {}
-            code, msg, result2 = parse_compute(max_value)
+            code, msg, end = parse_compute(max_value)
             if code != 200:
                 return code, msg, {}
-            value_parsed = f"{result1},{result2}"
+            value_parsed = f"{start},{end}"
             update_dict[k] = value_parsed
     api_dict.update(update_dict)
     return 200, "success", api_dict

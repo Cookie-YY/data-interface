@@ -34,6 +34,5 @@ def merge_initialized_table(dataframe):
     # 5. 融合初始化的df和数据df
     merged_df = get_merged_df(df, init_df, value)
     # 6. 随机值处理
-    # after_random_df = get_random_df(merged_df, value, INITIALIZATION)
     merged_df[value] = merged_df[value].apply(lambda x: fill_random_or_real(x, INITIALIZATION, value, table))
     return 200, "success", merged_df

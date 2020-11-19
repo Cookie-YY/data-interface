@@ -1,5 +1,5 @@
 import re
-
+from sqlalchemy import or_
 
 def parse_condition(ex_table, k, value):
     # like条件
@@ -17,6 +17,17 @@ def parse_condition(ex_table, k, value):
         if isinstance(value, list):
             return getattr(ex_table.columns, k).in_(value)
         return getattr(ex_table.columns, k).in_(value.split(","))
+
+    # or条件
+    elif str(k).startswith("OR-"):
+        k = k.replace("OR-", "")
+        k = k.strip("C")
+        or_list = []
+        v_list = value if isinstance(value, list) else value.split(",")
+        for v in v_list:
+            cond = getattr(ex_table.columns, k) != v.replace("!", "") if v.startswith("!") else getattr(ex_table.columns, k) == v
+            or_list.append(cond)
+        return or_(*or_list)
 
     # 分段条件
     elif "," in str(value):
@@ -41,7 +52,8 @@ def get_conditions(ex_table, conditions_dict):
 
         if not hasattr(ex_table.columns, k) and \
                 not hasattr(ex_table.columns, k.strip("LIKE-").lstrip("C")) and \
-                not hasattr(ex_table.columns, k.strip("IN-").lstrip("C")):
+                not hasattr(ex_table.columns, k.strip("IN-").lstrip("C")) and \
+                not hasattr(ex_table.columns, k.strip("OR-").lstrip("C")):
             from app import app
             NOCOLUMN_ERROR = app.config.get("NOCOLUMN_ERROR", True)
             if NOCOLUMN_ERROR:

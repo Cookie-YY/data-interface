@@ -19,13 +19,17 @@ def get_splited_columns(dataframe, INITIALIZATION):
     before_splited_columns = list(df.columns).copy()
     re_col_file = {}  # 最终有联动的列的字典
     for column in df.columns:
-        if column in RELATION_COLS and column not in INITIALIZATION:  # 需要在文件中，且不在init_dicts里面
+        if column in RELATION_COLS:
             table = RELATION_COLS[column]  # 获得联动的表名
+            table_columns = table.split("+")
             # 构造re_col_file = {"shej_02+shij_02+xj_02": ["xj_02", ""]}
-            take = re_col_file.setdefault(table, [])
-            take.append(column)
+            take = re_col_file.setdefault(table, [None]*len(table_columns))
+            take[table_columns.index(column)] = column
             re_col_file[table] = take
             before_splited_columns.remove(column)
+
+    # 3. 删除空项
+    re_col_file = {k: [i for i in v if i] for k, v in re_col_file.items()}
 
     return before_splited_columns, re_col_file
 

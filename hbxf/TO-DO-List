@@ -415,3 +415,25 @@ xf_blfsxx：
     http://127.0.0.1:3389/api/xf/?gd_id1=%E4%BF%A1%E8%AE%BF%E4%BA%8B%E9%A1%B9%E9%A2%84%E8%AD%A6&gd_id2=%E8%B5%B4%E7%9C%81%E8%AE%BF&gd_id3=%E9%A2%84%E8%AD%A6%E7%8A%B6%E6%80%81&Cqh=%E5%B9%BF%E4%B8%9C%E7%9C%81&day=[2020-10-19,2020-11-18]
     预警状态的图：当是同比的时候，value=xfjc
     ⭐解决方案：将groupby/同比/环比/占比 过程抽象出来
+- logger可选定向到文件还是返回前端
+    1. 封装一个函数，检查url速度问题【装饰器】
+    2. http://127.0.0.1:3389/api/xf/?gd_id1=%E4%BF%A1%E8%AE%BF%E4%BA%8B%E9%A1%B9%E9%A2%84%E8%AD%A6&gd_id2=%E8%B5%B4%E7%9C%81%E8%AE%BF&gd_id3=%E4%BF%A1%E8%AE%BF%E9%87%8F%E8%B5%B0%E5%8A%BF&Cqh=%E5%B9%BF%E4%B8%9C%E7%9C%81&day=[2020-10-20,2020-11-19]
+
+
+
+
+- 继续之前的信访绩效考核：信访部门/责任单位
+    信访部门+责任单位的排名策略不同
+        信访部门
+        ⭐方案：增加cond_trans   xfbm=广东省信访局&cond_trans=xfbm@trimXfbm【可以在里面判断是否需要真的做trim】
+            满意率和参评率可以用这个方法                  【接收xfbm=广东省信访局，返回IN-xfbm=aa,bb,cc,dd】条件解析需要增加一部分
+            即使走插件过程的即时受理率，也可以用这个方法     【接收xfbm=广东省信访局，xfbm_qh=广东省】
+        责任单位
+        ⭐方案：用一个transformer=@zrdwjssllvpm
+            核心：如果是广东省，得到结果后，只留最后的19个
+
+- 预测的方案
+    1. 能够预测【导包：离线安装的检测anaconda是否有sklearn】
+    2. 数据格式【待商量】
+
+- 测试动态传参给sql是否能够执行【线上测】

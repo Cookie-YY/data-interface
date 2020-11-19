@@ -41,6 +41,8 @@ def parse_data(realm, index, request_args):
         code, msg, api_dict = get_parsed_apis(api_dict)      # 处理 =drop/$引用问题/=now的解析
         if code != 200:
             return code, msg, {}
+        from flask import g
+        g.req_str = "&".join([f"{k}={v}" for k, v in api_dict.items() if v])
 
         # 3.查询层(apis   -> pandas)
         code, msg, dataframe = get_dataframe(api_dict)  # 返回df
@@ -53,7 +55,7 @@ def parse_data(realm, index, request_args):
         if code != 200:
             return code, msg, {}
 
-        data_frame = dict(**{"main_name": main_name}, **dataframe)
+        data_frame = dict(**{"main_name": main_name}, **dataframe, **{"req": g.get("req_str")})
         data_frame_list.append(data_frame)
 
     # 5.转换层(pandas -> json)

@@ -7,8 +7,8 @@ def params_parse_tb(conditions_dict):
     month_condition = conditions_dict.get("month")
     if day_condition:
         min_value, max_value = day_condition.strip("[").strip("]").split(",")
-        min_date = datetime.datetime.strptime(min_value, "%Y-%m-%d")
-        max_date = datetime.datetime.strptime(max_value, "%Y-%m-%d")
+        min_date = datetime.datetime.strptime(min_value, "%Y-%m-%d %H:%M:%S")
+        max_date = datetime.datetime.strptime(max_value, "%Y-%m-%d %H:%M:%S")
         last_min_date = min_date.replace(year=min_date.year - 1)
         last_max_date = max_date.replace(year=max_date.year - 1)
         conditions_dict["day"] = f"{last_min_date.strftime('%Y-%m-%d')},{last_max_date.strftime('%Y-%m-%d')}"

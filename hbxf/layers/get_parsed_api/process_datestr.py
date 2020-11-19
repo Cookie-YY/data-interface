@@ -27,6 +27,8 @@ def process_datestr(api_dict):
     """
 
     code, msg, api_dict = process_datecolumn(api_dict, "day")
+    if code != 200:
+        return code, msg, {}
     code, msg, api_dict = process_datecolumn(api_dict, "date")
     if code != 200:
         return code, msg, {}

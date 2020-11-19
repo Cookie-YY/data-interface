@@ -369,3 +369,44 @@ xf_blfsxx：
     拆分 BaseSearch类  和 Extension类
     Base_Search类有完整的before_search   search   after_search
     Extension类是一个工具包，提供基础的groupbysum   groupbyunicount   tb    hb   方法
+
+
+
+
+广东剩余工作
+- sql执行过程，需要增加 Cqh的等级判断
+    a. ext=jssllv_xx_xx/jssllv_yy_yy
+    b. 解决权限问题
+- sql要把所有的参数拼进去
+- full:
+    a. 随机初始化
+    b. 随机初始化的上下限
+    c. 字段自定义上下限
+
+- white_list
+- xfxs=网信时需要处理   param_trans  xfxs
+- 信访事项预警-->省局集体访量-->两个满意率为0
+- g变量添加full【param_trans里面的qh_godown】
+- g变量的监听：装饰器？
+- qh_godown  添加full=true
+- 时间  近十二个月     year/month/date   都用整型
+    date      time_format=year-month月day   time_show=%Y%m%d     year=2020    month=2020-01     day=2020-01-01,2020-10-10
+
+
+- 连接数的问题
+- xfxs=网信统一加 wx_map
+- qh_godown在 绩效考核的按期答复率的地图，不起作用，不会将name改掉
+    condition_dict    apis_copy  都放到g变量中
+
+- 真实的请求也放到返回值中[g变量]  before_param_trans
+- 微信+转交办效率
+- 【已完成】有效数字的统一处理
+- 【已完成】拆分param_trans
+- 信访绩效考核的地图没有table参数，通过sql计算完的df没有qh列
+- process_dollar 应该在 param_trans 后面
+    其他process 和 auth的处理都在 param_trans前面
+- 【已完成】day/date等参数，兼容数据库中可能存在的字符串形式
+- api_gateway
+    把插件过程拿出来
+    参数保护单独做一个部分
+    参数校验部分的重构

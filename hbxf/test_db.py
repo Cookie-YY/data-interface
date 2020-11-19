@@ -109,5 +109,35 @@ import pandas as pd
 # print(t)
 
 
-t = dict(zip(["a", "b"], [{"1":1, "2":2}, {"2":1, "1":2}]))
+# t = dict(zip(["a", "b"], [{"1":1, "2":2}, {"2":1, "1":2}]))
+# print(t)
+
+# 引用
+a = [1,2,3]
+b = a
+b.append(1)
+print(a)
+
+# 浅拷贝
+a = [1,2,3]
+b = a.copy()
+b.append(1)
+print(a)
+
+# 深拷贝
+a = [1,2,[3]]
+b = a.copy()
+b[2].append(1)
+
+dt ={"Cqh": "广东省"}
+sql = "aaaaa{Cqh}"
+
+t = f"selct from {sql.format(**{'Cqh': '广东省'})} where a={dt['Cqh']}"
+
+# t = t.format(**{"Cqh": "广东省"})
 print(t)
+
+print(f"{{}}")
+
+tt = {"a": 1, "b": 1}
+print(tt.copy())

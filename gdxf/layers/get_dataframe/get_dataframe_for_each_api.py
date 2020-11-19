@@ -12,4 +12,9 @@ def get_dataframe_for_each_api(apis):
         code, msg, dataframe = get_dataframe_common(apis)
     if code != 200:
         return code, msg, {}
+    SIGNIFICANT_DIGITS = app.config.get("SIGNIFICANT_DIGITS", 4)
+    try:
+        dataframe["df"][dataframe.get("value")] = dataframe["df"][dataframe.get("value")].apply(lambda x: round(x, SIGNIFICANT_DIGITS))
+    except:
+        pass
     return 200, "success", dataframe

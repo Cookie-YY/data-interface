@@ -54,15 +54,16 @@ def get_random_or_zero(df_dict):
 
         for column in value_dict:
             int_or_float = df_dict.get(column)[0]
+            # int_or_float = "VALUE_FLOAT(0.5,0.8)"
             if "VALUE_FLOAT" in int_or_float:
                 if "(" in int_or_float and ")" in int_or_float:
-                    lower, upper = int_or_float.strip(")").split(")")[1].split(",")
+                    lower, upper = int_or_float.strip(")").split("(")[1].split(",")
                     random_dict["random_float_lower"] = lower
                     random_dict["random_float_upper"] = upper
                 random_str = "round(random.uniform({random_float_lower},{random_float_upper}),{efficient_digits})".format(**random_dict)
             else:
                 if "(" in int_or_float and ")" in int_or_float:
-                    lower, upper = int_or_float.strip(")").split(")")[1].split(",")
+                    lower, upper = int_or_float.strip(")").split("(")[1].split(",")
                     random_dict["random_int_lower"] = lower
                     random_dict["random_int_upper"] = upper
                 random_str = "random.randint({random_int_lower},{random_int_upper})".format(**random_dict)

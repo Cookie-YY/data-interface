@@ -1,7 +1,9 @@
+from layers.get_parsed_api.process_datestr import process_datestr
 from layers.get_parsed_api.process_drop import process_drop
 from layers.get_parsed_api.process_dollar import process_dollar
 from layers.get_parsed_api.process_now import process_now
 from layers.get_parsed_api.process_invalid import process_invalid
+from flask import g
 
 
 def get_parsed_apis(api_dicts):
@@ -16,45 +18,47 @@ def get_parsed_apis(api_dicts):
     """
     result = {}
     for main_name, api_dict in api_dicts.items():
-        # 处理默认值问题
+        # 1.处理默认值问题
         from layers.get_parsed_api.process_default import process_default
         code, msg, result_this = process_default(api_dict)
         if code != 200:
             return code, msg, {}
 
-        # 处理parm_trans
-        from layers.get_parsed_api.process_paramtrans import process_paramtrans
-        result_this = process_paramtrans(result_this)
-
-        # 处理drop问题
-        code, msg, result_this = process_drop(result_this)
-        if code != 200:
-            return code, msg, {}
-
-        # 处理$引用问题
-        code, msg, result_this = process_dollar(result_this)
-        if code != 200:
-            return code, msg, {}
-
-        # 处理now问题
-        code, msg, result_this = process_now(result_this)
-        if code != 200:
-            return code, msg, {}
-
-        # 处理invalid问题
+        # 2.处理invalid问题
         code, msg, result_this = process_invalid(result_this)
         if code != 200:
             return code, msg, {}
 
-        # 处理参数映射
-        from utils.value_mapped import value_mapped
-        result_this = value_mapped(result_this)
+        # 3.处理drop问题
+        code, msg, result_this = process_drop(result_this)
+        if code != 200:
+            return code, msg, {}
 
-        # 处理权限问题
+        # 4.处理now问题
+        code, msg, result_this = process_now(result_this)
+        if code != 200:
+            return code, msg, {}
+
+        # 5.处理时间的字段类型兼容问题
+        code, msg, result_this = process_datestr(result_this)
+        if code != 200:
+            return code, msg, {}
+
+        # 5.处理权限问题
         from layers.get_parsed_api.process_auth import process_auth
         result_this = process_auth(result_this)
 
+        # 此时将没有经过param_trans的内容放到g变量中，保存一份完整的用户参数
+        g.before_param_trans = result_this
 
+        # 6.处理param_trans
+        from layers.get_parsed_api.process_paramtrans import process_paramtrans
+        result_this = process_paramtrans(result_this)
+
+        # 7.处理$引用问题
+        code, msg, result_this = process_dollar(result_this)
+        if code != 200:
+            return code, msg, {}
 
         result[main_name] = result_this
     return 200, "success", result

@@ -58,6 +58,7 @@ def get_dataframe_extensions(apis):
         df = df.fillna("")
 
     dataframe = {**apis_copy, **{"df": df}}
+    dataframe["table"] = ["SQL"]  # 兼容没有waiting_for_search的情况
     if ext.waiting_for_search:
         dataframe["table"] = [i.get("table") for i in ext.waiting_for_search if "table" in i]
     return 200, "success", dataframe

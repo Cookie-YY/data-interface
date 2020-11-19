@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 import pandas as pd
 import random  # eval有可能会用到随机数
@@ -133,9 +134,9 @@ def merge_initialized_table(dataframe):
 
     # 加载字段可能取值 & 联动字段文件的目录
     from app import app
-    cus_init = app.config.get("CUS_INITIALIZATION")
-    global_init = app.config.get("INITIALIZATION")  # extension_float 和 extension_int
-    df_dict = {**global_init, **cus_init}
+    # cus_init = app.config.get("CUS_INITIALIZATION")
+    df_dict = app.config.get("INITIALIZATION")  # extension_float 和 extension_int
+    # df_dict = {**global_init, **cus_init}
     df_dict = get_random_or_zero(df_dict)
 
     file_root_path = app.config.get("INITIALIZATION_FILE_PATH")
@@ -152,6 +153,8 @@ def merge_initialized_table(dataframe):
         date = dataframe.get("date")
         date_list = date_initialized(date, dataframe.get("time_format"))
         df_dict["date"] = date_list
+        # df["date"] = df["date"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
+        # df["date"] = df["date"].apply(lambda x: datetime.strftime(x, dataframe.get("time_format")))
     df_list = list(df)  # 输入的df列名列表
 
     # 如果只有一列，说明只取了value,也只能有一行

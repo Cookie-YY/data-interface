@@ -1,5 +1,5 @@
 # 初始化指标需要的值
-CUS_INITIALIZATION = {
+INITIALIZATION = {
     "yyxfjc": ["VALUE_INT"],
     "gjjxfjc": ["VALUE_INT"],
     "wtsd": ["省级", "市级", "县级", "乡级"],
