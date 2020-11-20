@@ -47,11 +47,17 @@ def check_graph_id_dict(graph_id_dict):
     for graph_id_assigned in url_dispatch_map:
         if re.match(graph_id_assigned, graph_id):
             url = url_dispatch_map[graph_id_assigned]
+    # 如果查找后依然没有，报错
     if url is None:
-    # if graph_id not in url_dispatch_map:
         return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
-    # url = url_dispatch_map[graph_id]
-
+    # 如果是$开头作为分发的引用，用于构建测试接口【$引用的gd_id必须是正常的字符串url或者list/dict数据】
+    elif isinstance(url, str) and url.startswith("$"):
+        url = url_dispatch_map.get(url.strip("$"))
+        if url is None:
+            return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
+    # 如果是list或者dict直接当作数据返回[如果走了$, 这里检查的是拿到$引用的]
+    if isinstance(url, dict) or isinstance(url, list):
+        return 203, "success", {"data": url}
     return 200, "success", url
 
 
@@ -67,7 +73,7 @@ def get_dispatched_apis(request_args):
     if graph_id_dict:  # 如果要走映射[只有gd_id=，插件过程，这里为空]
         code, msg, url = check_graph_id_dict(graph_id_dict)  # 得到映射后的url
         if code != 200:
-            return code, msg, {}
+            return code, msg, url
 
         # 得到格式化后的url
         url = url.format(**request_args_copy)

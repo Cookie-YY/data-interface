@@ -48,12 +48,15 @@ def data_index_api(realm, index=""):
     # convert层直接返回封装好的结果
     # 如果走插件过程，需要手动补充code和msg
     code, msg, parsed_data = parse_data(realm, index, request_args)
-    if code not in [200, 201, 202, 999]:
+    if code not in [200, 201, 202, 203, 999]:  # 201空数据   202  插件过程   203api分发时直接是字典
         parsed_data = {"code": code, "msg": msg, "data": {}}
     else:
         if code == 202:
             parsed_data["code"] = 202
-            parsed_data["msg"] = msg
+            parsed_data["msg"] = "plugin_mode"
+        elif code == 203:
+            parsed_data["code"] = 203
+            parsed_data["msg"] = "test data in apis_dispatch"
     response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = '*'

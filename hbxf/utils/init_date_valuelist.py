@@ -15,7 +15,7 @@ def init_date_valuelist(dataframe):
 
 
 def date_initialized(date, time_format):
-    date_splited = date.strip("[").strip("]").split(",")
+    date_splited = date.split(",")
     begin_date = date_splited[0]
     end_date = date_splited[1]
 
@@ -32,7 +32,7 @@ def date_initialized(date, time_format):
 
 
 def day_initialized(day):
-    day_splited = day.strip("[").strip("]").split(",")
+    day_splited = day.split(",")
     begin_date = day_splited[0]
     end_date = day_splited[1]
 
@@ -49,7 +49,7 @@ def day_initialized(day):
 
 
 def year_initialized(year):
-    year_splited = year.strip("[").strip("]").split(",")
+    year_splited = year.split(",")
     if len(year_splited) == 2:
         begin_year = int(year_splited[0])
         end_year = int(year_splited[1])

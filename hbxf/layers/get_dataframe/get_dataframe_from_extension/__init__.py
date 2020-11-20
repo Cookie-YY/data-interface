@@ -1,13 +1,15 @@
 def get_dataframe_from_extension(apis_copy, apis):
     # 0.初始化：加载自定义extension
-    # 0.1 判断来自系统的extension还是自定义extension
+    # 0.1 解析参数
     extension_name_ = apis_copy["transformer"]
     extension_name_ = extension_name_ if ":" in extension_name_ else extension_name_+":"
     extension_module, params = extension_name_.split(":")
     extension_class = extension_module.capitalize()
-    params = params.split(",")  # params=[""] (当params没有传)
+    params = params.split(",")  # params=[""] (当params没有传)   params=["7d"]    params=["7d", "p=1", "q=2"]
+    kwargs = {param.split("=")[0]: param.split("=")[1] for param in params if "=" in param}
+    args = [i for i in params if "=" not in i]
 
-    # 0.2 加载extension
+    # 0.2 判断来自系统的extension还是自定义extension并加载
     from app import app
     module_path = f"settings.{app.config['PROJECT']}.extensions.{extension_module}" \
         if extension_module in app.config.get("CUS_EXTENSIONS", []) \
@@ -16,7 +18,7 @@ def get_dataframe_from_extension(apis_copy, apis):
     Ext = getattr(extension_setting, extension_class)
 
     # 1. 执行extension的before_search/search/after_search
-    ext = Ext(apis_copy, apis, *params)
+    ext = Ext(apis_copy, apis, *args, **kwargs)
     ext.before_search()   # search 前准备
     if ext.code != 200:
         return ext.code, ext.msg, {}

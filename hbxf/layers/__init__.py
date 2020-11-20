@@ -5,6 +5,8 @@ from layers.get_parsed_api import get_parsed_apis
 from layers.get_splited_apis import get_splited_apis
 from layers.makeup_dataframe import makeup_dataframe
 
+from flask import request
+
 
 
 
@@ -21,8 +23,7 @@ def parse_data(realm, index, request_args):
     """
     # 0.网关层(apis -> apis)
     # 1. 权限验证
-    # 2. 插件化开发
-    # 3. apis 分发：如果传过来的request_args只有参数 graph_id\d+ 那么需要拼接 graph_id 做分发
+    # 2. apis 分发：如果传过来的request_args只有参数 graph_id\d+ 那么需要拼接 graph_id 做分发
     code, msg, api_dicts_or_result = api_gateway(realm, index, request_args)
     if code != 200:
         return code, msg, api_dicts_or_result
@@ -38,7 +39,7 @@ def parse_data(realm, index, request_args):
     # 如果开启调试模式，在这里跳出
     from flask import g
     if g.get("debug") == "true":
-        return 999, "调试模式", [{main_name: "&".join([f"{k}={v}" for k, v in api_dict.items() if v and k!="debug"])} for main_name, api_dict in api_dicts.items()]
+        return 999, "调试模式", [{main_name: request.base_url+"?"+"&".join([f"{k}={v}" for k, v in api_dict.items() if v and k!="debug"])} for main_name, api_dict in api_dicts.items()]
 
 
     # 开始分流，逐一对每一个拆出来的请求做处理

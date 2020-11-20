@@ -67,7 +67,7 @@ LEVEL_AUTH_ENCRYPT = False
 # 键：特殊参数
 # 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
-CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "time_format": (False, None), "ext": (False, None)}
+CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "full": ("true", None)}
 CUS_PARAM_TRANS = ["wx_map"]
 
 ############################### 数据配置 ###############################

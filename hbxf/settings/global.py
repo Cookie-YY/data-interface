@@ -9,7 +9,7 @@ URL_REFERENCE = {
     "shej": "shej_02"
 }
 # 程序内置extension，可以直接transformer=@xx使用
-SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb"]  # 系统内置extension
+SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict"]  # 系统内置extension
 
 # 程序内置param_trans
 SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
@@ -55,5 +55,8 @@ SYS_SPECIAL_PARAMS = {
     "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)|none"),
     "tmp_search": ("", None),
     "debug": (False, None),
-    "gd_id": ("", None)
+    "gd_id": ("", None),
+    "time_format": (False, None),
+    "ext": (False, None),
+    "ext_params": ("", None)
 }

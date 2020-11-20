@@ -25,7 +25,7 @@ def get_dataframe(apis):
     if code != 200:
         return code, msg, {}
 
-    # 3.extension【除CUS_EXTENSIONS外，需要寻找real_table】
+    # 3.extension【除CUS_EXTENSIONS外，其他的EXTENSION需要寻找real_table】
     # 3.1如果是系统过程，需要获取真实表
     from app import app
     if apis_copy["transformer"] in app.config["SYS_EXTENSIONS"]:

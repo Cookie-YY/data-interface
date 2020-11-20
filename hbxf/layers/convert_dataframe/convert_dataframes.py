@@ -44,10 +44,6 @@ def convert_one_dataframe(dataframe, groupid=0):
         stack_uni = get_unilist(stack_list)  # 内层嵌套的内容去重
         main_list = [i.get("name") for i in data]  # 外层包裹的内容
         main_uni = get_unilist(main_list)  # 外层包裹的内容去重
-        # num_stack = len(stack_uni)
-        # num_main = len(main_uni)
-        # stack_uni = stack_uni[:min(limit_inner, num_stack)]  # 内层取前几项
-        # main_uni = main_uni[:min(limit_outer, num_main)]  # 外层取前几项
         if name == stack:
             mapping = {f"value_g{groupid}_{1}": main_name}
         else:

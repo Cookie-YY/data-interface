@@ -5,7 +5,6 @@ from flask import request, g
 from layers.get_dataframe.get_dataframe_from_plugin.check_plugin import check_plugin_args
 from layers.get_dataframe.get_dataframe_from_plugin.mode_custom import get_custom_apis
 from layers.get_dataframe.get_dataframe_from_plugin.mode_sql import get_sql_apis
-from layers.get_dataframe.get_dataframe_from_plugin.preprocess_api import preprocess_api
 
 
 def get_dataframe_from_plugin(request_args):

@@ -31,7 +31,7 @@ def get_splited_apis(realm, index, request_args):
                 'condition = "lx@to:xfxs"'
                 target, operation = condition.split("@", 1)
                 operation = operation if ":" in operation else operation+":"
-                operator, op_content = operation.split(":")
+                operator, op_content = operation.split(":", 1)
                 # target:     表名：busin/index/timetype/qh/lx
                 #                  name/value
                 #             字段：year/month
