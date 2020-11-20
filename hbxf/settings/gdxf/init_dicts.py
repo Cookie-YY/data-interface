@@ -69,7 +69,7 @@ INITIALIZATION = {
     "hjlv": ["VALUE_FLOAT"],
     "xfrc": ["VALUE_INT"],
     "zjlv": ["VALUE_FLOAT"],
-    "tb_hb": ["VALUE_FLOAT"],
+    "tb": ["VALUE_FLOAT"],
     "hb": ["VALUE_FLOAT"],
     "gfrc": ["VALUE_INT"],
     "jtfrc": ["VALUE_INT"],

@@ -21,8 +21,8 @@ def run(fx_pymysql, start, end, query, query_date, **kwargs):
     e_time = end
 
     query = "('" + query + "')" if query != '网信' else ('网上投诉', '网信', '领导信箱')
-    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d")
-    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d")
+    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d %H:%M:%S")
+    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d %H:%M:%S")
     # query_date = request.args.get('query_date', 'xfrq')
     query_date = 'xfrq' if query_date == '信访日期' else 'djsj'
     xfxssql = "select xfjbh, xfxsmc, nrflmc, djjgmc,wtsdmc ,xfrs, cfxfbz, xfrq,djsj from xf_xfjxx  where xfxsmc in %s and %s  between '%s' and '%s'" % (query, query_date, s_time1, e_time1)

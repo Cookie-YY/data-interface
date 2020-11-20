@@ -15,8 +15,9 @@ class Mylv(Extension):
         xf_xfjg_cd_bmjb_qh_xfbm_xfxs_jbmyjc
 
     """
-    def __init__(self, apis_copy, apis):
-        super(Mylv, self).__init__(apis_copy, apis)  # 执行父类方法，获得self.apis/self.apis_copy
+    def __init__(self, apis_copy, apis, *args, **kwargs):
+        # 执行父类方法，获得self.apis/self.apis_copy/self.value
+        super(Mylv, self).__init__(apis_copy, apis, *args, **kwargs)
 
     def before_search(self):
         table = self.apis_copy.get("table", "")
@@ -70,7 +71,7 @@ class Mylv(Extension):
             columns.remove(self.value_my)
             if not columns:
                 value = (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]) / (df_my[self.value_my][0] + df_jbmy[self.value_jbmy][0]+df_bmy[self.value_bmy][0])
-                value = 0 if np.isnan(value) else value
+                # value = 0 if np.isnan(value) else value
                 self.df = pd.DataFrame({"mylv": [value]})
             else:
                 temp = pd.merge(pd.merge(df_my, df_bmy, on=columns, how="inner"), df_jbmy, on=columns, how="inner")
@@ -79,9 +80,9 @@ class Mylv(Extension):
 
                 # 处理计算结果
                 df_my.drop(self.value_my, axis=1, inplace=True)
-                df = df_my.replace(np.nan, 0)
-                df = df.replace([np.inf, -np.inf], 0)
-                self.df = df
+                # df = df_my.replace(np.nan, 0)
+                # df = df.replace([np.inf, -np.inf], 0)
+                self.df = df_my
         else:
             df_my = 0 if isinstance(df_my, pd.DataFrame) else df_my
             df_bmy = 0 if isinstance(df_bmy, pd.DataFrame) else df_bmy

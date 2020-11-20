@@ -1,3 +1,6 @@
+import sys
+
+
 def init_project():
     from app import app
 
@@ -8,19 +11,25 @@ def init_project():
     # app.config["INITIALIZATION"] = {**INITIALIZATION, **CUS_INITIALIZATION}
 
     # 1. 融合特殊参数信息
-    SPECIAL_PARAMS = app.config["SPECIAL_PARAMS"]
+    SYS_SPECIAL_PARAMS = app.config["SYS_SPECIAL_PARAMS"]
     CUS_SPECIAL_PARAMS = app.config.get("CUS_SPECIAL_PARAMS", {})
-    app.config["SPECIAL_PARAMS"] = {**SPECIAL_PARAMS, **CUS_SPECIAL_PARAMS}
+    app.config["SPECIAL_PARAMS"] = {**SYS_SPECIAL_PARAMS, **CUS_SPECIAL_PARAMS}
 
     # 2. 融合extension信息[可能重复，CUS中复写了系统的extension]
-    EXTENSIONS = app.config["EXTENSIONS"]
+    SYS_EXTENSIONS = app.config["SYS_EXTENSIONS"]
     CUS_EXTENSIONS = app.config.get("CUS_EXTENSIONS", [])
-    EXTENSIONS.extend(CUS_EXTENSIONS)
+    EXTENSIONS = SYS_EXTENSIONS + CUS_EXTENSIONS
     app.config["EXTENSIONS"] = EXTENSIONS
 
     # 3. 融合param_trans信息[可能重复，CUS中复写了系统的param_trans]
-    PARAM_TRANS = app.config["PARAM_TRANS"]
+    SYS_PARAM_TRANS = app.config["SYS_PARAM_TRANS"]
     CUS_PARAM_TRANS = app.config.get("CUS_PARAM_TRANS", [])
-    PARAM_TRANS.extend(CUS_PARAM_TRANS)
+    PARAM_TRANS = SYS_PARAM_TRANS + CUS_PARAM_TRANS
     app.config["PARAM_TRANS"] = PARAM_TRANS
 
+
+
+    # 99. 配置检查
+    from utils.config_check import ConfigCheck
+    ConfigCheck(app.config)
+    print("[ok]----Config Checked")

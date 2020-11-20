@@ -27,12 +27,11 @@ def get_norelation_valuelist(dataframe):
     init_date_valuedict = init_date_valuelist(dataframe)
     INITIALIZATION = app.config.get("INITIALIZATION")
     modified_initialization = g.get("modified_initialization", {})
-    INITIALIZATION.update(modified_initialization)       # 由于param_trans导致的取值变化
     INITIALIZATION.update(init_date_valuedict)           # 由于指定时间范围导致的取值变化
+    INITIALIZATION.update(modified_initialization)       # 由于param_trans导致的取值变化
     INITIALIZATION = get_random_or_zero(INITIALIZATION)
 
     return INITIALIZATION
-
 
 
 def get_random_or_zero(df_dict):

@@ -119,11 +119,11 @@ class Jssllv(Extension):
     计算公式：使用已提供的SQL语句进行计算
     """
 
-    def __init__(self, apis_copy, apis):
-        super(Jssllv, self).__init__(apis_copy, apis)  # 执行父类方法，获得self.apis/self.apis_copy
+    def __init__(self, apis_copy, apis, *args, **kwargs):
+        super(Jssllv, self).__init__(apis_copy, apis, *args, **kwargs)  # 执行父类方法，获得self.apis/self.apis_copy
 
     def before_search(self):
-        self.df = pd.DataFrame([None],columns=["jssllv"])
+        return
 
     def search(self):
         # self.apis_copy["xfjc"] = "jssllv"

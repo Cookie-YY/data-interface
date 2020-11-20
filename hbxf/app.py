@@ -41,11 +41,14 @@ def data_index_api(realm, index=""):
     request_args_list = {i: request_args[i][0] for i in request_args if isinstance(request_args[i], list)}
     request_args = {**request_args_list, **request_args_str}
 
+    # 前端调试模式
+    g.debug = request_args.get("debug", "false")
+
     # 得到解析的结果
     # convert层直接返回封装好的结果
     # 如果走插件过程，需要手动补充code和msg
     code, msg, parsed_data = parse_data(realm, index, request_args)
-    if code not in [200, 201, 202]:
+    if code not in [200, 201, 202, 999]:
         parsed_data = {"code": code, "msg": msg, "data": {}}
     else:
         if code == 202:

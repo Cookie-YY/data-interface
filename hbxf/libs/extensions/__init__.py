@@ -13,30 +13,34 @@ class Extension:
     after_search方法:
         返回 res = [[data_list1, data_list2],[]]
     """
-    from layers.get_dataframe.params_check import get_real_table
-    from layers.get_dataframe.params_parse.params_parse_conditions import get_conditions
-    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_groupby import groupby_and_sum
+    from layers.get_dataframe.params_check.params_check_real_table import get_real_table
+    from layers.get_dataframe.params_parse import get_conditions
+    # from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_groupby import groupby_and_sum
 
-    from layers.get_dataframe.params_parse.parse_transformer.params_parse_hb import params_parse_hb
-    from layers.get_dataframe.params_parse.parse_transformer.params_parse_tb import params_parse_tb
-    from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_tb_or_hb import parse_tb_or_hb, \
-        parse_tb_and_hb
+    from utils.sys_extensions.groupby import groupby_and_sum
+    from utils.sys_extensions.params_parse_tb_hb import params_parse_tb, params_parse_hb
+    from utils.sys_extensions.calculate_tb_hb import calculate_tb_and_hb, calculate_tb_or_hb
 
-    def __init__(self, apis_copy, apis):  # apis_copy中可以拿到ex_table
+    def __init__(self, apis_copy, apis, *args, **kwargs):  # apis_copy中可以拿到ex_table
         """实现除了transformer其他的条件解析"""
         self.code = 200
         self.msg = "success"
         self.apis_copy = apis_copy
         self.apis = apis
+        self.value = apis_copy.get("value")
         self.before_waiting_for_search = None  # [自己调用方法后]调用before_search后，提供该属性用于查库
         self.waiting_for_search = None  # 外界必须实现将before_waiting_for_search转成waiting_for_search的方法
         self.db_results = None  # [外界传递]当完成数据库查库后获得该属性
         self.df = None  # [自己调用方法后]调用after_search后，提供该属性作为最终结果
 
-    def get_before_waiting_for_search(self):
+        self.args = args
+        self.kwargs = kwargs
+
+    def _before_search(self):
         code, msg, real_table = Extension.get_real_table(self.apis_copy)
         table, ex_table = real_table["table"], real_table["ex_table"]
-        columns = f"{self.apis_copy['name']},{self.apis_copy['stack']},{self.apis_copy['value']}"
+        tmp_search = self.apis_copy['tmp_search'].split(',')
+        columns = f"{self.apis_copy['name']},{self.apis_copy['stack']},{self.value},{','.join(tmp_search)}"
         conditions = [self.apis]
         before_waiting_for_search = [
             {"table": table, "ex_table": ex_table, "columns": columns, "conditions": conditions},
@@ -46,7 +50,7 @@ class Extension:
 
 
     def before_search(self):
-        self.get_before_waiting_for_search()
+        self._before_search()
         self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(self.before_waiting_for_search)
 
 
@@ -116,7 +120,7 @@ class Extension:
 
     def after_search(self):
         df = self.db_results[0][0]
-        df = Extension.groupby_and_sum(df, self.apis_copy.get("value"))
+        df = Extension.groupby_and_sum(df, self.value)
         df = df.replace(np.nan, 0)
         df = df.replace([np.inf, -np.inf], 0)
         self.df = df
@@ -152,7 +156,8 @@ class Extension:
             # 处理 columns
             columns = waiting_for_search_each["columns"]
             columns = [i for i in columns.split(",") if i]
-            for_search_each_done["columns"] = columns
+            from utils.get_unilist import get_unilist
+            for_search_each_done["columns"] = get_unilist(columns)
 
             # 处理conditions
             conditions_done = []

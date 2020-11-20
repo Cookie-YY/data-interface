@@ -13,8 +13,9 @@ class Cplv(Extension):
         xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc
         xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwpjjc
     """
-    def __init__(self, apis_copy, apis):
-        super(Cplv, self).__init__(apis_copy, apis)  # 执行父类方法，获得self.apis/self.apis_copy
+    def __init__(self, apis_copy, apis, *args, **kwargs):
+        # 执行父类方法，获得self.apis/self.apis_copy/self.value
+        super(Cplv, self).__init__(apis_copy, apis, *args, **kwargs)
 
     def before_search(self):
         table = self.apis_copy.get("table", "")
@@ -61,7 +62,7 @@ class Cplv(Extension):
             columns.remove(self.value_yp)
             if not columns:
                 value = (df_yp[self.value_yp][0]) / (df_yp[self.value_yp][0] + df_wp[self.value_wp][0])
-                value = 0 if np.isnan(value) else value
+                # value = 0 if np.isnan(value) else value
                 self.df = pd.DataFrame({"cplv": [value]})
             else:
                 temp = pd.merge(df_yp, df_wp, on=columns, how="inner")
@@ -70,9 +71,9 @@ class Cplv(Extension):
                 df_yp["cplv"] = (temp[self.value_yp])/(temp[self.value_yp]+temp[self.value_wp])
                 # 处理计算结果
                 df_yp.drop(self.value_yp, axis=1, inplace=True)
-                df = df_yp.replace(np.nan, 0)
-                df = df.replace([np.inf, -np.inf], 0)
-                self.df = df
+                # df = df_yp.replace(np.nan, 0)
+                # df = df.replace([np.inf, -np.inf], 0)
+                self.df = df_yp
             # self.final_res = {"df": df, "apis_copy": self.apis_copy}
         else:
             df_yp = 0 if isinstance(df_yp, pd.DataFrame) else df_yp

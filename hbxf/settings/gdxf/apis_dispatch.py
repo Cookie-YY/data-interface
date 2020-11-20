@@ -185,7 +185,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_集体访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfbmmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_zrdwmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_jtf_xfjc&jtf=集体访&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_集体访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
+    "信访事项预警_集体访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day;Cqh)",
 
 
 
@@ -193,7 +193,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_进京访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfbmgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_gjjxfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_进京访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
+    "信访事项预警_进京访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day;Cqh)",
     "信访事项预警_进京访_内容分类": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_gjjxfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_进京访_信访目的": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_gjjxfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 
@@ -202,7 +202,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_赴省访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_myjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_xfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_赴省访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&param_protect=black_list(day;Cqh)",
+    "信访事项预警_赴省访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day;Cqh)",
     "信访事项预警_赴省访_内容分类": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_xfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_赴省访_信访目的": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_xfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 
@@ -215,7 +215,7 @@ URL_DISPATCH_MAP = {
 
 
     # 【权限控制需要在sql中判断Cqh】按期答复率+网信占比[分信访形式的需要测试]
-    "信访绩效考核_区划分布_总体_(全部|drop)": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@aqdflv&ext=aqdflv_qh_all_shej/aqdflv_qh_all_shij&extra_index=table@to:xf_xfj_cd_xj_xfxs_xfjc;transformer@to:@wxzb;ext@to:wxzb;name@to:xfxs;param_trans@to:qh_include_sub&main_name=按期答复率,网信占比&day=[2020-01-01,2020-10-10]&Cqh=广东省",
+    "信访绩效考核_区划分布_总体_(全部|drop)": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@aqdflv&ext=aqdflv_qh_all_shej/aqdflv_qh_all_shij&extra_index=table@to:xf_xfj_cd_xj_xfxs_xfjc;transformer@to:@wxzb;ext@to:wxzb;param_trans@to:qh_include_sub&main_name=按期答复率,网信占比&day=[2020-01-01,2020-10-10]&Cqh=广东省",
     "信访绩效考核_区划分布_总体_(?!全部)(?!drop)": "http://127.0.0.1:3389/api/xf/?transformer=@aqdflv&ext=aqdflv_qh_all_shej/aqdflv_qh_all_shij&main_name=按期答复率&xfxs={gd_id4}&full=true&day=[2020-01-01,2020-10-10]&Cqh=广东省",
     # 【权限控制需要在sql中判断Cqh】参评率+满意率+及时受理率
     "信访绩效考核_区划分布_信访部门_(全部|drop)": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&xfxs=drop&param_trans=qh_include_sub&transformer=@cplv&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc;transformer@to:@mylv,transformer@to:@jssllv;ext@to:jssllv_qh_all_xfbm_shej/jssllv_qh_all_xfbm_shij/jssllv_qh_all_xfbm_xj&main_name=参评率,满意率,及时受理率&day=[2020-01-01,2020-10-10]&Cqh=广东省",
@@ -240,58 +240,51 @@ URL_DISPATCH_MAP = {
     "信访绩效考核_区划分布_区划_drop_责任单位-及时受理率": "http://127.0.0.1:3389/api/xf/?xfxs={gd_id4}&transformer=@jssllv&ext=jssllv_qh_all_zrdw_allshij&Cqh=广东省&param_trans=qh_godown",
 
 
-    # 2. 信访部门 [xfxs=drop/来信/来访/网信  xfbm=广东省信访局/invalid[默认广东省信访局]
+    # 2. 信访部门 [xfxs=drop/来信/来访/网信  xfbm=广东省信访局   xfxs=   bmjb=省级]（bmjb给到sql实现的三率，正常实现的不影响）
     # 【转交办效率待实现】待领 待办 超期未答复 转交办效率
-    "信访绩效考核_信访部门_工作过程监控": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dljc&value=dljc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dbjc;value@to:dbjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwbjjc;value@to:cqwbjjc&main_name=待领,待办,超期未答复",
+    "信访绩效考核_信访部门_工作过程监控": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dljc&value=dljc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dbjc;value@to:dbjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwbjjc;value@to:cqwbjjc&main_name=待领,待办,超期未答复&xfbm=广东省信访局&param_trans=@trimXfbm",
 
-    "信访绩效考核_信访部门_参评饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&value=ypjjc&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwpjjc;value@to:cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_信访部门_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_信访部门_参评饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
 
-    "信访绩效考核_信访部门_满意饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&value=myjc&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_bmyjc;value@to:bmyjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_jbmyjc;value@to:jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_信访部门_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_信访部门_满意饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_bmyjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
 
-    # 待实现
-    "信访绩效考核_信访部门_及时受理饼图": "http://127.0.0.1:3389/api/xf/?transformer=@jssllv&ext=jssllv_xfbm_all_shej_nums/jssllv_xfbm_all_shij_nums&name=slqk&full=true",
-    # 待实现
-    "信访绩效考核_信访部门_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_qh_xfxs_xfbm_shej/jssllv_qh_xfxs_xfbm_shij",
+    "信访绩效考核_信访部门_及时受理饼图": "http://127.0.0.1:3389/api/xf/?transformer=@jssllv&ext=jssllv_xfbm_all_shej_nums/jssllv_xfbm_all_shij_nums&name=slqk&full=true&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_qh_xfxs_xfbm_shej/jssllv_qh_xfxs_xfbm_shij&xfbm=广东省信访局&bmjb=省级",
 
-    "信访绩效考核_信访部门_网信占比饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&name=xfxs&value=xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]",
-    # 待实现
-    "信访绩效考核_信访部门_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_信访部门_网信占比饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&name=xfxs&value=xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&transformer=@wxzb&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
 
+    # xfbm_godowm需要实现【直属小弟】
+    "信访绩效考核_信访部门_排名_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&name=xfbm&order=-cplv&limit=10&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_trans=bm_godown",
+    "信访绩效考核_信访部门_排名_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&name=xfbm&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_trans=bm_godown",
+    "信访绩效考核_信访部门_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@jssllv&ext=jssllv_xfbm_all_shej_list/jssllv_xfbm_all_shij_list&order=-jssllv&limit=10&name=xfbm&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_trans=bm_godown",
+    "信访绩效考核_信访部门_排名_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@wxzb&name=xfbm&order=-wxzb&limit=10&day=[2020-01-01,2020-10-09]&full=true&xfbm=广东省信访局&param_trans=bm_godown",
 
-    "信访绩效考核_信访部门_排名_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&name=xfbm&order=-cplv&limit=10&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_信访部门_排名_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&name=xfbm&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]",
-    # 待实现
-    "信访绩效考核_信访部门_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@jssllv&ext=jssllv_xfbm_all_shej_list/jssllv_xfbm_all_shij_list&order=-jssllv&limit=10&name=xfbm&day=[2020-01-01,2020-10-09]",
-    # 待实现
-    "信访绩效考核_信访部门_排名_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&name=xfbm&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&full=true",
-
-    # 3. 责任单位
+    # 3. 责任单位[xfxs=drop/来信/来访/网信  zrdw=广东省统计局  xfxs=  Cqh=广东省（bmjb给到sql实现的三率，正常实现的不影响）]
     # 【转交办效率待实现】待领 待办 超期未答复 转交办效率
-    "信访绩效考核_责任单位_工作过程监控": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_dljc&value=dljc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_dbjc;value@to:dbjc,table@to:xf_xfjg_cd_qh_zrdw_xfxs_cqwbjjc;value@to:cqwbjjc&main_name=待领,待办,超期未答复",
+    "信访绩效考核_责任单位_工作过程监控": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_dljc&value=dljc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_dbjc;value@to:dbjc,table@to:xf_xfjg_cd_qh_zrdw_xfxs_cqwbjjc;value@to:cqwbjjc&main_name=待领,待办,超期未答复&zrdw=广东省信访局",
 
-    "信访绩效考核_责任单位_参评饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&value=ypjjc&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_cqwpjjc;value@to:cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_责任单位_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_责任单位_参评饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
+    "信访绩效考核_责任单位_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
 
-    "信访绩效考核_责任单位_满意饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&value=myjc&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_bmyjc;value@to:bmyjc,table@to:xf_xfjg_cd_qh_zrdw_xfxs_jbmyjc;value@to:jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_责任单位_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_责任单位_满意饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&extra_index=table@to:xf_xfjg_cd_qh_zrdw_xfxs_bmyjc,table@to:xf_xfjg_cd_qh_zrdw_xfxs_jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
+    "信访绩效考核_责任单位_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
 
-    # 待实现
-    "信访绩效考核_责任单位_及时受理饼图": "http://127.0.0.1:3389/api/xf/?transformer=@jssllv&ext=jssllv_zrdw_all_nums",
-    "信访绩效考核_责任单位_及时受理率": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@jssllv&ext=jssllv_zrdw_all_jssllv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_责任单位_及时受理饼图": "http://127.0.0.1:3389/api/xf/?transformer=@jssllv&ext=jssllv_zrdw_all_nums&day=[2020-01-01,2020-10-09]&zrdw=广东省信访局",
+    "信访绩效考核_责任单位_及时受理率": "http://127.0.0.1:3389/api/xf/?full=true&transformer=@jssllv&ext=jssllv_zrdw_all_jssllv&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
 
-    "信访绩效考核_责任单位_网信占比饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&name=xfxs&value=xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_责任单位_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]",
+    "信访绩效考核_责任单位_网信占比饼图": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&name=xfxs&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
+    "信访绩效考核_责任单位_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
 
-    "信访绩效考核_责任单位_排名_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&name=zrdw&order=-cplv&limit=10&day=[2020-01-01,2020-10-09]",
-    "信访绩效考核_责任单位_排名_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]",
-    # 待实现
-    "信访绩效考核_责任单位_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true",
-    "信访绩效考核_责任单位_(来信|来访|网信)_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_xfxs_list&order=-jssllv&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true",
-    "信访绩效考核_责任单位_drop_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true",
-    # 待实现
-    "信访绩效考核_责任单位_排名_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]",
+    # zrdw_godown待实现【省级的时候，直属小弟】
+    "信访绩效考核_责任单位_排名_参评率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&name=zrdw&order=-cplv&limit=10&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_满意率": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_(来信|来访|网信)_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_xfxs_list&order=-jssllv&xfxs={gd_id4}&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_drop_排名_及时受理率": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=10&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_网信占比": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=10&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
 
     ####################################### 辅助决策 #######################################
     # 全局业务监控-满意度-信访部门

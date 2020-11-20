@@ -30,8 +30,8 @@ def search_sb(conn, sql, value1, value2):
 def run(start, end, zt, zb_pymysql, **kwargs):
     s_time = start
     e_time = end
-    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d")
-    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d")
+    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d %H:%M:%S")
+    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d %H:%M:%S")
     str1 = s_time1.strftime("%Y{y}%m{m}%d{d}").format(y="年", m="月", d="日")
     str2 = e_time1.strftime("%Y{y}%m{m}%d{d}").format(y="年", m="月", d="日")
     last_s_time = str(s_time1.year - 1) + s_time[4:]

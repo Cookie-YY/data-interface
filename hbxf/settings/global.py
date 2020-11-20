@@ -9,10 +9,10 @@ URL_REFERENCE = {
     "shej": "shej_02"
 }
 # 程序内置extension，可以直接transformer=@xx使用
-EXTENSIONS = ["groupby", "tb", "hb", "zb"]  # 系统内置extension
+SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb"]  # 系统内置extension
 
 # 程序内置param_trans
-PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
+SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
 # # extension过程中的初始化值
 # INITIALIZATION = {
 #     "ext_int": ["VALUE_FLOAT"],
@@ -23,7 +23,7 @@ PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
 # 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
 # 键：特殊参数
 # 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
-SPECIAL_PARAMS = {
+SYS_SPECIAL_PARAMS = {
     # 确定表的参数
     "realm": (False, None),
     "busin": ("", None),
@@ -46,11 +46,14 @@ SPECIAL_PARAMS = {
     "limit": ("", "\d+|\d\s其他"),  # +会被浏览器转义成空格
     
     # 高级属性
-    "transformer": ("@groupby", "^@"),
+    "transformer": ("@groupby", None),
     "full": ("", None),
     "name_limit": ("", "\d+"),
     "stack_limit": ("", "\d+"),
     "ceil": ("", "\d+"),
     "ceil_value": (False, None),
-    "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)")
+    "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)|none"),
+    "tmp_search": ("", None),
+    "debug": (False, None),
+    "gd_id": ("", None)
 }

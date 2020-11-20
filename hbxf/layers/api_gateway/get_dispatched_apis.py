@@ -69,10 +69,17 @@ def get_dispatched_apis(request_args):
         if code != 200:
             return code, msg, {}
 
-        url = url.format(**request_args_copy)   # 做一个填空
-        graph_id_url_dict = url2dict(url)       # url --> dict
-        request_args = after_param_protect(graph_id_url_dict.get("param_protect", ""), request_args)  # param_protect用于保护参数 param_protect=black_list|white_list
-        graph_id_url_dict.update(request_args)  # 用剩余参数更新dict
+        # 得到格式化后的url
+        url = url.format(**request_args_copy)
+        # url --> dict
+        graph_id_url_dict = url2dict(url)
+        # 外界可以取消保护
+        if "param_protect" in request_args:
+            graph_id_url_dict.update({"param_protect": request_args["param_protect"]})
+        # url保护  param_protect=black_list|white_list
+        request_args = after_param_protect(graph_id_url_dict.get("param_protect", ""), request_args)
+        # 更新request_args
+        graph_id_url_dict.update(request_args)
         return 200, "success", graph_id_url_dict
     return 200, "success", request_args
 

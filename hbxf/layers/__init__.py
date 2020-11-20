@@ -6,6 +6,8 @@ from layers.get_splited_apis import get_splited_apis
 from layers.makeup_dataframe import makeup_dataframe
 
 
+
+
 def parse_data(realm, index, request_args):
     """
     组装所有层的方法：
@@ -33,6 +35,12 @@ def parse_data(realm, index, request_args):
     if code != 200:
         return code, msg, {}
 
+    # 如果开启调试模式，在这里跳出
+    from flask import g
+    if g.get("debug") == "true":
+        return 999, "调试模式", [{main_name: "&".join([f"{k}={v}" for k, v in api_dict.items() if v and k!="debug"])} for main_name, api_dict in api_dicts.items()]
+
+
     # 开始分流，逐一对每一个拆出来的请求做处理
     data_frame_list = []
     for main_name, api_dict in api_dicts.items():
@@ -47,7 +55,7 @@ def parse_data(realm, index, request_args):
         # 3.查询层(apis   -> pandas)
         code, msg, dataframe = get_dataframe(api_dict)  # 返回df
         if code != 200:
-            return code, msg, []
+            return code, msg, dataframe
 
         # 4.补充层(pandas -> pandas)
         # 返回data = pd.DataFrame()

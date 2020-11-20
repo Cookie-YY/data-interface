@@ -1,3 +1,44 @@
+from libs.extensions import Extension
+
+
+class Zb(Extension):
+    """占比"""
+    """
+    目前仅支持分组求和
+    """
+    def __init__(self, apis_copy, apis, *args, **kwargs):
+        # 执行父类方法，获得self.apis/self.apis_copy/self.value
+        super(Zb, self).__init__(apis_copy, apis, *args, **kwargs)
+
+    def after_search(self):
+        """
+        self.db_results: [db_results[0][0]]
+        :return:
+        """
+        # 获取结果
+        df_zb = Extension.groupby_and_sum(self.db_results[0][0], self.value)
+
+        if len(self.args) == 1:
+            if self.args[0] == "":
+                df_zb[self.value] = df_zb[self.value] / (df_zb[self.value].sum())
+            else:
+                former, later = self.args[0].split("/")
+                tmp = df_zb[later].map(
+                    lambda x: df_zb.loc[df_zb[later] == x, [self.value]].sum().squeeze())  # 按later类型计算value列的和，squeeze()取标量
+                df_zb[self.value] = df_zb[self.value] / tmp
+        else:
+            return {}
+
+        self.df = df_zb
+
+
+
+
+
+
+
+
+
 def parse_zb(df_list, apis_copy):
     """
     @zb的情况

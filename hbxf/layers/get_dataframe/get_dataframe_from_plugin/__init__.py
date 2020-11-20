@@ -1,14 +1,14 @@
 import re
 
-from flask import request
+from flask import request, g
 
-from layers.api_gateway.get_plugined_apis.check_plugin import check_plugin_args
-from layers.api_gateway.get_plugined_apis.mode_custom import get_custom_apis
-from layers.api_gateway.get_plugined_apis.mode_sql import get_sql_apis
-from layers.api_gateway.get_plugined_apis.preprocess_api import preprocess_api
+from layers.get_dataframe.get_dataframe_from_plugin.check_plugin import check_plugin_args
+from layers.get_dataframe.get_dataframe_from_plugin.mode_custom import get_custom_apis
+from layers.get_dataframe.get_dataframe_from_plugin.mode_sql import get_sql_apis
+from layers.get_dataframe.get_dataframe_from_plugin.preprocess_api import preprocess_api
 
 
-def get_plugined_apis(request_args):
+def get_dataframe_from_plugin(request_args):
     plugin_apis = []
     from app import app
     for i in app.config.get("APIS_PLUGIN", []):
@@ -24,18 +24,13 @@ def get_plugined_apis(request_args):
         if code != 200:
             return code, msg, {}
 
-        # 处理now问题【需要处理才能拿到from和to】
-        code, msg, request_args = preprocess_api(request_args)
-        if code != 200:
-            return code, msg, {}
-
         # 获取mode，并判断模式
         mode = results.get("mode")
 
         # 格式化变量池
         from utils.db_connection import fx_pymysql, zb_pymysql
-        format_pool_custom = dict(**request_args, **app.config, fx_pymysql=fx_pymysql, zb_pymysql=zb_pymysql)
-        format_pool_sql = dict(**request_args, **app.config)
+        format_pool_custom = dict(**g.get("reqdicts_before_pt"), **app.config, fx_pymysql=fx_pymysql, zb_pymysql=zb_pymysql)
+        format_pool_sql = dict(**g.get("reqdicts_before_pt"), **app.config)
 
         # custom模式
         if mode == "custom":
@@ -55,4 +50,4 @@ def get_plugined_apis(request_args):
             return 400, "", {}
         res = {"map": mapping, "data": data} if mapping else {"data": data}
         return 202, "success", res
-    return 200, "success", {}
+    return 200, "success", request_args
