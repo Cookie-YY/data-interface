@@ -2,8 +2,8 @@
   "code": 200,
   "msg": "success",
   "map": {
-    "value_g0_1": "value",
-    "value_g1_1": "precent"
+    "value_g0_1": "件次",
+    "value_g1_1": "占比"
   },
   "data": [
     {

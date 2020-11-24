@@ -28,10 +28,10 @@ class Extension:
         self.apis_copy = apis_copy
         self.apis = apis
         self.value = apis_copy.get("value")
-        self.before_waiting_for_search = None  # [自己调用方法后]调用before_search后，提供该属性用于查库
-        self.waiting_for_search = None  # 外界必须实现将before_waiting_for_search转成waiting_for_search的方法
-        self.db_results = None  # [外界传递]当完成数据库查库后获得该属性
-        self.df = None  # [自己调用方法后]调用after_search后，提供该属性作为最终结果
+        self.before_waiting_for_search = None  # 调用_before_search后获得【可以继承后，在已有的内容上增加内容】
+        self.waiting_for_search = None         # 调用before_search后获得【用于查库】
+        self.db_results = None                 # 调用search后获得【查询结果，用于之后的合并】
+        self.df = None                         # 调用after_search后获得【作为最终结果】
 
         self.args = args
         self.kwargs = kwargs
@@ -95,9 +95,11 @@ class Extension:
                     NOCOLUMN_ERROR = app.config.get("NOCOLUMN_ERROR", True)
                     if NOCOLUMN_ERROR:
                         self.code, self.msg = 400, f"NoSuchColumnError: The table {search_one_table['table']} has no specific columns [{col}]"
-                        return
-                    nonedf = Extension._get_none_df(self.apis_copy)
-                    self.db_results = nonedf
+                    else:
+                        nonedf = Extension._get_none_df(self.apis_copy)
+                        self.code, self.msg, self.db_results = 200, f"The table {search_one_table['table']} has no specific columns [{col}]", nonedf
+                    session.close()
+                    return
 
             tar_vs = [getattr(ex_table.columns, i) for i in columns]
             # 当前表中的多组条件
@@ -125,6 +127,9 @@ class Extension:
         df = df.replace([np.inf, -np.inf], 0)
         self.df = df
         # self.final_res = {"df": df, "apis_copy": self.apis_copy}
+
+    def reuse_df(self):
+        pass
 
     @classmethod
     def get_waiting_for_search(cls, before_waiting_for_search):
@@ -165,6 +170,8 @@ class Extension:
             for condition in conditions:
                 if not isinstance(condition, dict):  # 说明有多组condition
                     return 400, "ExtensionError: The condition must be list with some dicts", {}
+                if isinstance(ex_table, str):
+                    return 200, "ExtensionError: NoSuchTable", {}
                 code, msg, parsed_condition = cls.get_conditions(ex_table, condition)
                 if code != 200:
                     return code, msg, {}

@@ -1,15 +1,16 @@
 import re
 
+
 def after_param_protect(param_protect, request_args_copy):
     # param_protect = request_args_copy.get("param_protect","")
     black_list = re.search(r"black_list\((.*?)\)", param_protect)
     white_list = re.search(r"white_list\((.*?)\)", param_protect)
     if black_list:
-        bk_list = black_list.groups()[0].split(";")
+        bk_list = black_list.groups()[0].split("+")
         for i in bk_list:
             request_args_copy.pop(i, "")
     elif white_list:
-        wt_list = white_list.groups()[0].split(";")
+        wt_list = white_list.groups()[0].split("+")
         [request_args_copy.pop(i) for i in list(request_args_copy.keys()) if i not in wt_list]
     else:
         pass
@@ -62,29 +63,37 @@ def check_graph_id_dict(graph_id_dict):
 
 
 def get_dispatched_apis(request_args):
-    # 去掉带有 invalid 的项
-    request_args = {k: v for k, v in request_args.items() if v and not (v == "invalid" and k.startswith("gd_id"))}
+    """
+    如果 request_args中有 graph_id，根据 id 内容和 settings 中的 DISPATCH_MAP 进行分发
+    1. 判断是否有 graph_id, 如果没有直接返回 request_args
+    2. 如果有，在 settings 中寻找 URL_DISPATCH_MAP，如果没有，返回 code 400
+    3. 如果有对应的 ID， 得到 url的字符串，对字符串处理得到字典
+    4. 将request_args剩下的部分更新进字典中
+    5. 返回更新的字典
+    """
+    # 1.去掉带有 invalid 的项 & 同时将空格变回加号(需要兼容空格紧跟逗号的情况)
+    request_args = {k: v.replace(" ", "+").replace(",+", ",") for k, v in request_args.items() if v and not (v == "invalid" and k.startswith("gd_id"))}
     request_args_copy = request_args.copy()  # 备份，方便遍历/方便最后给url填空
 
+    # 2.选出用于拼接得到分发标识的gd_id参数
     graph_id_dict = {i: request_args.pop(str(i), "") for i in request_args_copy if re.match(r"gd_id[-]?\d+", i)}
-    # graph_id_dict: {"gd_id0": "全部", "gd_id1": "件次"}
-    # request_args: 去掉 invalid 和 gd_id\d+开头的项
 
-    if graph_id_dict:  # 如果要走映射[只有gd_id=，插件过程，这里为空]
+    # 3.如果要走分发
+    if graph_id_dict:
         code, msg, url = check_graph_id_dict(graph_id_dict)  # 得到映射后的url
         if code != 200:
             return code, msg, url
 
-        # 得到格式化后的url
+        # 3.1 得到格式化后的url
         url = url.format(**request_args_copy)
-        # url --> dict
+        # 3.2 url --> dict
         graph_id_url_dict = url2dict(url)
-        # 外界可以取消保护
+        # 3.3 外界可以取消保护
         if "param_protect" in request_args:
             graph_id_url_dict.update({"param_protect": request_args["param_protect"]})
-        # url保护  param_protect=black_list|white_list
+        # 3.4 url保护  param_protect=black_list|white_list
         request_args = after_param_protect(graph_id_url_dict.get("param_protect", ""), request_args)
-        # 更新request_args
+        # 3.5 更新request_args
         graph_id_url_dict.update(request_args)
         return 200, "success", graph_id_url_dict
     return 200, "success", request_args

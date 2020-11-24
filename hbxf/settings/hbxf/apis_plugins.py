@@ -122,7 +122,7 @@ APIS_PLUGIN = [
         "fx_db_sql": """
          """,
         "zb_db_sql": """
-        select xm, id, xfjc from xf_ba_cd_shej_id_xm_px_xfjc WHERE day >= '{from}' AND day <= '{to}' order by px;
+        select xm, id, xfjc from xf_ba_cd_shej_id_xm_px_xfjc WHERE day >= '{start}' AND day <= '{end}' order by px;
          """,
         # "on": "zjhm",
         # "time_format": "%Y年%m月%d日",
@@ -139,7 +139,7 @@ APIS_PLUGIN = [
         "zb_db_sql": """
         SELECT x1.xm, x2.xfjc FROM xf_sxr_cy_xm_sx x1
         LEFT JOIN ( SELECT sxr, sum( xfjc ) xfjc FROM xf_sxr_cd_shej_cfxfbz_xfjc 
-        WHERE `day` >= '{from}' AND `day` <= '{to}' GROUP BY sxr ) x2 
+        WHERE `day` >= '{start}' AND `day` <= '{end}' GROUP BY sxr ) x2 
         ON x1.xm = x2.sxr ORDER BY x1.sx
      """,
         # "on": "zjhm"

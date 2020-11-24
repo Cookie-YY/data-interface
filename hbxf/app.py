@@ -22,7 +22,7 @@ app.config.from_object(f"settings.{PROJECT}.init_dicts")
 app.config.from_object(f"settings.{PROJECT}.apis_dispatch")
 app.config.from_object(f"settings.{PROJECT}.apis_plugins")
 app.config.from_object(f"settings.{PROJECT}.auth")
-app.config.from_object(f"settings.{PROJECT}.qh_info")
+# app.config.from_object(f"settings.{PROJECT}.qh_info")
 
 cache = Cache()
 cache.init_app(app)

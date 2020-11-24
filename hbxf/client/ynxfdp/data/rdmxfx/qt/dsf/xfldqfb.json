@@ -3,130 +3,68 @@
   "msg": "success",
   "data":[
     {
-      "name": "湛江市",
-      "id": "01",
-      "type": "XFRNL",
-      "value": 36
+      "name": "昆明市",
+      "value": 767
     },
     {
-      "name": "茂名市",
-      "id": "02",
-      "type": "XFRNL",
-      "value": 2
+      "name": "玉溪市",
+      "value": 470
     },
     {
-      "name": "阳江市",
-      "id": "03",
-      "type": "XFRNL",
-      "value": 8
+      "name": "曲靖市",
+      "value": 110
     },
     {
-      "name": "云浮市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "保山市",
+      "value": 570
     },
     {
-      "name": "肇庆市",
-      "id": "05",
-      "type": "XFRNL",
-      "value": 86
+      "name": "昭通市",
+      "value": 197
     },
     {
-      "name": "江门市",
-      "id": "05",
-      "type": "XFRNL",
-      "value": 86
+      "name": "楚雄州",
+      "value": 371
     },
     {
-      "name": "清远市",
-      "id": "01",
-      "type": "XFRNL",
-      "value": 36
+      "name": "临沧市",
+      "value": 134
     },
     {
-      "name": "珠海市",
-      "id": "02",
-      "type": "XFRNL",
-      "value": 2
+      "name": "普洱市",
+      "value": 156
     },
     {
-      "name": "中山市",
-      "id": "03",
-      "type": "XFRNL",
-      "value": 8
+      "name": "丽江市",
+      "value": 300
     },
     {
-      "name": "广州市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "红河州",
+      "value": 210
     },
     {
-      "name": "韶关市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "文山州",
+      "value": 670
     },
     {
-      "name": "东莞市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "西双版纳",
+      "value": 300
     },
     {
-      "name": "深圳市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "大理州",
+      "value": 210
     },
     {
-      "name": "惠州市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "德宏州",
+      "value": 170
     },
     {
-      "name": "河源市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "怒江州",
+      "value": 270
     },
     {
-      "name": "汕尾市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
-    },
-    {
-      "name": "梅州市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
-    },
-    {
-      "name": "揭阳市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
-    },
-    {
-      "name": "汕头市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
-    },
-    {
-      "name": "潮州市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
-    },
-    {
-      "name": "佛山市",
-      "id": "04",
-      "type": "XFRNL",
-      "value": 24
+      "name": "迪庆州",
+      "value": 370
     }
   ]
 }

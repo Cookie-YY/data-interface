@@ -47,7 +47,7 @@ SYS_SPECIAL_PARAMS = {
     
     # 高级属性
     "transformer": ("@groupby", None),
-    "full": ("", None),
+    "full": ("true", None),
     "name_limit": ("", "\d+"),
     "stack_limit": ("", "\d+"),
     "ceil": ("", "\d+"),
@@ -58,5 +58,6 @@ SYS_SPECIAL_PARAMS = {
     "gd_id": ("", None),
     "time_format": (False, None),
     "ext": (False, None),
-    "ext_params": ("", None)
+    "reindex": ("0", None),
+    "reuse": ("none", "none|waiting_for_search|db_results|df")
 }

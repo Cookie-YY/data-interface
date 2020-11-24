@@ -1,3 +1,4 @@
+import os
 import sys
 
 
@@ -18,3 +19,13 @@ class ConfigCheck:
                     (v[1] is None or isinstance(v[1], str))):
                 sys.exit("ConfigError[SPECIAL_PARAMS]: The element in SPECIAL_PARAMS must be as follow "
                          "(False or str, str)")
+
+    # 必须有shej_02+shij_02+xj_02的文件 或者是  shij_02+xj_02
+    def check_INITIALIZATION_FILE_PATH(self):
+        INITIALIZATION_FILE_PATH = self.config.get("INITIALIZATION_FILE_PATH")
+        if not INITIALIZATION_FILE_PATH:
+            sys.exit("ConfigError[INITIALIZATION_FILE_PATH]: Missing INITIALIZATION_FILE_PATH")
+        if "shej_02+shij_02+xj_02" not in os.listdir(INITIALIZATION_FILE_PATH) and "shij_02+xj_02" not in os.listdir(INITIALIZATION_FILE_PATH):
+            sys.exit("ConfigError[INITIALIZATION_FILE_PATH]: There should be file "
+                     "named shej_02+shij_02+xj_02 or shij_02+xj_02 in config INITIALIZATION_FILE_PATH")
+

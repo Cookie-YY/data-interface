@@ -10,7 +10,6 @@ def get_parsed_apis(api_dict):
     """
     输入：{"name": "", "value": ""}
     """
-
     # 1.处理默认值问题
     from layers.get_parsed_api.process_default import process_default
     code, msg, result_this = process_default(api_dict)
@@ -43,7 +42,7 @@ def get_parsed_apis(api_dict):
 
     # 7.处理start/end
     for k, v in result_this.copy().items():
-        if k in ["day", "date", "year"] and "," in v:
+        if k in ["day", "date", "year"] and "," in str(v):
             start, end = v.split(",")
             result_this["start"] = start
             result_this["end"] = end
@@ -54,8 +53,10 @@ def get_parsed_apis(api_dict):
     result_this.pop("end", "")
 
     # 8.处理param_trans
-    from layers.get_parsed_api.process_paramtrans import process_paramtrans
-    result_this = process_paramtrans(result_this)
+    from app import app
+    if app.config.get("PARAMS_TRANS_ON", False):
+        from layers.get_parsed_api.process_paramtrans import process_paramtrans
+        result_this = process_paramtrans(result_this)
 
     # 9.处理$引用问题
     code, msg, result_this = process_dollar(result_this)

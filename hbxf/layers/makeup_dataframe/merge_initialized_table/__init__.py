@@ -20,6 +20,8 @@ def merge_initialized_table(dataframe):
     INITIALIZATION = get_norelation_valuelist(dataframe)  # 加载没有联动关系的取值
 
     if len(df.columns) == 1:
+        if df.columns[0] not in INITIALIZATION:
+            return 400, f"The Column {df.columns[0]} must be registered", {}
         df[df.columns[0]] = df[df.columns[0]].apply(lambda x: fill_random_or_real(x, INITIALIZATION, df.columns[0], table))
         return 200, "success", df
 
@@ -28,7 +30,10 @@ def merge_initialized_table(dataframe):
     # 2. 处理联动列的所有取值
     re_list, re_col = get_relation_valuelist(re_col_file)  # re_list/re_col可能跨表存在
     # 3. 处理独立列的所有取值
-    no_re_list = [INITIALIZATION[item] for item in no_re_col]  # 获得所有独立字段的取值
+    for item in no_re_col:
+        if item not in INITIALIZATION:
+            return 400, f"The Column {item} must be registered", {}
+    no_re_list = [INITIALIZATION.get(item) for item in no_re_col]  # 获得所有独立字段的取值
     # 4. 初始化df
     init_df = get_init_df(re_list, no_re_list, re_col, no_re_col)
     # 5. 融合初始化的df和数据df

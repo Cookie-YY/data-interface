@@ -38,7 +38,7 @@ DP_CONTAINER = "client"    # 大屏的根路径
 DP_ROOT = "ynxfdp"
 
 DP_DIR = ""
-DP_URL = "/ynxfdp"         # 访问大屏的url
+DP_URL = "ynxfdp"          # 访问大屏的url
 
 # 头像等获取的文件的地址
 FILE_URL = f"/{DP_ROOT}/file/"

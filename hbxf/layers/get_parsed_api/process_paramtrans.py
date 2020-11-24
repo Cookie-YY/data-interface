@@ -1,6 +1,3 @@
-import re
-
-
 def process_paramtrans(api_dict):
     from settings import PROJECT
     project_settings = __import__(f"settings.{PROJECT}.param_trans", globals(), locals(), ["PT"])
@@ -13,7 +10,7 @@ def process_paramtrans(api_dict):
     for param_trans_one in param_trans.split(","):
         param_trans_one = param_trans_one + "(" if "(" not in param_trans_one else param_trans_one
         func, args = param_trans_one.split("(")
-        args = args.split(";")
+        args = args.split("+")
 
         from app import app
         if func not in app.config["PARAM_TRANS"]:

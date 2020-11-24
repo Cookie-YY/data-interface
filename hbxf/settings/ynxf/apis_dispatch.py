@@ -4,7 +4,7 @@
    目前的模块：信访工作形势研判、信访态势统计分析
 """
 URL_DISPATCH_MAP = {
-    # 1、信访工作形势研判
+    # 一. 信访工作形势研判
     # 1.1、信访工作形势研判_信访部门
     "信访工作形势研判_信访部门_区域年度受理量排行": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfjg_cy_shij_dwjc&name=shij_02&value=dwjc&order=-dwjc&full=true&year=2020",
     "信访工作形势研判_信访部门_办理方式": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfjg_cy_shej_blfs_bmjc&name=blfs&value=bmjc&transformer=@groupby&full=true&year=2020",
@@ -37,7 +37,7 @@ URL_DISPATCH_MAP = {
     "信访态势统计分析_内容分类_地域分布_一级内容分类信访量":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=shej_02&value=xfjc&transformer=@groupby&full=true&day=[2020-10-01,2020-10-20]",
     "信访态势统计分析_内容分类_地域分布_三类指数":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=yjnr&value=xfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
     "信访态势统计分析_内容分类_地域分布_饼图":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfjc&name=yjnr&value=xfjc&stack=yjnr&transformer=@groupby&full=true&day=[2019-01-01,2020-12-10]",
-    "信访态势统计分析_内容分类_地域分布_**信访量分布?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_yjnr_xfjc&name=shij_02&value=xfjc&stack=shij_02&transformer=@groupby&extra_index=table@to:xf_xfj_cd_shij_yjnr_xfrc;value@to:xfrc&main_name=件次,人次,&day=[2019-01-01,2020-12-10]&full=true&yjnr=卫生计生",
+    "信访态势统计分析_内容分类_地域分布_信访量分布?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_yjnr_xfjc&name=shij_02&value=xfjc&stack=shij_02&transformer=@groupby&extra_index=table@to:xf_xfj_cd_shij_yjnr_xfrc;value@to:xfrc&main_name=件次,人次,&day=[2019-01-01,2020-12-10]&full=true&yjnr=卫生计生",
     # b.问题分类
     "信访态势统计分析_内容分类_问题分类_二级内容分类信访量?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_ejnr_xfjc&name=shej_02&value=xfjc&stack=shej_02&transformer=@groupby&year=2020&order=-xfjc&extra_index=transformer@to:@tb;order@drop;month@to:now&main_name=件次,同比&full=true",
     "信访态势统计分析_内容分类_问题分类_各级内容分类占比分布?":"",
@@ -48,8 +48,8 @@ URL_DISPATCH_MAP = {
     "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件分布_初件重件联名件数量和比例":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=xfxs&value=xfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xfxs_cfxfbz_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
     "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件分布_联名件非联名件圆环图":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_lmj_xfjc&name=lmj&value=xfjc&stack=lmj&full=true&transformer=@groupby&extra_index=transformer@to:@zb&main_name=件次,占比&full=true&day=[2019-01-01,2020-12-10]&xfxs=来信",
     "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件分布_初件重件圆环图":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=cfxfbz&value=xfjc&stack=cfxfbz&full=true&transformer=@groupby&extra_index=transformer@to:@zb&main_name=件次,占比&full=true&day=[2019-01-01,2020-12-10]&xfxs=来信",
-    "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件走势_年度?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=xfxs&value=xfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xfxs_cfxfbz_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
-    "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件走势_月度?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=xfxs&value=xfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xfxs_cfxfbz_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
+    # "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件走势_年度?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=xfxs&value=xfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xfxs_cfxfbz_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
+    # "信访态势统计分析_信访形式_来信_来信信访量信访初件重件联名件走势_月度?":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_xfxs_cfxfbz_xfjc&name=xfxs&value=xfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xfxs_cfxfbz_xfrc;value@to:xfrc,transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-12-10]&full=true",
     # b.来访?
     # c.网信?
     # 4.信访目的
@@ -74,6 +74,42 @@ URL_DISPATCH_MAP = {
     "信访工作形势研判_初件重件_重件_地区信访人群年龄分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_nlrange_cfxfbz_xfrc&name=nlrange&value=xfrc&transformer=@groupby&full=true&year=2020&cfxfbz=重件&shij_02=昆明市",
     "信访工作形势研判_初件重件_重件_地区信访量信访目的分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_xfmd_cfxfbz_xfjc&name=xfmd&value=xfjc&transformer=@groupby&full=true&year=2020&cfxfbz=重件&shij_02=昆明市",
     "信访工作形势研判_初件重件_重件_地区信访量投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_yjnr_cfxfbz_xfjc&name=yjnr&value=xfjc&transformer=@groupby&full=true&year=2020&cfxfbz=重件&shij_02=昆明市",
-    "信访工作形势研判_初件重件_重件_地区信访量信访次数分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_xfcsrange_cfxfbz_xfjc&name=xfcsrange&value=xfjc&transformer=@groupby&full=true&year=2020&cfxfbz=重件&shij_02=昆明市"
+    "信访工作形势研判_初件重件_重件_地区信访量信访次数分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_xfcsrange_cfxfbz_xfjc&name=xfcsrange&value=xfjc&transformer=@groupby&full=true&year=2020&cfxfbz=重件&shij_02=昆明市",
+
+
+    # 三. 热点模型分析
+    # 1.进京访
+    "热点模型分析_进京访_区划排名": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfxs_jjf_xfjc&name=shij_02&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_进京访_进京访信访量人数规模分布走势": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cm_shej_jtf_jjf_xfjc&name=month&value=xfjc&jjf=个访&stack=month&full=true&transformer=@groupby&extra_index=jjf@to:集体访&main_name=个访,集体访&year=2020",
+    "热点模型分析_进京访_重复访次数分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_cfcsrange_xfxs_jjf_xfjc&name=cfcsrange&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_进京访_人数规模分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_rsrange_xfxs_jjf_xfjc&name=rsrange&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_进京访_信访群体年龄分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_nlrange_xfxs_jjf_xfrc&name=nlrange&value=xfrc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_进京访_信访诉求_信访问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_xfmd_xfxs_jjf_xfjc&name=xfmd&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_进京访_信访诉求_投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfxs_jjf_xfjc&name=yjnr&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    # 2.到省访
+    "热点模型分析_到省访_区划排名": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfxs_fsf_xfjc&name=shij_02&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_到省访_进京访信访量人数规模分布走势": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cm_shej_jtf_fsf_xfjc&name=month&value=xfjc&fsf=个访&stack=month&full=true&transformer=@groupby&extra_index=fsf@to:集体访&main_name=个访,集体访&year=2020",
+    "热点模型分析_到省访_重复访次数分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_cfcsrange_xfxs_fsf_xfjc&name=cfcsrange&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_到省访_人数规模分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_rsrange_xfxs_fsf_xfjc&name=rsrange&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_到省访_信访群体年龄分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_nlrange_xfxs_fsf_xfrc&name=nlrange&value=xfrc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_到省访_信访诉求_信访问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_xfmd_xfxs_fsf_xfjc&name=xfmd&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_到省访_信访诉求_投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfxs_fsf_xfjc&name=yjnr&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    # 3.集体访
+    "热点模型分析_集体访_区划排名": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfxs_jtf_xfjc&name=shij_02&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_集体访_集体访信访量走势": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cm_shej_jtf_xfjc&name=month&value=xfjc&year=2020",
+    "热点模型分析_集体访_人数规模分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_rsrange_xfxs_jtf_xfjc&name=rsrange&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_集体访_信访群体年龄分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_nlrange_xfxs_jtf_xfrc&name=nlrange&value=xfrc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_集体访_信访诉求_信访问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_xfmd_xfxs_jtf_xfjc&name=xfmd&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    "热点模型分析_集体访_信访诉求_投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfxs_jtf_xfjc&name=yjnr&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
+    # 4.其他(缺表)
+
+    # 四. 政策关联分析
+    # 1.涉件分析(缺)
+    # 2.政策统计
+    "政策关联分析_政策统计_一级内容分类政策分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfzc_cy_shej_yjnr_zcsl&name=yjnr&value=zcsl&stack=yjnr&transformer=@groupby&extra_index=table@to:xf_xfj_cy_shej_yjnr_xfjc;value@to:xfjc&main_name=政策数量,信访量件次&year=2020",
+    "政策关联分析_政策统计_信访量月度走势": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfzc_cm_shej_yjnr_xfjc&name=month&value=xfjc&year=2020&full=true",
+    "政策关联分析_政策统计_政策分类分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfzc_cy_shej_yjnr_zcfl_zcsl&name=zcfl&value=zcsl&year=2020",
+
+
 
     }

@@ -1,26 +1,33 @@
 {
-  "code": "200",
+  "code": 200,
   "msg": "success",
-  "data":[
+  "data": [
     {
-      "title": "国家",
-      "tb": 0.5,
-      "hb": 0.5
+    "name": "国家",
+    "value_g0_1": 0.3,
+    "value_g1_1": 0.6782
     },
     {
-      "title": "省级",
-      "tb": 0.6,
-      "hb": 0.5
+    "name": "省级",
+    "value_g0_1": 0.8,
+    "value_g1_1": 0.2183
     },
     {
-      "title": "市级",
-      "tb": 0.5,
-      "hb": 0.7
+    "name": "市级",
+    "value_g0_1": 0.35,
+    "value_g1_1": 0.1029
     },
     {
-      "title": "县级",
-      "tb": 0.24,
-      "hb": 0.5
+      "name": "县级",
+      "value_g0_1": 0.6,
+      "value_g1_1": 0.1029
     }
+  ],
+  "map": {
+    "value_g0_1": "同比",
+    "value_g1_1": "环比"
+  },
+  "table": [
+    "xf_xfj_cd_xfxs_cfxfbz_xfjc"
   ]
 }

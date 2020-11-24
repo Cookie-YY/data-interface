@@ -18,22 +18,22 @@ def process_now(api_dict):
         value = str(v)
         # 解析now
         if "now" in value:
-            if k == "year":
-                value = value.replace("now", str(datetime.now().year))
-                # update_dict[k] = value  # 直接赋值，如果是范围的，在后面可以覆盖
-            elif k == "month":
-                value = value.replace("now", str(datetime.now().month))
-                update_dict["year"] = str(datetime.now().year)
-            elif k == "day":
-                value = value.replace(" ", "+")  # +会被解析成空格
-                value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
-            elif k == "date":
-                value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
-            if "," not in value:  # 说明不是范围
-                code, msg, value = parse_compute(value)  # 直接赋值，如果是范围的，在后面可以覆盖
-                if code != 200:
-                    return code, msg, {}
-            update_dict[k] = value
+            if k in ["year", "month", "day", "date"]:
+                if k == "year":
+                    value = value.replace("now", str(datetime.now().year))
+                    # update_dict[k] = value  # 直接赋值，如果是范围的，在后面可以覆盖
+                elif k == "month":
+                    value = value.replace("now", str(datetime.now().month))
+                    update_dict["year"] = str(datetime.now().year)
+                elif k == "day":
+                    value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
+                elif k == "date":
+                    value = value.replace("now", datetime.now().strftime("%Y/%m/%d"))
+                if "," not in value:  # 说明不是范围
+                    code, msg, value = parse_compute(value)  # 直接赋值，如果是范围的，在后面可以覆盖
+                    if code != 200:
+                        return code, msg, {}
+                update_dict[k] = value
         # 解析范围（同时去掉中括号）
         if value.startswith("[") and value.endswith("]"):
             min_value = value.strip("[").strip("]").split(",")[0]  # "2020-1"

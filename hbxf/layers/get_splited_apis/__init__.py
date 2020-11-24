@@ -20,9 +20,14 @@ def get_splited_apis(realm, index, request_args):
     base_dict.update(request_args)
     request_args_set = [base_dict]
     # 得到多个group：extra_grouplist: [["lx:to-xfxs;index:to-xfj_zb"], ["year:math_+1"]]
-    extra_grouplist = [i for i in extra_index.split(",")]
 
     if extra_index:
+        # extra_index里面可能有day@to:[now-50,now]逗号   【可以先把中括号的逗号替换掉，最后再替换回来】
+        # http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&name=day&stack=day&day=[now-50,now]&extra_index=transformer@to:predict(7d+p=1+d=1+q=0+realdata_show=50d);day@to:[now-200,now]&Cqh=广东省
+        num_comma = extra_index.count(",")
+        should_minus = extra_index.count("[")
+        extra_grouplist = [i for i in extra_index.split(",", num_comma - should_minus)]
+        # 开始遍历获得所有的额外条件
         for group in extra_grouplist:  # group = ["lx@to:xfxs;index@to:xfj_zb"]
             # 每个group要得到一个request_args字典
             request_args_for_each_group = base_dict.copy()  # 基础的参数

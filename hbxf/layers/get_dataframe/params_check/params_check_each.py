@@ -13,7 +13,7 @@ def params_check_each(apis):
             condition = v[1]
             if condition and apis_copy[k]:  # 如果该参数有条件 并且 v 有值
                 if not re.match(condition, apis_copy[k]):  # 如果不满足条件
-                    return 400, f"ParamsStructureError: [{k}] must match {condition}", {}
+                    return 400, f"ParamsStructureError: [{k}] must match {condition}, now is [{apis_copy[k]}]", {}
         apis.pop(k, "")  # 删除所有特殊参数
     checked_params.update(apis_copy)
 
@@ -30,7 +30,7 @@ def params_check_each(apis):
     # 3. 其他检验
     # 3.1 transformer 检验
     transformer = checked_params["transformer"].strip("@")
-    transformer_ = transformer if ":" not in transformer else transformer.split(":")[0]
+    transformer_ = transformer.split("(")[0]
     if transformer_ not in app.config.get("EXTENSIONS", []):
         return 400, f"ParamsStructureError: [transformer] must be registered", {}
     checked_params["transformer"] = transformer

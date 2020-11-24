@@ -1,4 +1,6 @@
+import os
 import sys
+import pandas as pd
 
 
 def init_project():
@@ -27,9 +29,16 @@ def init_project():
     PARAM_TRANS = SYS_PARAM_TRANS + CUS_PARAM_TRANS
     app.config["PARAM_TRANS"] = PARAM_TRANS
 
-
-
     # 99. 配置检查
     from utils.config_check import ConfigCheck
     ConfigCheck(app.config)
     print("[ok]----Config Checked")
+
+    # 100. 通过shej_02+shij_02+xj_02加载qh_info
+    path = app.config["INITIALIZATION_FILE_PATH"]
+    if "shej_02+shij_02+xj_02" in os.listdir(path):
+        qh_info = "shej_02+shij_02+xj_02"
+    else:
+        qh_info = "shij_02+xj_02"
+    app.config["QH_INFO"] = pd.read_csv(os.path.join(path, qh_info), sep=app.config.get("INITIALIZATION_FILE_SEP", "\t"))
+

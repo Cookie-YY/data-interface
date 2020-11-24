@@ -3,34 +3,22 @@
   "msg": "success",
   "data":[
     {
-      "name": "意见建议",
+      "name": "来信",
       "id": "01",
       "type": "XFMD",
       "value": 98
     },
     {
-      "name": "申诉",
+      "name": "来访",
       "id": "02",
       "type": "XFMD",
       "value": 77
     },
     {
-      "name": "求决",
+      "name": "网信",
       "id": "03",
       "type": "XFMD",
       "value": 70
-    },
-    {
-      "name": "揭发控告",
-      "id": "04",
-      "type": "XFMD",
-      "value": 34
-    },
-    {
-      "name": "其他",
-      "id": "99",
-      "type": "XFMD",
-      "value": 12
     }
   ]
 }

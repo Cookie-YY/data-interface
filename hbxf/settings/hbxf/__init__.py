@@ -74,6 +74,9 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 # 自定义extensions
 CUS_EXTENSIONS = []
 
+# 有关联关系的字段
+RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
+
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
 

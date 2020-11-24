@@ -1,5 +1,5 @@
-import re
 from sqlalchemy import or_
+
 
 def parse_condition(ex_table, k, value):
     # like条件

@@ -263,6 +263,9 @@ name/stack/value：
     1. 能够预测【导包：离线安装的检测anaconda是否有sklearn】
     2. 数据格式【待商量】
 - 【已解决】地图 以及 地图现在full的问题
+- 【已解决】*****reindex【为了让可复用的结果放到一起，但是大屏不一定是这个顺序】如：总数/分信访形式 应该是分信访形式分布再总数
+- 【已解决/待测试】*****reindex同时会改变main_name（转换层）
+- 【已解决】*****reuse【获取上一个search之后的结果】 默认是search之后的结果/也可以 after_search之后的结果
 
 
 ################################################ 待解决 ################################################
@@ -341,10 +344,19 @@ name/stack/value：
 - 信访事项（xf_xfjmx)  需要去重计数groupby unicount
 - FUZZY-xm: 字段用分词查询
 - 插件过程无法保留有效数字【待定】
-- 插件过程加一个report/ 指标和报表
+- 插件过程加一个report 包括 指标和图表
+    实现方法就是把所有需要的数字，放到parse_data(app的那个入口函数)跑一遍
+    图表: 在convert层做  graph=bar     show=data   |   pic   |   show=code
+    show=data/pic/code              pic/code[需要指定type=num/bar/line/pie/map]  和 colors    BLUE
+    settings里面加色系的参数
+    settings加从文件加载还是配置数据库 / 两个都选  文件会覆盖掉同名的数据库配置
+    save2table=xf_xfj_cd_shej_xfjc    如果不指定可以推断出来
+    save2es=
+    graph=bar
 - add_unit的实现
 - order/limit的实现
-
+- embededding的嵌套格式【name=a,b,c,d】
+- stack的堆叠模式 预测和真实值不一样的时候，会保留短的那个[重写；pandas有现成方法？保证name=stack时的情况]
 
 # 金鸿
 - uwsgi 在win下怎么用【不重要】
@@ -380,16 +392,21 @@ name/stack/value：
     及时受理率的相关指标返回了"1"
 
 
+
+- 【已完成】ext_params 放transformer的参数【predict中测试】  删掉transformer参数校验的":"事情
 - *****预测的过程，展示和用到的时间跨度不一定一样
-- *****ext_params 放transformer的参数【predict中测试】  删掉transformer参数校验的":"事情
-- *****集成jssllv/aqdflv的sql和表名的切换
 - *****预测的分组
 - *****param_trans 中的 modified_initialization 和条件
     - *****qh_godown modified_initialization
     - *****zrdw_godown【省级的时候，直属小弟】
     - *****xfbm_godown【直属小弟】
+- *****集成jssllv/aqdflv的sql和表名的切换
 - *****集成name_limit  stack_limit
 - *****云南项目的dispatch和测试
-
-- embededding的嵌套格式
-- stack的堆叠模式 预测和真实值不一样的时候，会保留短的那个
+- SQL过程的的执行try一下，如果没表报错开关   关了   没字段报错开关    关了  不同的报错，不同的处理
+- SQL过程的展示也放到name/stack/value
+- reindex的判断
+- 【统一在dispatch处理】参数的空格
+- reuse的统一复用
+- ext_params 覆盖ext的参数
+- extra_index里面，用逗号分隔，如果不满足@条件，说明这个逗号不是分隔符号

@@ -1,0 +1,112 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+  {
+  "name": "1",
+  "value_g0_1": 792,
+  "value_g1_1": 701,
+  "value_g2_1": 523,
+  "value_g3_1": 887,
+  "value_g4_1": 249
+  },
+  {
+  "name": "2",
+  "value_g0_1": 742,
+  "value_g1_1": 447,
+  "value_g2_1": 835,
+  "value_g3_1": 378,
+  "value_g4_1": 562
+  },
+  {
+  "name": "3",
+  "value_g0_1": 832,
+  "value_g1_1": 595,
+  "value_g2_1": 692,
+  "value_g3_1": 521,
+  "value_g4_1": 646
+  },
+  {
+  "name": "4",
+  "value_g0_1": 174,
+  "value_g1_1": 740,
+  "value_g2_1": 306,
+  "value_g3_1": 499,
+  "value_g4_1": 246
+  },
+  {
+  "name": "5",
+  "value_g0_1": 882,
+  "value_g1_1": 180,
+  "value_g2_1": 695,
+  "value_g3_1": 643,
+  "value_g4_1": 189
+  },
+  {
+  "name": "6",
+  "value_g0_1": 872,
+  "value_g1_1": 647,
+  "value_g2_1": 362,
+  "value_g3_1": 587,
+  "value_g4_1": 621
+  },
+  {
+  "name": "7",
+  "value_g0_1": 690,
+  "value_g1_1": 761,
+  "value_g2_1": 527,
+  "value_g3_1": 629,
+  "value_g4_1": 116
+  },
+  {
+  "name": "8",
+  "value_g0_1": 159,
+  "value_g1_1": 804,
+  "value_g2_1": 231,
+  "value_g3_1": 369,
+  "value_g4_1": 314
+  },
+  {
+  "name": "9",
+  "value_g0_1": 886,
+  "value_g1_1": 819,
+  "value_g2_1": 401,
+  "value_g3_1": 963,
+  "value_g4_1": 312
+  },
+  {
+  "name": "10",
+  "value_g0_1": 767,
+  "value_g1_1": 374,
+  "value_g2_1": 529,
+  "value_g3_1": 493,
+  "value_g4_1": 380
+  },
+  {
+  "name": "11",
+  "value_g0_1": 916,
+  "value_g1_1": 983,
+  "value_g2_1": 274,
+  "value_g3_1": 818,
+  "value_g4_1": 934
+  },
+  {
+  "name": "12",
+  "value_g0_1": 628,
+  "value_g1_1": 549,
+  "value_g2_1": 810,
+  "value_g3_1": 575,
+  "value_g4_1": 435
+  }
+  ],
+  "map": {
+  "value_g0_1": "求决",
+  "value_g1_1": "意见建议",
+  "value_g2_1": "揭发控告",
+  "value_g3_1": "申诉",
+  "value_g4_1": "其他"
+  },
+  "table": [
+  "xf_xfj_cm_shej_xfmd_xfjc"
+  ]
+  }

@@ -106,8 +106,14 @@ INITIALIZATION_FILE_SEP = "\t"
 # 自定义extensions
 CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
 
+# 有关联关系的字段
 RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 
+# predict（ext）的参数
+# 最小可供预测的数据
+PREDICT_MIN_DATA = 20
+PREDICT_MIN_MULTI_DATA = 3
+PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准      震荡幅度(相对于均值)
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
 
