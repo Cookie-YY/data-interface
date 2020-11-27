@@ -46,4 +46,4 @@ def ext_executor(ext):
 
     g.df = ext.df                                  # 保存db_results
 
-    return ext.df, ext.apis_copy
+    return ext.code, ext.msg, {"df": ext.df, "apis_copy": ext.apis_copy}

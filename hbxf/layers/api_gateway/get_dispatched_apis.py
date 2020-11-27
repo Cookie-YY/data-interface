@@ -46,8 +46,9 @@ def check_graph_id_dict(graph_id_dict):
 
     url = None
     for graph_id_assigned in url_dispatch_map:
-        if re.match(graph_id_assigned, graph_id):
+        if re.match(graph_id_assigned.lstrip("#"), graph_id):  # 去掉开头的井号再去匹配，带井号的是待废弃的
             url = url_dispatch_map[graph_id_assigned]
+            break  # 匹配到就退出，多个匹配后面的不管
     # 如果查找后依然没有，报错
     if url is None:
         return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}

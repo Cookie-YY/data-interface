@@ -15,7 +15,6 @@ class Extension:
     """
     from layers.get_dataframe.params_check.params_check_real_table import get_real_table
     from layers.get_dataframe.params_parse import get_conditions
-    # from layers.get_dataframe.merge_serached_dataframes.convert_and_compute.parse_groupby import groupby_and_sum
 
     from utils.sys_extensions.groupby import groupby_and_sum
     from utils.sys_extensions.params_parse_tb_hb import params_parse_tb, params_parse_hb
@@ -37,10 +36,12 @@ class Extension:
         self.kwargs = kwargs
 
     def _before_search(self):
-        code, msg, real_table = Extension.get_real_table(self.apis_copy)
+        self.code, self.msg, real_table = Extension.get_real_table(self.apis_copy)
+        if self.code != 200:
+            return
         table, ex_table = real_table["table"], real_table["ex_table"]
         tmp_search = self.apis_copy['tmp_search'].split(',')
-        columns = f"{self.apis_copy['name']},{self.apis_copy['stack']},{self.value},{','.join(tmp_search)}"
+        columns = f"{self.apis_copy.get('name','')},{self.apis_copy['stack']},{self.value},{','.join(tmp_search)}"
         conditions = [self.apis]
         before_waiting_for_search = [
             {"table": table, "ex_table": ex_table, "columns": columns, "conditions": conditions},
@@ -51,6 +52,8 @@ class Extension:
 
     def before_search(self):
         self._before_search()
+        if self.code != 200:
+            return
         self.code, self.msg, self.waiting_for_search = Extension.get_waiting_for_search(self.before_waiting_for_search)
 
 

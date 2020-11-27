@@ -53,10 +53,8 @@ def get_parsed_apis(api_dict):
     result_this.pop("end", "")
 
     # 8.处理param_trans
-    from app import app
-    if app.config.get("PARAMS_TRANS_ON", False):
-        from layers.get_parsed_api.process_paramtrans import process_paramtrans
-        result_this = process_paramtrans(result_this)
+    from layers.get_parsed_api.process_paramtrans import process_paramtrans
+    result_this = process_paramtrans(result_this)
 
     # 9.处理$引用问题
     code, msg, result_this = process_dollar(result_this)

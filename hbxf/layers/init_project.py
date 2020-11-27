@@ -1,6 +1,9 @@
 import os
 import sys
 import pandas as pd
+from flask import jsonify
+
+from utils.error_page import InvalidUsage
 
 
 def init_project():
@@ -42,3 +45,17 @@ def init_project():
         qh_info = "shij_02+xj_02"
     app.config["QH_INFO"] = pd.read_csv(os.path.join(path, qh_info), sep=app.config.get("INITIALIZATION_FILE_SEP", "\t"))
 
+
+
+
+    # @app.errorhandler(400)
+    # def error(code):
+    #     from utils.get_error_msg import get_error_msg
+    #     return {"code": code, "msg": get_error_msg(code)}
+    #
+    # # 101. 拦截全局异常
+    # @app.errorhandler(InvalidUsage)
+    # def handle_invalid_usage(error):
+    #     response = jsonify(error.to_dict())
+    #     # response.status_code = error.status_code
+    #     return response

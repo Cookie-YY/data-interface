@@ -80,7 +80,7 @@ let option1 = {
 	}]
 };
 
-
+var seriesArr = []
 
 let option2 = {
     legend: {
@@ -96,22 +96,24 @@ let option2 = {
         },
         itemGap: 30 // 设置间距
     },
+    
     tooltip: {
-        // formatter: "{a} {b} {c}% ",
-        trigger: 'none',
-        axisPointer: {
-            type: 'cross',
-            animation: false,
-            label: {
-                backgroundColor: '#4c74fc',
-                borderColor: '#4c74fc',
-                borderWidth: 1,
-                shadowBlur: 0,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                color: '#fff'
-            }
-        },
+        trigger: 'axis',
+        // backgroundColor: 'none',
+        // trigger: 'none',
+        // axisPointer: {
+        //     type: 'cross',
+        //     animation: false,
+        //     label: {
+        //         backgroundColor: '#4c74fc',
+        //         borderColor: '#4c74fc',
+        //         borderWidth: 1,
+        //         shadowBlur: 0,
+        //         shadowOffsetX: 0,
+        //         shadowOffsetY: 0,
+        //         color: '#fff'
+        //     }
+        // },
     },
     xAxis: {
         type: 'category',
@@ -121,46 +123,7 @@ let option2 = {
         type: 'value',
         axisLine: {show:false},
     },
-    series: [{
-        name:'来信',
-        data: [],
-        type: 'line',
-        symbolSize: 10,
-        itemStyle: {
-            normal: {
-                color: "#29adff",
-                lineStyle: {
-                    color: "#29adff"
-                }
-            }
-        },
-    },{
-        name: '来访',
-        data: [],
-        type: 'line',
-        symbolSize: 10,
-        itemStyle: {
-            normal: {
-                color: "#f9e03c",
-                lineStyle: {
-                    color: "#f9e03c"
-                }
-            }
-        },
-    },{
-        name: '网信',
-        data: [],
-        type: 'line',
-        symbolSize: 10,
-        itemStyle: {
-            normal: {
-                color: "#46eea6",
-                lineStyle: {
-                    color: "#46eea6"
-                }
-            }
-        },
-    }]
+    series: seriesArr
 };
 ///*ajax获取myChart2数据  begin*/
 // 	$.ajax({
@@ -241,16 +204,58 @@ function getAPI() {
         },
         url: baseapi + "/",
             success: function(data) {
-                var xArr = [],
-                    yArr = []
+                let map = data.map
+                let propData = data.data
+                // 获取keys数组
+                let dataKeys = Object.keys(map);
+                
+                // 获取key对应的中文数组
+                let legendData = Object.values(map);
+                // 所有line数据数组
+                let lineDataArr = [];
+                // echarts series数据
+                // var seriesArr = [];
+                // 根据legend设置每条line数据对应的key值
+                let maxArr = [];
+                dataKeys.forEach(value => {
+                    lineDataArr[value] = [];
+                });
+                let colors = ['#29adff', '#f9e03c', '#46eea6']
+                for (let [index, item] of propData.entries()) {
+                    // x轴数据添加
+                    // xAxis.push(item[this.params.xName]);
+                    dataKeys.forEach(value => {
+                      maxArr.push(item[value]);
+                      // 为每条line对应的数组添加数据
+                      lineDataArr[value].push(item[value]);
+                    });
+                  }
+                  dataKeys.forEach((value, index) => {
+                    let series = {
+                        name: map[value],
+                        type: 'line',
+                        symbolSize: 10,
+                        itemStyle: {
+                            normal: {
+                                color: colors[index],
+                                lineStyle: {
+                                    color: colors[index]
+                                }
+                            }
+                        },
+                        data: lineDataArr[value]
+                    };
+                    seriesArr.push(series);
+                  });
+                  option2.tooltip = {trigger: 'axis'}
+                var xArr = [];
                 var newData = data.data
                 for (var i = 0; i < newData.length; i++) {
                     xArr.push(newData[i].name)
-                    yArr.push(newData[i].value)
                 }
                 option2.xAxis.data = xArr
-                option2.series.data = xArr
-                option2.series[0].data = newData//折线图需要的数据
+                // option2.series.data = xArr
+                // option2.series[0].data = newData//折线图需要的数据
                 myChart2.setOption(option2)
 
         }

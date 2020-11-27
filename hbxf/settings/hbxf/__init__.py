@@ -45,6 +45,17 @@ FILE_URL = f"/{DP_ROOT}/file/"
 FILE_PATH = os.path.join(BASE_DIR, DP_CONTAINER, DP_ROOT, "file")
 
 
+############################### 参数配置 ###############################
+# 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
+# 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
+# 键：特殊参数
+# 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
+# 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
+# 有param_trans param_trans的开关才算打开，否则不走param_trans
+CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "full": (False, None)}
+# CUS_PARAM_TRANS = ["wx_map"]
+
+
 ############################### 数据配置 ###############################
 # 随机化配置
 RANDOM_OR_ZERO = "RANDOM"
@@ -53,7 +64,7 @@ RANDOM_INT_LOWER = 100   # VALUE_INT的随机化的最小值，不写默认100
 RANDOM_INT_UPPER = 999   # VALUE_INT的随机化的最大值，不写默认999
 
 # 关闭NoTableError的报错
-NOTABLE_ERROR = False
+NOTABLE_ERROR = True
 
 # 计算后（占比/同比/环比）保留的小数位数，可能百分比显示
 SIGNIFICANT_DIGITS = 4
@@ -87,7 +98,7 @@ DEBUG = True
 # 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
 # 键：特殊参数
 # 值：字符串代表默认值，False 代表 不可为空或默认值无法表示
-CUS_SPECIAL_PARAMS = {"busin": ("xfj", None)}
+
 
 
 

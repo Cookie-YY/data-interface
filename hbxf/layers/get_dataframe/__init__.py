@@ -28,11 +28,11 @@ def get_dataframe(apis):
     # 3.extension【除CUS_EXTENSIONS外，其他的EXTENSION需要寻找real_table】
     # 3.1如果是系统过程，需要获取真实表
     from app import app
-    if apis_copy["transformer"] in app.config["SYS_EXTENSIONS"]:
-        code, msg, real_table = get_real_table(apis_or_result)
-        if code != 200:
-            return code, msg, {}
-        apis_copy.update(real_table)  # {"table": "", "ex_table": }
+    # if apis_copy["transformer"] in app.config["SYS_EXTENSIONS"]:
+    #     code, msg, real_table = get_real_table(apis_or_result)
+    #     if code != 200:
+    #         return code, msg, {}
+    #     apis_copy.update(real_table)  # {"table": "", "ex_table": }
     # 3.2获取dateframe对象（封装了df和所有请求参数的对象）
     code, msg, dataframe = get_dataframe_from_extension(apis_or_result, apis)
     if code != 200:

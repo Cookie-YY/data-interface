@@ -8,52 +8,52 @@
   "data":[
     {
       "name": "1",
-      "value_g0_1": 0
+      "value_g0_1": 2642
     },
     {
       "name": "2",
-      "value_g0_1": 0
+      "value_g0_1": 2359
     },
     {
       "name": "3",
-      "value_g0_1": 0
+      "value_g0_1": 2600
     },
     {
       "name": "4",
-      "value_g0_1": 0
+      "value_g0_1": 1785
     },
     {
       "name": "5",
-      "value_g0_1": 0
+      "value_g0_1": 1552
     },
     {
       "name": "6",
-      "value_g0_1": 0
+      "value_g0_1": 577
     },
     {
       "name": "7",
-      "value_g0_1": 0
+      "value_g0_1": 317
     },
     {
       "name": "8",
-      "value_g0_1": 0,
-      "value_g1_1": 0
+      "value_g0_1": 317,
+      "value_g1_1": 317
     },
     {
       "name": "9",
-      "value_g1_1": 0
+      "value_g1_1": 2532
     },
     {
       "name": "10",
-      "value_g1_1": 0
+      "value_g1_1": 1666
     },
     {
       "name": "11",
-      "value_g1_1": 0
+      "value_g1_1": 850
     },
     {
       "name": "12",
-      "value_g1_1": 0
+      "value_g1_1": 990
     }
   ]
 }

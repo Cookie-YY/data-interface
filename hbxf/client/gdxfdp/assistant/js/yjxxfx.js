@@ -5,20 +5,22 @@ let myChart1 = echarts.init(document.getElementById('main1'));
 // 指定图表的配置项和数据
 let option1 = {
     tooltip: {
-        trigger: 'none',
-        axisPointer: {
-            type: 'cross',
-            animation: false,
-            label: {
-                backgroundColor: '#FF57A2',
-                borderColor: '#FF57A2',
-                borderWidth: 1,
-                shadowBlur: 0,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                color: '#fff'
-            }
-        },
+        trigger: "axis",
+        formatter: "{c}",
+        // trigger: 'none',
+        // axisPointer: {
+        //     type: 'cross',
+        //     animation: false,
+        //     label: {
+        //         backgroundColor: '#FF57A2',
+        //         borderColor: '#FF57A2',
+        //         borderWidth: 1,
+        //         shadowBlur: 0,
+        //         shadowOffsetX: 0,
+        //         shadowOffsetY: 0,
+        //         color: '#fff'
+        //     }
+        // },
     },
     xAxis: {
         type: 'category',

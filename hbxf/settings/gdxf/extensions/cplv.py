@@ -65,8 +65,8 @@ class Cplv(Extension):
                 # value = 0 if np.isnan(value) else value
                 self.df = pd.DataFrame({"cplv": [value]})
             else:
-                temp = pd.merge(df_yp, df_wp, on=columns, how="inner")
-
+                temp = pd.merge(df_yp, df_wp, on=columns, how="outer")
+                temp = temp.fillna(0)
                 # 计算
                 df_yp["cplv"] = (temp[self.value_yp])/(temp[self.value_yp]+temp[self.value_wp])
                 # 处理计算结果

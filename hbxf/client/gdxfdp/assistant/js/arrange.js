@@ -1,1 +1,1 @@
-var baseapi= '/api/xf';
+var baseapi= 'http://39.107.240.28:3390/api/xf';

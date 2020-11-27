@@ -44,24 +44,30 @@
 2. 在`settings/项目名/__init__.py`中修改大屏的访问路径和地址
     - DP_URL中需要和 前端的url.js文件中的BASE_API保持一致
 
-### 启动步骤（CentOS）
+### 启动步骤
+0. 安装requirements.txt中所有的依赖
+    - `pip install -r requirements.txt`
 1. 修改数据库连接
-- 在`settings/$PROJECT/__init__.py`中修改FX_DB, ZB_DB的值，分别对应，输入库和输出库
-- 注意如果密码中包含特殊值时的写法
+    - 在`settings/$PROJECT/__init__.py`中修改FX_DB, ZB_DB的值
+        - $PROJECT：当前项目
+        - FX_DB, ZB_DB：输入库和输出库
+    - 注意如果密码中包含特殊值时的写法
 
 2. 检查数据库连接，执行
-`/root/anaconda3/bin/python3 env_test.py`
-- 若成功，返回数据库的URL，检查是否正确
-- 若失败，报错退出
+    - `python3 env_test.py`
+        - 若成功，返回数据库的URL，检查是否正确
+        - 若失败，报错退出
 
 3. 启动代码程序后台运行
-- 开发模式`/root/anaconda3/bin/python3 app.py`
-- 生产模式
-    - 启动：`uwsgi --ini uwsgi.ini`(需要安装uwsgi)
-    - 重启：`uwsgi --reload uwsgi.pid`
-    - 停止：`uwsgi --stop uwsgi.pid`
-
+    - 开发模式`python3 app.py`
+        - 默认端口3389
+        - 查看大屏需要在端口后拼接大屏路径：如127.0.0.1:3389/hbxfdp
+    - 生产模式[centos]
+        - 启动：`uwsgi --ini uwsgi.ini`(需要安装uwsgi)
+        - 重启：`uwsgi --reload uwsgi.pid`
+        - 停止：`uwsgi --stop uwsgi.pid`
+    - 生产模式[windows]
 ### 注意事项
 1. windows下生产环境启动
-- 安装tornado
-- `/root/anaconda3/bin/python3 win-server.py`
+    - 安装tornado
+    - `/root/anaconda3/bin/python3 win-server.py`

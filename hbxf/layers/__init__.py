@@ -8,8 +8,6 @@ from layers.makeup_dataframe import makeup_dataframe
 from flask import request
 
 
-
-
 def parse_data(realm, index, request_args):
     """
     组装所有层的方法：
@@ -45,6 +43,7 @@ def parse_data(realm, index, request_args):
     # 开始分流，逐一对每一个拆出来的请求做处理
     data_frame_list = []
     for main_name, api_dict in api_dicts.items():
+        g.modified_initialization = {}  # 等待装填内容
         # 2.解析层(apis   -> apis)
         # 对请求参数做解析，拿到最终的请求字典
         code, msg, api_dict = get_parsed_apis(api_dict)      # 处理 =drop/$引用问题/=now的解析

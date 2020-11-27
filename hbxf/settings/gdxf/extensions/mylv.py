@@ -76,6 +76,7 @@ class Mylv(Extension):
             else:
                 temp = pd.merge(pd.merge(df_my, df_bmy, on=columns, how="inner"), df_jbmy, on=columns, how="inner")
                 # 计算
+                temp = temp.fillna(0)
                 df_my["mylv"] = (temp[self.value_my]+temp[self.value_jbmy])/(temp[self.value_my]+temp[self.value_jbmy]+temp[self.value_bmy])
 
                 # 处理计算结果

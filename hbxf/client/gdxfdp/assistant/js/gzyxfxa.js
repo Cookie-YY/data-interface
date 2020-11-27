@@ -11,21 +11,23 @@ let data1 = [
 // 指定图表的配置项和数据
 let option1 = {
     tooltip: {
-        trigger: 'none',
-        axisPointer: {
-            type: 'cross',
-            animation: false,
-            label: {
-                backgroundColor: '#29adff',
-                borderColor: '#29adff',
-                borderWidth: 1,
-                shadowBlur: 0,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                color: '#fff',
+        trigger: "axis",
+        formatter: "{c}",
+        // trigger: 'none',
+        // axisPointer: {
+        //     type: 'cross',
+        //     animation: false,
+        //     label: {
+        //         backgroundColor: '#29adff',
+        //         borderColor: '#29adff',
+        //         borderWidth: 1,
+        //         shadowBlur: 0,
+        //         shadowOffsetX: 0,
+        //         shadowOffsetY: 0,
+        //         color: '#fff',
                 
-            }
-        },
+        //     }
+        // },
     },
     xAxis: {
         type: 'category',

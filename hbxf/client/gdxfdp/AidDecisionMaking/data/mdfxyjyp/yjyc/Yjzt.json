@@ -4,19 +4,19 @@
   "data":[
     {
       "name": "预警状态",
-      "value": "平稳"
+      "value": "告警"
     },
     {
       "name": "未来一周信访量",
-      "value": 0
+      "value": 77
     },
     {
       "name": "同比",
-      "value": 0
+      "value": 0.2
     },
     {
       "name": "环比",
-      "value": 0
+      "value": -0.3
     }
   ]
 }

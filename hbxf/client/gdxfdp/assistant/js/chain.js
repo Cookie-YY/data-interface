@@ -6,7 +6,10 @@
 				type: "Get",
 				url: baseapi + "/xf/?table=search_qh&value=shej_02&transformer=@groupby",
 				success: function(data) {
-					$("#shengj").text(data.data[0].value[0]);
+					for(var i = 0; i < data.data[0].value.length; i++) {
+						$("#shengj").html(`<a style='color: #000;text-decoration: none;' href="${from}.html?Cqh=${data.data[0].value[i]}">${data.data[0].value[i]}</a>`)
+						// $("#shengj").html($li_1);
+					}
 				}
 			})
 			//市级

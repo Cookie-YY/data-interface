@@ -6,7 +6,6 @@ def process_default(api_dict):
 
     # param_trans参数 如果设置了特殊参数 是在默认值的基础上进行拼接
     if SPECIAL_PARAMS.get("param_trans", ""):
-        app.config["PARAMS_TRANS_ON"] = True
         params_trans_default = SPECIAL_PARAMS.get("param_trans", "")[0]
         if isinstance(params_trans_default, str):
             params_trans_default_list = params_trans_default.split(",")

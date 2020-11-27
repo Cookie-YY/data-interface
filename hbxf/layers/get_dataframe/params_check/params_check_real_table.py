@@ -1,5 +1,8 @@
 import re
 from sqlalchemy import Table
+from werkzeug.exceptions import abort
+
+from utils.error_page import InvalidUsage
 
 
 def get_table_when_table(table, realm, busin, timetype, qh, lx, index):
@@ -80,5 +83,5 @@ def get_real_table(apis_copy):
 
     from app import app
     if not app.config.get("NOTABLE_ERROR", True):
-        return 200, "NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {"table": "test", "ex_table": "test"}
-    return 400, f" NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {}
+        return 200, f"NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {"table": "test", "ex_table": "test"}
+    return 400, f"NoSuchTableError: ater trying all of the candidate tables, nothing found {candidate_tables}", {}

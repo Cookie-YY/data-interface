@@ -357,6 +357,9 @@ name/stack/value：
 - order/limit的实现
 - embededding的嵌套格式【name=a,b,c,d】
 - stack的堆叠模式 预测和真实值不一样的时候，会保留短的那个[重写；pandas有现成方法？保证name=stack时的情况]
+- 河北项目的sql过程是字符串类型的小数点
+    http://127.0.0.1:3389/api/xf/?gd_id=hb_xfxs_sxrmd&day=[2020-10-26,2020-11-25]
+
 
 # 金鸿
 - uwsgi 在win下怎么用【不重要】
@@ -393,20 +396,118 @@ name/stack/value：
 
 
 
-- 【已完成】ext_params 放transformer的参数【predict中测试】  删掉transformer参数校验的":"事情
-- *****预测的过程，展示和用到的时间跨度不一定一样
+- 【已解决】ext_params 放transformer的参数【predict中测试】  删掉transformer参数校验的":"事情
+- 【已解决】*****预测的过程，展示和用到的时间跨度不一定一样
 - *****预测的分组
 - *****param_trans 中的 modified_initialization 和条件
     - *****qh_godown modified_initialization
-    - *****zrdw_godown【省级的时候，直属小弟】
-    - *****xfbm_godown【直属小弟】
+    - 【已解决】*****zrdw_godown【省级的时候，直属小弟】
+    - 【已解决】*****xfbm_godown【直属小弟】
 - *****集成jssllv/aqdflv的sql和表名的切换
 - *****集成name_limit  stack_limit
 - *****云南项目的dispatch和测试
 - SQL过程的的执行try一下，如果没表报错开关   关了   没字段报错开关    关了  不同的报错，不同的处理
-- SQL过程的展示也放到name/stack/value
+- SQL过程的展示也放到name/stack/value[db_engine=fx_db]
 - reindex的判断
-- 【统一在dispatch处理】参数的空格
+- 【已解决】【统一在dispatch处理】参数的空格
 - reuse的统一复用
 - ext_params 覆盖ext的参数
-- extra_index里面，用逗号分隔，如果不满足@条件，说明这个逗号不是分隔符号
+- 【暂时解决】extra_index里面，用逗号分隔，如果不满足@条件，说明这个逗号不是分隔符号
+
+
+###################################### 河北用新代码的问题 ####################################
+重点信访人画像
+    也是带着中括号
+去掉趋势的请求
+    前端去掉了
+小数点：信访形式-->受信人那一页
+国家省市县的顺序
+    这个请求没加full
+    http://127.0.0.1:3389/api/xf/xfjc/?lx=djjg_xfxs&stack=djjg&name=$timetype&value=xfjc&year=[now-4,+now]&timetype=cy&xfxs=drop
+
+
+
+######################################## 广东新修改 ##############################################
+1.  "信访事项预警_集体访_信访量": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&order=-xfjc&jtf=集体访&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
+    "信访事项预警_集体访_满意率-信访部门": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfbmmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
+    "信访事项预警_集体访_满意率-责任单位": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_zrdwmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
+    "信访事项预警_集体访_信访量走势": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_jtf_xfjc&jtf=集体访&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
+    "信访事项预警_集体访_预警状态": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day+Cqh)",
+【缺两个】
+把这一页的所有gd_id2改掉
+到省走访页的去掉jtf_
+指标名+dszf  (到省走访)【表名+指标名】
+
+2.  信访事项预警 --- > 信访量趋势变化
+     信访目的分布 ----> 信访形式分布   xfmd-->xfxs
+
+3. 绩效考核区划分布添加个圈  重复信访率(等sql)
+
+4. 信访内容分类模块
+    yjnr/ejnr/sjnr   里面的内容是带下划线
+    name=_ejnr
+    name=_sjnr
+        有一个占比的过程   前十的占比用extension做
+
+5. 预测
+    同比环比预警状态的 reuse
+
+6. 绩效考核的指标
+    1. 部门排名的godown
+    2. 责任单位排名的godown
+    3. 饼图和率的检查
+    4. 地图时的 modified_initialization
+
+
+弹窗的公共接口需要用gd_id的方法写   full=none
+【已解决】网信占比信访部门的排名   保留小数
+【已解决】责任单位的排名 limit20
+
+
+
+
+
+
+###################################### 广东终验 ####################################
+【已解决】生成报告   xf_xfj_cd_zt_xj_djjg_xfjc -> xf_xfj_cd_zt_qh_djjg_xfjc
+【已解决】微信  态势 走势  现在不是三条线
+【已解决】网信占比的信访部门排名会报错
+【已解决】责任单位的zrdw_godown   参考金鸿的19个责任单位
+
+4. 辅助决策需要检查的两个
+    1. 信访总量预警-->总量预警好像没接    和  驾驶舱的 信访事项预警--->信访总量
+    2. 全局业务监控-->信访件监控-->内容分类   的中间top3并不是top3
+
+5. 预测的两层壳子
+
+6. qh_godown时需要修改modified_initialization
+
+
+###################################### 广东终验-前端 ####################################
+1. 排名的小数--->百分比
+2. 日期默认都是从当前年的01-01开始
+3. 信访绩效考核-->信访部门/责任单位 --> 网信
+    删掉网信占比的排名
+
+8. [应该重新部署就好了]信访人画像整个报错：  身份证号请求的带 中括号【可能不好解决】
+9. 接口用gd_id来写
+    公共接口 加full=none 同时注意权限的控制
+    3. 辅助决策需要修改的接口
+    1. [需要在文档中改]全局业务监控--->重复新房监控--> 四季登记机构分布   xf_xfj_cd_xj_cfxfbz_djjg_xfjc  --> xf_xfj_cd_qh_cfxfbz_djjg_xfjc
+    2. [需要在文档中改]自定义主题分析的   左下角  分布和走势    xf_xfj_cd_zt_qh_djjg_xfjc
+    3. [需要在文档中改]全局业务监控 的重件是100%   xf_xfj_cd_xj_cfxfbz_xfjc      xf_xfj_cd_xj_xfjc
+
+
+
+
+
+###################################### 广东终验-金鸿 ####################################
+- 这一批接口的gd_id个数不统一
+    # zrdw_godown待实现【省级的时候，直属小弟】
+    "信访绩效考核_责任单位_排名_参评率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&name=zrdw&order=-cplv&limit=20&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_满意率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=20&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_(来信|来访|网信)_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_xfxs_list&order=-jssllv&xfxs={gd_id4}&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_drop_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
+    "信访绩效考核_责任单位_排名_网信占比$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&full=true&transformer=@wxzb&name=xfbm&order=-wxzb&day=[2020-01-01,2020-10-09]&full=true&param_trans=zrdw_godown&param_protect=black_list(zrdw+xfxs)",
+- sql填空的测试

@@ -66,17 +66,24 @@ class ParamTrans:
         if qh and ("shej" in table or "shij" in table or "xj" in table):
             self.apis_copy.pop("Cqh", "")
 
-        # 2. 存在qh_godown 并且 table中含有qh时，删除Cqh
-        param_trans = self.apis_copy.get("param_trans", "")
-        table = self.apis_copy.get("table", "")
-        if "qh_godown" in param_trans and "qh" in table:
-            self.apis_copy.pop("Cqh", "")
+        # 存在带有IN-条件或者OR-条件时，删除  剩下的内容  如  存在IN-Cqh时 删除Cqh
+        wait_for_del = [i for i in self.apis_copy if i.startswith("IN-") or i.startswith("OR-")]
+        wait_for_del = [i.split("-")[1] for i in wait_for_del]
+        for i in wait_for_del:
+            self.apis_copy.pop(i, "")
 
-        # 3. 存在qh_include_sub 并且 table中含有qh时，删除Cqh
-        param_trans = self.apis_copy.get("param_trans", "")
-        table = self.apis_copy.get("table", "")
-        if "qh_include_sub" in param_trans and "qh" in table:
-            self.apis_copy.pop("Cqh", "")
 
-        # waittodo: 存在IN-Cqh  时  删除Cqh
+        # # 2. 存在qh_godown 并且 table中含有qh时，删除Cqh
+        # param_trans = self.apis_copy.get("param_trans", "")
+        # table = self.apis_copy.get("table", "")
+        # if "qh_godown" in param_trans and "qh" in table:
+        #     self.apis_copy.pop("Cqh", "")
+        #
+        # # 3. 存在qh_include_sub 并且 table中含有qh时，删除Cqh
+        # param_trans = self.apis_copy.get("param_trans", "")
+        # table = self.apis_copy.get("table", "")
+        # if "qh_include_sub" in param_trans and "qh" in table:
+        #     self.apis_copy.pop("Cqh", "")
+        #
+        # # waittodo: 存在IN-Cqh  时  删除Cqh
 

@@ -42,7 +42,7 @@ def run(start, end, zt, zb_pymysql, **kwargs):
 
     sql = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfjc where zt='"+zt+"' and `day` >= '%s' AND `day` <= '%s' "
     sql_xfxs = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfxs_xfjc where zt='"+zt+"' and xfxs='%s' AND `day` >= '%s' AND `day` <= '%s' "
-    sql_djjg = "select sum(xfjc) from xf_xfj_cd_zt_xj_djjg_xfjc where zt='"+zt+"' and djjg='%s' AND `day` >= '%s' AND `day` <= '%s' "
+    sql_djjg = "select sum(xfjc) from xf_xfj_cd_zt_qh_djjg_xfjc where zt='"+zt+"' and djjg='%s' AND `day` >= '%s' AND `day` <= '%s' "
     sql_jtf = "select sum(xfjc) from xf_xfj_cd_zt_xj_jtf_xfjc where zt='"+zt+"' and jtf='集体访' AND `day` >= '%s' AND `day` <= '%s' "
     # 全省-同比
     total_num, tb_qs = search_sb(zb_pymysql, sql, (s_time, e_time), (last_s_time, last_e_time))

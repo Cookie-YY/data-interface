@@ -61,8 +61,7 @@ class Predict(Extension):
             day_end = self.today+datetime.timedelta(days=self.span)
             day_end = day_end.strftime("%Y-%m-%d %H:%M:%S")
             day_list = day_initialized(f"{day_start},{day_end}")
-            modified_initialization = {"day": day_list}
-            g.modified_initialization = modified_initialization
+            g.modified_initialization.update({"day": day_list})
             # df_beforepredict = df_beforepredict.reset_index()
             df = pd.concat([df_beforepredict, df], ignore_index=True)
         elif not self.apis_copy.get("name"):
