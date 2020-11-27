@@ -36,8 +36,8 @@ sql_3_2_all = """(select
     LEFT JOIN xf_dbxx e ON e.xfjbh = x.xfjbh
     LEFT JOIN xf_ybinfo y ON x.xfjbh = y.xfjbh
     where 1=1
-      and x.xbjzsj >= {start}
-      and x.xbjzsj <= {end}
+      and x.xbjzsj >= '{start}'
+      and x.xbjzsj <= '{end}'
       and x.djjglbdm in ('0000','0100','0200','0300','1000','1100','1200','1300','1400')
       and x.xfrs >= 1 and x.xfrs <= 9999
       and x.check_flag = 0
@@ -89,8 +89,8 @@ sql_3_2_xfxs = """(select
     LEFT JOIN xf_dbxx e ON e.xfjbh = x.xfjbh
     LEFT JOIN xf_ybinfo y ON x.xfjbh = y.xfjbh
     where 1=1
-      and x.xbjzsj >= {start}
-      and x.xbjzsj <= {end} 
+      and x.xbjzsj >= '{start}'
+      and x.xbjzsj <= '{end}' 
       and (case x.xfxsmc when '来信' then '来信' when '来访' then '来访' else '网信' end)='网信'
       and x.djjglbdm in ('0000','0100','0200','0300','1000','1100','1200','1300','1400')
       and x.xfrs >= 1 and x.xfrs <= 9999
@@ -141,8 +141,8 @@ sql_3_4_all = """(select
     LEFT JOIN xf_dbxx e ON e.xfjbh = x.xfjbh
     LEFT JOIN xf_ybinfo y ON x.xfjbh = y.xfjbh
     where 1=1
-      and x.xbjzsj >= {start}
-      and x.xbjzsj <= {end}
+      and x.xbjzsj >= '{start}'
+      and x.xbjzsj <= '{end}'
       and x.djjglbdm in ('0000','0100','0200','0300','1000','1100','1200','1300','1400')
       and x.xfrs >= 1 and x.xfrs <= 9999
       and x.check_flag = 0
@@ -195,8 +195,8 @@ sql_3_4_xfxs = """(select
     LEFT JOIN xf_dbxx e ON e.xfjbh = x.xfjbh
     LEFT JOIN xf_ybinfo y ON x.xfjbh = y.xfjbh
     where 1=1
-      and x.xbjzsj >= {start}
-      and x.xbjzsj <= {end}
+      and x.xbjzsj >= '{start}'
+      and x.xbjzsj <= '{end}'
       and (case x.xfxsmc when '来信' then '来信' when '来访' then '来访' else '网信' end)='网信' 
       and x.djjglbdm in ('0000','0100','0200','0300','1000','1100','1200','1300','1400')
       and x.xfrs >= 1 and x.xfrs <= 9999
