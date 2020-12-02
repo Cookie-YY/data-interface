@@ -30,9 +30,9 @@ class Tb(Extension):
         self.db_results[0][0] = Extension.groupby_and_sum(self.db_results[0][0], self.value)
         self.db_results[0][1] = Extension.groupby_and_sum(self.db_results[0][1], self.value)
 
-        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0][self.value][0] is None:
+        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0].shape[1] == 1 and self.db_results[0][0][self.value][0] is None:
             self.db_results[0][0] = np.int32(0)
-        if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1][self.value][0] is None:
+        if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1].shape[1] == 1 and self.db_results[0][1][self.value][0] is None:
             self.db_results[0][1] = np.int32(0)
 
         df_tb = Tb.calculate_tb_or_hb(self.db_results, self.apis_copy)

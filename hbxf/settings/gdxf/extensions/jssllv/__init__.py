@@ -6,7 +6,7 @@ import pandas as pd
 from settings.gdxf.extensions.jssllv.base_sql_map import get_base_sql_map
 from utils.qh_processor import get_qh_level
 
-DEBUG = False
+DEBUG = True
 
 
 def get_sql_map(flag):
@@ -189,13 +189,16 @@ class Jssllv(Extension):
         # self.apis_copy["xfjc"] = "jssllv"
 
         sql_list = self.apis_copy['ext'].split('/')
-        Cqh_sql_map = {'shej_02': {}, 'shij_02': {}, 'xj_02': {}, 'all': {}}
+        Cqh_sql_map = {'shej_02': {'xfxs': None, 'all': None}, 'shij_02': {'xfxs': None, 'all': None},
+                       'xj_02': {'xfxs': None, 'all': None}, 'all': {'xfxs': None, 'all': None}}
         for item in sql_list:
             if 'xfxs' in item:
                 if 'shej' in item:
                     Cqh_sql_map['shej_02']['xfxs'] = item
+                    Cqh_sql_map['all']['xfxs'] = item if not Cqh_sql_map['all']['xfxs'] else Cqh_sql_map['all']['xfxs']
                 elif 'shij' in item:
                     Cqh_sql_map['shij_02']['xfxs'] = item
+                    Cqh_sql_map['all']['xfxs'] = item if not Cqh_sql_map['all']['xfxs'] else Cqh_sql_map['all']['xfxs']
                 elif 'xj' in item:
                     Cqh_sql_map['xj_02']['xfxs'] = item
                 else:
@@ -203,8 +206,10 @@ class Jssllv(Extension):
             else:
                 if 'shej' in item:
                     Cqh_sql_map['shej_02']['all'] = item
+                    Cqh_sql_map['all']['all'] = item if not Cqh_sql_map['all']['all'] else Cqh_sql_map['all']['all']
                 elif 'shij' in item:
                     Cqh_sql_map['shij_02']['all'] = item
+                    Cqh_sql_map['all']['all'] = item if not Cqh_sql_map['all']['all'] else Cqh_sql_map['all']['all']
                 elif 'xj' in item:
                     Cqh_sql_map['xj_02']['all'] = item
                 else:
@@ -223,17 +228,17 @@ class Jssllv(Extension):
 
         if bmjb:
             if xfxs:
-                sql_item = Cqh_sql_map[bmjb]['xfxs'] if bmjb in Cqh_sql_map else Cqh_sql_map['all']['xfxs']
+                sql_item = Cqh_sql_map[bmjb]['xfxs'] if Cqh_sql_map[bmjb]['xfxs'] else Cqh_sql_map['all']['xfxs']
             else:
-                sql_item = Cqh_sql_map[bmjb]['all'] if bmjb in Cqh_sql_map else Cqh_sql_map['all']['all']
+                sql_item = Cqh_sql_map[bmjb]['all'] if Cqh_sql_map[bmjb]['all'] else Cqh_sql_map['all']['all']
         else:
             if xfxs:
                 Cqh_level = get_qh_level(g.get('reqdicts_before_pt').get('Cqh'))
-                sql_item = Cqh_sql_map[Cqh_level]['xfxs'] if Cqh_level in Cqh_sql_map else Cqh_sql_map['all']['xfxs']
+                sql_item = Cqh_sql_map[Cqh_level]['xfxs'] if Cqh_sql_map[Cqh_level]['xfxs'] else Cqh_sql_map['all'][
+                    'xfxs']
             else:
                 Cqh_level = get_qh_level(g.get('reqdicts_before_pt').get('Cqh'))
-                sql_item = Cqh_sql_map[Cqh_level]['all'] if Cqh_level in Cqh_sql_map else Cqh_sql_map['all']['all']
-
+                sql_item = Cqh_sql_map[Cqh_level]['all'] if Cqh_sql_map[Cqh_level]['all'] else Cqh_sql_map['all']['all']
         sql_map = get_sql_map(DEBUG)
 
         from utils.db_connection import fx_engine

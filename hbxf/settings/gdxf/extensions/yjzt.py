@@ -1,3 +1,4 @@
+from layers.makeup_dataframe import merge_initialized_table
 from libs.extensions import Extension
 import pandas as pd
 import numpy as np
@@ -43,20 +44,73 @@ class Yjzt(Extension):
         self.db_results[1][0] = Extension.groupby_and_sum(self.db_results[1][0], self.value)
         self.db_results[1][1] = Extension.groupby_and_sum(self.db_results[1][1], self.value)
 
-        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0][self.value][0] is None:
+        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0].shape[1] == 1 and self.db_results[0][0][self.value][0] is None:
             self.db_results[0][0] = np.int32(0)
-        if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1][self.value][0] is None:
+        if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1].shape[1] == 1 and self.db_results[0][1][self.value][0] is None:
             self.db_results[0][1] = np.int32(0)
-        if isinstance(self.db_results[1][0], pd.DataFrame) and self.db_results[1][0][self.value][0] is None:
+        if isinstance(self.db_results[1][0], pd.DataFrame) and self.db_results[1][0].shape[1] == 1 and self.db_results[1][0][self.value][0] is None:
             self.db_results[1][0] = np.int32(0)
-        if isinstance(self.db_results[1][1], pd.DataFrame) and self.db_results[1][1][self.value][0] is None:
+        if isinstance(self.db_results[1][1], pd.DataFrame) and self.db_results[1][1].shape[1] == 1 and self.db_results[1][1][self.value][0] is None:
             self.db_results[1][1] = np.int32(0)
 
         df_tb, df_hb = Yjzt.calculate_tb_and_hb(self.db_results, self.apis_copy)
-        self.apis_copy["value"] = "yjzt"  # 不能放到前面，tb/hb解析的时候接受的db_results中的列名并没有改
-        res = "平稳"
-        if abs(df_tb) > 0.2 or abs(df_hb) > 0.2:
-            res = "告警"
-        elif abs(df_tb) > 0.1 or abs(df_hb) > 0.1:
-            res = "异常"
-        self.df = pd.DataFrame({"yjzt": [res]})
+
+        self.apis_copy["value"] = "yjzt"
+        if not isinstance(df_tb, pd.DataFrame) or not isinstance(df_hb, pd.DataFrame):
+            res = "平稳"
+            if abs(df_tb) > 0.2 or abs(df_hb) > 0.2:
+                res = "告警"
+            elif abs(df_tb) > 0.1 or abs(df_hb) > 0.1:
+                res = "异常"
+            self.df = pd.DataFrame({"yjzt": [res]})
+            return
+
+        df_tb = df_hb.rename(columns={self.value: "tb"})
+        df_hb = df_hb.rename(columns={self.value: "hb"})
+        on_list = list(df_hb.columns)
+        on_list.remove("hb")
+        # 如果on_list为空，说明不需要merge，只有一行，返回预警状态即可
+        if not on_list:
+            res = "平稳"
+            if abs(df_tb["tb"][0]) > 0.2 or abs(df_hb["hb"][0]) > 0.2:
+                res = "告警"
+            elif abs(df_tb["tb"][0]) > 0.1 or abs(df_hb["hb"][0]) > 0.1:
+                res = "异常"
+            self.df = pd.DataFrame({"yjzt": [res]})
+            return
+
+        else:
+            code, msg, df_tb = merge_initialized_table({"df": df_tb, "value": "tb"})  # 融合数据表：加 处理了day的初始化问题
+            if code != 200:
+                self.code = code
+                self.msg = msg
+                return
+            code, msg, df_hb = merge_initialized_table({"df": df_hb, "value": "hb"})  # 融合数据表：加 处理了day的初始化问题
+            if code != 200:
+                self.code = code
+                self.msg = msg
+                return
+            thb_df = pd.merge(df_tb, df_hb, how="left", on=on_list)
+
+            def get_res(tb, hb):
+                if tb > 2 or hb > 2:
+                    return "告警"
+                elif tb > 1 or hb > 1:
+                    return "预警"
+                return "平稳"
+
+            # ycthb_df["yjzt"] = "平稳"
+            thb_df["yjzt"] = thb_df.apply(lambda x: get_res(x["tb"], x["hb"]), axis=1)
+
+            thb_df = thb_df.drop(['tb', 'hb'], axis=1)  # drop不会就地修改，创建副本返回
+            self.df = thb_df
+
+        
+        
+        # self.apis_copy["value"] = "yjzt"  # 不能放到前面，tb/hb解析的时候接受的db_results中的列名并没有改
+        # res = "平稳"
+        # if abs(df_tb) > 0.2 or abs(df_hb) > 0.2:
+        #     res = "告警"
+        # elif abs(df_tb) > 0.1 or abs(df_hb) > 0.1:
+        #     res = "异常"
+        # self.df = pd.DataFrame({"yjzt": [res]})

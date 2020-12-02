@@ -31,18 +31,20 @@ class ParamTrans:
     def qh_godown(self, *args, **kwargs):
         # full的问题
         table = self.apis_copy.get("table", "")
+        qh = self.apis_copy.get("Cqh", "")
+        from utils.qh_processor import get_qh_sub
+        from utils.get_unilist import get_unilist
+        child_qh = get_qh_sub(qh, "next")
+        child_qh = get_unilist(child_qh)
         if "shej" in table or "shij" in table or "xj" in table:
             qh = self.apis_copy.get("Cqh", "")
             from utils.qh_processor import get_qh_godown
             qh_child_level = get_qh_godown(qh)
             update_dict = {"name": qh_child_level}
+            g.modified_initialization.update({qh_child_level: child_qh})
         elif "qh" in table:
-            qh = self.apis_copy.get("Cqh", "")
-            from utils.qh_processor import get_qh_sub
-            from utils.get_unilist import get_unilist
-            child_qh = get_qh_sub(qh, "next")
-            child_qh = get_unilist(child_qh)
             update_dict = {"name": "qh", "IN-Cqh": ",".join(child_qh)}
+            g.modified_initialization.update({"qh": child_qh})
             # waittodo: full的事
         elif table == "":  #  没有写table，走transformer，按照qh in table处理
             qh = self.apis_copy.get("Cqh", "")
@@ -51,6 +53,7 @@ class ParamTrans:
             child_qh = get_qh_sub(qh, "next")
             child_qh = get_unilist(child_qh)
             update_dict = {"name": "qh", "IN-Cqh": ",".join(child_qh)}
+            g.modified_initialization.update({"qh": child_qh})
         else:
             return self
         self.apis_copy.update(update_dict)

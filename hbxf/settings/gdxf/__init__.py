@@ -105,15 +105,18 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "cjzb"]
 
 # 有关联关系的字段
 RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 
+# 禁止full的情况
+DISABLE_FULL_WHEN_NAME = ["xm"]
+
 # predict（ext）的参数
-# 最小可供预测的数据
-PREDICT_MIN_DATA = 20
-PREDICT_MIN_MULTI_DATA = 3
+# 最小可供预测的数据，否则返回均值
+PREDICT_MIN_DATA = 20            # 用于预测的最小的训练集的样本量
+PREDICT_MIN_MULTI_DATA = 3       # 用于预测的最小的训练集的样本量的倍数，如，预测7天，最少需要21天
 PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准      震荡幅度(相对于均值)
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True

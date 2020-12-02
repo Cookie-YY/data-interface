@@ -45,7 +45,7 @@ def get_dataframe(apis):
             dataframe["df"][dataframe.get("value")] = dataframe["df"][dataframe.get("value")].apply(lambda x: round(x, SIGNIFICANT_DIGITS))
         else:
             dataframe["df"] = round(dataframe["df"], SIGNIFICANT_DIGITS)
-    except:
+    except Exception:
         pass
     return 200, "success", dataframe
 

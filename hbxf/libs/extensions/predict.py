@@ -14,6 +14,9 @@ from utils.init_date_valuelist import day_initialized
 
 class Predict(Extension):
     """预测"""
+    """
+    after_search之后，会在g变量的predict_df中保存预测的df
+    """
     # ext
     #   tb/hb/yjzt
     #   ext=include_before:                         涵盖之前的数据
@@ -54,8 +57,9 @@ class Predict(Extension):
             # 传给预测函数的df必须只有两列：day/self.value
             df = self.predict_df(df_beforepredict)
 
-        # 3.获取展示时长[realdate_show]
+        # 3.整理结果
         if self.apis_copy.get("name") == "day":
+            # 需要展示时间：获取展示时长[realdate_show]
             day_start = self.today-datetime.timedelta(days=int(self.kwargs.get("realdata_show").strip("d")))
             day_start = day_start.strftime("%Y-%m-%d %H:%M:%S")
             day_end = self.today+datetime.timedelta(days=self.span)
@@ -65,7 +69,7 @@ class Predict(Extension):
             # df_beforepredict = df_beforepredict.reset_index()
             df = pd.concat([df_beforepredict, df], ignore_index=True)
         elif not self.apis_copy.get("name"):
-            df = pd.DataFrame({self.value: df[self.value].sum()})
+            df = pd.DataFrame({self.value: [df[self.value].sum()]})
         else:
             pass
 
@@ -78,6 +82,7 @@ class Predict(Extension):
 
 
         self.df = df
+        g.predict_df = df
 
     def get_datetime_column(self):
         day_condition = self.apis_copy.get("day")

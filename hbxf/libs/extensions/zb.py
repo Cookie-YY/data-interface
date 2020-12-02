@@ -26,6 +26,8 @@ class Zb(Extension):
                 tmp = df_zb[later].map(
                     lambda x: df_zb.loc[df_zb[later] == x, [self.value]].sum().squeeze())  # 按later类型计算value列的和，squeeze()取标量
                 df_zb[self.value] = df_zb[self.value] / tmp
+            df_zb = df_zb.rename(columns={self.value: "zb"})
+            self.apis_copy["value"] = "zb"
         else:
             return {}
 

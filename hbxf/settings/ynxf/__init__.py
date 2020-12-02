@@ -47,7 +47,7 @@ FILE_PATH = os.path.join(BASE_DIR, DP_CONTAINER, DP_ROOT, "file")
 
 ############################### 数据配置 ###############################
 # 随机化配置
-RANDOM_OR_ZERO = "RANDOM"
+RANDOM_OR_ZERO = "ZERO"
 EFFICIENT_DIGITS = 4     # VALUE_FLOAT的小数位数，不写默认为4
 RANDOM_INT_LOWER = 100   # VALUE_INT的随机化的最小值，不写默认100
 RANDOM_INT_UPPER = 999   # VALUE_INT的随机化的最大值，不写默认999

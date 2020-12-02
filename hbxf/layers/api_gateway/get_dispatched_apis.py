@@ -72,8 +72,8 @@ def get_dispatched_apis(request_args):
     4. 将request_args剩下的部分更新进字典中
     5. 返回更新的字典
     """
-    # 1.去掉带有 invalid 的项 & 同时将空格变回加号(需要兼容空格紧跟逗号的情况)
-    request_args = {k: v.replace(" ", "+").replace(",+", ",") for k, v in request_args.items() if v and not (v == "invalid" and k.startswith("gd_id"))}
+    # 1.去掉带有 invalid 的项 & 同时将空格变回加号(需要兼容空格紧跟逗号的情况)  兼容k里面出现不知道哪里来的中括号的情况
+    request_args = {k.replace("[]", ""): v.replace(" ", "+").replace(",+", ",") for k, v in request_args.items() if v and not (v == "invalid" and k.startswith("gd_id"))}
     request_args_copy = request_args.copy()  # 备份，方便遍历/方便最后给url填空
 
     # 2.选出用于拼接得到分发标识的gd_id参数

@@ -34,7 +34,7 @@ def get_dataframe_from_extension(apis_copy, apis):
 
     # 3.封装dateframe对象以供返回
     dataframe = {**apis_copy, **{"df": df}}
-    dataframe["table"] = ["SQL"]  # 兼容没有waiting_for_search的情况
+    dataframe["table"] = ["SQL OR Reuse Last results"]  # 兼容没有waiting_for_search的情况
     if ext.waiting_for_search:
         dataframe["table"] = [i.get("table") for i in ext.waiting_for_search if "table" in i]
     return 200, "success", dataframe

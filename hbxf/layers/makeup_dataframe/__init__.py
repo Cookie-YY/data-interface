@@ -28,7 +28,8 @@ def makeup_dataframe(dataframe):
         dataframe["df"] = df
 
         # 排序补零：
-        if dataframe.get("full") == "true":
+        from app import app
+        if dataframe.get("full") == "true" and dataframe.get("name", "") not in app.config.get("DISABLE_FULL_WHEN_NAME", []):
             code, msg, df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
             if code != 200:
                 return 400, msg, {}

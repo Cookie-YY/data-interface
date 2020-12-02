@@ -1,3 +1,6 @@
+from flask import g
+
+
 def get_splited_columns(dataframe, INITIALIZATION):
     """
     1. 找到有关系的列
@@ -19,7 +22,7 @@ def get_splited_columns(dataframe, INITIALIZATION):
     before_splited_columns = list(df.columns).copy()
     re_col_file = {}  # 最终有联动的列的字典
     for column in df.columns:
-        if column in RELATION_COLS:
+        if column in RELATION_COLS and column not in g.get("modified_initialization"):  # 如果也不在g变量的修改过的初始化清单里面
             table = RELATION_COLS[column]  # 获得联动的表名
             table_columns = table.split("+")
             # 构造re_col_file = {"shej_02+shij_02+xj_02": ["xj_02", ""]}
