@@ -3,6 +3,7 @@ let myChart1 = echarts.init(document.getElementById('main1'));
 let myChart2 = echarts.init(document.getElementById('main2'));
 /*let myChart3 = echarts.init(document.getElementById('main3'));*/
 
+var seriesArr = []
 
 let data1 = [
 ]
@@ -80,7 +81,6 @@ let option1 = {
 	}]
 };
 
-var seriesArr = []
 
 let option2 = {
     legend: {
@@ -123,7 +123,7 @@ let option2 = {
         type: 'value',
         axisLine: {show:false},
     },
-    series: seriesArr
+    series: []
 };
 ///*ajax获取myChart2数据  begin*/
 // 	$.ajax({
@@ -206,21 +206,23 @@ function getAPI() {
             success: function(data) {
                 let map = data.map
                 let propData = data.data
+                let dataKeys = []
+                let legendData = []
                 // 获取keys数组
-                let dataKeys = Object.keys(map);
+                dataKeys = Object.keys(map);
                 
                 // 获取key对应的中文数组
-                let legendData = Object.values(map);
+                legendData = Object.values(map);
                 // 所有line数据数组
                 let lineDataArr = [];
                 // echarts series数据
-                // var seriesArr = [];
                 // 根据legend设置每条line数据对应的key值
                 let maxArr = [];
                 dataKeys.forEach(value => {
                     lineDataArr[value] = [];
                 });
                 let colors = ['#29adff', '#f9e03c', '#46eea6']
+                // seriesArr = []
                 for (let [index, item] of propData.entries()) {
                     // x轴数据添加
                     // xAxis.push(item[this.params.xName]);
@@ -253,7 +255,9 @@ function getAPI() {
                 for (var i = 0; i < newData.length; i++) {
                     xArr.push(newData[i].name)
                 }
+                option2.series = seriesArr;
                 option2.xAxis.data = xArr
+                console.log('000', option2)
                 // option2.series.data = xArr
                 // option2.series[0].data = newData//折线图需要的数据
                 myChart2.setOption(option2)

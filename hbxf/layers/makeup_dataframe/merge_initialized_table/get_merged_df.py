@@ -12,10 +12,10 @@ def get_merged_df(df, init_df, val_col):
         # 如果直接merge出错，说明出现了int64和object不能merge的情况，直接全部变成字符串
         merged_df = pd.merge(init_df, df, how="left", on=on, suffixes=("_x", ""))
     except Exception as e:
-        init_df = init_df.astype("str")
-        df = df.astype("str")
-        df[val_col] = df[val_col].astype("float")
-        init_df[val_col] = init_df[val_col].astype("float")
+        init_df[on] = init_df[on].astype("str")
+        df[on] = df[on].astype("str")
+        # df[val_col] = df[val_col].astype("float")
+        # init_df[val_col] = init_df[val_col].astype("float")
         merged_df = pd.merge(init_df, df, how="left", on=on, suffixes=("_x", ""))
     merge_df = merged_df.drop([val_col+'_x'], axis=1)
     return merge_df

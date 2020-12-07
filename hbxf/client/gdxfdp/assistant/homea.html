@@ -75,7 +75,7 @@
 			<img class="fh" src="./image/fh.png" alt="">
 			<p>工作考核分析</p>
 			<p class="didian">
-				<a onclick="window.location.href='chain.html?from=homea'"><img src="image/abc_03.jpg"/></a>
+				<a onclick="window.location.href='chain.html?from=homea&Cqh=广东省'"><img src="image/abc_03.jpg"/></a>
 			</p>
 			<p class="riqi" id="riqi">
 				<a href="javascript:;" edbox data-box-target="#modal" data-box-after-close="closeDateSelect" id="showModal">
@@ -111,13 +111,13 @@
 				</p>
 				<div id="main3" style="width: 100%;height:260px;"></div>
 			</div>
-			<div class="home_index">
+			<!-- <div class="home_index">
 				<p class="home_index_title">
 					<span>网信占比</span>
 					<span style="color:#4c74fc;float: right;">70%</span>
 				</p>
 				<div id="main4" style="width: 100%;height:260px;"></div>
-			</div>
+			</div> -->
 			
 		</div>
 		<!--底部-->
@@ -154,7 +154,7 @@
 <script src="js/dateTime.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 var day = '[now-30,now]';
-var Cqh = '广州市'
+var Cqh = '广东省'
 		$("#startDate").datetime({
 			type:"date",
 			value:[2020,10,01],
@@ -206,7 +206,7 @@ var Cqh = '广州市'
 	if (search) {
 		Cqh = decodeURI(search)
 	} else {
-		Cqh = '广州市'
+		Cqh = '广东省'
 	}
 	sessionStorage.setItem('Cqh', Cqh)
 	sessionStorage.setItem('from', 'homea')

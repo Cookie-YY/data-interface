@@ -6,7 +6,7 @@ import pandas as pd
 from settings.gdxf.extensions.jssllv.base_sql_map import get_base_sql_map
 from utils.qh_processor import get_qh_level
 
-DEBUG = True
+DEBUG = False
 
 
 def get_sql_map(flag):
@@ -34,10 +34,18 @@ def get_sql_map(flag):
         "jssllv_qh_all_xfbm_shej": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['1-2-全']} as a where a.region_name='{{Cqh}}'",
             ["jssllv"]),
+        # 区划分布 --> 全部 --> 信访部门 （省） 【三种情况】 *
+        "jssllv_qh_all_xfbm_shej_nums": (
+            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['1-2-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc' FROM {base_sql_map['1-2-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['1-2-全']} as a where a.region_name='{{Cqh}}'",
+            ["slqk", "xfjc"]),
         # 区划分布 --> 全部 --> 信访部门 （xx市） 【一个数】
         "jssllv_qh_all_xfbm_shij": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['1-4-全']} as a where a.region_name='{{Cqh}}'",
-            ["jssllv"]),
+            ["slqk", "xfjc"]),
+        # 区划分布 --> 全部 --> 信访部门 （xx市） 【三种情况】 *
+        "jssllv_qh_all_xfbm_shij_nums": (
+            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['1-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc'  FROM {base_sql_map['1-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['1-4-全']} as a where a.region_name='{{Cqh}}'",
+            ["slqk", "xfjc"]),
         # 区划分布 --> 全部 --> 信访部门 （各个市） 【name/value】
         "jssllv_qh_all_xfbm_allshij": (
             f"select a.region_name as qh,a.jssl/a.zs as jssllv from {base_sql_map['1-4-全']} as a",
@@ -50,10 +58,18 @@ def get_sql_map(flag):
         "jssllv_qh_all_zrdw_shej": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['2-2-全']} as a where a.region_name='{{Cqh}}'",
             ["jssllv"]),
+        # 区划分布 --> 全部 --> 责任单位 （省） 【三种情况】 *
+        "jssllv_qh_all_zrdw_shej_nums": (
+            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['2-2-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc' FROM {base_sql_map['2-2-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['2-2-全']} as a where a.region_name='{{Cqh}}'",
+            ["slqk", "xfjc"]),
         # 区划分布 --> 全部 --> 责任单位 （xx市） 【一个数】
         "jssllv_qh_all_zrdw_shij": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['2-4-全']} as a where a.region_name='{{Cqh}}'",
-            ["jssllv"]),
+            ["slqk", "xfjc"]),
+        # 区划分布 --> 全部 --> 责任单位 （xx市） 【三种情况】 *
+        "jssllv_qh_all_zrdw_shij_nums": (
+            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['2-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc'  FROM {base_sql_map['2-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['2-4-全']} as a where a.region_name='{{Cqh}}'",
+            ["slqk", "xfjc"]),
         # 区划分布 --> 全部 --> 责任单位 （各个市） 【name/value】
         "jssllv_qh_all_zrdw_allshij": (
             f"select a.region_name as qh,a.jssl/a.zs as jssllv from {base_sql_map['2-4-全']} as a",
@@ -154,7 +170,7 @@ def get_sql_map(flag):
             ["jssllv"]),
         # 责任单位 --> 信访形式 （某一个责任单位的三种情况）【name/value】-------- 结果需要转置
         "jssllv_zrdw_xfxs_nums": (
-            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'value' FROM {base_sql_map['2-5-形式']} as a WHERE a.company_name='{{zrdw}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'value'  FROM {base_sql_map['2-5-形式']} as a WHERE a.company_name='{{zrdw}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'value' FROM {base_sql_map['2-5-形式']} as a where a.company_name='{{zrdw}}'",
+            f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['2-5-形式']} as a WHERE a.company_name='{{zrdw}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc'  FROM {base_sql_map['2-5-形式']} as a WHERE a.company_name='{{zrdw}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['2-5-形式']} as a where a.company_name='{{zrdw}}'",
             ["slqk", "xfjc"]),
         # 责任单位 --> 信访形式 （某一个责任单位的及时受理率）【一个数】
         "jssllv_zrdw_xfxs_jssllv": (
@@ -255,6 +271,7 @@ class Jssllv(Extension):
         self.apis_copy['value'] = 'jssllv'
         if sql_item.endswith('nums'):
             self.apis_copy['value'] = 'xfjc'
+        full_sql =sql.format(**g.get("reqdicts_before_pt")).format(**self.apis_copy)
         results = fx_engine.execute(sql.format(**g.get("reqdicts_before_pt")).format(**self.apis_copy))
         # results = fx_engine.execute(sql)
         data = results2df(results, columns)

@@ -8,7 +8,7 @@
 				success: function(data) {
 					for(var i = 0; i < data.data[0].value.length; i++) {
 						$("#shengj").html(`<a style='color: #000;text-decoration: none;' href="${from}.html?Cqh=${data.data[0].value[i]}">${data.data[0].value[i]}</a>`)
-						// $("#shengj").html($li_1);
+						$("#shengj").addClass('abc')
 					}
 				}
 			})

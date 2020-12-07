@@ -73,7 +73,7 @@
         <img class="fh" src="./image/fh.png" alt="">
         <p>工作运行分析</p>
         <p class="didian">
-        	<a onclick="window.location.href='chain.html'"><img src="image/abc_03.jpg"/></a>
+        	<a onclick="window.location.href='chain.html?Cqh=广东省'"><img src="image/abc_03.jpg"/></a>
         </p>
 		<p class="riqi" id="riqi">
 				<a href="javascript:;" edbox data-box-target="#modal" data-box-after-close="closeDateSelect" id="showModal">
@@ -225,7 +225,7 @@ var day = '[now-30,now]'
 	if (search) {
 		Cqh = decodeURI(search)
 	} else {
-		Cqh = '广州市'
+		Cqh = '广东省'
 	}
 	sessionStorage.setItem('Cqh', Cqh)
 	sessionStorage.setItem('from', 'gzyxfxa')

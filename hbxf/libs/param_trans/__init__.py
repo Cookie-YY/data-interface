@@ -59,10 +59,19 @@ class ParamTrans:
         self.apis_copy.update(update_dict)
         return self
 
-    def year_range(self):
-        pass
+    def year_range(self, *args, **kwargs):
+        # param_trans在parse_now之后
+        # param_trans在g.reqdicts_before_pt之前（g.reqdicts_before_pt有start和end）
+        # self.apis_copy需要有[2018,2020]  // 搜索/排序补零
+        year = self.apis_copy.get("year")
+        if year.isdigit() and len(args) == 1:
+            start = int(year) - int(args[0])
+            condition = f"{start},{year}"
+            self.apis_copy["year"] = condition
+            g.reqdicts_before_pt.update({"start": str(start), "end": str(year)})
+        return self
 
-    def before_finish(self):
+    def before_finish(self, *args, **kwargs):
         # 1. 存在qh 但 区划体系是  shej/shij/xj时，删除qh
         qh = self.apis_copy.get("Cqh", "")
         table = self.apis_copy.get("table", "")

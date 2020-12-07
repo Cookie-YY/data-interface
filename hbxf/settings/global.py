@@ -12,7 +12,7 @@ URL_REFERENCE = {
 SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict"]  # 系统内置extension
 
 # 程序内置param_trans
-SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown"]
+SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range"]
 # # extension过程中的初始化值
 # INITIALIZATION = {
 #     "ext_int": ["VALUE_FLOAT"],
@@ -53,6 +53,7 @@ SYS_SPECIAL_PARAMS = {
     "ceil": ("", "\d+"),
     "ceil_value": (False, None),
     "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)|none"),
+    "param_trans": (False, None),
     "tmp_search": ("", None),
     "debug": (False, None),
     "gd_id": ("", None),

@@ -1,7 +1,7 @@
 // 基于准备好的dom，初始化echarts实例
 let myChart1 = echarts.init(document.getElementById('main1'));
 /*let myChart2 = echarts.init(document.getElementById('main2'));*/
-
+var zlyjList = []
 // 指定图表的配置项和数据
 let option1 = {
     tooltip: {
@@ -144,3 +144,27 @@ let option1 = {
 // 使用刚指定的配置项和数据显示图表。
 myChart1.setOption(option1);
 //myChart2.setOption(option2);
+
+$.ajax({
+	type: "Get",
+    dataType:"json",
+    data: {
+        gd_id1: '信访总量预警',
+        gd_id2: '总量预警',
+        gd_id3: '预警状态',
+    },
+	//async:true,
+	//cache:false,
+	url: baseapi + "/",
+	success: function(data) {
+        zlyjList = data.data;
+        $('#yjzt').text(data.data[0].name)
+        $('.yj-value').text(data.data[0].value)
+        $('#jyzxfl').text(data.data[1].name)
+        $('.jyz-value').text(data.data[1].value)
+        $('#acctb').text(data.data[2].name)
+        $('.ac-value').text((data.data[2].value)*100 + '%')
+        $('.hbtext').text(data.data[3].name)
+        $('.hb-value').text((data.data[3].value)*100 + '%')
+	}
+})

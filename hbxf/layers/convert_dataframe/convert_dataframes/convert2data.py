@@ -92,7 +92,7 @@ def _get_filled_multi_stack(parsed_data, old, new, limit):
     for i in new:
         flag = True
         for j in old:
-            if i.get("name") == j.get("name"):
+            if str(i.get("name")) == str(j.get("name")):
                 j.update(i)
                 flag = False
                 break

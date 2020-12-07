@@ -12,10 +12,12 @@ def process_paramtrans(api_dict):
             param_trans_one = param_trans_one + "(" if "(" not in param_trans_one else param_trans_one
             func, args = param_trans_one.split("(")
             args = args.split("+")
+            kwargs = {param.split("=")[0]: param.split("=")[1] for param in args if "=" in param}
+            args = [i for i in args if "=" not in i]  # args=[""] (当params没有传)
 
             from app import app
             if func not in app.config["PARAM_TRANS"]:
                 return
-            pt = getattr(pt, func)(*args)
+            pt = getattr(pt, func)(*args, **kwargs)
     pt.before_finish()
     return pt.apis_copy

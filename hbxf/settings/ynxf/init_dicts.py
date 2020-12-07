@@ -10,6 +10,8 @@ INITIALIZATION = {
     "shij_02": ["昆明市","玉溪市","曲靖市","保山市","昭通市","楚雄州","临沧市","普洱市","丽江市","红河州","文山州","西双版纳","大理州","德宏州","怒江州","迪庆州"],
     # "xj_02": "D:\\Study\\PKUSE\\all-through\\产品\\指标表初始化\\xj_02.txt",
 
+    "zcsl": ["VALUE_INT"],
+    "zcfl": ["VALUE_INT"],
     # 20200903新增
     "bljc": ["VALUE_INT"],
     "sljc": ["VALUE_INT"],
@@ -60,6 +62,7 @@ INITIALIZATION = {
     "zjlv": ["VALUE_FLOAT"],
     "tb_hb": ["VALUE_FLOAT"],
     "hb": ["VALUE_FLOAT"],
+    "tb": ["VALUE_FLOAT"],
     "gfrc": ["VALUE_INT"],
     "jtfrc": ["VALUE_INT"],
     "slxfjc": ["VALUE_INT"],

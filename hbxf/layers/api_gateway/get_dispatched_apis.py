@@ -54,7 +54,7 @@ def check_graph_id_dict(graph_id_dict):
         return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
     # 如果是$开头作为分发的引用，用于构建测试接口【$引用的gd_id必须是正常的字符串url或者list/dict数据】
     elif isinstance(url, str) and url.startswith("$"):
-        url = url_dispatch_map.get(url.strip("$"))
+        url = url_dispatch_map.get(url.lstrip("$"))
         if url is None:
             return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
     # 如果是list或者dict直接当作数据返回[如果走了$, 这里检查的是拿到$引用的]

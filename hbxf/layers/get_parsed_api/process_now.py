@@ -35,7 +35,7 @@ def process_now(api_dict):
                         return code, msg, {}
                 update_dict[k] = value
         # 解析范围（同时去掉中括号）
-        if value.startswith("[") and value.endswith("]"):
+        if str(value).startswith("[") and str(value).endswith("]"):
             min_value = value.strip("[").strip("]").split(",")[0]  # "2020-1"
             max_value = value.strip("[").strip("]").split(",")[1]  # "2020"
             code, msg, start = parse_compute(min_value)

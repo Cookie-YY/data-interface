@@ -2,7 +2,7 @@
 let myChart1 = echarts.init(document.getElementById('main1'));
 let myChart2 = echarts.init(document.getElementById('main2'));
 let myChart3 = echarts.init(document.getElementById('main3'));
-let myChart4 = echarts.init(document.getElementById('main4'));
+// let myChart4 = echarts.init(document.getElementById('main4'));
 let data1 = [];
 let data2 = [];
 let data3 = [];
@@ -287,88 +287,6 @@ let option3 = {
 
 
 
-let option4 = {
-	title: {
-		// text: '南丁格尔玫瑰图',
-		// subtext: '纯属虚构',
-		// left: 'center'
-	},
-	tooltip: {
-		trigger: 'item',
-		formatter: '{a} <br/>{b} : {c} ({d}%)'
-	},
-	legend: {
-		orient: 'vertical',
-		x: 'left',
-		left: '5%',
-		top: '80px',
-		data: ['来信', '网信', '来访', ],
-		// icon:"circle",
-		formatter: function(name) {
-			let target;
-			for(let i = 0; i < data4.length; i++) {
-				if(data4[i].name === name) {
-					target = data4[i].value
-				}
-			}
-			let arr = ["{b|" + name + "}", "{a|" + target + '件' + "}"]
-			return arr
-
-		},
-		textStyle: {
-			rich: {
-				a: {
-					fontSize: 12,
-					color: "#333",
-					padding: 10
-				},
-				b: {
-					fontSize: 12,
-					color: "#333",
-				}
-			}
-		}
-	},
-	// data: [],
-	toolbox: {
-		show: true,
-	},
-	series: [{
-		name: '',
-		type: 'pie',
-		radius: ['20%', '50%'],
-		center: ['70%', '50%'],
-		label: {
-			show: false
-		},
-		data: [{
-			value: 28,
-			name: '来信'
-
-		}, {
-			value: 40,
-			name: '网信'
-		}, {
-			value: 32,
-			name: '来访'
-		}],
-		color:["#01BAFF","#FAE754","#47EFA7"],
-		itemStyle: {
-			normal: {
-				label: {
-					show: true,
-					position: 'inner',
-					fontSize: 14,
-					color:'#ffffff',
-					formatter: function(p) { //指示线对应文字,百分比
-						return p.percent + "%";
-					}
-				},
-			}
-		}
-	}]
-};
-
 function getAPI() {
 		// 1.考核_信访部门_参评率
 		$.ajax({
@@ -490,4 +408,4 @@ getAPI()
 myChart1.setOption(option1);
 myChart2.setOption(option2);
 myChart3.setOption(option3);
-myChart4.setOption(option4);
+// myChart4.setOption(option4);
