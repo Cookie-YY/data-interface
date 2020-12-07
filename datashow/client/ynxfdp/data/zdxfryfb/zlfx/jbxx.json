@@ -1,0 +1,66 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": {
+    "name": "赵慧敏",
+    "photo":"www.baidu.com",
+    "type": [
+      {
+        "name": "进京",
+        "value": "red"
+      },
+      {
+        "name": "赴省",
+        "value": "yellow"
+      },
+      {
+        "name": "集体",
+        "value": "yellow"
+      },
+      {
+        "name": "越级",
+        "value": "yellow"
+      },
+      {
+        "name": "扬言",
+        "value": "red"
+      }
+    ],
+    "info": [
+      {
+        "name": "性别",
+        "value": "女"
+      },
+      {
+        "name": "年龄",
+        "value": "34"
+      },
+      {
+        "name": "电话",
+        "value": "13845467434"
+      },
+      {
+        "name": "身份证号",
+        "value": "232323232298886735"
+      },
+      {
+        "name": "户籍地",
+        "value": "河北省邯郸市"
+      },
+      {
+        "name": "居住地",
+        "value": "河北省石家庄市"
+      },
+      {
+        "name": "信访次数",
+        "value": "13"
+      },
+      {
+        "name": "最新上访时间",
+        "value": "2020年3月18日"
+      }
+    ]
+  }
+}
+
+

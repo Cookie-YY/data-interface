@@ -1,0 +1,250 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "城乡建设",
+      "itemStyle": {
+        "color": "#187a2f"
+      },
+      "children": [
+        {
+          "name": "城市建设和市政管理",
+          "value": 6,
+          "itemStyle": {
+              "color": "#3aa255"
+          },
+          "children": [
+            {
+              "name": "城管执法",
+              "value": 5,
+              "itemStyle": {
+                "color": "#35a051"
+              }
+            },
+            {
+              "name": "城市公共设施",
+              "value": 1,
+              "itemStyle": {
+                "color": "#ffdeab"
+              }
+            }
+          ]
+        },
+        {
+          "name": "城乡规划",
+          "value": 1,
+          "itemStyle": {
+              "color": "#5e9a80"
+          }
+        },
+        {
+          "name": "村镇建设",
+          "value": 1,
+          "itemStyle": {
+              "color": "#3aa255"
+          }
+        },
+        {
+          "name": "工程质量",
+          "value": 1,
+          "itemStyle": {
+              "color": "#5e9a80"
+          }
+        },
+        {
+          "name": "建筑市场",
+          "value": 1,
+          "itemStyle": {
+              "color": "#3aa255"
+          }
+        },
+        {
+          "name": "房屋税收与补偿（国）",
+          "value": 1,
+          "itemStyle": {
+              "color": "#5e9a80"
+          }
+        },
+        {
+          "name": "房屋税收与补偿（集）",
+          "value": 1,
+          "itemStyle": {
+              "color": "#3aa255"
+          }
+        },
+        {
+          "name": "其他",
+          "value": 1,
+          "itemStyle": {
+              "color": "#5e9a80"
+          }
+        }
+      ]
+    },
+    {
+      "name": "党务政务",
+      "itemStyle": {
+        "color": "#ffa500"
+      },
+      "children": [
+        {
+          "name": "党的建设",
+          "value": 1,
+          "itemStyle": {
+              "color": "#ffdead"
+          }
+        },
+        {
+          "name": "港澳台侨",
+          "value": 1,
+          "itemStyle": {
+              "color": "#eedc82"
+          }
+        },
+        {
+          "name": "国防外交",
+          "value": 1,
+          "itemStyle": {
+              "color": "#ffdead"
+          }
+        },
+        {
+          "name": "民族宗教",
+          "value": 1,
+          "itemStyle": {
+              "color": "#eedc82"
+          }
+        },
+        {
+          "name": "其他",
+          "value": 1,
+          "itemStyle": {
+              "color": "#ffdead"
+          }
+        },
+        {
+          "name": "群众团体",
+          "value": 1,
+          "itemStyle": {
+              "color": "#eedc82"
+          }
+        },
+        {
+          "name": "宣传舆论",
+          "value": 1,
+          "itemStyle": {
+              "color": "#ffdead"
+          }
+        },
+        {
+          "name": "政治体制",
+          "value": 1,
+          "itemStyle": {
+              "color": "#eedc82"
+          }
+        }
+      ]
+    },
+    {
+      "name": "国土资源",
+      "itemStyle": {
+        "color": "#0aa3b5"
+      },
+      "children": [
+        {
+          "name": "海洋气象地震",
+          "value": 1,
+          "itemStyle": {
+              "color": "#9db2b7"
+          }
+        },
+        {
+          "name": "矿产资源管理",
+          "value": 1,
+          "itemStyle": {
+              "color": "#76c0cb"
+          }
+        },
+        {
+          "name": "土地征收",
+          "value": 1,
+          "itemStyle": {
+              "color": "#9db2b7"
+          }
+        },
+        {
+          "name": "土地资源管理",
+          "value": 1,
+          "itemStyle": {
+              "color": "#76c0cb"
+          }
+        },
+        {
+          "name": "环保管理",
+          "value": 1,
+          "itemStyle": {
+            "color": "#9db2b7"
+          }
+        }
+      ]
+    },
+    {
+      "name": "经济管理",
+      "itemStyle": {
+        "color": "#e65832"
+      },
+      "children": [
+        {
+          "name": "安全生产",
+          "value": 1,
+          "itemStyle": {
+              "color": "#f89a80"
+          }
+        }, 
+        {
+          "name": "保险证券期货",
+          "value": 1,
+          "itemStyle": {
+            "color": "#d45a59"
+          }
+        },
+        {
+          "name": "国资监管",
+          "value": 1,
+          "itemStyle": {
+              "color": "#f89a80"
+          }
+        }, 
+        {
+          "name": "宏观调控",
+          "value": 1,
+          "itemStyle": {
+              "color": "#d45a59"
+          }
+        }, 
+        {
+          "name": "金融财税",
+          "value": 1,
+          "itemStyle": {
+              "color": "#f89a80"
+          }
+        },
+        {
+          "name": "能源管理",
+          "value": 1,
+          "itemStyle": {
+              "color": "#d45a59"
+          }
+        },
+        {
+          "name": "企业破产",
+          "value": 1,
+          "itemStyle": {
+              "color": "#f89a80"
+          }
+        }
+      ]
+    }
+  ]
+}

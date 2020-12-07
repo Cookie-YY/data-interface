@@ -1,0 +1,42 @@
+{
+  "code": "200",
+  "msg": "success",
+  "map": {
+    "value_g0_1": "高频",
+    "value_g1_1": "低频",
+    "value_g2_1": "未涉案"
+  },
+  "data":[
+    
+    {
+      "name": "其他",
+      "value_g0_1": 0.7,
+      "value_g1_1": 0.2,
+      "value_g2_1": 0.1
+    },
+    {
+      "name": "乡镇",
+      "value_g0_1": 0.6,
+      "value_g1_1": 0.2,
+      "value_g2_1": 0.2
+    },
+    {
+      "name": "区县",
+      "value_g0_1": 0.4,
+      "value_g1_1": 0.3,
+      "value_g2_1": 0.3
+    },
+    {
+      "name": "云南省",
+      "value_g0_1": 0.3,
+      "value_g1_1": 0.2,
+      "value_g2_1": 0.5
+    },
+    {
+      "name": "国家级",
+      "value_g0_1": 0.1,
+      "value_g1_1": 0.2,
+      "value_g2_1": 0.7
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "FXDB":{
+        "driver":"com.mysql.jdbc.Driver",
+        "database":"jdbc:mysql://10.242.253.88:82/zhxf_db_test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true",
+        "userName":"root",
+        "password":"kDV5OZeFZhBwufgk"
+    },
+    "ZBDB":{
+         "driver":"com.mysql.jdbc.Driver",
+        "database":"jdbc:mysql://39.107.240.28:3306/pt_dev_dabot?useUnicode=true&characterEncoding=utf8",
+        "userName":"root",
+        "password":"Beidas0ft"
+    }
+}

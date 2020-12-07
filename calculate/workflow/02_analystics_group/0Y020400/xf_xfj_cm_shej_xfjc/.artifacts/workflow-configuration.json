@@ -1,0 +1,7 @@
+
+{
+    "knime.var.year": {
+        "type": "string",
+        "default": "2020"
+    }
+}

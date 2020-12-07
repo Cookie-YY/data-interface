@@ -1,0 +1,149 @@
+body, p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f2f5fc;  
+    
+}
+html {
+	font-size: 62.5%;
+}
+
+
+.title{
+	 position: relative; 
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to right,#54c3fd,#4c73fc);
+}
+.title .didian{
+	position: absolute;
+	top:0px;
+	cursor: pointer;
+	width:25px;
+	height:25px;
+	left:78%;
+}
+.title .didian img{
+	width:25px;
+	height:25px;
+}
+.title .riqi{
+	position: absolute;
+	top:0px;
+	width:25px;
+	cursor:pointer;
+	height:25px;
+	left:88%;
+}
+.title .riqi img{
+	width:25px;
+	height:25px;
+}
+.title > p{
+    padding-top: 10px; 
+    color: #fff;
+    text-align: center;
+    font-family: "Noto Sans SC";
+    font-weight: 400;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    font-size: 2.5rem;
+}
+.title > .fh {
+    position: absolute;
+    width: 10px;
+    top: 28px;
+    left: 20px;
+}
+.title > .title_nav{
+    width: 100%;
+    padding-top: 5px;
+    position: relative;
+}
+.title > .title_nav > p{
+    width: 50%;
+    color: #fff;
+    text-align: center;
+    font-family: "Noto Sans SC";
+    font-weight: 400;
+    float: left;
+    font-size: 1.8rem;
+}
+.title > .title_nav > p a{
+    color: #fff;
+    text-align: center;
+    font-family: "Noto Sans SC";
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+.title > .title_nav > span{
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #ffc029;
+    display: inline-block;
+    position: absolute;
+    left: calc(76% - 15px);
+    top: 35px;
+}
+
+
+
+.home_mian{
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 130px;
+}
+
+.home_index{
+    width: calc(100% - 35px);
+    height: 368px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(199, 199, 199, 0.5) 0px 0px 6px 1px;
+}
+.home_index > .home_index_title{
+    height: 77px;
+    line-height: 77px;
+    padding: 0 25px;
+    border-bottom: 1px dashed  #C1C1C1;
+    font-size: 2rem;
+    font-family: "Noto Sans SC";
+    font-weight: 450;
+}
+.footer{
+    border-top: 1px solid #bbb;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index:999;
+    height: 98px;
+    background: #fff;
+}
+.footer p{
+    width: 25%;
+    float: left;
+    height: 98px;
+}
+.footer p img{
+    display: block;
+    margin: 15px auto 5px;
+    width: 36px;
+    height: 36px;
+}
+.footer p span{
+    font-size: 22px;
+    color: #666;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Noto Sans SC";
+    font-weight: 400;
+}

@@ -1,0 +1,11 @@
+
+{
+    "knime.var.day_from": {
+        "type": "string",
+        "default": "2020-01-01"
+    },
+    "knime.var.day_to": {
+        "type": "string",
+        "default": "2020-08-31"
+    }
+}

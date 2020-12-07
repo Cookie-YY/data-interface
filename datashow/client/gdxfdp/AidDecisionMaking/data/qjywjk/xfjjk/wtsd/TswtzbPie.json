@@ -1,0 +1,14 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "男性",
+      "value": 490
+    },
+    {
+      "name": "女姓",
+      "value": 596
+    }
+  ]
+}

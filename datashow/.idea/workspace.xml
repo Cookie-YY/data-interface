@@ -1,0 +1,1759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ee1fd8e2-d592-4c1f-af9d-9d13d856ff7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/hbxf.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/TO-DO-List" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/bin/restart.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/bin/start.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/bin/start.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/bin/stop.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/mdfxyjyp/yjyc/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/mdfxyjyp/yjyc/Yjzt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/mdfxyjyp/yjyc/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/popLists/Detail.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/popLists/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/Mdfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/Rqnlfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/SjjgfbRing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/Tswtfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/ZbRing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/cfxfjk/ZbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Xfbm/Cpqk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Xfbm/Pjqk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Xfbm/Sjxfpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Zrdw/Cpqk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Zrdw/Pjqk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/mydjk/Zrdw/Sjxfpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/nrfl/HotBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/nrfl/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/nrfl/WtflPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/nrfl/ZbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/nrfl/ZbType.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/FbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/ThbzsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/TswtzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/WrbzsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsd/XflzsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/FbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/GfjtfzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/NlzbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/TswtzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/XflzsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/wtsdapi/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/xfxs/SjdjjgPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/xfxs/XsfbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/xfxs/XsfbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfjjk/xfxs/XsfbZb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/Jbxx.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/LeftSeach.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/TswtPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/XfcsRadar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/XfgjDetail.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/qjywjk/xfrhx/XfgjTimeLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/seach/DepSeach.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/seach/UnitSeachLeft.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/seach/UnitSeachRight.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/FbTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/Maptop.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/NlzbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/RCTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/TswtzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlfx/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlyj/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlyj/Yjzt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/xfzlyj/zlyj/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/Scfxbg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/ZbFunnel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/ZfxszbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/ldsb/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/ZbFunnel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/ZfxszbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/nctdzy/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/ZbFunnel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/ZfxszbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/shce/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/ZbFunnel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/ZfxszbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/szxjjaj/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/QyfbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/RsgmzbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/ZbFunnel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/ZbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/ZfxszbPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/data/zdyztfx/zfbzyfdc/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/font/ds-digi-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/font/ds-digi-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/font/ds-digi-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/font/ds-digi-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440000.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440800.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/440900.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441800.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/441900.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/442000.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/445100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/445200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/map/445300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/app.01c931ed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-01611afa.a1bb2b57.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-07a7b2f2.1db58053.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-08bb77b0.8b1c000c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-11febe82.0c632220.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-14e29d80.4d017c14.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-15c2c8f0.eee4fce6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-19725a3c.96416234.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-1c09b84c.ebf47a65.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-24a6ee69.13efcc35.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-3096c9f4.fcbe481d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-31417f84.78e3323e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-352feeaf.15fd816a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-3587804a.9b144c87.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-4a4d1d13.ea1712f1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-54a3d672.74dee241.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-5593e4b8.878009bb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-576230d2.2126f789.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-5f6c2067.0da8baec.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-6c7cbf40.1622a560.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-6f7538a1.9b44c017.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-7ed2463a.f525af27.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-87a6c5de.f24c6b99.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-8f5adf2e.aedb57ac.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-954a1a56.323e3383.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-9af16aa4.325f15f5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-9f176af8.dfd10bbb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-bcb032bc.ec9f6cce.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-e43cba26.b8b1c4b5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/css/chunk-vendors.767f701c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/fonts/element-icons.535877f5.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/fonts/element-icons.732389de.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.00a6806f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.5ad8a1a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.96abae09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.ac13473a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.ac8212a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/bg.fabfe50a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/btn-bg.8d4b4974.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/c-bottom-bg.62a2baf7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/c-bottom-bg1.185d600f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/footer-bg.09ddb636.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/header-bg1.df67dd65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/hot-pie-bg.f5ad22eb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/main-bg.66dd577e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/map-bg.d3138c46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/pie-bg.5c41da41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/pop-bg.11010e9c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/pop-bg.bb84298b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/seach-bg.a729901e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/seach-bg3.7a56a100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/tab-active.7aab5e83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/title-l.57ae022c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/title-r.0e549dc2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/wrapper-bg.f6f814ed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/wrapper-bg2.70ab3c72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/wrapper-bg3.f7e818cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/img/yearSliderBg.f98bcbad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/app.f92c5464.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/app.f92c5464.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-01611afa.05bc8090.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-01611afa.05bc8090.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-07a7b2f2.d7e69435.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-07a7b2f2.d7e69435.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-08bb77b0.c2353a8f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-08bb77b0.c2353a8f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-11febe82.225d06f8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-11febe82.225d06f8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-14e29d80.908017bc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-14e29d80.908017bc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-15c2c8f0.4959a4af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-15c2c8f0.4959a4af.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-19725a3c.6e59357b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-19725a3c.6e59357b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-1c09b84c.896e52f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-1c09b84c.896e52f1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-24a6ee69.65c97d8f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-24a6ee69.65c97d8f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-3096c9f4.f64dd7a1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-3096c9f4.f64dd7a1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-31417f84.8a86bd84.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-31417f84.8a86bd84.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-352feeaf.ae130d08.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-352feeaf.ae130d08.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-3587804a.1afd103f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-3587804a.1afd103f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-481d1ca4.47bd4e0f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-481d1ca4.47bd4e0f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-4a4d1d13.dc8808d8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-4a4d1d13.dc8808d8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-54a3d672.c50087d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-54a3d672.c50087d4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-5593e4b8.c12cf702.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-5593e4b8.c12cf702.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-576230d2.a7069d5c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-576230d2.a7069d5c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-58c79bfc.2e62a88e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-58c79bfc.2e62a88e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-5f6c2067.9fd6a663.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-5f6c2067.9fd6a663.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-6c7cbf40.97933a73.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-6c7cbf40.97933a73.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-6f7538a1.e606b50e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-6f7538a1.e606b50e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-7ed2463a.99f9e59a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-7ed2463a.99f9e59a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-87a6c5de.4733055c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-87a6c5de.4733055c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-8f5adf2e.78a117be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-8f5adf2e.78a117be.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-954a1a56.ab183d7d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-954a1a56.ab183d7d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-9af16aa4.4cfb83e1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-9af16aa4.4cfb83e1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-9f176af8.bb7da189.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-9f176af8.bb7da189.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-bcb032bc.0d62227d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-bcb032bc.0d62227d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-e43cba26.066b5523.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-e43cba26.066b5523.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-vendors.e439e73c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/static/js/chunk-vendors.e439e73c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/AidDecisionMaking/url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/seach/DepSeach.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/seach/UnitSeachLeft.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/seach/UnitSeachRight.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/typeList/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/Aqbjlqvfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/Qsjxkh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/allRadar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/xfbmRadar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/zdgzqh.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/zrdwRadar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Cpl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Gzgcjk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Jssll.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Myl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Sjxfbmpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Wxzb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/zrdwpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Cpl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Gzgcjk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Jssll.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Myl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Sjxfbmpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Wxzb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/zrdwpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/fsf/Nrflfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/fsf/Qhpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/fsf/Xfmdfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/fsf/Xxlzs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/fsf/Yjzt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jjf/Nrflfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jjf/Qhpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jjf/Xfmdfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jjf/Xxlzs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jjf/Yjzt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jtf/Nrflfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jtf/Qhpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jtf/Xfmdfb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jtf/Xxlzs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfsxyj/jtf/Yjzt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/JcTotal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/JcType.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/JtffbBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/RdwtCloud.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/XflphBar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/XflzsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/XfmdPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/xfywtl/XfxsPie.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/yearList/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/blzl/Blfs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/blzl/Qybllph.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/blzl/Xfly.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/blzl/Zrdwpm.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/qstz/Map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/qstz/RdwtCloud.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/data/zrdwhx/qstz/ZsLine.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/font/ds-digi-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/font/ds-digi-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/font/ds-digi-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/font/ds-digi-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440000.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440800.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/440900.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441800.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/441900.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/442000.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/445100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/445200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/map/445300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/css/chunk-vendors.767f701c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/fonts/element-icons.535877f5.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/fonts/element-icons.732389de.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/bg.5ad8a1a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/bg.96abae09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/bg.ac8212a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/bg.fabfe50a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/blfs-icon2.fbc6b038.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/btn-bg.8d4b4974.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/c-bottom-bg.62a2baf7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/c-bottom-bg1.185d600f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/footer-bg.09ddb636.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/gcjk1.3ce42f2b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/gcjk2.568e41a5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/gcjk3.477471c8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/gcjk4.a87a8a09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/header-bg2.1348b1c0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/hot-pie-bg.f5ad22eb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/main-bg.66dd577e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/map-bg.d3138c46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/part-bg-b.4723621f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/part-bg-s.b4d6408f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/pie-bg.5c41da41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/seach-bg.a729901e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/search-bg2.7a56a100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/tab-active.7aab5e83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/title-l.57ae022c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/title-r.0e549dc2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/wrapper-bg.f6f814ed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/wrapper-bg2.70ab3c72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/wrapper-bg3.f7e818cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/img/yearSliderBg.f98bcbad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/js/chunk-vendors.9d1fe7b3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/static/js/chunk-vendors.9d1fe7b3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/LeadCockpit/url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2018年09月10日至2020年10月15日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2018年09月10日至2020年10月15日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2019年08月01日至2020年09月01日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2019年08月01日至2020年09月01日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年08月29日至2020年09月28日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年08月29日至2020年09月28日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月07日至2021年10月21日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月07日至2021年10月21日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月10日至2020年10月10日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月10日至2020年10月10日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月14日至2020年10月14日.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/client/gdxfdp/file/report-2020年09月14日至2020年10月14日.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/env_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/authentication.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_dispatched_apis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_plugined_apis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_plugined_apis/check_plugin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_plugined_apis/mode_custom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_plugined_apis/mode_sql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/api_gateway/get_plugined_apis/preprocess_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/convert_dataframe/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/convert_dataframe/parse_one_dataframe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/convert_dataframe/pase_muti_dataframs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/get_dataframe_common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/get_dataframe_extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/get_dataframe_for_each_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/merge_serached_dataframes/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/merge_serached_dataframes/convert_and_compute/parse_groupby.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/merge_serached_dataframes/convert_and_compute/parse_tb_or_hb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/merge_serached_dataframes/convert_and_compute/parse_zb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/merge_serached_dataframes/convert_and_compute/simple2df.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_check/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_check/params_check_each.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_check/params_check_real_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_parse/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_parse/params_parse_conditions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_parse/parse_transformer/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_parse/parse_transformer/params_parse_hb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_parse/parse_transformer/params_parse_tb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_dataframe/params_search/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/process_auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/process_dollar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/process_drop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/process_invalid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_parsed_api/process_now.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/get_splited_apis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/init_project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/add_ceil.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/add_unit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/day_initialized.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/merge_initialized_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/order_limit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/layers/makeup_dataframe/year_initialized.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/refresh/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/apis_dispatch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/apis_plugins.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/custom/bgtc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/custom/ztfxbg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/extensions/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/extensions/bmsllv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/extensions/cplv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/extensions/mylv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/init_dicts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/init_files/xfbm.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/init_files/xj_02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/init_files/zrdw.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/refresh/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/refresh/search_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/gdxf/report/ztfxbg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/settings/global.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/test_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/check_sql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/db_connection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/get_unilist.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/groupby_and_sum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/parse_compute.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/results2df.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/router_type.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/time_format.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/timeout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/utils/value_mapped.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/uwsgi.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf/win-server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf20201112.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gdxf20201113.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TO-DO-List" beforeDir="false" afterPath="$PROJECT_DIR$/TO-DO-List" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/order_limit.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/order_limit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JupyterTrust" id="72133b7d-deee-4623-be64-96139bc8d2ee" />
+  <component name="ProjectId" id="1dei6zRa11pZ64XQ9bIF1E44nks" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="directory" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/settings/gdxf/extensions/jssllv" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Project\hbxf\settings\gdxf\extensions\jssllv" />
+      <recent name="D:\Programming\Project\hbxf\settings\gdxf\extensions\aqdflv" />
+      <recent name="D:\Programming\Project\hbxf\client\gdxfdp\assistant" />
+      <recent name="D:\Programming\Project\hbxf\settings\ynxf" />
+      <recent name="D:\Programming\Project\hbxf\settings\hbxf" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Project\hbxf\libs" />
+      <recent name="D:\Programming\Project\hbxf" />
+      <recent name="D:\Programming\Project\hbxf\apps" />
+      <recent name="D:\Programming\Project\hbxf\layers\get_dataframe" />
+      <recent name="D:\Programming\Project\hbxf\settings\gdxf" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hbxf-pro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Study/PKUSE/worklogs/2020/第41周2020.11.23/hbxf-pro/hbxf" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../Study/PKUSE/worklogs/2020/第41周2020.11.23/hbxf-pro/hbxf/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hbxf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="base_sql_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hbxf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/settings/gdxf/extensions/jssllv" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/base_sql_map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="predict" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hbxf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/extensions" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/extensions/predict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hbxf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.app (1)" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.base_sql_map" />
+      <item itemvalue="Python.predict" />
+      <item itemvalue="Python.test_db" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.base_sql_map" />
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.predict" />
+        <item itemvalue="Python.test_db" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee1fd8e2-d592-4c1f-af9d-9d13d856ff7d" name="Default Changelist" comment="" />
+      <created>1592791787320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592791787320</updated>
+      <workItem from="1592791788717" duration="73220000" />
+      <workItem from="1593246236401" duration="10107000" />
+      <workItem from="1593409403073" duration="8553000" />
+      <workItem from="1593480016506" duration="3951000" />
+      <workItem from="1593572475773" duration="4076000" />
+      <workItem from="1593681490299" duration="2396000" />
+      <workItem from="1594004164469" duration="604000" />
+      <workItem from="1594170290990" duration="7868000" />
+      <workItem from="1594260849858" duration="18263000" />
+      <workItem from="1594346398382" duration="2446000" />
+      <workItem from="1594617711840" duration="7221000" />
+      <workItem from="1594705808784" duration="2540000" />
+      <workItem from="1594797050035" duration="7159000" />
+      <workItem from="1594863178138" duration="9401000" />
+      <workItem from="1594954535957" duration="8703000" />
+      <workItem from="1595208112956" duration="8407000" />
+      <workItem from="1595294178879" duration="15686000" />
+      <workItem from="1595380516738" duration="14041000" />
+      <workItem from="1595466618593" duration="14604000" />
+      <workItem from="1595553135700" duration="1204000" />
+      <workItem from="1595734595613" duration="1186000" />
+      <workItem from="1595813344588" duration="19399000" />
+      <workItem from="1595904539959" duration="19576000" />
+      <workItem from="1595989541176" duration="13002000" />
+      <workItem from="1596025248428" duration="2993000" />
+      <workItem from="1596073408766" duration="260000" />
+      <workItem from="1596073729921" duration="174000" />
+      <workItem from="1596073912788" duration="12629000" />
+      <workItem from="1596515846417" duration="16316000" />
+      <workItem from="1596589060941" duration="6913000" />
+      <workItem from="1596680375939" duration="16759000" />
+      <workItem from="1596712589582" duration="703000" />
+      <workItem from="1596766695124" duration="11647000" />
+      <workItem from="1596861231371" duration="11554000" />
+      <workItem from="1596962488674" duration="11143000" />
+      <workItem from="1597021856039" duration="15144000" />
+      <workItem from="1597130731170" duration="7872000" />
+      <workItem from="1597283895094" duration="14759000" />
+      <workItem from="1597370787187" duration="4826000" />
+      <workItem from="1597458871448" duration="1325000" />
+      <workItem from="1597567388652" duration="11685000" />
+      <workItem from="1597658366525" duration="3678000" />
+      <workItem from="1597717752967" duration="26827000" />
+      <workItem from="1597799975623" duration="11112000" />
+      <workItem from="1597887106726" duration="15909000" />
+      <workItem from="1598003181953" duration="3803000" />
+      <workItem from="1598171084247" duration="5677000" />
+      <workItem from="1598250895385" duration="17040000" />
+      <workItem from="1598490840392" duration="4427000" />
+      <workItem from="1598842385179" duration="11759000" />
+      <workItem from="1598924366818" duration="4281000" />
+      <workItem from="1599036254503" duration="2705000" />
+      <workItem from="1599097788893" duration="4392000" />
+      <workItem from="1599181593528" duration="18244000" />
+      <workItem from="1599278493678" duration="854000" />
+      <workItem from="1599444737540" duration="4719000" />
+      <workItem from="1599542538278" duration="2721000" />
+      <workItem from="1599619546888" duration="1426000" />
+      <workItem from="1599704761791" duration="5703000" />
+      <workItem from="1599788546569" duration="8200000" />
+      <workItem from="1599893740729" duration="13430000" />
+      <workItem from="1599964204544" duration="8824000" />
+      <workItem from="1600046636227" duration="33257000" />
+      <workItem from="1600093388704" duration="19842000" />
+      <workItem from="1600133420382" duration="26089000" />
+      <workItem from="1600218993589" duration="27254000" />
+      <workItem from="1600277923260" duration="729000" />
+      <workItem from="1600305414011" duration="14738000" />
+      <workItem from="1600346607143" duration="3238000" />
+      <workItem from="1600350245706" duration="5481000" />
+      <workItem from="1600395158447" duration="20227000" />
+      <workItem from="1600500378818" duration="12855000" />
+      <workItem from="1600565479374" duration="1314000" />
+      <workItem from="1600577869080" duration="5322000" />
+      <workItem from="1600588020777" duration="45000" />
+      <workItem from="1600589856104" duration="7906000" />
+      <workItem from="1600652167158" duration="9174000" />
+      <workItem from="1600741104237" duration="11239000" />
+      <workItem from="1600754323825" duration="10430000" />
+      <workItem from="1600826028784" duration="18544000" />
+      <workItem from="1600912691278" duration="14780000" />
+      <workItem from="1600946339982" duration="46000" />
+      <workItem from="1600952971794" duration="1306000" />
+      <workItem from="1600996965317" duration="4816000" />
+      <workItem from="1601004161693" duration="15728000" />
+      <workItem from="1601101220095" duration="10605000" />
+      <workItem from="1601169306377" duration="24649000" />
+      <workItem from="1601255544950" duration="22425000" />
+      <workItem from="1601347817361" duration="4361000" />
+      <workItem from="1601431080030" duration="462000" />
+      <workItem from="1601432454836" duration="1755000" />
+      <workItem from="1602205448352" duration="19034000" />
+      <workItem from="1602293626785" duration="43203000" />
+      <workItem from="1602383037793" duration="7605000" />
+      <workItem from="1602427749109" duration="2380000" />
+      <workItem from="1602463550789" duration="6318000" />
+      <workItem from="1602552190082" duration="1604000" />
+      <workItem from="1602558871409" duration="2586000" />
+      <workItem from="1602656629704" duration="1789000" />
+      <workItem from="1602785094117" duration="22516000" />
+      <workItem from="1602840832304" duration="1396000" />
+      <workItem from="1602842346333" duration="2205000" />
+      <workItem from="1602849036116" duration="10749000" />
+      <workItem from="1602900141780" duration="19039000" />
+      <workItem from="1602930362453" duration="1660000" />
+      <workItem from="1602988756753" duration="10205000" />
+      <workItem from="1603015872523" duration="45764000" />
+      <workItem from="1603114868382" duration="12044000" />
+      <workItem from="1603160808091" duration="35054000" />
+      <workItem from="1603206812360" duration="20738000" />
+      <workItem from="1603260374138" duration="11052000" />
+      <workItem from="1603281569331" duration="9988000" />
+      <workItem from="1603330337396" duration="47747000" />
+      <workItem from="1603399332214" duration="1023000" />
+      <workItem from="1603413979938" duration="5466000" />
+      <workItem from="1603503637208" duration="598000" />
+      <workItem from="1603507089730" duration="3949000" />
+      <workItem from="1603629968586" duration="1587000" />
+      <workItem from="1603678973027" duration="2152000" />
+      <workItem from="1603712592529" duration="1216000" />
+      <workItem from="1603760129598" duration="5592000" />
+      <workItem from="1603894100507" duration="1365000" />
+      <workItem from="1603935392632" duration="9398000" />
+      <workItem from="1604021206434" duration="4107000" />
+      <workItem from="1604281383420" duration="9415000" />
+      <workItem from="1604366354530" duration="5014000" />
+      <workItem from="1604454667181" duration="17698000" />
+      <workItem from="1604498904140" duration="140000" />
+      <workItem from="1604540005082" duration="22211000" />
+      <workItem from="1604582015010" duration="21320000" />
+      <workItem from="1604749966519" duration="2077000" />
+      <workItem from="1604885598459" duration="16581000" />
+      <workItem from="1604989021805" duration="5893000" />
+      <workItem from="1605059086910" duration="16075000" />
+      <workItem from="1605101984809" duration="9507000" />
+      <workItem from="1605146378891" duration="26860000" />
+      <workItem from="1605179344984" duration="49000" />
+      <workItem from="1605179395818" duration="52733000" />
+      <workItem from="1605438692631" duration="3173000" />
+      <workItem from="1605446530412" duration="53000" />
+      <workItem from="1605496547125" duration="23758000" />
+      <workItem from="1605577515893" duration="14851000" />
+      <workItem from="1605665160446" duration="38407000" />
+      <workItem from="1605751470447" duration="38848000" />
+      <workItem from="1605799873681" duration="20888000" />
+      <workItem from="1605838361069" duration="6843000" />
+      <workItem from="1605852367278" duration="16765000" />
+      <workItem from="1605884275975" duration="3158000" />
+      <workItem from="1605932286191" duration="5028000" />
+      <workItem from="1605963022549" duration="1256000" />
+      <workItem from="1606096328997" duration="34496000" />
+      <workItem from="1606183882244" duration="23662000" />
+      <workItem from="1606225538239" duration="101000" />
+      <workItem from="1606225657547" duration="32839000" />
+      <workItem from="1606355146594" duration="23579000" />
+      <workItem from="1606398866053" duration="6044000" />
+      <workItem from="1606440515380" duration="5597000" />
+      <workItem from="1606465001688" duration="39355000" />
+      <workItem from="1606699124067" duration="12227000" />
+      <workItem from="1606807407806" duration="2054000" />
+      <workItem from="1606890972696" duration="6408000" />
+      <workItem from="1606968531807" duration="7389000" />
+      <workItem from="1607046266410" duration="8760000" />
+      <workItem from="1607064213923" duration="15681000" />
+      <workItem from="1607138771362" duration="2314000" />
+      <workItem from="1607303634922" duration="2909000" />
+      <workItem from="1607315914487" duration="417000" />
+      <workItem from="1607316443981" duration="60000" />
+    </task>
+    <task id="LOCAL-00018" summary="完善readme文件，隐藏大屏配置文件位置">
+      <created>1599999595897</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1599999595897</updated>
+    </task>
+    <task id="LOCAL-00019" summary="增加TO-DO-List，修改makeup层的补零bug">
+      <created>1600051816703</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1600051816703</updated>
+    </task>
+    <task id="LOCAL-00020" summary="补充插件的功能，可以从两个库中取数据">
+      <created>1600064945834</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1600064945834</updated>
+    </task>
+    <task id="LOCAL-00021" summary="时间格式化功能，插件的单独格式化，当year有范围，且name=year的初始化，修改跨域问题">
+      <created>1600102596170</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1600102596170</updated>
+    </task>
+    <task id="LOCAL-00022" summary="解决冲突，插件过程单边SQL时，map需要完全对应">
+      <created>1600110274078</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1600110274078</updated>
+    </task>
+    <task id="LOCAL-00023" summary="解决跨域问题，完善插件过程的注释">
+      <created>1600137376430</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1600137376430</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改大屏路径，统一入口client/下">
+      <created>1600151805802</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1600151805802</updated>
+    </task>
+    <task id="LOCAL-00025" summary="修改大屏路径，统一入口client/下，修改只有value的情况下加full">
+      <created>1600154035293</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1600154035293</updated>
+    </task>
+    <task id="LOCAL-00026" summary="makeup层一开始的时间格式化可能是单个数字，会报错，增加判断类型的方法">
+      <created>1600155522789</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1600155522789</updated>
+    </task>
+    <task id="LOCAL-00027" summary="移动refresh文件夹到项目配置中">
+      <created>1600156252483</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1600156252483</updated>
+    </task>
+    <task id="LOCAL-00028" summary="添加TO-LIST">
+      <created>1600219093899</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1600219093899</updated>
+    </task>
+    <task id="LOCAL-00029" summary="增加插入数据库的提示\b个数">
+      <created>1600221529082</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1600221529082</updated>
+    </task>
+    <task id="LOCAL-00030" summary="解决插件过程的sql的默认值问题">
+      <created>1600231273030</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1600231273030</updated>
+    </task>
+    <task id="LOCAL-00031" summary="解决基本过程中的模糊查询的问题">
+      <created>1600232234664</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1600232234664</updated>
+    </task>
+    <task id="LOCAL-00032" summary="插件过程增加query_data的sql自定义筛选">
+      <created>1600242433926</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1600242433926</updated>
+    </task>
+    <task id="LOCAL-00033" summary="增加广东xj_02的初始化文件，修复merge时的bug（需要传table）">
+      <created>1600256086676</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1600256086676</updated>
+    </task>
+    <task id="LOCAL-00034" summary="增加广东大屏">
+      <created>1600419509773</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1600419509773</updated>
+    </task>
+    <task id="LOCAL-00035" summary="插件过程默认为空">
+      <created>1600423614866</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1600423614866</updated>
+    </task>
+    <task id="LOCAL-00036" summary="更新day参数中的now解析的功能，让插件过程可以获取from/to参数">
+      <created>1600525354618</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1600525354618</updated>
+    </task>
+    <task id="LOCAL-00037" summary="河北线上版本">
+      <created>1600608264336</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1600608264337</updated>
+    </task>
+    <task id="LOCAL-00038" summary="解决单项目的接口/或者死json访问">
+      <created>1600654451245</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1600654451245</updated>
+    </task>
+    <task id="LOCAL-00039" summary="解决多项目共同部署问题，解决不能走接口就走静态json问题，解决广东报告的自定义问题">
+      <created>1600935240193</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1600935240193</updated>
+    </task>
+    <task id="LOCAL-00040" summary="广东报告的样式添加，解决广东大弹窗问题，解决广东密码特殊字符问题">
+      <created>1601033744218</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1601033744218</updated>
+    </task>
+    <task id="LOCAL-00041" summary="增加缓存功能">
+      <created>1601169972299</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1601169972299</updated>
+    </task>
+    <task id="LOCAL-00042" summary="解决同比环比占比的随机初始化问题">
+      <created>1601281096034</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1601281096034</updated>
+    </task>
+    <task id="LOCAL-00043" summary="get_dataframe_for_each_api中判断df类型后再替换空值">
+      <created>1601364188252</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1601364188252</updated>
+    </task>
+    <task id="LOCAL-00044" summary="get_dataframe_for_each_api中判断df类型后+判断df长度后，再替换空值">
+      <created>1602209782367</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1602209782367</updated>
+    </task>
+    <task id="LOCAL-00045" summary="指定table参数后，可以通过timetype/qh/index等参数修改table表名">
+      <created>1602309757251</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1602309757251</updated>
+    </task>
+    <task id="LOCAL-00046" summary="解决decimal问题（线上环境的数据库decimal类型，python无法计算），增加sql模式的full参数/variables参数，拆分插件过程的代码">
+      <created>1602344628829</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1602344628829</updated>
+    </task>
+    <task id="LOCAL-00047" summary="添加云南项目，增加extension，支持月同比环比，增加系统参数，拆分配置文件global.py">
+      <created>1603154967729</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1603154967730</updated>
+    </task>
+    <task id="LOCAL-00048" summary="广东大屏第三方测试版本">
+      <created>1603388666990</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1603388666990</updated>
+    </task>
+    <task id="LOCAL-00049" summary="增加前端显示，修改微信端走势接口+groupby">
+      <created>1603969066313</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1603969066314</updated>
+    </task>
+    <task id="LOCAL-00050" summary="增加requirements, apis_dispatch增加分隔后为空的判断，修改 广东参评率和受理率只有一个数字相除为空">
+      <created>1604542305067</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1604542305069</updated>
+    </task>
+    <task id="LOCAL-00051" summary="完成预警状态">
+      <created>1604910325682</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1604910325683</updated>
+    </task>
+    <task id="LOCAL-00052" summary="修改yjzt的bug，now的问题的bug">
+      <created>1605147029527</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1605147029527</updated>
+    </task>
+    <task id="LOCAL-00053" summary="增加param_trans功能，增加项目qh统一处理">
+      <created>1605178897075</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1605178897076</updated>
+    </task>
+    <task id="LOCAL-00054" summary="xfxs=网信的处理，date近12个月的功能，param_trans的默认值，是增加不是覆盖">
+      <created>1605520225162</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1605520225162</updated>
+    </task>
+    <task id="LOCAL-00055" summary="融合新版full方法，解决name==stack时convert中拿stack的报错">
+      <created>1605584364909</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1605584364909</updated>
+    </task>
+    <task id="LOCAL-00056" summary="拆分param_trans, 新增libs文件夹用于存放extension/param_trans，将transformer的默认值设置成groupby(计算完成的结果，先groupby一下)">
+      <created>1605674209025</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1605674209026</updated>
+    </task>
+    <task id="LOCAL-00057" summary="解决day/date字符串的兼容问题">
+      <created>1605677581670</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1605677581670</updated>
+    </task>
+    <task id="LOCAL-00058" summary="修复sql_mode中的df映射问题">
+      <created>1605677886606</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1605677886606</updated>
+    </task>
+    <task id="LOCAL-00059" summary="重构full方法">
+      <created>1605709380081</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1605709380081</updated>
+    </task>
+    <task id="LOCAL-00060" summary="修复full的bug，拆分convert层增加全局信息">
+      <created>1605768319895</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1605768319896</updated>
+    </task>
+    <task id="LOCAL-00061" summary="重构groupby/zb/tb/hb，使用extension的方式，将inf/-inf/nan/None 统一交给full处理，迁移插件过程，增加debug功能，查看报错的url">
+      <created>1605831954499</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1605831954499</updated>
+    </task>
+    <task id="LOCAL-00062" summary="解决预测问题">
+      <created>1605869687099</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1605869687099</updated>
+    </task>
+    <task id="LOCAL-00063" summary="更新云南大屏，河北大屏，解决分组预测问题，拆分转换层，预留df转换成echarts图表的功能">
+      <created>1606218325249</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1606218325249</updated>
+    </task>
+    <task id="LOCAL-00064" summary="测试完成领导驾驶舱（前端需要增加一个参数）">
+      <created>1606447149561</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1606447149561</updated>
+    </task>
+    <task id="LOCAL-00065" summary="修复 {start}的 bug">
+      <created>1606447311675</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1606447311675</updated>
+    </task>
+    <task id="LOCAL-00066" summary="完成预测相关extension">
+      <created>1606893038062</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1606893038062</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/Programming/Project/hbxf" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/Programming/Project/hbxf/settings" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="解决同比环比占比的随机初始化问题" />
+    <MESSAGE value="get_dataframe_for_each_api中判断df类型后再替换空值" />
+    <MESSAGE value="get_dataframe_for_each_api中判断df类型后+判断df长度后，再替换空值" />
+    <MESSAGE value="指定table参数后，可以通过timetype/qh/index等参数修改table表名" />
+    <MESSAGE value="解决decimal问题（线上环境的数据库decimal类型，python无法计算），增加sql模式的full参数/variables参数，拆分插件过程的代码" />
+    <MESSAGE value="添加云南项目，增加extension，支持月同比环比，增加系统参数，拆分配置文件global.py" />
+    <MESSAGE value="广东大屏第三方测试版本" />
+    <MESSAGE value="增加前端显示，修改微信端走势接口+groupby" />
+    <MESSAGE value="增加requirements, apis_dispatch增加分隔后为空的判断，修改 广东参评率和受理率只有一个数字相除为空" />
+    <MESSAGE value="完成预警状态" />
+    <MESSAGE value="修改yjzt的bug，now的问题的bug" />
+    <MESSAGE value="增加param_trans功能，增加项目qh统一处理" />
+    <MESSAGE value="xfxs=网信的处理，date近12个月的功能，param_trans的默认值，是增加不是覆盖" />
+    <MESSAGE value="融合新版full方法，解决name==stack时convert中拿stack的报错" />
+    <MESSAGE value="拆分param_trans, 新增libs文件夹用于存放extension/param_trans，将transformer的默认值设置成groupby(计算完成的结果，先groupby一下)" />
+    <MESSAGE value="解决day/date字符串的兼容问题" />
+    <MESSAGE value="修复sql_mode中的df映射问题" />
+    <MESSAGE value="重构full方法" />
+    <MESSAGE value="修复full的bug，拆分convert层增加全局信息" />
+    <MESSAGE value="重构groupby/zb/tb/hb，使用extension的方式，将inf/-inf/nan/None 统一交给full处理，迁移插件过程，增加debug功能，查看报错的url" />
+    <MESSAGE value="解决预测问题" />
+    <MESSAGE value="更新云南大屏，河北大屏，解决分组预测问题，拆分转换层，预留df转换成echarts图表的功能" />
+    <MESSAGE value="测试完成领导驾驶舱（前端需要增加一个参数）" />
+    <MESSAGE value="修复 {start}的 bug" />
+    <MESSAGE value="完成预测相关extension" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成预测相关extension" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2160" y="220" width="550" height="276" key="#Notifications" timestamp="1605178983527">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="565" y="226" key="#Notifications/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1600399479703" />
+    <state x="2160" y="220" key="#Notifications/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605178983527" />
+    <state x="565" y="226" width="550" height="276" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1600102983299" />
+    <state x="1780" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605854666511">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="1780" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605854666511" />
+    <state x="1948" y="131" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606307682249">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="414" y="164" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1600048030154" />
+    <state x="1948" y="131" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606307682249" />
+    <state x="2100" y="323" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1606216812250">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2100" y="323" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606216812250" />
+    <state x="2081" y="118" key="#xdebugger.evaluate" timestamp="1605853975384">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2081" y="118" key="#xdebugger.evaluate/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605853975384" />
+    <state x="1499" y="-44" width="1084" height="728" key="CommitChangelistDialog2" timestamp="1606893025786">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="218" y="0" width="1084" height="728" key="CommitChangelistDialog2/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606447309949" />
+    <state x="1499" y="-44" width="1629" height="874" key="CommitChangelistDialog2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606893025786" />
+    <state x="171" y="0" width="1159" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605831948017" />
+    <state width="1546" height="310" key="DebuggerActiveHint" timestamp="1606981981273">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state width="2062" height="418" key="DebuggerActiveHint/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604594709738" />
+    <state width="1291" height="412" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1605080658809" />
+    <state width="1546" height="310" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606981981273" />
+    <state width="1166" height="317" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605863497666" />
+    <state width="2062" height="418" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1606719379931" />
+    <state x="1458" y="-11" width="1736" height="856" key="DiffContextDialog" timestamp="1606218218388">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="-2179" y="-45" width="1831" height="618" key="DiffContextDialog/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604594358112" />
+    <state x="0" y="0" width="1366" height="728" key="DiffContextDialog/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1603968924291" />
+    <state x="1458" y="-11" width="1736" height="856" key="DiffContextDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606218218388" />
+    <state x="65" y="64" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1603373782667" />
+    <state x="526" y="192" key="FileChooserDialogImpl" timestamp="1607316310642">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="526" y="192" key="FileChooserDialogImpl/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1599116501807" />
+    <state x="1771" y="102" key="FileChooserDialogImpl/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606306493042" />
+    <state x="526" y="192" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607316310642" />
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom" timestamp="1607315799365">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="517" key="GridCell.Tab.0.bottom/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596130925" />
+    <state width="1323" height="276" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025320" />
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.2560.1400@0.0.1366.728" timestamp="1603953660323" />
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607315799365" />
+    <state width="1877" height="147" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606444551420" />
+    <state width="2517" height="322" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state width="1323" height="150" key="GridCell.Tab.0.center" timestamp="1607315799364">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="517" key="GridCell.Tab.0.center/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596130925" />
+    <state width="1323" height="276" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584627" />
+    <state width="1877" height="427" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025320" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.2560.1400@0.0.1366.728" timestamp="1603953660323" />
+    <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607315799364" />
+    <state width="1877" height="147" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606444551419" />
+    <state width="2517" height="322" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577441" />
+    <state width="1323" height="150" key="GridCell.Tab.0.left" timestamp="1607315799364">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="517" key="GridCell.Tab.0.left/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596130924" />
+    <state width="1323" height="276" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584627" />
+    <state width="1877" height="427" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025320" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.2560.1400@0.0.1366.728" timestamp="1603953660322" />
+    <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607315799364" />
+    <state width="1877" height="147" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606444551419" />
+    <state width="2517" height="322" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577441" />
+    <state width="1323" height="150" key="GridCell.Tab.0.right" timestamp="1607315799364">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="517" key="GridCell.Tab.0.right/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596130925" />
+    <state width="1323" height="276" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025320" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.2560.1400@0.0.1366.728" timestamp="1603953660323" />
+    <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607315799364" />
+    <state width="1877" height="147" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606444551420" />
+    <state width="2517" height="322" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state width="1877" height="427" key="GridCell.Tab.1.bottom" timestamp="1607064172755">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="146" key="GridCell.Tab.1.bottom/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596251781" />
+    <state width="1323" height="276" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025321" />
+    <state width="1877" height="427" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607064172755" />
+    <state width="2517" height="322" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state width="1877" height="427" key="GridCell.Tab.1.center" timestamp="1607064172755">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="146" key="GridCell.Tab.1.center/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596251780" />
+    <state width="1323" height="276" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025321" />
+    <state width="1877" height="427" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1607064172755" />
+    <state width="2517" height="322" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state width="1877" height="427" key="GridCell.Tab.1.left" timestamp="1607064172754">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="146" key="GridCell.Tab.1.left/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596251780" />
+    <state width="1323" height="276" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025321" />
+    <state width="1877" height="427" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1607064172754" />
+    <state width="2517" height="322" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state width="1877" height="427" key="GridCell.Tab.1.right" timestamp="1607064172755">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="2517" height="146" key="GridCell.Tab.1.right/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604596251781" />
+    <state width="1323" height="276" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606997584628" />
+    <state width="1877" height="427" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1607049025321" />
+    <state width="1877" height="427" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1607064172755" />
+    <state width="2517" height="322" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1606720577442" />
+    <state x="1366" y="-103" width="1920" height="778" key="MergeDialog" timestamp="1604542484108">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="1366" y="-103" width="1920" height="778" key="MergeDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1604542484108" />
+    <state x="1904" y="189" width="664" height="267" key="MultipleFileMergeDialog" timestamp="1604542484129">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="1904" y="189" key="MultipleFileMergeDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1604542484129" />
+    <state x="483" y="222" width="664" height="267" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1600110234694" />
+    <state x="2037" y="147" key="RollbackChangesDialog" timestamp="1605690363219">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="-1666" y="71" key="RollbackChangesDialog/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604594367969" />
+    <state x="477" y="131" key="RollbackChangesDialog/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1601285787226" />
+    <state x="2037" y="147" key="RollbackChangesDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605690363219" />
+    <state x="477" y="131" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603414270316" />
+    <state x="116" y="17" key="SettingsEditor" timestamp="1606843938666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="1777" y="20" key="SettingsEditor/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606374764254" />
+    <state x="116" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1606843938666" />
+    <state x="2044" y="109" key="Vcs.Push.Dialog.v2" timestamp="1606893824247">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="308" y="152" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1606447515807" />
+    <state x="2044" y="109" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606893824247" />
+    <state x="393" y="177" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605831991345" />
+    <state width="1292" height="713" key="XDebugger.FullValuePopup" timestamp="1606647438400">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="969" height="529" key="XDebugger.FullValuePopup/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606376120773" />
+    <state width="690" height="371" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1605863497657" />
+    <state width="1292" height="713" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1606647438400" />
+    <state x="95" y="100" width="1166" height="528" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1599099538223">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="95" y="100" width="1166" height="528" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1599099538223" />
+    <state x="1004" y="222" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606644251798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2119" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1600133749542" />
+    <state x="1004" y="222" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1606644251798" />
+    <state x="2168" y="127" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1600525438687">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2168" y="127" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1600525438687" />
+    <state x="2002" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600140713889">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2002" y="359" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1600140713889" />
+    <state x="1852" y="117" key="git4idea.merge.GitPullDialog" timestamp="1600423696704">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="346" y="154" key="git4idea.merge.GitPullDialog/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1600242449628" />
+    <state x="1852" y="117" key="git4idea.merge.GitPullDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1600423696704" />
+    <state x="346" y="154" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1600102955375" />
+    <state x="2127" y="323" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605680506135">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2127" y="323" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605680506135" />
+    <state x="2135" y="256" key="git4idea.ui.GitTagDialog" timestamp="1600608441226">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2135" y="256" key="git4idea.ui.GitTagDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1600608441226" />
+    <state x="351" y="207" width="1134" height="595" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1606843937968">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="1860" y="192" width="1134" height="595" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606100840714" />
+    <state x="351" y="207" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.728@0.0.1366.728" timestamp="1606843937968" />
+    <state x="2101" y="108" key="refactoring.ChangeSignatureDialog" timestamp="1605702210720">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2101" y="108" key="refactoring.ChangeSignatureDialog/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1605702210720" />
+    <state x="523" y="148" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1602320816628" />
+    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup" timestamp="1607066892148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-1729" y="122" width="896" height="913" key="search.everywhere.popup/0.0.1366.728/-2560.-181.2560.1400@-2560.-181.2560.1400" timestamp="1604590116608" />
+    <state x="1989" y="122" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1606981205882" />
+    <state x="443" y="158" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607066892148" />
+    <state x="623" y="226" width="945" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603069865717" />
+    <state x="830" y="304" width="1260" height="914" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1606656242793" />
+    <state x="2156" y="208" key="svn.repositoryBrowser" timestamp="1598952855941">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state x="2156" y="208" key="svn.repositoryBrowser/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1598952855941" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Python-3.6.8/Lib/site-packages/pypandoc/__init__.py</url>
+          <line>547</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_db.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/makeup_dataframe/add_ceil.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/api_gateway/get_plugined_apis/mode_sql.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_db.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="347" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/merge_serached_dataframes/__init__.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="381" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table_bak.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="388" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table_bak.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="397" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/mylv.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="408" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_db.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="462" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table_bak.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="507" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/merge_serached_dataframes/__init__.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="531" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/merge_serached_dataframes/convert_and_compute/parse_tb_or_hb.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="539" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/params_check/params_check_each.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="557" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/libs/extensions/zb.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="558" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes-bak.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="584" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/init_project.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="644" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/init_project.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="646" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/__init__.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="647" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/mode_sql.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="657" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/mode_sql.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="659" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/param_trans.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="660" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/jssllv/__init__.py</url>
+          <line>274</line>
+          <option name="timeStamp" value="688" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/ycyjzt.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="703" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/ycyjzt.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="707" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert2data.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="709" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert2data.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="710" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert2data.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="712" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/cjzb.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="717" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/settings/gdxf/extensions/yjzt.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="718" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/__init__.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="722" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_parsed_api/process_paramtrans.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="723" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/libs/param_trans/__init__.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="724" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/api_gateway/get_dispatched_apis.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="725" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/api_gateway/get_dispatched_apis.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="726" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/api_gateway/get_dispatched_apis.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="727" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/layers/get_dataframe/__init__.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="728" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hbxf$get_splited_apis.coverage" NAME="get_splited_apis Coverage Results" MODIFIED="1592806709482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers" />
+    <SUITE FILE_PATH="coverage/hbxf$get_dataframe_for_each_api.coverage" NAME="get_dataframe_for_each_api Coverage Results" MODIFIED="1594621261029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$process_dollar.coverage" NAME="process_dollar Coverage Results" MODIFIED="1592964783740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_parsed_api" />
+    <SUITE FILE_PATH="coverage/hbxf$params_parse.coverage" NAME="params_parse Coverage Results" MODIFIED="1593247407310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$ztfxbg.coverage" NAME="ztfxbg Coverage Results" MODIFIED="1601027665346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/settings/gdxf/custom" />
+    <SUITE FILE_PATH="coverage/hbxf$process_drop.coverage" NAME="process_drop Coverage Results" MODIFIED="1592876903091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_parsed_api" />
+    <SUITE FILE_PATH="coverage/hbxf$__init____4_.coverage" NAME="__init__ (4) Coverage Results" MODIFIED="1595938039674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers" />
+    <SUITE FILE_PATH="coverage/hbxf$base_sql_map.coverage" NAME="base_sql_map Coverage Results" MODIFIED="1606388166915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/settings/gdxf/extensions/jssllv" />
+    <SUITE FILE_PATH="coverage/hbxf$app__2_.coverage" NAME="app Coverage Results" MODIFIED="1607313657551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../dabot/hbxf" />
+    <SUITE FILE_PATH="coverage/hbxf$day_initialized.coverage" NAME="day_initialized Coverage Results" MODIFIED="1596698759187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/makeup_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$test_db.coverage" NAME="test_db Coverage Results" MODIFIED="1605760515382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$csz.coverage" NAME="csz Coverage Results" MODIFIED="1596892308266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$merge_initialized_table.coverage" NAME="merge_initialized_table Coverage Results" MODIFIED="1595845427215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/makeup_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$test.coverage" NAME="test Coverage Results" MODIFIED="1600853426471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$__init____2_.coverage" NAME="__init__ (2) Coverage Results" MODIFIED="1602323496525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers" />
+    <SUITE FILE_PATH="coverage/hbxf$user_guess.coverage" NAME="user_guess Coverage Results" MODIFIED="1596885088548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
+    <SUITE FILE_PATH="coverage/hbxf$parse_compute.coverage" NAME="parse_compute Coverage Results" MODIFIED="1597578454064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/hbxf$timeout__1_.coverage" NAME="timeout (1) Coverage Results" MODIFIED="1597843119606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/hbxf$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1592817666176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/plugins/python/helpers/pydev/_pydev_imps" />
+    <SUITE FILE_PATH="coverage/hbxf$win_server.coverage" NAME="win-server Coverage Results" MODIFIED="1603116104708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$predict.coverage" NAME="predict Coverage Results" MODIFIED="1605854026215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/extensions" />
+    <SUITE FILE_PATH="coverage/hbxf$search_init__1_.coverage" NAME="search_init (1) Coverage Results" MODIFIED="1598003828330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$merge.coverage" NAME="merge Coverage Results" MODIFIED="1605700537030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table" />
+    <SUITE FILE_PATH="coverage/hbxf$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1606306588630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Study/PKUSE/worklogs/2020/第41周2020.11.23/hbxf-pro/hbxf" />
+    <SUITE FILE_PATH="coverage/hbxf$overtime.coverage" NAME="overtime Coverage Results" MODIFIED="1597765130098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/hbxf$simple2df.coverage" NAME="simple2df Coverage Results" MODIFIED="1595320936030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe/params2dataframe/before_merge" />
+    <SUITE FILE_PATH="coverage/hbxf$mode_sql.coverage" NAME="mode_sql Coverage Results" MODIFIED="1602324321221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/api_gateway/get_plugined_apis" />
+    <SUITE FILE_PATH="coverage/hbxf$get_dispatched_apis.coverage" NAME="get_dispatched_apis Coverage Results" MODIFIED="1596785715791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/api_gateway" />
+    <SUITE FILE_PATH="coverage/hbxf$__init____3_.coverage" NAME="__init__ (3) Coverage Results" MODIFIED="1595233873044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1602323540991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/api_gateway" />
+    <SUITE FILE_PATH="coverage/hbxf$db_connection.coverage" NAME="db_connection Coverage Results" MODIFIED="1601004821402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/hbxf$env_test.coverage" NAME="env_test Coverage Results" MODIFIED="1603387178505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$process_invalid.coverage" NAME="process_invalid Coverage Results" MODIFIED="1597576839573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_parsed_api" />
+    <SUITE FILE_PATH="coverage/hbxf$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1602323592771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/api_gateway/get_plugined_apis" />
+    <SUITE FILE_PATH="coverage/hbxf$params_check_real_table.coverage" NAME="params_check_real_table Coverage Results" MODIFIED="1597761252982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe/params_check" />
+    <SUITE FILE_PATH="coverage/hbxf$params_pase_conditions.coverage" NAME="params_pase_conditions Coverage Results" MODIFIED="1593248346537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe" />
+    <SUITE FILE_PATH="coverage/hbxf$process_now.coverage" NAME="process_now Coverage Results" MODIFIED="1592992002594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_parsed_api" />
+    <SUITE FILE_PATH="coverage/hbxf$app.coverage" NAME="app Coverage Results" MODIFIED="1607313070352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbxf$params_parse_tb_or_hb.coverage" NAME="params_parse_tb_or_hb Coverage Results" MODIFIED="1593410616304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layers/get_dataframe" />
+  </component>
+</project>

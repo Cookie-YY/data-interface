@@ -1,0 +1,70 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": [
+    {
+      "name": "农村农业",
+      "value": 493
+    },
+    {
+      "name": "国土资源",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "城乡建设",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "卫生计生",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "经济管理",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "教育文体",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "劳动和社会保障",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "民政",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "政法",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "交通运输",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "科技与信息产业",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "商贸旅游",
+      "value": 493,
+      "query":"1"
+    },
+    {
+      "name": "环境保护",
+      "value": 493,
+      "query":"1"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "国家级",
+      "id": "01",
+      "type": "XZQXFCS",
+      "value": 5002
+    },
+    {
+      "name": "云南省",
+      "id": "02",
+      "type": "XZQXFCS",
+      "value": 9000
+    },
+    {
+      "name": "乡镇",
+      "id": "03",
+      "type": "XZQXFCS",
+      "value": 4900
+    },
+    {
+      "name": "区县",
+      "id": "04",
+      "type": "XZQXFCS",
+      "value": 3890
+    },
+    {
+      "name": "其他",
+      "id": "05",
+      "type": "XZQXFCS",
+      "value": 2000
+    }
+  ]
+}

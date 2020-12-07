@@ -1,0 +1,30 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":[
+    {
+      "name": "1次",
+      "id": "SXRJB02",
+      "type": "QYJB",
+      "value": 26
+    },
+    {
+      "name": "2次以上",
+      "id": "SXRJB03",
+      "type": "QYJB",
+      "value": 51
+    },
+    {
+      "name": "5次以上",
+      "id": "SXRJB04",
+      "type": "QYJB",
+      "value": 23
+    },
+    {
+      "name": "10次以上",
+      "id": "SXRJB01",
+      "type": "QYJB",
+      "value": 64
+    }
+  ]
+}

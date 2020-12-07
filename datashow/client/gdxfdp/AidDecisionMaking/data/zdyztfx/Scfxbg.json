@@ -1,0 +1,5 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data":  "<div class='report' style='display: flex;flex-direction: column;'><h class='wrapper_title' style='display: block;width: 100%;font-size: 0.4rem;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align: center'>广东省涉众型经济案件信访专题分析报告</h></h><span class='dc' style='width: 1.2rem;height: 0.4rem;line-height: 0.4rem;position: fixed;right: 4rem;top: 2.2rem;font-size: 0.2rem;border-radius: 3rem;border: 1px solid #155E95;background:#010816;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align:center;'>导出</span><span class='wrapper_time' style='color: #DBFFFF; font-size: 0.25rem;text-align: center;margin: 0.3rem'>2020-09-25</span></div><p class='subtitle' style='color: #A2C8CD; font-size: 0.24rem'>一：基本情况</p><p style='display: flex'><span class='time_span' style='text-indent: 0.2rem;height: 0.3rem;color: #F2DE58;font-size: 0.2rem;line-height: 0.3rem;margin: 0.1rem;'>2020年01月01日至2020年01月03日</span>"
+}
