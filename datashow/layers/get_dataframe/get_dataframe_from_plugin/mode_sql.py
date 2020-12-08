@@ -209,7 +209,7 @@ def get_sql_apis(results, format_pool_sql):
     code, msg, variables = get_variables_from_sql_mode(results, format_pool_sql)
     if code != 200:
         return code, msg, {}
-    variables = {k:v.replace("'", "") for k,v in variables.items()}
+    variables = {k:v.replace("'", "") for k, v in variables.items()}
     format_pool_sql.update(**variables)
 
     # 处理sql模式中的full

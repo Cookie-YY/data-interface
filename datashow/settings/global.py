@@ -60,5 +60,6 @@ SYS_SPECIAL_PARAMS = {
     "time_format": (False, None),
     "ext": (False, None),
     "reindex": ("0", None),
-    "reuse": ("none", "none|waiting_for_search|db_results|df")
+    "sql_qh": (False, None)  # 系统内部用于给sql模式传递qh条件(权限)
+    # "reuse": ("none", "none|waiting_for_search|db_results|df")
 }

@@ -4,9 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="hbxf-pro" />
-    <orderEntry type="module" module-name="generate_tables" />
     <orderEntry type="module" module-name="calculate" />
+    <orderEntry type="module" module-name="generate_tables" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

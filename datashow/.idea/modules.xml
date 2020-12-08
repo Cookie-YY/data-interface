@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../calculate/.idea/calculate.iml" filepath="$PROJECT_DIR$/../calculate/.idea/calculate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/datashow.iml" filepath="$PROJECT_DIR$/.idea/datashow.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dev_tools/generate_tables/.idea/generate_tables.iml" filepath="$PROJECT_DIR$/../dev_tools/generate_tables/.idea/generate_tables.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/hbxf.iml" filepath="$PROJECT_DIR$/.idea/hbxf.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../Study/PKUSE/worklogs/2020/第41周2020.11.23/hbxf-pro/.idea/hbxf-pro.iml" filepath="$PROJECT_DIR$/../../../Study/PKUSE/worklogs/2020/第41周2020.11.23/hbxf-pro/.idea/hbxf-pro.iml" />
     </modules>
   </component>
 </project>

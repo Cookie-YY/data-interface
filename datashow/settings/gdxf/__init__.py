@@ -15,7 +15,7 @@ FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 # FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
-ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gd144'
+ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gdauth'
 # ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
 # ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_1021' % urllib.parse.unquote_plus("cDhZ2@zR")
 # ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
@@ -69,7 +69,7 @@ LEVEL_AUTH_ENCRYPT = False
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
 # 有param_trans param_trans的开关才算打开，否则不走param_trans
 CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "full": ("true", None)}
-CUS_PARAM_TRANS = ["wx_map", "bm_godown", "zrdw_godown"]
+CUS_PARAM_TRANS = ["wx_map", "bm_godown", "zrdw_godown", "djjg"]
 
 ############################### 数据配置 ###############################
 # 随机化配置
@@ -105,7 +105,7 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "cjzb"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj"]
 
 # 有关联关系的字段
 RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]

@@ -77,9 +77,9 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc&",
         "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
-        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_djjg_xfxs_xfrqxfjc;"
-                                 "{query_date}==登记日期 then xf_xfj_cd_djjg_xfxs_djrqxfjc;"
-                                 "{query_date}==交换日期 then xf_xfj_cd_djjg_xfxs_jhrqxfjc;",
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfxs_xfrqxfjc;"
+                                 "{query_date}==登记日期 then xf_xfj_cd_xj_xfxs_djrqxfjc;"
+                                 "{query_date}==交换日期 then xf_xfj_cd_xj_xfxs_jhrqxfjc;",
                       "v_select": "{query_date}==信访日期 then xfrqxfjc;"
                                   "{query_date}==登记日期 then djrqxfjc;"
                                   "{query_date}==交换日期 then jhrqxfjc;"},
@@ -87,7 +87,7 @@ APIS_PLUGIN = [
         "zb_db_sql": """
         SELECT a.name, a.name as query, sum(a.value) as value from (select (CASE WHEN xfxs = '来信' THEN '来信'
         WHEN xfxs = '来访' THEN '来访'
-        ELSE '网信' END) as name, {v_select} as value, day from {v_table}) a where a.day between '{start}' and '{end}'group by a.name
+        ELSE '网信' END) as name, {v_select} as value, day, shej_02, shij_02, xj_02 from {v_table}) a where a.day between '{start}' and '{end}' and a.{sql_qh} group by a.name
         """,
         "full": {"name": "xfxs", "value": [0], "query": "$name"}
     },
@@ -96,15 +96,15 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_yjnrtc&",
         "map": {"name": "一级内容", "value": "信访件次", "query": "查询id"},
-        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_shej_yjnr_xfrqxfjc;"
-                                 "{query_date}==登记日期 then xf_xfj_cd_shej_yjnr_djrqxfjc;"
-                                 "{query_date}==交换日期 then xf_xfj_cd_shej_yjnr_jhrqxfjc;",
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_yjnr_xfrqxfjc;"
+                                 "{query_date}==登记日期 then xf_xfj_cd_xj_yjnr_djrqxfjc;"
+                                 "{query_date}==交换日期 then xf_xfj_cd_xj_yjnr_jhrqxfjc;",
                       "v_select": "{query_date}==信访日期 then xfrqxfjc;"
                                   "{query_date}==登记日期 then djrqxfjc;"
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' group by yjnr 
+    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' and {sql_qh} group by yjnr 
     """,
         "full": {"name": "yjnr", "value": [0], "query": "$name"}
     },
@@ -134,17 +134,6 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
         # 广东_全局业务监控_地图弹窗后的小弹窗
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_tcaftertc&xfjbh=LX0000002019102900499
         "url": "/api/xf/\?gd_id=gd_qjywjk_tcaftertc&",
-        "map": {"xfjztmc": "信访件状态", "xfrq": "信访日期", "bjsj": "办结日期",
-                "bljg": "办理机构", "blfs": "办理方式", "qxjg": "去向机构"},
-        "fx_db_sql": """select a.xfjztmc, a.xfrq, a.bjsj, b.xfjbh, b.bljg, b.blfs, b.qxjg from xf_xfjxx a LEFT JOIN xf_blfsxx b on a.xfjbh=b.xfjbh where b.xfjbh='{xfjbh}';""",
-        "zb_db_sql": """""",
-    },
-
-    ###################### 广东_复杂业务指标（及时受理率/受理率/答复率）######################
-    {
-        # 广东_1-1
-        # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_tcaftertc&xfjbh=LX0000002019102900499
-        "url": "/api/xf/\?gd_id=gd_1-1&",
         "map": {"xfjztmc": "信访件状态", "xfrq": "信访日期", "bjsj": "办结日期",
                 "bljg": "办理机构", "blfs": "办理方式", "qxjg": "去向机构"},
         "fx_db_sql": """select a.xfjztmc, a.xfrq, a.bjsj, b.xfjbh, b.bljg, b.blfs, b.qxjg from xf_xfjxx a LEFT JOIN xf_blfsxx b on a.xfjbh=b.xfjbh where b.xfjbh='{xfjbh}';""",

@@ -38,3 +38,7 @@ def get_qh_godown(qh):
         return "shij_02"
     if qh in qh_info["shij_02"].tolist():
         return "xj_02"
+
+
+def get_qh_include_sub(qh, sub="all"):
+    return [qh] + get_qh_sub(qh, sub=sub)

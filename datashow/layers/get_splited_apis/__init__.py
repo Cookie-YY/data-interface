@@ -34,6 +34,7 @@ def get_splited_apis(realm, index, request_args):
             # main_name = "总数"
             for condition in group.split(";"):  # condition = "lx:to-xfxs"
                 'condition = "lx@to:xfxs"'
+                # condition = condition.replace("=", "@to:")   # 语法糖: 如果写了=就是@to:
                 target, operation = condition.split("@", 1)
                 operation = operation if ":" in operation else operation+":"
                 operator, op_content = operation.split(":", 1)

@@ -159,7 +159,7 @@ html {
 	color: #FFB400;
 	font-weight: 500;
 	display: inline-block;
-	width: 30%;
+	/* width: 30%; */
 }
 
 .yjxxfx_index>.yjxxfx_index_body>div:nth-of-type(3)>div>p:first-of-type {

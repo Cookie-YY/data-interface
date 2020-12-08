@@ -27,10 +27,10 @@ def get_dataframe_from_extension(apis_copy, apis):
         return code, msg, {}
     df, apis_copy = results["df"], results["apis_copy"] # 执行ext的方法
 
-    # 2.如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
-    import pandas as pd
-    if isinstance(df, pd.DataFrame) and len(df.columns) > 1:
-        df = df.fillna("")
+    # # 2.如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）
+    # import pandas as pd
+    # if isinstance(df, pd.DataFrame) and len(df.columns) > 1:
+    #     df = df.fillna(None)
 
     # 3.封装dateframe对象以供返回
     dataframe = {**apis_copy, **{"df": df}}

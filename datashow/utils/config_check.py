@@ -25,7 +25,10 @@ class ConfigCheck:
         INITIALIZATION_FILE_PATH = self.config.get("INITIALIZATION_FILE_PATH")
         if not INITIALIZATION_FILE_PATH:
             sys.exit("ConfigError[INITIALIZATION_FILE_PATH]: Missing INITIALIZATION_FILE_PATH")
-        if "shej_02+shij_02+xj_02" not in os.listdir(INITIALIZATION_FILE_PATH) and "shij_02+xj_02" not in os.listdir(INITIALIZATION_FILE_PATH):
+        cond1 = "shej_02+shij_02+xj_02" in os.listdir(INITIALIZATION_FILE_PATH)
+        cond2 = "shij_02+xj_02" in os.listdir(INITIALIZATION_FILE_PATH)
+        if not(cond1 or cond2):
             sys.exit("ConfigError[INITIALIZATION_FILE_PATH]: There should be file "
-                     "named shej_02+shij_02+xj_02 or shij_02+xj_02 in config INITIALIZATION_FILE_PATH")
+                     "named [shej_02+shij_02+xj_02] or [shij_02+xj_02] in config INITIALIZATION_FILE_PATH")
 
+    # plgin的检查：从check_plugin中拿出来

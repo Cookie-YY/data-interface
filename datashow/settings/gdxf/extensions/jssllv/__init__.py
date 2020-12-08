@@ -6,7 +6,7 @@ import pandas as pd
 from settings.gdxf.extensions.jssllv.base_sql_map import get_base_sql_map
 from utils.qh_processor import get_qh_level
 
-DEBUG = False
+DEBUG = True
 
 
 def get_sql_map(flag):

@@ -28,8 +28,11 @@ def get_dataframe_from_plugin(request_args):
 
         # 格式化变量池
         from utils.db_connection import fx_pymysql, zb_pymysql
-        format_pool_custom = dict(**g.get("reqdicts_before_pt"), **app.config, fx_pymysql=fx_pymysql, zb_pymysql=zb_pymysql)
-        format_pool_sql = dict(**g.get("reqdicts_before_pt"), **app.config)
+        # param_trans 之后的参数也能拿到[sql_qh]
+        format_pool_custom = dict(**request_args,  **app.config, fx_pymysql=fx_pymysql, zb_pymysql=zb_pymysql)
+        format_pool_custom.update(g.get("reqdicts_before_pt"))   # 用保存的param_trans之前的参数覆盖
+        format_pool_sql = dict(**request_args, **app.config)
+        format_pool_sql.update(g.get("reqdicts_before_pt"))      # 用保存的param_trans之前的参数覆盖
 
         # custom模式
         if mode == "custom":

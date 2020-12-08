@@ -15,7 +15,7 @@ def merge_initialized_table(dataframe):
     """
     value = dataframe.get("value")
     df = dataframe.get("df")
-    table = dataframe.get("table")
+    table = dataframe.get("table")  # 当需要用table判断某个字段用哪种初始化方式的时候必须传
     # 0. 初始化，获得所有独立列取值[random_or_zero] && 如果只有一列直接返回【on会为空，报错】
     INITIALIZATION = get_norelation_valuelist(dataframe)  # 加载没有联动关系的取值
 

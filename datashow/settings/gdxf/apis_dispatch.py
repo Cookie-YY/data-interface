@@ -5,26 +5,26 @@
 gd_id03=信访日期/ 登记日期/ 交换日期
 http://39.107.240.28:3390/api/xf/?gd_id01=全局业务监控&gd_id02=信访形式分布1&gd_id02=信访日期&day=[2019-01-01,2019-01-09]
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
 2）列表：
 gd_id03=信访日期/ 登记日期/ 交换日期
 http://39.107.240.28:3390/api/xf/?gd_id01=全局业务监控&gd_id02=信访形式分布2&gd_id02=信访日期&day=[2019-01-01,2020-12-02]
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xj_xfxs_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_xj_xfxs_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xj_xfxs_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_xj_xfxs_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_jhrqxfrc;value@to:jhrqxfrc,table@to:xf_xfj_cd_shej_xfxs_jhrqxfrc;value@to:jhrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
 3）饼图：
 gd_id03=信访日期/ 登记日期/ 交换日期
 http://39.107.240.28:3390/api/xf/?gd_id01=全局业务监控&gd_id02=信访形式分布3&gd_id02=信访日期&day=[2019-01-01,2020-12-02]
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2020-12-02]&full=true
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2020-12-02]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2020-12-02]&full=true
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2020-12-02]&full=true
 （2） 四级登记机构-信访形式分布
 圆环图 1） 2）3） 4） djjg=国家/省级/市级/县级
-信访日期：xf_xfj_cd_djjg_xfxs_xfrqxfjc
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true
-登记日期：xf_xfj_cd_djjg_xfxs_djrqxfjc
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true
+信访日期：xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true
+登记日期：xf_xfj_cd_qh_djjg_xfxs_djrqxfjc
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true
 交换日期：xf_xfj_cd_djjg_xfxs_jhrqxfjc
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true
 
@@ -34,17 +34,17 @@ http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&v
 # 全局业务监控_内容分类
 http://39.107.240.28:3390/api/xf/?gd_id1=全局业务监控&gd_id2=内容分类1&gd_id3=信访日期&day=[2019-01-01,2019-01-09]
 总数:
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]
 
 列表:
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xj_yjnr_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_xj_yjnr_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&name=yjnr&value=jhrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_jhrqxfrc;value@to:jhrqxfrc,table@to:xf_xfj_cd_shej_yjnr_jhrqxfrc;value@to:jhrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true
 
 饼图:
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true
-http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true
+http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true
 http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&name=yjnr&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true
 
 """
@@ -84,53 +84,52 @@ http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xb_jhrqxfjc&name=xb&value=j
 
 URL_DISPATCH_MAP = {
     # 全局业务监控
-    "全局业务监控_信访形式分布1_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
-    "全局业务监控_信访形式分布1_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_信访形式分布1_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&Cqh=广东省",
+    "全局业务监控_信访形式分布1_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&Cqh=广东省",
     "全局业务监控_信访形式分布1_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
 
-    "全局业务监控_信访形式分布2_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_shej_xfxs_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
-    "全局业务监控_信访形式分布2_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_shej_xfxs_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
+    "全局业务监控_信访形式分布2_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xj_xfxs_xfrqxfrc;value@to:xfrqxfrc,table@to:xf_xfj_cd_xj_xfxs_xfrqxfrc;value@to:xfrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true&Cqh=广东省",
+    "全局业务监控_信访形式分布2_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_xj_xfxs_djrqxfrc;value@to:djrqxfrc,table@to:xf_xfj_cd_xj_xfxs_djrqxfrc;value@to:djrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true&Cqh=广东省",
     "全局业务监控_信访形式分布2_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&stack=xfxs&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_xfxs_jhrqxfrc;value@to:jhrqxfrc,table@to:xf_xfj_cd_shej_xfxs_jhrqxfrc;value@to:jhrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
 
-    # "全局业务监控_信访形式分布3_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
-    # "全局业务监控_信访形式分布3_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
+    # "全局业务监控_信访形式分布3_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
+    # "全局业务监控_信访形式分布3_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
     # "全局业务监控_信访形式分布3_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_信访形式分布3_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期",
-    "全局业务监控_信访形式分布3_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=登记日期",
-    "全局业务监控_信访形式分布3_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=交换日期",
+    "全局业务监控_信访形式分布3_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期&table=shej&Cqh=广东省",
+    "全局业务监控_信访形式分布3_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=登记日期&table=shej&Cqh=广东省",
+    "全局业务监控_信访形式分布3_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=交换日期&table=shej&Cqh=广东省",
 
-    "全局业务监控_四级登记机构_国家_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_四级登记机构_国家_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true",
-    "全局业务监控_四级登记机构_国家_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&djjg=国家&day=[2019-01-01,2020-12-02]&full=true",
+    "全局业务监控_四级登记机构_国家_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&day=[2019-01-01,2019-01-09]&full=true&Cqh=广东省&param_trans=djjg(国家)",
+    "全局业务监控_四级登记机构_国家_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(国家)",
+    "全局业务监控_四级登记机构_国家_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(国家)",
 
-    "全局业务监控_四级登记机构_省级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=省级&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_四级登记机构_省级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=省级&day=[2019-01-01,2020-12-02]&full=true",
-    "全局业务监控_四级登记机构_省级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&djjg=省级&day=[2019-01-01,2020-12-02]&full=true",
+    "全局业务监控_四级登记机构_省级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&day=[2019-01-01,2019-01-09]&full=true&Cqh=广东省&param_trans=djjg(省级)",
+    "全局业务监控_四级登记机构_省级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(省级)",
+    "全局业务监控_四级登记机构_省级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(省级)",
 
-    "全局业务监控_四级登记机构_市级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=市级&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_四级登记机构_市级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=市级&day=[2019-01-01,2020-12-02]&full=true",
-    "全局业务监控_四级登记机构_市级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&djjg=市级&day=[2019-01-01,2020-12-02]&full=true",
+    "全局业务监控_四级登记机构_市级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&day=[2019-01-01,2019-01-09]&full=true&Cqh=广东省&param_trans=djjg(市级)",
+    "全局业务监控_四级登记机构_市级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(市级)",
+    "全局业务监控_四级登记机构_市级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(市级)",
 
-    "全局业务监控_四级登记机构_县级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&djjg=县级&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_四级登记机构_县级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&djjg=县级&day=[2019-01-01,2020-12-02]&full=true",
-    "全局业务监控_四级登记机构_县级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&djjg=县级&day=[2019-01-01,2020-12-02]&full=true",
+    "全局业务监控_四级登记机构_县级_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_xfrqxfjc&name=xfxs&value=xfrqxfjc&transformer=@groupby&day=[2019-01-01,2019-01-09]&full=true&Cqh=广东省&param_trans=djjg(县级)",
+    "全局业务监控_四级登记机构_县级_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_qh_djjg_xfxs_djrqxfjc&name=xfxs&value=djrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(县级)",
+    "全局业务监控_四级登记机构_县级_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_djjg_xfxs_jhrqxfjc&name=xfxs&value=jhrqxfjc&transformer=@groupby&day=[2019-01-01,2020-12-02]&full=true&Cqh=广东省&param_trans=djjg(县级)",
 
     # 全局业务监控_内容分类
-    "全局业务监控_内容分类1_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
-    "全局业务监控_内容分类1_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_内容分类1_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&Cqh=广东省&day=[2019-01-01,2019-01-09]",
+    "全局业务监控_内容分类1_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&value=djrqxfjc&transformer=@groupby&Cqh=广东省&day=[2019-01-01,2019-01-09]",
     "全局业务监控_内容分类1_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]",
 
-    "全局业务监控_内容分类2_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&stack=yjnr&transformer=@groupby&order=-xfrqxfjc&limit=3&extra_index=transformer@to:@zb;limit@drop;order@drop,table@to:xf_xfj_cd_shej_yjnr_xfrqxfrc;value@to:xfrqxfrc;limit@drop;order@drop,table@to:xf_xfj_cd_shej_yjnr_xfrqxfrc;value@to:xfrqxfrc;limit@drop;order@drop;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
-    "全局业务监控_内容分类2_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&stack=yjnr&transformer=@groupby&order=-djrqxfjc&limit=3&extra_index=transformer@to:@zb;limit@drop;order@drop,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc;limit@drop;order@drop,table@to:xf_xfj_cd_shej_yjnr_djrqxfrc;value@to:djrqxfrc;limit@drop;order@drop;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
-    # 交换日期已作废
+    "全局业务监控_内容分类2_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&stack=yjnr&transformer=@groupby&order=-xfrqxfjc&limit=3&extra_index=transformer@to:@zb;limit@drop;order@drop,table@to:xf_xfj_cd_xj_yjnr_xfrqxfrc;value@to:xfrqxfrc;limit@drop;order@drop,table@to:xf_xfj_cd_xj_yjnr_xfrqxfrc;value@to:xfrqxfrc;limit@drop;order@drop;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true&Cqh=广东省",
+    "全局业务监控_内容分类2_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&stack=yjnr&transformer=@groupby&order=-djrqxfjc&limit=3&extra_index=transformer@to:@zb;limit@drop;order@drop,table@to:xf_xfj_cd_xj_yjnr_djrqxfrc;value@to:djrqxfrc;limit@drop;order@drop,table@to:xf_xfj_cd_xj_yjnr_djrqxfrc;value@to:djrqxfrc;limit@drop;order@drop;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true&Cqh=广东省",
     "全局业务监控_内容分类2_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&name=yjnr&value=jhrqxfjc&stack=yjnr&transformer=@groupby&extra_index=transformer@to:@zb,table@to:xf_xfj_cd_shej_yjnr_jhrqxfrc;value@to:jhrqxfrc,table@to:xf_xfj_cd_shej_yjnr_jhrqxfrc;value@to:jhrqxfrc;transformer@to:@zb&main_name=信访件次,件次占比,信访人次,人次占比&day=[2019-01-01,2020-02-02]&full=true",
 
-    # "全局业务监控_内容分类3_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
-    # "全局业务监控_内容分类3_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
+    # "全局业务监控_内容分类3_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_xfrqxfjc&name=yjnr&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
+    # "全局业务监控_内容分类3_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_yjnr_djrqxfjc&name=yjnr&value=djrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
     # "全局业务监控_内容分类3_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_shej_yjnr_jhrqxfjc&name=yjnr&value=jhrqxfjc&transformer=@groupby&shej_02=广东省&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_内容分类3_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期",
-    "全局业务监控_内容分类3_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=登记日期",
-    "全局业务监控_内容分类3_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=交换日期",
+    "全局业务监控_内容分类3_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期&Cqh=广东省&table=shej",
+    "全局业务监控_内容分类3_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=登记日期&Cqh=广东省&table=shej",
+    "全局业务监控_内容分类3_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=交换日期&Cqh=广东省&table=shej",
 
     # 全局业务监控_问题属地1 总数
     "全局业务监控_问题属地1_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfrqxfjc&value=xfrqxfjc&transformer=@groupby&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]",
@@ -141,9 +140,9 @@ URL_DISPATCH_MAP = {
     # "全局业务监控_问题属地2_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfrqxfjc&name=shij_02&value=xfrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
     # "全局业务监控_问题属地2_登记日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_djrqxfjc&name=shij_02&value=djrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
     # "全局业务监控_问题属地2_交换日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_jhrqxfjc&name=shij_02&value=jhrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
-    "全局业务监控_问题属地2_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=信访日期&name=shij_02",
-    "全局业务监控_问题属地2_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=登记日期&name=shij_02",
-    "全局业务监控_问题属地2_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=交换日期&name=shij_02",
+    "全局业务监控_问题属地2_信访日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=信访日期&table=shej&Cqh=广东省&param_trans=qh_godown",
+    "全局业务监控_问题属地2_登记日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=登记日期&table=shej&Cqh=广东省&param_trans=qh_godown",
+    "全局业务监控_问题属地2_交换日期$": "http://39.107.240.28:3390/api/xf/?gd_id=gd_qjywjk_dttc&query_date=交换日期&table=shej&Cqh=广东省&param_trans=qh_godown",
 
     # 全局业务监控_问题属地3 折线
     "全局业务监控_问题属地3_信访日期$": "http://39.107.240.28:3390/api/xf/?table=xf_xfj_cd_xj_xfrqxfjc&name=day&value=xfrqxfjc&shej_02=广东省&shij_02=invalid&xj_02=invalid&day=[2019-01-01,2019-01-09]&full=true",
@@ -190,7 +189,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_赴省访_满意率-信访部门$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_myjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_满意率-责任单位$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_include_sub,qh_godown&Cqh=广东省",
     "信访事项预警_赴省访_信访量走势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_xfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_赴省访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day+Cqh)",
+    "信访事项预警_赴省访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day)",
     "信访事项预警_赴省访_内容分类$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_xfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_赴省访_信访目的$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_xfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 
@@ -198,7 +197,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_进京访_满意率-信访部门$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfbmgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_满意率-责任单位$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_zrdwgjjmyjc&order=-mylv&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&param_trans=qh_godown&Cqh=广东省",
     "信访事项预警_进京访_信访量走势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_gjjxfjc&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_进京访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day+Cqh)",
+    "信访事项预警_进京访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_gjjxfjc&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day)",
     "信访事项预警_进京访_内容分类$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_yjnr_gjjxfjc&name=yjnr&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
     "信访事项预警_进京访_信访目的$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfmd_gjjxfjc&name=xfmd&full=true&transformer=@groupby&day=[2020-01-01,2020-10-09]&Cqh=广东省",
 
@@ -206,7 +205,7 @@ URL_DISPATCH_MAP = {
     "信访事项预警_集体访_满意率-信访部门$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfbmmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_满意率-责任单位$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_zrdwmyjc&order=-mylv&jtf=集体访&transformer=@mylv&full=true&day=[2020-01-01,2020-10-09]&Cqh=广东省&param_trans=qh_godown",
     "信访事项预警_集体访_信访量走势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cm_xj_jtf_xfjc&jtf=集体访&name=date&transformer=@groupby&full=true&param_protect=black_list(day)&time_format=%Y年%m月&date=[now-12m,now]&Cqh=广东省",
-    "信访事项预警_集体访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day+Cqh)",
+    "信访事项预警_集体访_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_jtf_xfjc&jtf=集体访&full=true&transformer=@yjzt&extra_index=transformer@to:@groupby,transformer@to:@tb,transformer@to:@hb&main_name=预警状态,近一周,同比,环比&day=[now-7,now]&Cqh=广东省&param_protect=black_list(day)",
 
     # 信访绩效考核
     # 1. 区划分布
@@ -245,17 +244,17 @@ URL_DISPATCH_MAP = {
     # 【转交办效率待实现】待领 待办 超期未答复 转交办效率
     "信访绩效考核_信访部门_工作过程监控$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dljc&value=dljc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_dbjc;value@to:dbjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwbjjc;value@to:cqwbjjc&main_name=待领,待办,超期未答复&xfbm=广东省信访局&param_trans=@trimXfbm",
 
-    "信访绩效考核_信访部门_参评饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
-    "信访绩效考核_信访部门_参评率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_参评饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_cqwpjjc&main_name=已评价,超期未评价&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(bmjb)",
+    "信访绩效考核_信访部门_参评率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(bmjb)",
 
-    "信访绩效考核_信访部门_满意饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_bmyjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
-    "信访绩效考核_信访部门_满意率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级",
+    "信访绩效考核_信访部门_满意饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&extra_index=table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_bmyjc,table@to:xf_xfjg_cd_bmjb_qh_xfbm_xfxs_jbmyjc&main_name=满意,不满意,基本满意&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(bmjb)",
+    "信访绩效考核_信访部门_满意率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(bmjb)",
 
     "信访绩效考核_信访部门_及时受理饼图$": "http://127.0.0.1:3389/api/xf/?transformer=@jssllv&ext=jssllv_xfbm_all_shej_nums/jssllv_xfbm_all_shij_nums/jssllv_xfbm_xfxs_shej_nums/jssllv_xfbm_xfxs_shij_nums&name=slqk&full=true&xfbm=广东省信访局&bmjb=省级",
     "信访绩效考核_信访部门_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_xfbm_all_shej_jssllv/jssllv_xfbm_all_shij_jssllv/jssllv_xfbm_xfxs_shej_jssllv/jssllv_xfbm_xfxs_shij_jssllv&xfbm=广东省信访局&bmjb=省级",
 
-    "信访绩效考核_信访部门_网信占比饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&name=xfxs&value=xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级&param_protect=black_list(xfxs)",
-    "信访绩效考核_信访部门_网信占比率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&transformer=@wxzb&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&bmjb=省级&param_protect=black_list(xfxs)",
+    "信访绩效考核_信访部门_网信占比饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&name=xfxs&value=xfjc&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(xfxs+bmjb)",
+    "信访绩效考核_信访部门_网信占比率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_xfjc&transformer=@wxzb&full=true&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_protect=black_list(xfxs+bmjb)",
 
     # xfbm_godowm需要实现【直属小弟】
     "信访绩效考核_信访部门_排名_参评率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_bmjb_qh_xfbm_xfxs_ypjjc&full=true&transformer=@cplv&name=xfbm&order=-cplv&day=[2020-01-01,2020-10-09]&xfbm=广东省信访局&param_trans=bm_godown&param_protect=black_list(bmjb)",
@@ -280,13 +279,12 @@ URL_DISPATCH_MAP = {
     "信访绩效考核_责任单位_网信占比饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&name=xfxs&transformer=@groupby&full=true&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
     "信访绩效考核_责任单位_网信占比率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局",
 
-    # zrdw_godown待实现【省级的时候，直属小弟】
     "信访绩效考核_责任单位_排名_参评率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_ypjjc&full=true&transformer=@cplv&name=zrdw&order=-cplv&limit=20&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
     "信访绩效考核_责任单位_排名_满意率$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_myjc&full=true&transformer=@mylv&name=zrdw&order=-mylv&limit=20&day=[2020-01-01,2020-10-09]&zrdw=广东省统计局&param_trans=zrdw_godown",
     "信访绩效考核_责任单位_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_shej_all_list/jssllv_zrdw_shej_xfxs_list&order=-jssllv&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
     "信访绩效考核_责任单位_(来信|来访|网信)_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_xfxs_list&order=-jssllv&xfxs={gd_id4}&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
     "信访绩效考核_责任单位_drop_排名_及时受理率$": "http://127.0.0.1:3389/api/xf/?&full=true&transformer=@jssllv&ext=jssllv_zrdw_all_list&order=-jssllv&limit=20&day=[2020-01-01,2020-10-09]&name=zrdw&full=true&zrdw=广东省统计局&param_trans=zrdw_godown",
-    "信访绩效考核_责任单位_排名_网信占比$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&full=true&transformer=@wxzb&name=xfbm&order=-wxzb&day=[2020-01-01,2020-10-09]&full=true&param_trans=zrdw_godown&param_protect=black_list(zrdw+xfxs)",
+    "信访绩效考核_责任单位_排名_网信占比$": "http://127.0.0.1:3389/api/xf/?table=xf_xfjg_cd_qh_zrdw_xfxs_xfjc&full=true&transformer=@wxzb&name=xfbm&limit=20&order=-wxzb&day=[2020-01-01,2020-10-09]&full=true&param_trans=zrdw_godown&param_protect=black_list(zrdw+xfxs)",
 
     ####################################### 辅助决策 #######################################
     # 全局业务监控-满意度-信访部门
@@ -312,22 +310,22 @@ URL_DISPATCH_MAP = {
 
     # 全局业务监控-重复信访监控
     # xf_xfj_cd_xj_cfxfbz_xfjc      xf_xfj_cd_xj_xfjc
-    # 这里的逻辑很奇怪，全局只有这里用到transformer=cjzb（重件占比）
-    "全局业务监控_重复信访监控_重件占比$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_cfxfbz_xfjc&Cqh=广东省&day=[2020-01-01,2020-11-10]&extra_index=transformer@to:cjzb&main_name=重件,占比&param_trans=qh_include_sub",
+    # 这里的逻辑很奇怪，全局只有这里用到transformer=chuj（需要用总数-重件就是初件）
+    "全局业务监控_重复信访监控_重件占比$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_cfxfbz_xfjc&Cqh=广东省&day=[2020-01-01,2020-11-10]&extra_index=transformer@to:chuj&main_name=重件,初件&reindex=2,1&param_trans=qh_include_sub",
     "全局业务监控_重复信访监控_四级登记机构分布$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_qh_cfxfbz_djjg_xfjc&name=djjg&value=xfjc&transformer=@groupby&Cqh=广东省&day=[2020-01-01,2020-11-10]&full=true&param_trans=qh_include_sub",
 
 
 
     # 矛盾分析预警预判-现状分析
-    "矛盾分析预警预判_专项督办信访总量$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_zxdbxfjc&value=zxdbxfjc&year=2020",
-    "矛盾分析预警预判_专项督办信访饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xfxs_zxdbxfjc&name=xfxs&value=zxdbxfjc&full=true&year=2020",
+    "矛盾分析预警预判_专项督办信访总量$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_zxdbxfjc&value=zxdbxfjc&year=2020&Cqh=广东省",
+    "矛盾分析预警预判_专项督办信访饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_xfxs_zxdbxfjc&name=xfxs&value=zxdbxfjc&full=true&year=2020&Cqh=广东省",
     # year参数是[now-5,now]
-    "矛盾分析预警预判_专项督办信访趋势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_zxdbxfjc&name=year&value=zxdbxfjc&year=[now-5,now]&full=true",
-    "矛盾分析预警预判_国家专项督办信访总量$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_gjzxdbxfjc&value=gjzxdbxfjc&full=true&year=2020",
-    "矛盾分析预警预判_国家专项督办信访饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xfxs_gjzxdbxfjc&name=xfxs&value=gjzxdbxfjc&full=true&year=2020",
-    "矛盾分析预警预判_省内专项督办-省级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xfxs_shezxdbxfjc&name=xfxs&value=shezxdbxfjc&full=true&year=2020",
-    "矛盾分析预警预判_省内专项督办-市级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xfxs_shizxdbxfjc&name=xfxs&value=shizxdbxfjc&full=true&year=2020",
-    "矛盾分析预警预判_省内专项督办-县级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xfxs_xzxdbxfjc&name=xfxs&value=xzxdbxfjc&full=true&year=2020",
+    "矛盾分析预警预判_专项督办信访趋势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_zxdbxfjc&name=year&value=zxdbxfjc&year=[now-5,now]&full=true&Cqh=广东省",
+    "矛盾分析预警预判_国家专项督办信访总量$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_gjzxdbxfjc&value=gjzxdbxfjc&full=true&year=2020&Cqh=广东省",
+    "矛盾分析预警预判_国家专项督办信访饼图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_xfxs_gjzxdbxfjc&name=xfxs&value=gjzxdbxfjc&full=true&year=2020&Cqh=广东省",
+    "矛盾分析预警预判_省内专项督办-省级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_xfxs_shezxdbxfjc&name=xfxs&value=shezxdbxfjc&full=true&year=2020&Cqh=广东省",
+    "矛盾分析预警预判_省内专项督办-市级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_xfxs_shizxdbxfjc&name=xfxs&value=shizxdbxfjc&full=true&year=2020&Cqh=广东省",
+    "矛盾分析预警预判_省内专项督办-县级$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cy_xj_xfxs_xzxdbxfjc&name=xfxs&value=xzxdbxfjc&full=true&year=2020&Cqh=广东省",
 
     # 矛盾分析预警预判-预警预测
     "矛盾分析预警预判_预警预测_预警地图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_xj_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=广东省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=a,b,c,d&reindex=4&param_trans=qh_godown",

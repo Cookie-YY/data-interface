@@ -540,13 +540,36 @@ name/stack/value：
 
 
 #################### 2020-12-07  2020-12-11 ####################
-
-2. /api/gd_id/?mode=create&name=xx_xx_xx_&value=sadfdsafdsafdsaf
-3. /api/gd_id/?mode=query&
+2. /api/gd_id/xf?mode=create&name=xx_xx_xx_&value=sadfdsafdsafdsaf
+3. /api/gd_id/xf?mode=query&            /api/data/xf
 4. 【付尧】预测：分市分一级内容  （cm）  xf_xfj_cm_shij_yjnr_xfjc
 5. 【付尧】预警：信访量/进京访/赴省访/集体访（4个接口）   件次/同比/环比/预警状态
         【萱萱】1. 目前是cm-->cd
         【付尧】2. 这四个里面有几个告警/几个异常/几个平稳
-6. 广东问题：
-7. 云南旭日图的嵌套格式
+6. 【已解决】广东问题：
+7. 云南旭日图的嵌套格式&limit=3    当嵌套格式的时候，limit指的是最外层的分类：yjnr要前三 ejnr
 8. 开发一个工具：将写好的表名，按照一定规则把表初始化到数据库，并可选是否随机初始化一些值
+9. 判断权限
+    1. 将gd_id的插件格式都加一个table参数，用来告诉qh2sheshixj
+    2. 接口中没有Cqh，统一加上
+    3. 如果接口的cookie超过了传的Cqh，就降级成接口cookie的Cqh
+    4. 【弹窗同级的处理】 写三个param_trans 处理三个弹窗的权限
+10. 插件过程增加report
+11. extra_index里面 兼容 = <==> @to:  [如果直接替换=，会把predict(7d+q=1)替换掉]
+12. 四级登记机构的权限控制不太一样
+    国家
+        Cqh判断是省级: djjg=国家
+        Cqh判断是市级:
+        Cqh判断是县级:
+    省级
+        Cqh判断是省级: djjg=省级
+        Cqh判断是市级:
+        Cqh判断是县级:
+    市级
+        Cqh判断是省级: djjg=市级
+        Cqh判断是市级: djjg=市级 & IN-Cqh=当前市
+        Cqh判断是县级:
+    县级
+        Cqh判断是省级: djjg=县级
+        Cqh判断是市级: djjg=县级 & IN-Cqh=当前市所属的所有县
+        Cqh判断是县级: djjg=县级 & IN-Cqh=当前县

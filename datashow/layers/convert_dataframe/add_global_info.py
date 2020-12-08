@@ -8,5 +8,5 @@ def add_global_info(data_frame_list, results):
         table_list.extend(dataframe["table"])
         req_list.append(dataframe["req"])
     results["table"] = get_unilist(table_list)
-    results["req"] = get_unilist(req_list)
+    # results["req"] = get_unilist(req_list)
     return results

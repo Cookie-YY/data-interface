@@ -11,25 +11,25 @@ import pandas as pd
 import numpy as np
 
 
-class Cjzb(Extension):
-    """预警状态"""
+class Chuj(Extension):
+    """初件"""
     """
     计算公式：
-        当同比或环比的绝对值超过20%即为告警，绝对值超过10%即为异常，否则为平稳
+        总数-重件
 
     """
 
     def __init__(self, apis_copy, apis, *args, **kwargs):
         # 执行父类方法，获得self.apis/self.apis_copy/self.value
-        super(Cjzb, self).__init__(apis_copy, apis, *args, **kwargs)  # 执行父类方法，获得self.apis/self.apis_copy
+        super(Chuj, self).__init__(apis_copy, apis, *args, **kwargs)  # 执行父类方法，获得self.apis/self.apis_copy
 
     def before_search(self):
         self._before_search()  # 此时self.before_waiting_for_search中就有了最基本的内容
-        self.before_waiting_for_search.append(self.before_waiting_for_search[0].copy())
-        self.before_waiting_for_search[1]["table"] = self.apis_copy.get("table").replace("cfxfbz_", "")
-        self.before_waiting_for_search[1]["ex_table"] = None
+        # self.before_waiting_for_search.append(self.before_waiting_for_search[0].copy())
+        self.before_waiting_for_search[0]["table"] = self.apis_copy.get("table").replace("cfxfbz_", "")
+        self.before_waiting_for_search[0]["ex_table"] = None
 
-        self.code, self.msg, self.waiting_for_search = Cjzb.get_waiting_for_search(self.before_waiting_for_search)
+        self.code, self.msg, self.waiting_for_search = Chuj.get_waiting_for_search(self.before_waiting_for_search)
 
     def after_search(self):
         """
@@ -37,20 +37,22 @@ class Cjzb(Extension):
         :return:
         """
         # 获取结果
-        self.db_results[0][0] = Extension.groupby_and_sum(self.db_results[0][0], self.value)
+        from flask import g
+        df_chongjian = g.get("df")
+        df_all = Extension.groupby_and_sum(self.db_results[0][0], self.value)
         # self.db_results[0][1] = Extension.groupby_and_sum(self.db_results[0][1], self.value)
-        self.db_results[1][0] = Extension.groupby_and_sum(self.db_results[1][0], self.value)
+        # self.db_results[1][0] = Extension.groupby_and_sum(self.db_results[1][0], self.value)
         # self.db_results[1][1] = Extension.groupby_and_sum(self.db_results[1][1], self.value)
 
-        if isinstance(self.db_results[0][0], pd.DataFrame) and self.db_results[0][0].shape[1] == 1 and \
-                self.db_results[0][0][self.value][0] is None:
-            self.db_results[0][0] = np.int32(0)
+        if isinstance(df_chongjian, pd.DataFrame) and df_chongjian.shape[1] == 1 and \
+                df_chongjian[self.value][0] is None:
+            df_chongjian = np.int32(0)
         # if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1].shape[1] == 1 and \
         #         self.db_results[0][1][self.value][0] is None:
         #     self.db_results[0][1] = np.int32(0)
-        if isinstance(self.db_results[1][0], pd.DataFrame) and self.db_results[1][0].shape[1] == 1 and \
-                self.db_results[1][0][self.value][0] is None:
-            self.db_results[1][0] = np.int32(0)
+        if isinstance(df_all, pd.DataFrame) and df_all.shape[1] == 1 and \
+                df_all[self.value][0] is None:
+            df_all = np.int32(0)
         # if isinstance(self.db_results[1][1], pd.DataFrame) and self.db_results[1][1].shape[1] == 1 and \
         #         self.db_results[1][1][self.value][0] is None:
         #     self.db_results[1][1] = np.int32(0)
@@ -59,45 +61,42 @@ class Cjzb(Extension):
         # df_tb = df_hb.rename(columns={self.value: "tb"})
         # df_hb = df_hb.rename(columns={self.value: "hb"})
 
-        df_cfxfbz = self.db_results[0][0]
-        df_all = self.db_results[1][0]
-
-        self.apis_copy["value"] = "zb"
-        if not isinstance(df_cfxfbz, pd.DataFrame) or not isinstance(df_cfxfbz, pd.DataFrame):
-            self.df = pd.DataFrame({"zb": [df_cfxfbz / df_all]})
+        # self.apis_copy["value"] = "zb"
+        if not isinstance(df_chongjian, pd.DataFrame) or not isinstance(df_all, pd.DataFrame):
+            self.df = pd.DataFrame({"xfjc": [df_all - df_chongjian]})
             return
 
-        on_list = list(df_cfxfbz.columns)
+        on_list = list(df_chongjian.columns)
         on_list.remove("xfjc")
         # self.apis_copy["value"] = "yjzt"
         # 如果on_list为空，说明不需要merge，只有一行，返回预警状态即可
         if not on_list:
-            self.df = pd.DataFrame({"zb": [df_cfxfbz["xfjc"][0]/df_all["xfjc"][0]]})
+            self.df = pd.DataFrame({"xfjc": [df_all["xfjc"][0]-df_chongjian["xfjc"][0]]})
             return
 
         else:
-            code, msg, df_cfxfbz = merge_initialized_table({"df": df_cfxfbz, "value": "tb"})  # 融合数据表：加 处理了day的初始化问题
+            code, msg, df_chongjian = merge_initialized_table({"df": df_chongjian, "value": "xfjc"})  # 融合数据表：加 处理了day的初始化问题
             if code != 200:
                 self.code = code
                 self.msg = msg
                 return
-            code, msg, df_all = merge_initialized_table({"df": df_all, "value": "hb"})  # 融合数据表：加 处理了day的初始化问题
+            code, msg, df_all = merge_initialized_table({"df": df_all, "value": "xfjc"})  # 融合数据表：加 处理了day的初始化问题
             if code != 200:
                 self.code = code
                 self.msg = msg
                 return
             df_all = df_all.rename(columns={self.value: "all"})            
-            zb_df = pd.merge(df_cfxfbz, df_all, how="left", on=on_list)
+            df_chujian = pd.merge(df_chongjian, df_all, how="left", on=on_list)
 
             def get_res(xfjc, all):
                 res = 0
                 if xfjc * all:
-                    res = xfjc / all
+                    res = xfjc - all
                 return res
 
-            zb_df["zb"] = zb_df.apply(lambda x: get_res(x[self.value], x["all"]), axis=1)
+            df_chujian["xfjc"] = df_chujian.apply(lambda x: get_res(x[self.value], x["all"]), axis=1)
 
-            zb_df = zb_df.drop(['xfjc', 'all'], axis=1)  # drop不会就地修改，创建副本返回
+            zb_df = df_chujian.drop(['all'], axis=1)  # drop不会就地修改，创建副本返回
             self.df = zb_df
 
         # self.apis_copy["value"] = "yjzt"  # 不能放到前面，tb/hb解析的时候接受的db_results中的列名并没有改

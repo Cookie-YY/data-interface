@@ -65,7 +65,7 @@ class Yjzt(Extension):
             self.df = pd.DataFrame({"yjzt": [res]})
             return
 
-        df_tb = df_hb.rename(columns={self.value: "tb"})
+        df_tb = df_tb.rename(columns={self.value: "tb"})
         df_hb = df_hb.rename(columns={self.value: "hb"})
         on_list = list(df_hb.columns)
         on_list.remove("hb")
@@ -93,9 +93,9 @@ class Yjzt(Extension):
             thb_df = pd.merge(df_tb, df_hb, how="left", on=on_list)
 
             def get_res(tb, hb):
-                if tb > 2 or hb > 2:
+                if abs(tb) > 0.2 or abs(hb) > 0.2:
                     return "告警"
-                elif tb > 1 or hb > 1:
+                elif abs(tb) > 0.1 or abs(hb) > 0.1:
                     return "预警"
                 return "平稳"
 
