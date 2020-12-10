@@ -32,3 +32,4 @@ class ConfigCheck:
                      "named [shej_02+shij_02+xj_02] or [shij_02+xj_02] in config INITIALIZATION_FILE_PATH")
 
     # plgin的检查：从check_plugin中拿出来
+    # 开了LEVEL_AUTH 但是没有 LEVEL_AUTH_MAP 或者 没有 LEVEL_AUTH_PARAM和LEVEL_AUTH_COOKIE

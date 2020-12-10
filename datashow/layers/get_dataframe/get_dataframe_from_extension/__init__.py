@@ -14,7 +14,7 @@ def get_dataframe_from_extension(apis_copy, apis):
     extension_setting = __import__(module_path, globals(), locals(), [extension_class])  # 导入extension
     Ext = getattr(extension_setting, extension_class)
 
-    # 0.2 解析参数
+    # 0.2 解析transformer参数
     params_with_parentheses = transformer.replace(extension_module, "")
     params = params_with_parentheses.strip("(").strip(")").split("+")  # params=["7d"]    params=["7d", "p=1", "q=2"]
     kwargs = {param.split("=")[0]: param.split("=")[1] for param in params if "=" in param}

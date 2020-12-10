@@ -14,6 +14,6 @@ def authentication(request_args):
         if LEVEL_AUTH_PARAM:
             g.level_auth = request_args.get(LEVEL_AUTH_PARAM, "")
         if not g.level_auth and LEVEL_AUTH_COOKIE:
-            g.level_auth = request.cookies.get(LEVEL_AUTH_PARAM, "")
+            g.level_auth = request.cookies.get(LEVEL_AUTH_COOKIE, "")
 
     return 200, "success", {}

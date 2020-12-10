@@ -41,7 +41,7 @@ def get_sql_map(flag):
         # 区划分布 --> 全部 --> 信访部门 （xx市） 【一个数】
         "jssllv_qh_all_xfbm_shij": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['1-4-全']} as a where a.region_name='{{Cqh}}'",
-            ["slqk", "xfjc"]),
+            ["jssllv", "xfjc"]),
         # 区划分布 --> 全部 --> 信访部门 （xx市） 【三种情况】 *
         "jssllv_qh_all_xfbm_shij_nums": (
             f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['1-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc'  FROM {base_sql_map['1-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['1-4-全']} as a where a.region_name='{{Cqh}}'",
@@ -65,7 +65,7 @@ def get_sql_map(flag):
         # 区划分布 --> 全部 --> 责任单位 （xx市） 【一个数】
         "jssllv_qh_all_zrdw_shij": (
             f"select a.jssl/a.zs as jssllv from {base_sql_map['2-4-全']} as a where a.region_name='{{Cqh}}'",
-            ["slqk", "xfjc"]),
+            ["slqk", "jssllv"]),
         # 区划分布 --> 全部 --> 责任单位 （xx市） 【三种情况】 *
         "jssllv_qh_all_zrdw_shij_nums": (
             f"SELECT case a.jssl when a.jssl then '及时受理' end as slqk,a.jssl as 'xfjc' FROM {base_sql_map['2-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqsl when a.cqsl then '超期受理' end as slqk ,a.cqsl as 'xfjc'  FROM {base_sql_map['2-4-全']} as a WHERE a.region_name='{{Cqh}}' UNION SELECT case a.cqwsl when a.cqwsl then '超期未受理' end as slqk ,a.cqwsl as 'xfjc' FROM {base_sql_map['2-4-全']} as a where a.region_name='{{Cqh}}'",
@@ -236,7 +236,7 @@ class Jssllv(Extension):
         if g.get('reqdicts_before_pt').get('bmjb', "") == '省级':
             bmjb = 'shej_02'
         elif g.get('reqdicts_before_pt').get('bmjb', "") == '市级':
-            bmjb = 'shi_02'
+            bmjb = 'shij_02'
         elif g.get('reqdicts_before_pt').get('bmjb', "") == '县级':
             bmjb = 'xj_02'
         else:
@@ -271,8 +271,9 @@ class Jssllv(Extension):
         self.apis_copy['value'] = 'jssllv'
         if sql_item.endswith('nums'):
             self.apis_copy['value'] = 'xfjc'
-        full_sql =sql.format(**g.get("reqdicts_before_pt")).format(**self.apis_copy)
-        results = fx_engine.execute(sql.format(**g.get("reqdicts_before_pt")).format(**self.apis_copy))
+        qh_maybe = self.apis_copy.get("xfbm", "").replace("信访局", "")
+        sql = sql.format(**g.get("reqdicts_before_pt")).format(**self.apis_copy).format(Cqh=qh_maybe)
+        results = fx_engine.execute(sql)
         # results = fx_engine.execute(sql)
         data = results2df(results, columns)
         self.df = data

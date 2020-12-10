@@ -52,6 +52,11 @@ def parse_data(realm, index, request_args):
         from flask import g
         g.req_str = "&".join([f"{k}={v}" for k, v in api_dict.items() if v])
 
+        if g.get("debug"):
+            if g.get("debug") == str(len(data_frame_list)+1):
+                return 999, "调试模式", {main_name: request.base_url + "?" + "&".join(
+                    [f"{k}={v}" for k, v in api_dict.items() if v and k != "debug"])}
+
         # 3.查询层(apis   -> pandas)
         code, msg, dataframe = get_dataframe(api_dict)  # 返回df
         if code != 200:

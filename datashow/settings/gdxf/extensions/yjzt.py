@@ -96,7 +96,7 @@ class Yjzt(Extension):
                 if abs(tb) > 0.2 or abs(hb) > 0.2:
                     return "告警"
                 elif abs(tb) > 0.1 or abs(hb) > 0.1:
-                    return "预警"
+                    return "异常"
                 return "平稳"
 
             # ycthb_df["yjzt"] = "平稳"

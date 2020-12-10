@@ -752,7 +752,7 @@ sql_2_5_all = """(select
       and x.xfxsdm in ('100','200','300','303','600')
   ) t
   on (t.qxmcdm = r.org_code or t.djjgdm = r.org_code)
-where r.region_name={Cqh}  
+where r.region_name='{Cqh}'  
 group by r.region_name,r.org_code)"""
 
 sql_2_5_xfxs = """(select 
@@ -806,5 +806,5 @@ sql_2_5_xfxs = """(select
       and x.xfxsdm in ('100','200','300','303','600')
   ) t
   on (t.qxmcdm = r.org_code or t.djjgdm = r.org_code)
-where r.region_name={Cqh}  
+where r.region_name='{Cqh}'  
 group by r.region_name,r.org_code,xfxs)"""

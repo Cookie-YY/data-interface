@@ -10,18 +10,22 @@ def search_sb(conn, sql, value1, value2):
         pre = '<span class="index" style="color: #F2DE58;">'
         post = '</span>'
         cur = conn.cursor()
-        cur.execute(sql % value1)  # 查询数据
+        sql1 = sql % value1
+        cur.execute(sql1)  # 查询数据
         res = cur.fetchall()  # 获取结果
         total_num = res[0][0]
-        cur.execute(sql % value2)  # 查询数据
+        sql2 = sql % value2
+        cur.execute(sql2)  # 查询数据
         res = cur.fetchall()  # 获取结果)
         last_total_num = res[0][0]
         if last_total_num == None:
-            total_num = str(total_num) if total_num != None else str(0)
-            tb = str(0)
+            total_num = str(int(total_num)) if total_num != None else "0"
+            tb = "0.00"
             total_num, tb = f'{pre}{total_num}{post}', f'{pre}{tb}{post}'
         else:
-            tb = str(int(total_num) / last_total_num)  # 同比
+            tb = int(total_num) / last_total_num  # 同比
+            from app import app
+            tb = round(tb, app.config.get("SIGNIFICANT_DIGITS", 4))
         return f'{pre}{total_num}{post}', f'{pre}{tb}{post}'
     except Exception as e:
         print(e)
@@ -30,6 +34,10 @@ def search_sb(conn, sql, value1, value2):
 def run(start, end, zt, zb_pymysql, **kwargs):
     s_time = start
     e_time = end
+    sql_qhauth_sheshixj = kwargs.get("sql_qhauth_sheshixj")
+    sql_qhauth_qh = kwargs.get("sql_qhauth_qh")
+    sql_qhauth_djjg_qh = kwargs.get("sql_qhauth_other").get("djjg_qh")
+    qh = sql_qhauth_qh.replace("'", "").replace("qh","").replace("=","").strip()
     s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d %H:%M:%S")
     e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d %H:%M:%S")
     str1 = s_time1.strftime("%Y{y}%m{m}%d{d}").format(y="年", m="月", d="日")
@@ -40,16 +48,17 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     total_time = str1 + "至" + str2  # 具体时间
     now_time = datetime.datetime.now().strftime("%Y-%m-%d")
 
-    sql = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfjc where zt='"+zt+"' and `day` >= '%s' AND `day` <= '%s' "
-    sql_xfxs = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfxs_xfjc where zt='"+zt+"' and xfxs='%s' AND `day` >= '%s' AND `day` <= '%s' "
-    sql_djjg = "select sum(xfjc) from xf_xfj_cd_zt_qh_djjg_xfjc where zt='"+zt+"' and djjg='%s' AND `day` >= '%s' AND `day` <= '%s' "
-    sql_jtf = "select sum(xfjc) from xf_xfj_cd_zt_xj_jtf_xfjc where zt='"+zt+"' and jtf='集体访' AND `day` >= '%s' AND `day` <= '%s' "
+    sql = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfjc where zt='"+zt+"' and `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_sheshixj} "
+    sql_xfxs = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfxs_xfjc where zt='"+zt+"' and xfxs='%s' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_sheshixj} "
+    sql_xfxs_wx = "select sum(xfjc) from xf_xfj_cd_zt_xj_xfxs_xfjc where zt='"+zt+"' and xfxs!='来信' and xfxs !='来访' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_sheshixj} "
+    sql_djjg = "select sum(xfjc) from xf_xfj_cd_zt_qh_djjg_xfjc where zt='"+zt+"' and djjg='%s' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_djjg_qh} "
+    sql_jtf = "select sum(xfjc) from xf_xfj_cd_zt_xj_jtf_xfjc where zt='"+zt+"' and jtf='集体访' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_sheshixj} "
     # 全省-同比
     total_num, tb_qs = search_sb(zb_pymysql, sql, (s_time, e_time), (last_s_time, last_e_time))
     # xfxs_tb
     total_num_lx, tb_lx = search_sb(zb_pymysql, sql_xfxs, ('来信', s_time, e_time), ('来信', last_s_time, last_e_time))
     total_num_lf, tb_lf = search_sb(zb_pymysql, sql_xfxs, ('来访', s_time, e_time), ('来访', last_s_time, last_e_time))
-    total_num_wx, tb_wx = search_sb(zb_pymysql, sql_xfxs, ('网信', s_time, e_time), ('网信', last_s_time, last_e_time))
+    total_num_wx, tb_wx = search_sb(zb_pymysql, sql_xfxs_wx, (s_time, e_time), (last_s_time, last_e_time))
     # djjg_tb
     total_num_gj, tb_gj = search_sb(zb_pymysql, sql_djjg, ('国家', s_time, e_time), ('国家', last_s_time, last_e_time))  # 国家
     total_num_fsf, tb_fsf = search_sb(zb_pymysql, sql_djjg, ('省级', s_time, e_time), ('省级', last_s_time, last_e_time))  # 赴省访
@@ -63,7 +72,7 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     path = app.config["FILE_PATH"]
 
     # 标题
-    title = f'<h class="wrapper_title" style="display: block;width: 100%;font-size: 0.4rem;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align: center">广东省{zt}信访专题分析报告</h></h>'
+    title = f'<h class="wrapper_title" style="display: block;width: 100%;font-size: 0.4rem;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align: center">{qh}{zt}信访专题分析报告</h></h>'
     # 导出
     dc = f'<a class="dc" href="{report_url}" style="width: 1.2rem;height: 0.4rem;line-height: 0.4rem;position: fixed;right: 4rem;top: 2.2rem;font-size: 0.2rem;border-radius: 3rem;border: 1px solid #155E95;background:#010816;font-weight: 700;text-shadow: 0 0 5px #0cafc9;color: #ffffff;text-align:center;">导出</a>'
     # 生成时间
@@ -80,7 +89,7 @@ def run(start, end, zt, zb_pymysql, **kwargs):
                  f'<span class="time_span" style="text-indent: 0.2rem;height: 0.3rem;color: #F2DE58;font-size: 0.2rem;line-height: 0.3rem;margin: 0.1rem;">' \
                  f'{total_time}</span>' \
                  f'<span class="time_span" style="color: #B9E4E9;height: 0.3rem;font-size: 0.2rem;line-height: 0.3rem;margin: 0.1rem;">，' \
-                 f'全省信访系统共登记受理{zt}类信访件{total_num}件次，同比浮动{tb_qs}%。</span>' \
+                 f'{qh}信访系统共登记受理{zt}类信访件{total_num}件次，同比浮动{tb_qs}%。</span>' \
                  f'</p>'
     para1 = para1_title + para1_body
 

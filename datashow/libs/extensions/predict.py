@@ -72,15 +72,6 @@ class Predict(Extension):
             df = pd.DataFrame({self.value: [df[self.value].sum()]})
         else:
             pass
-
-        # 4.ext=tb/hb
-
-
-        # 5.ext=yjzt
-
-
-
-
         self.df = df
         g.predict_df = df
 
@@ -130,14 +121,13 @@ class Predict(Extension):
         pdates = pd.date_range(start=self.apis_copy.get("day").split(",")[0], end=self.apis_copy.get("day").split(",")[1])
 
         # 用于预测的数据中补零的策略
+        df = df.reindex(pdates, fill_value=0)
         from app import app
         strategy, ratio = app.config["PREDICT_STRATEGY_FILL_NA"]
         if strategy == "mean":
             fill_na = df[self.value].mean()
-        else:
-            fill_na = 0
-        df = df.reindex(pdates, fill_value=0)
-        df[self.value] = df[self.value].apply(lambda x: random.uniform(fill_na-df[self.value].mean(), fill_na+df[self.value].mean()) if x==0 else x)
+            swag = fill_na * ratio
+            df[self.value] = df[self.value].apply(lambda x: random.uniform(fill_na-swag, fill_na+swag) if x == 0 else x)
 
         # 如果外界指定参数，直接越过模型搜索
         p = int(self.kwargs.get("p", -1))  # 传递p和q就不用搜索了

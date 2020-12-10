@@ -33,7 +33,7 @@ init_project.init_project()  # 初始化项目
 # 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/', methods=['GET'])
 @app.route("/api/<string:realm>/", methods=['GET'])
-@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.full_path)
+@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE"))+":"+request.full_path)
 def data_index_api(realm, index=""):
     request_args = dict(request.args)
     # 兼容可能的解析请求参数时得到列表：部署时使用的anaconda3中的环境会解析成列表
@@ -84,7 +84,7 @@ dp_url_re = "'"+"|".join(dp_urls)+"'"
 @app.route(f"/<re({dp_url_re}):dp>/")  # 路径只有一个值时：需要满足自定义的大屏路径
 def get_index(dp):
     from layers.api_gateway import authentication
-    authentication(request.args.copy())
+    authentication(request.args.copy())  # 将level_auth写入g，如果有的话
     index_path = f"{dp}/index.html" if len(dp_dirs) > 1 else "index.html"
     resp = render_template(index_path)
     resp = Response(resp)

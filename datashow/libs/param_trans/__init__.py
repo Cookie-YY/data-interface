@@ -7,14 +7,33 @@ class ParamTrans:
 
     def qh2sheshixj(self, *args, **kwargs):
         table = self.apis_copy.get("table", "")
-        qh = self.apis_copy.get("Cqh", "")
+        qh = self.apis_copy.get("Cqh", "")     # 此时的qh已经是经过权限过滤的了
+        qh_ceiling = g.get("level_auth_name")
+        # 如果有权限控制直接把sql_qh_auth写成ceiling【防止那种接口不传Cqh的可能(在sql_qhauth中可以拿到ceiling的权限)】
+        if qh_ceiling:
+            sql_sqlauth_qh = f"qh = '{qh_ceiling}'"
+            from utils.qh_processor import get_qh_level
+            qh_level = get_qh_level(qh_ceiling)  # xj_02时 只有xj_02=xx县 没有shij_02
+            sql_sqlauth_sheshixj = f"{qh_level} = '{qh_ceiling}'"
+
+            if "qh" in table:
+                update_dict = {"sql_qhauth_auto": sql_sqlauth_qh, "sql_qhauth_qh": sql_sqlauth_qh}
+            elif "shej" in table or "shij" in table or "xj" in table:
+                update_dict = {"sql_qhauth_auto": sql_sqlauth_sheshixj, "sql_qhauth_sheshixj": sql_sqlauth_sheshixj}
+            else:
+                update_dict = {"sql_qhauth_qh": sql_sqlauth_qh, "sql_qhauth_sheshixj": sql_sqlauth_sheshixj}
+            self.apis_copy.update(update_dict)
+
+        # 正常的转换操作，通过转换得到的qh也会再次作用在sql_qhauth上
         if qh:
             if "qh" in table:
-                update_dict = {"sql_qh": f"qh = '{qh}'"}
-            elif "shej" in table or "shij" in table or "xj" in table:
+                sql_sqlauth_qh = f"qh = '{qh}'"
+                update_dict = {"sql_qhauth_auto": sql_sqlauth_qh, "sql_qhauth_qh": sql_sqlauth_qh}
+            elif "shej" in table or "shij" in table or "xj" in table:  # 这里不能删除Cqh，其他的pt还要用，最后统一删除
                 from utils.qh_processor import get_qh_level
                 qh_level = get_qh_level(qh)  # xj_02时 只有xj_02=xx县 没有shij_02
-                update_dict = {qh_level: qh, "sql_qh": f"{qh_level} = '{qh}'"}
+                sql_sqlauth_sheshixj = f"{qh_level} = '{qh}'"
+                update_dict = {qh_level: qh, "sql_qhauth_auto": sql_sqlauth_sheshixj, "sql_qhauth_sheshixj": sql_sqlauth_sheshixj}
             else:
                 return self
             self.apis_copy.update(update_dict)
@@ -78,7 +97,7 @@ class ParamTrans:
     def before_finish(self, *args, **kwargs):
         # 1. 存在qh 但 区划体系是  shej/shij/xj时，删除qh
         qh = self.apis_copy.get("Cqh", "")
-        table = self.apis_copy.get("table", "")
+        table = self.apis_copy.get("table", "") or self.apis_copy.get("qh", "")  # 可能不是用table的方式 使用拼接方式写的数据表
         if qh and ("shej" in table or "shij" in table or "xj" in table):
             self.apis_copy.pop("Cqh", "")
 

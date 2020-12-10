@@ -87,7 +87,7 @@ APIS_PLUGIN = [
         "zb_db_sql": """
         SELECT a.name, a.name as query, sum(a.value) as value from (select (CASE WHEN xfxs = '来信' THEN '来信'
         WHEN xfxs = '来访' THEN '来访'
-        ELSE '网信' END) as name, {v_select} as value, day, shej_02, shij_02, xj_02 from {v_table}) a where a.day between '{start}' and '{end}' and a.{sql_qh} group by a.name
+        ELSE '网信' END) as name, {v_select} as value, day, shej_02, shij_02, xj_02 from {v_table}) a where a.day between '{start}' and '{end}' and a.{sql_qhauth_auto} group by a.name
         """,
         "full": {"name": "xfxs", "value": [0], "query": "$name"}
     },
@@ -104,7 +104,7 @@ APIS_PLUGIN = [
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' and {sql_qh} group by yjnr 
+    select yjnr as name, yjnr as query, sum({v_select}) as value from {v_table} where day between '{start}' and '{end}' and {sql_qhauth_auto} group by yjnr 
     """,
         "full": {"name": "yjnr", "value": [0], "query": "$name"}
     },

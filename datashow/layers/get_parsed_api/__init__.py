@@ -38,7 +38,9 @@ def get_parsed_apis(api_dict):
 
     # 6.处理权限问题
     from layers.get_parsed_api.process_auth import process_auth
-    result_this = process_auth(result_this)
+    code, msg, result_this = process_auth(result_this)
+    if code != 200:
+        return code, msg, {}
 
     # 7.处理start/end
     for k, v in result_this.copy().items():

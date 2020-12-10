@@ -68,10 +68,10 @@ class Ycyjzt(Extension):
                 ycthb_df = pd.merge(yctb_df, ychb_df, how="left", on=on_list)
 
                 def get_res(tb, hb):
-                    if tb > 2 or hb > 2:
+                    if abs(tb) > 0.2 or abs(hb) > 0.2:
                         return "告警"
-                    elif tb > 1 or hb > 1:
-                        return "预警"
+                    elif abs(tb) > 0.1 or abs(hb) > 0.1:
+                        return "异常"
                     return "平稳"
 
                 # ycthb_df["yjzt"] = "平稳"

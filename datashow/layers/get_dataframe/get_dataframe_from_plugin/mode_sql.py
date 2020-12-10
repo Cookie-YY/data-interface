@@ -57,6 +57,7 @@ def get_value_mapped(df, value_map, format_pool_sql):
             new_column, old_column = column, column
         default = default.format(**format_pool_sql)
         if old_column in df:
+            format_pool_sql.pop("value","")
             df[new_column] = df[old_column].apply(lambda x: rule_one.format(value=x or default, **format_pool_sql))
     return df
 

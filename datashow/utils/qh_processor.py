@@ -33,6 +33,10 @@ def get_qh_level(target):
         return "xj_02"
 
 
+def get_qh_levelindex(target):
+    return list(qh_info.columns).index(get_qh_level(target))
+
+
 def get_qh_godown(qh):
     if qh in qh_info["shej_02"].tolist():
         return "shij_02"
@@ -42,3 +46,13 @@ def get_qh_godown(qh):
 
 def get_qh_include_sub(qh, sub="all"):
     return [qh] + get_qh_sub(qh, sub=sub)
+
+
+def get_qh_with_auth(qh, qh_ceiling):
+    if qh:
+        qh_level, qh_ceiling_level = get_qh_level(qh), get_qh_level(qh_ceiling)
+        qh_level_container = list(qh_info.columns)
+        if qh_level_container.index(qh_level) <= qh_level_container.index(qh_ceiling_level):
+            return qh_ceiling
+        return qh
+    return ""

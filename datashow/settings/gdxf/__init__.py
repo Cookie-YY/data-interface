@@ -69,7 +69,7 @@ LEVEL_AUTH_ENCRYPT = False
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
 # 有param_trans param_trans的开关才算打开，否则不走param_trans
 CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "full": ("true", None)}
-CUS_PARAM_TRANS = ["wx_map", "bm_godown", "zrdw_godown", "djjg"]
+CUS_PARAM_TRANS = ["wx_map", "xfbm_godown", "zrdw_godown", "djjg_qhauth", "xfbm_qhauth", "zrdw_qhauth", "xfbmsearch_qhauth", "zrdwsearch_qhauth"]
 
 ############################### 数据配置 ###############################
 # 随机化配置
@@ -114,10 +114,10 @@ RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 DISABLE_FULL_WHEN_NAME = ["xm"]
 
 # predict（ext）的参数
-# 最小可供预测的数据，否则返回均值
+# 最小可供预测的数据，否则将均值作为预测结果
 PREDICT_MIN_DATA = 20            # 用于预测的最小的训练集的样本量
 PREDICT_MIN_MULTI_DATA = 3       # 用于预测的最小的训练集的样本量的倍数，如，预测7天，最少需要21天
-PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准      震荡幅度(相对于均值)
+PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准("mean" or "zero")      震荡幅度(当zero时 幅度没用)
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
 

@@ -12,12 +12,8 @@ URL_REFERENCE = {
 SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict"]  # 系统内置extension
 
 # 程序内置param_trans
+# 以advanced开头的pt，系统会在最之前调用
 SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range"]
-# # extension过程中的初始化值
-# INITIALIZATION = {
-#     "ext_int": ["VALUE_FLOAT"],
-#     "ext_float": ["VALUE_FLOAT"]
-# }
 
 # 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
 # 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each
@@ -60,6 +56,9 @@ SYS_SPECIAL_PARAMS = {
     "time_format": (False, None),
     "ext": (False, None),
     "reindex": ("0", None),
-    "sql_qh": (False, None)  # 系统内部用于给sql模式传递qh条件(权限)
+    "sql_qhauth_auto": (False, None),         # 系统内部用于给sql模式传递qh条件(权限)
+    "sql_qhauth_qh": (False, None),           # 系统内部用于给sql模式传递qh条件(权限)
+    "sql_qhauth_sheshixj": (False, None),     # 系统内部用于给sql模式传递qh条件(权限)
+    "sql_qhauth_other": (False, None),        # 系统内部用于给sql模式传递qh条件(权限)
     # "reuse": ("none", "none|waiting_for_search|db_results|df")
 }
