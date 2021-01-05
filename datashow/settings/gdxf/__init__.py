@@ -9,15 +9,15 @@ import urllib.parse
 
 ############################## 数据库配置 ##############################
 # 分析库：业务表和码表的位置
-FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
+# FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 # FX_DB = 'mysql+pymysql://admin_xfxx3:%s@19.15.64.203:15133/zhxf_pre' % urllib.parse.unquote_plus('S65@aG3c')
-# FX_DB = 'mysql+pymysql://admin_xfxx1:%s@19.15.64.203:15132/zhxf_gd' % urllib.parse.unquote_plus('5JFGPNe@')
+FX_DB = 'mysql+pymysql://admin_xfxx1:%s@19.15.64.203:15132/zhxf_gd' % urllib.parse.unquote_plus('5JFGPNe@')
 # FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
-ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gdauth'
-# ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
-# ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_1021' % urllib.parse.unquote_plus("cDhZ2@zR")
+# ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gdauth'
+ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
+# ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_fzjc' % urllib.parse.unquote_plus("cDhZ2@zR")
 # ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
 
 
@@ -69,7 +69,7 @@ LEVEL_AUTH_ENCRYPT = False
 # 【系统的特殊参数在查表时检查，项目自定义的特殊参数在程序一开始和查表时都检查】
 # 有param_trans param_trans的开关才算打开，否则不走param_trans
 CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "full": ("true", None)}
-CUS_PARAM_TRANS = ["wx_map", "xfbm_godown", "zrdw_godown", "djjg_qhauth", "xfbm_qhauth", "zrdw_qhauth", "xfbmsearch_qhauth", "zrdwsearch_qhauth"]
+CUS_PARAM_TRANS = ["wx_map", "xfbm_godown", "zrdw_godown", "djjg_qhauth", "xfbm_qhauth", "zrdw_qhauth", "xfbmsearch_qhauth", "zrdwsearch_qhauth", "find_qh_from_xfbm", "last_day"]
 
 ############################### 数据配置 ###############################
 # 随机化配置
@@ -91,7 +91,7 @@ TIME_FORMAT = "%Y-%m-%d"
 
 # 时间的精确配置
 DATE_START = "00:00:00"
-DATE_END = "00:00:00"
+DATE_END = "23:59:59"
 
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
 # get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
@@ -105,13 +105,11 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj"]
-
-# 有关联关系的字段
-RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj", "cfxflv"]
 
 # 禁止full的情况
 DISABLE_FULL_WHEN_NAME = ["xm"]
+DISABLE_FULL_WHEN_VALUE = ["shej_02", "shij_02", "xj_02"]
 
 # predict（ext）的参数
 # 最小可供预测的数据，否则将均值作为预测结果

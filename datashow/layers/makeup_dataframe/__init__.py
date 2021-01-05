@@ -29,14 +29,16 @@ def makeup_dataframe(dataframe):
 
         # 排序补零：
         from app import app
-        if dataframe.get("full") == "true" and dataframe.get("name", "") not in app.config.get("DISABLE_FULL_WHEN_NAME", []):
+        if dataframe.get("full") == "true" \
+                and dataframe.get("name", "") not in app.config.get("DISABLE_FULL_WHEN_NAME", []) \
+                and dataframe.get("value", "") not in app.config.get("DISABLE_FULL_WHEN_VALUE", []):
             code, msg, df = merge_initialized_table(dataframe)  # 融合数据表：加 处理了day的初始化问题
             if code != 200:
                 return 400, msg, {}
             dataframe["df"] = df
 
         # 重新排序+limit
-        if dataframe.get("order") or dataframe.get("limit"):
+        if (dataframe.get("order") or dataframe.get("limit")) and "," not in dataframe.get("name"):
             df = order_limit(dataframe)
             dataframe["df"] = df
 

@@ -21,7 +21,7 @@ def params_check_each(apis):
     # value
     index = checked_params.get("index")
     table = checked_params.get("table")
-    index_defalut = index.split("_")[0] if index else table.split("_")[-1]
+    index_defalut = index.split("_")[0] if index else table.replace("_zb", "").replace("_tb", "").replace("_hb", "").split("_")[-1]
     checked_params["value"] = apis_copy.get("value", index_defalut)
 
     # ceil_value

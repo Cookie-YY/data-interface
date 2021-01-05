@@ -140,7 +140,7 @@ def write_search_qh():
             shij_01 = row[1]
             shij_02 = row[0]
             for i in rows:
-                if i[1][0:5] == shij_01[0:5] and i[1] != shij_01:
+                if i[1][0:4] == shij_01[0:4] and i[1] != shij_01:
                     xj_01 = i[1]
                     xj_02 = i[0]
                     values = (shej_01, shej_02, shij_01, shij_02 , xj_01, xj_02)

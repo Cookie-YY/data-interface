@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../calculate/.idea/calculate.iml" filepath="$PROJECT_DIR$/../calculate/.idea/calculate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第45周2020.12.21/集成/convert_dataframe/.idea/convert_dataframe.iml" filepath="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第45周2020.12.21/集成/convert_dataframe/.idea/convert_dataframe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/重庆部署/cq_test/.idea/cq_test.iml" filepath="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/重庆部署/cq_test/.idea/cq_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../datacalculate/.idea/datacalculate.iml" filepath="$PROJECT_DIR$/../datacalculate/.idea/datacalculate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/datashow.iml" filepath="$PROJECT_DIR$/.idea/datashow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dev_tools/dispatch2front/.idea/dispatch2front.iml" filepath="$PROJECT_DIR$/../dev_tools/dispatch2front/.idea/dispatch2front.iml" />
       <module fileurl="file://$PROJECT_DIR$/../dev_tools/generate_tables/.idea/generate_tables.iml" filepath="$PROJECT_DIR$/../dev_tools/generate_tables/.idea/generate_tables.iml" />
     </modules>
   </component>

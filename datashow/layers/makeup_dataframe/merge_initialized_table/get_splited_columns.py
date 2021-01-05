@@ -1,7 +1,9 @@
+import os
+
 from flask import g
 
 
-def get_splited_columns(dataframe, INITIALIZATION):
+def get_splited_columns(dataframe):
     """
     1. 找到有关系的列
     找到有关系的列，直接把对应的关系表丢进dict{"关系表名":"（仿linux权限设计）"}，返回这个dict
@@ -15,7 +17,9 @@ def get_splited_columns(dataframe, INITIALIZATION):
     #     "xj_02": "shej_02+shij_02+xj_02",
     # }
     from app import app
-    RELATION_COLS = app.config.get("RELATION_COLS", [])  # "shej_02+shij_02+xj_02", "shej_02+shij_02+xj_02"
+    INITIALIZATION_FILE_PATH = app.config.get("INITIALIZATION_FILE_PATH")
+    RELATION_COLS = [i for i in os.listdir(INITIALIZATION_FILE_PATH) if "+" in i]
+    # RELATION_COLS = app.config.get("RELATION_COLS", [])  # ["shej_02+shij_02+xj_02", "shej_02+shij_02+xj_02"]
     RELATION_COLS = {col: table for table in RELATION_COLS for col in table.split("+")}
 
     # 2. 遍历所有列，拆分有联动和没有联动的列

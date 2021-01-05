@@ -1,6 +1,13 @@
 {
   "code": 200,
   "msg": "success",
+  "map": {
+    "value_g0_1": "求决",
+    "value_g1_1": "意见建议",
+    "value_g2_1": "揭发控告",
+    "value_g3_1": "申诉",
+    "value_g4_1": "其他"
+    },
   "data": [
   {
   "name": "1",
@@ -99,13 +106,7 @@
   "value_g4_1": 435
   }
   ],
-  "map": {
-  "value_g0_1": "求决",
-  "value_g1_1": "意见建议",
-  "value_g2_1": "揭发控告",
-  "value_g3_1": "申诉",
-  "value_g4_1": "其他"
-  },
+ 
   "table": [
   "xf_xfj_cm_shej_xfmd_xfjc"
   ]

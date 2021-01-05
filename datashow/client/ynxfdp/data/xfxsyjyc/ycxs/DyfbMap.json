@@ -4,67 +4,67 @@
   "data":[
     {
       "name": "昭通市",
-      "value": 123
+      "value":"告警"
     },
     {
       "name": "曲靖市",
-      "value": 7893
+      "value":"平稳"
     },
     {
       "name": "文山州",
-      "value": 8902
+      "value":"告警"
     },
     {
       "name": "昆明市",
-      "value": 345
+      "value":"平稳"
     },
     {
       "name": "红河州",
-      "value": 4567
+      "value":"平稳"
     },
     {
       "name": "玉溪市",
-      "value": 976
+      "value":"平稳"
     },
     {
       "name": "楚雄州",
-      "value": 6322
+      "value":"平稳"
     },
     {
       "name": "普洱市",
-      "value": 3142
+      "value":"平稳"
     },
     {
       "name": "西双版纳",
-      "value": 7932
+      "value":"平稳"
     },
     {
       "name": "临沧市",
-      "value": 8422
+      "value":"平稳"
     },
     {
       "name": "大理州",
-      "value": 345
+      "value":"告警"
     },
     {
       "name": "丽江市",
-      "value": 85
+      "value":"平稳"
     },
     {
       "name": "迪庆州",
-      "value": 6731
+      "value":"平稳"
     },
     {
       "name": "怒江州",
-      "value": 134
+      "value":"平稳"
     },
     {
       "name": "保山市",
-      "value": 134
+      "value":"异常"
     },
     {
       "name": "德宏州",
-      "value": 134
+      "value":"平稳"
     }
   ]
 }

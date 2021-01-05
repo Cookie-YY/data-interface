@@ -17,7 +17,7 @@ def process_paramtrans(api_dict):
 
             from app import app
             if func not in app.config["PARAM_TRANS"]:
-                return
+                return 400, f"the param_trans [{func}] need to be registered", {}
             pt = getattr(pt, func)(*args, **kwargs)
     pt.before_finish()
-    return pt.apis_copy
+    return 200, "success", pt.apis_copy

@@ -8,7 +8,9 @@ def check_plugin_args(plugin_apis):
     检查用户配置的 apis_plugins文件
     返回检查后的内容
     """
-    if len(plugin_apis) != 1:
+    if len(plugin_apis) == 0:
+        return 400, "No url in plugins can match gd_id", {}
+    if len(plugin_apis) > 1:
         return 400, "PluginLengthError: There are more than 1 plugin_config match", {}
     plugin_api = plugin_apis[0]
     fx_db_sql = plugin_api.get("fx_db_sql")

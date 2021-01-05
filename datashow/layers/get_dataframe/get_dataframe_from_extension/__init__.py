@@ -24,7 +24,7 @@ def get_dataframe_from_extension(apis_copy, apis):
     ext = Ext(apis_copy, apis, *args, **kwargs)
     code, msg, results = ext_executor(ext)
     if code != 200:
-        return code, msg, {}
+        return code, msg, results
     df, apis_copy = results["df"], results["apis_copy"] # 执行ext的方法
 
     # # 2.如果df是dataframe（不是np.int64） 且不只是一个列（只有一个列是只有value的情况）

@@ -3,7 +3,7 @@ import os
 import pandas as pd
 
 
-def get_relation_valuelist(re_col_file):
+def get_relation_valuelist(re_col_file, dataframe):
     from app import app
     INITIALIZATION_FILE_PATH = app.config["INITIALIZATION_FILE_PATH"]
     re_list = []  # [[["北京市", "海淀区"], ["北京市", "朝阳区"]], [["体育": "足球"], ["体育", "篮球"]]]
@@ -12,8 +12,14 @@ def get_relation_valuelist(re_col_file):
         re_df = pd.read_csv(os.path.join(INITIALIZATION_FILE_PATH, file_name), sep=app.config.get("INITIALIZATION_FILE_SEP", "\t"))
         re_cols.extend(re_df_cols)
 
+        # 筛选符合条件的数据
+        filter_cols = [i for i in dataframe if i in re_df.columns]
+        for col in filter_cols:
+            re_df[re_df_cols] = re_df[re_df_cols][re_df[col] == dataframe[col]]
+        res = re_df[re_df_cols].dropna()
+
         # 将这个df中所需要的列的取值，去重后放到全局取值中
-        tmp_re_list = [list(row) for index, row in re_df[re_df_cols].iterrows()]
+        tmp_re_list = [list(row) for _, row in res.iterrows()]
         from utils.get_unilist import get_unilist
         re_list.append(get_unilist(tmp_re_list))
 

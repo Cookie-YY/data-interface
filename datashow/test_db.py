@@ -1,7 +1,7 @@
-from itertools import product
-
-import pymysql
-import sqlalchemy
+# from itertools import product
+#
+# import pymysql
+# import sqlalchemy
 
 
 # conn = pymysql.connect(
@@ -90,7 +90,7 @@ import sqlalchemy
 # # print(df1.combine(df2, take_smaller))
 
 
-import pandas as pd
+# import pandas as pd
 
 
 
@@ -113,31 +113,56 @@ import pandas as pd
 # print(t)
 
 # 引用
-a = [1,2,3]
-b = a
-b.append(1)
-print(a)
+# a = [1,2,3]
+# b = a
+# b.append(1)
+# print(a)
+#
+# # 浅拷贝
+# a = [1,2,3]
+# b = a.copy()
+# b.append(1)
+# print(a)
+#
+# # 深拷贝
+# a = [1,2,[3]]
+# b = a.copy()
+# b[2].append(1)
+#
+# dt ={"Cqh": "广东省"}
+# sql = "aaaaa{Cqh}"
+#
+# t = f"selct from {sql.format(**{'Cqh': '广东省'})} where a={dt['Cqh']}"
+#
+# # t = t.format(**{"Cqh": "广东省"})
+# print(t)
+#
+# print(f"{{}}")
+#
+# tt = {"a": 1, "b": 1}
+# print(tt.copy())
 
-# 浅拷贝
-a = [1,2,3]
-b = a.copy()
-b.append(1)
-print(a)
 
-# 深拷贝
-a = [1,2,[3]]
-b = a.copy()
-b[2].append(1)
+def quick_sort2(array):
+    l, r = 0, len(array) - 1
+    if l >= r:
+        return
+    stack = []
+    stack.append(l)
+    stack.append(r)
+    while stack:
+        low = stack.pop(0)
+        high = stack.pop(0)
+        if high <= low:
+            continue
+        x = array[high]
+        i = low - 1
+        for j in range(low, high):
+            if array[j] <= x:
+                i += 1
+                array[i], array[j] = array[j], array[i]
+        array[i + 1], array[high] = array[high], array[i + 1]
+        stack.extend([low, i, i + 2, high])
 
-dt ={"Cqh": "广东省"}
-sql = "aaaaa{Cqh}"
-
-t = f"selct from {sql.format(**{'Cqh': '广东省'})} where a={dt['Cqh']}"
-
-# t = t.format(**{"Cqh": "广东省"})
-print(t)
-
-print(f"{{}}")
-
-tt = {"a": 1, "b": 1}
-print(tt.copy())
+t = [1,19,8,17,5,-1,-6]
+quick_sort2(t)

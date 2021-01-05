@@ -17,17 +17,8 @@ class PT(ParamTrans):
             self.apis_copy.update(update_dict)
         return self
 
-    @staticmethod
-    def _xfbm_or_zrdw_reader(flag):
-        from app import app
-        file = "shejxfbm+shijxfbm+xjxfbm" if flag == "xfbm" else "qh+zrdw"
-        path = app.config.get("INITIALIZATION_FILE_PATH")
-        sep = app.config.get("INITIALIZATION_FILE_SEP", "\t")
-        return pd.read_csv(os.path.join(path, file), sep=sep)
-
-
     def xfbm_godown(self, *args, **kwargs):
-        xfbm = PT._xfbm_or_zrdw_reader("xfbm")
+        xfbm = PT._init_file_reader("shejxfbm+shijxfbm+xjxfbm")
         target = self.apis_copy.get("xfbm")
         if target:
             childxfbm = []
@@ -51,7 +42,7 @@ class PT(ParamTrans):
                          '广东省民政厅', '广东省司法厅', '广东省人力资源和社会保障厅', '广东省生态环境厅', '广东省教育厅',
                          '广东省自然资源厅', '广东省科技厅', '广东省商务厅', '广东省退役军人事务厅']
             if self.apis_copy.get("Cqh") != "广东省":
-                zrdw = PT._xfbm_or_zrdw_reader("zrdw")
+                zrdw = PT._init_file_reader("qh+zrdw")
                 qh = self.apis_copy.get("Cqh")
                 zrdw_list = zrdw["zrdw"][zrdw["qh"] == qh].tolist()
             g.modified_initialization.update({"zrdw": zrdw_list})
@@ -91,7 +82,7 @@ class PT(ParamTrans):
         """
         qh_ceiling = g.get("level_auth_name")
         if qh_ceiling:
-            xfbm = PT._xfbm_or_zrdw_reader("xfbm")
+            xfbm = PT._init_file_reader("shejxfbm+shijxfbm+xjxfbm")
             target = self.apis_copy.get("xfbm")
             from utils.qh_processor import get_qh_levelindex
             qh_ceiling_index = get_qh_levelindex(qh_ceiling)
@@ -102,7 +93,7 @@ class PT(ParamTrans):
             else:
                 xfbm_qh_index = 2
             if xfbm_qh_index < qh_ceiling_index:
-                xfbm_list = xfbm.iloc[:,qh_ceiling_index][xfbm.iloc[:,qh_ceiling_index].str.contains(qh_ceiling)].tolist()
+                xfbm_list = xfbm.iloc[:, qh_ceiling_index][xfbm.iloc[:, qh_ceiling_index].str.contains(qh_ceiling)].tolist()
                 if len(set(xfbm_list)) == 1:
                     self.apis_copy["xfbm"] = xfbm_list[0]
                 # self.apis_copy["xfbm"] = qh_ceiling+"信访局"
@@ -121,7 +112,7 @@ class PT(ParamTrans):
         """
         qh_ceiling = self.apis_copy.get("Cqh")
         if qh_ceiling:
-            zrdw = PT._xfbm_or_zrdw_reader("zrdw")
+            zrdw = PT._init_file_reader("qh+zrdw")
             target = self.apis_copy.get("zrdw")
             qh = zrdw["qh"][zrdw["zrdw"] == target].tolist()
             if len(set(qh)) == 1:
@@ -157,8 +148,34 @@ class PT(ParamTrans):
         """
         qh_ceiling = g.get("level_auth_name")
         if qh_ceiling:
-            from utils.qh_processor import get_qh_include_sub, qh_info
+            from utils.qh_processor import get_qh_include_sub
             qh_list = get_qh_include_sub(qh_ceiling)
             self.apis_copy["IN-Cqh"] = ",".join(list(set(qh_list)))
+        return self
+
+    def find_qh_from_xfbm(self, *args, **kwargs):
+        keyword_map = {'shej': '省', 'shij': '市', 'xj': ['县', '区', '镇']}
+        xfbm = self.apis_copy.get("xfbm")
+        if not xfbm:
+            Cqh = g.get("level_auth_name")
+        else:
+            shej_index = xfbm.find('省')
+            shij_index = xfbm.find('市')
+            xj_index = [xfbm.find(k) for k in keyword_map['xj'] if k in xfbm] + [-1]
+            xj_index = xj_index[0]
+
+            shej_str = xfbm[:shej_index + 1]
+            shij_str = xfbm[shej_index + 1: shij_index + 1]
+            xj_str = xfbm[shej_index + 1:xj_index + 1] if shij_index < 0 else xfbm[shij_index + 1:xj_index + 1]
+
+            Cqh = xj_str or shij_str or shej_str
+
+        self.apis_copy["Cqh"] = Cqh
+        return self
+
+    def last_day(self, *args, **kwargs):
+        condition_day = self.apis_copy.get("day")
+        if condition_day and "," in condition_day:
+            self.apis_copy["day"] = condition_day.split(",")[-1].split()[0]+" 00:00:00"
         return self
 

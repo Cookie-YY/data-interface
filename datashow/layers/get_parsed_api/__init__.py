@@ -16,7 +16,7 @@ def get_parsed_apis(api_dict):
     if code != 200:
         return code, msg, {}
 
-    # 2.处理invalid问题
+    # 2.处理invalid问题[Pinvalid 或者 invalid]
     code, msg, result_this = process_invalid(result_this)
     if code != 200:
         return code, msg, {}
@@ -56,7 +56,9 @@ def get_parsed_apis(api_dict):
 
     # 8.处理param_trans
     from layers.get_parsed_api.process_paramtrans import process_paramtrans
-    result_this = process_paramtrans(result_this)
+    code, msg, result_this = process_paramtrans(result_this)
+    if code != 200:
+        return code, msg, {}
 
     # 9.处理$引用问题
     code, msg, result_this = process_dollar(result_this)

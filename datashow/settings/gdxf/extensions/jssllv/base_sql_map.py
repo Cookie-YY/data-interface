@@ -20,7 +20,9 @@ def get_base_sql_map():
         "2-4-全": sql_2_4_all,
         "1-5-全": sql_1_5_all,
         "1-6-全": sql_1_6_all,
-        '2-5-全': sql_2_5_all
+        '2-5-全': sql_2_5_all,
+        '2-6-全': sql_2_6_all,
+        '2-6-形式': sql_2_6_xfxs,
     }
     # 返回加载完毕的map
     return base_sql_map

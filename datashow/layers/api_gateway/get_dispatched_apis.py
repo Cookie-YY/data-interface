@@ -57,9 +57,10 @@ def check_graph_id_dict(graph_id_dict):
         url = url_dispatch_map.get(url.lstrip("$"))
         if url is None:
             return 400, f"GRAPHIDERROR: No such specific gd_id combinations {graph_id}", {}
-    # 如果是list或者dict直接当作数据返回[如果走了$, 这里检查的是拿到$引用的]
-    if isinstance(url, dict) or isinstance(url, list):
-        return 203, "success", {"data": url}
+    # 如果是dict直接当作数据返回[如果走了$, 这里检查的是拿到$引用的]
+    if isinstance(url, dict):
+        res = {"map": url.get("map", {}), "data": url.get("data", {})} if "map" in url else {"data": url.get("data", {})}
+        return 203, "success", res
     return 200, "success", url
 
 

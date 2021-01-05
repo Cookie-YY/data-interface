@@ -1,7 +1,7 @@
 import json
 import os
 
-from flask import Flask, request, Response, render_template, jsonify, send_from_directory, g
+from flask import Flask, request, Response, render_template, jsonify, send_from_directory, g, make_response
 from layers import parse_data, init_project  # get_parsed_data是所有的入口
 from settings import PROJECT   # 导入项目名称、内置extensions
 from flask_caching import Cache
@@ -33,7 +33,7 @@ init_project.init_project()  # 初始化项目
 # 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/', methods=['GET'])
 @app.route("/api/<string:realm>/", methods=['GET'])
-@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE"))+":"+request.full_path)
+@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE"), "")+":" + request.full_path)
 def data_index_api(realm, index=""):
     request_args = dict(request.args)
     # 兼容可能的解析请求参数时得到列表：部署时使用的anaconda3中的环境会解析成列表
@@ -57,10 +57,11 @@ def data_index_api(realm, index=""):
         elif code == 203:
             parsed_data["code"] = 203
             parsed_data["msg"] = "test data in apis_dispatch"
-    response = Response(json.dumps(parsed_data, default=lambda x: int(x)), mimetype='application/json')
+    response = make_response(json.dumps(parsed_data, default=lambda x: int(x)))
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = '*'
     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    # response = Response(response, mimetype='application/json')
     if app.config.get("LEVEL_AUTH"):
         if not request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE")) and g.get("level_auth"):
             response.set_cookie(app.config.get("LEVEL_AUTH_COOKIE"), g.level_auth)

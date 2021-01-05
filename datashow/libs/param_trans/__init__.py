@@ -1,9 +1,18 @@
 from flask import g
-
+import pandas as pd
+import os
 
 class ParamTrans:
     def __init__(self, apis_copy):
         self.apis_copy = apis_copy
+
+    @staticmethod
+    def _init_file_reader(file):
+        from app import app
+        # file = "shejxfbm+shijxfbm+xjxfbm" if flag == "xfbm" else "qh+zrdw"
+        path = app.config.get("INITIALIZATION_FILE_PATH")
+        sep = app.config.get("INITIALIZATION_FILE_SEP", "\t")
+        return pd.read_csv(os.path.join(path, file), sep=sep)
 
     def qh2sheshixj(self, *args, **kwargs):
         table = self.apis_copy.get("table", "")

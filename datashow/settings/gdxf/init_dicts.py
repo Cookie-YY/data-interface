@@ -56,6 +56,9 @@ INITIALIZATION = {
 
 
     "slqk":["及时受理","超期受理","超期未受理"],
+    "cpqk":["已评价","超期未评价"],
+    "myqk":["基本满意","满意","不满意"],
+    "wxqk":["网信","其他"],
     "cfxfbz": ["初件", "重件"],
     "lmj": ["联名件", "非联名件"],
     "jjf": ["进京访", "非进京访"],
@@ -76,6 +79,7 @@ INITIALIZATION = {
     "slxfjc": ["VALUE_INT"],
     "jssllv": ["VALUE_FLOAT"],
     "aqdflv":["VALUE_FLOAT"],
+    "cfxflv":["VALUE_FLOAT"],
     "cplv": ["VALUE_FLOAT"],
     "mylv": ["VALUE_FLOAT"],
     "wxzb": ["VALUE_FLOAT"],

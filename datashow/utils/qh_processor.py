@@ -1,4 +1,5 @@
 from app import app
+import pandas as pd
 qh_info = app.config["QH_INFO"]
 
 
@@ -25,11 +26,11 @@ def get_qh_sub(target, sub="all"):
 
 
 def get_qh_level(target):
-    if target in qh_info["shej_02"].tolist():
+    if target in qh_info.get("shej_02", pd.Series()).tolist():
         return "shej_02"
-    if target in qh_info["shij_02"].tolist():
+    if target in qh_info.get("shij_02", pd.Series()).tolist():
         return "shij_02"
-    if target in qh_info["xj_02"].tolist():
+    if target in qh_info.get("xj_02", pd.Series()).tolist():
         return "xj_02"
 
 
@@ -48,11 +49,14 @@ def get_qh_include_sub(qh, sub="all"):
     return [qh] + get_qh_sub(qh, sub=sub)
 
 
-def get_qh_with_auth(qh, qh_ceiling):
+def get_qh_with_auth(qh, qh_ceiling, table):
     if qh:
         qh_level, qh_ceiling_level = get_qh_level(qh), get_qh_level(qh_ceiling)
         qh_level_container = list(qh_info.columns)
         if qh_level_container.index(qh_level) <= qh_level_container.index(qh_ceiling_level):
             return qh_ceiling
         return qh
+    elif table == "" or ("qh" in table or "shej" in table or "shij" in table or "xj" in "table"):
+        if table not in ["search_qh"]:
+            return qh_ceiling
     return ""

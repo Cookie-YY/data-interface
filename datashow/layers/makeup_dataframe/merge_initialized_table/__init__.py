@@ -26,9 +26,9 @@ def merge_initialized_table(dataframe):
         return 200, "success", df
 
     # 1. 列拆分，获得没有联动的列  和  有联动的列的集合
-    no_re_col, re_col_file = get_splited_columns(df, INITIALIZATION)
+    no_re_col, re_col_file = get_splited_columns(df)
     # 2. 处理联动列的所有取值
-    re_list, re_col = get_relation_valuelist(re_col_file)  # re_list/re_col可能跨表存在
+    re_list, re_col = get_relation_valuelist(re_col_file, dataframe)  # re_list/re_col可能跨表存在
     # 3. 处理独立列的所有取值
     for item in no_re_col:
         if item not in INITIALIZATION:

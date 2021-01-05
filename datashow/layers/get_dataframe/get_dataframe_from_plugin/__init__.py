@@ -8,16 +8,17 @@ from layers.get_dataframe.get_dataframe_from_plugin.mode_sql import get_sql_apis
 
 
 def get_dataframe_from_plugin(request_args):
-    plugin_apis = []
-    from app import app
-    for i in app.config.get("APIS_PLUGIN", []):
-        if re.match(i.get("url"), request.full_path):  # 如果能够匹配到全路径
-            plugin_apis.append(i); break
-        if re.search(r'gd_id=(.*)&', i.get("url")):  # 如果是 apis_dispatch 转发过来的
-            if re.search(r'gd_id=(.*)&', i.get("url")).groups()[0] == request_args.get("gd_id", ""):
+    if request_args.get("gd_id", ""):  # 判断理论上是否需要走插件过程
+        # 匹配url
+        plugin_apis = []
+        from app import app
+        for i in app.config.get("APIS_PLUGIN", []):
+            if re.match(i.get("url"), request.full_path):  # 如果能够匹配到全路径
                 plugin_apis.append(i); break
-    # 如果能够匹配到url，就需要走插件过程，否则直接返回
-    if plugin_apis:
+            if re.search(r'gd_id=(.*)&', i.get("url")):    # 如果是 apis_dispatch 转发过来的
+                if re.search(r'gd_id=(.*)&', i.get("url")).groups()[0] == request_args.get("gd_id", ""):
+                    plugin_apis.append(i); break
+
         # 检查url
         code, msg, results = check_plugin_args(plugin_apis)
         if code != 200:

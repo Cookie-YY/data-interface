@@ -6,6 +6,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="calculate" />
     <orderEntry type="module" module-name="generate_tables" />
+    <orderEntry type="module" module-name="datacalculate" />
+    <orderEntry type="module" module-name="dispatch2front" />
+    <orderEntry type="module" module-name="convert_dataframe" />
+    <orderEntry type="module" module-name="cq_test" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

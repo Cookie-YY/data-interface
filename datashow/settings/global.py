@@ -12,7 +12,6 @@ URL_REFERENCE = {
 SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict"]  # 系统内置extension
 
 # 程序内置param_trans
-# 以advanced开头的pt，系统会在最之前调用
 SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range"]
 
 # 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
@@ -50,7 +49,7 @@ SYS_SPECIAL_PARAMS = {
     "ceil_value": (False, None),
     "param_protect": ("", "black_list\(.*?\)|white_list\(.*?\)|none"),
     "param_trans": (False, None),
-    "tmp_search": ("", None),
+    "tmp_search": ("", None),                 # 系统内部用于临时增加一个查询字段
     "debug": (False, None),
     "gd_id": ("", None),
     "time_format": (False, None),
@@ -60,5 +59,11 @@ SYS_SPECIAL_PARAMS = {
     "sql_qhauth_qh": (False, None),           # 系统内部用于给sql模式传递qh条件(权限)
     "sql_qhauth_sheshixj": (False, None),     # 系统内部用于给sql模式传递qh条件(权限)
     "sql_qhauth_other": (False, None),        # 系统内部用于给sql模式传递qh条件(权限)
-    # "reuse": ("none", "none|waiting_for_search|db_results|df")
+    "dq_before": (False, None),               # 表格反查之前的指标图(data query before)
+    "dq_after": (False, None),                # 表格反查之后的数据表(data query after)
+    "graph_type": (False, None),              # 返回js-echarts-code
+    "color": (False, None),                   # 返回js-echarts-code的图表颜色
+    "style": (False, None),                   # 返回js-echarts-code的图表类型
+    # "reuse": ("none", "none|waiting_for_search|db_results|df"),
+    "value_map": (False, None),
 }

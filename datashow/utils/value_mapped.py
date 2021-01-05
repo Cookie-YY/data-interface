@@ -10,7 +10,9 @@ def value_mapped(df, map_type="VALUE_MAP", apis_copy=None):
         apis_copy = {}
     from app import app
     config_map = app.config.get(map_type, {})  # {"xfxs": {"网信"： "网上投诉|网上信访"}}
-    for col, mapping in config_map.items():
+    value_map_from_api = eval(apis_copy.get("value_map", {}))
+    value_map = {**config_map, **value_map_from_api}
+    for col, mapping in value_map.items():
         if col in df:  # 如果目标字段在df中
             for after, condition in mapping.items():  # 字段的多中映射方法
                 df[col] = df[col].apply(lambda x: after if re.match(condition, str(x)) else x)

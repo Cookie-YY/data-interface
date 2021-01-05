@@ -26,7 +26,8 @@ def _calculate_tb_or_hb(df_list, apis_copy, index=0):
             columns_for_merge = get_trimed_list("zb", columns_for_merge)
 
             df = pd.merge(first_df, second_df, how="outer", on=columns_for_merge, suffixes=('_now', '_last'))
-
+            df[value + "_now"] = df[value+"_now"].apply(lambda x: 0 if not x else x)
+            df[value + "_last"] = df[value+"_last"].apply(lambda x: 0 if not x else x)
             df[value] = (df[value+"_now"] - df[value+"_last"]) / df[value+"_last"]
             df.drop(value+"_now", axis=1, inplace=True)
             df.drop(value+"_last", axis=1, inplace=True)
