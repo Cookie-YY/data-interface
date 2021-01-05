@@ -5,307 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="585a69d5-eb5a-4e20-97d4-48ffd794e6ac" name="Default Changelist" comment="新增深圳大屏，重庆大屏，">
-      <change afterPath="$PROJECT_DIR$/../datacalculate/.idea/datacalculate.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/start-for-cq.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/cqxf/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/cqxf/param_trans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/apis_dispatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/apis_plugins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/custom/bgtc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/custom/ztfxbg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/3-2-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/3-2-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/3-4-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/3-4-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/__init__-bak.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/get_base_sql_map.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/aqdflv/get_sql_from_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/chuj.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/cplv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-2-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-2-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-4-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-4-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-5-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-5-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-6-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/1-6-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-2-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-2-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-4-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-4-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-5-全.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/2-5-形式.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/base_sql_map.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/jssllv/get_sql_from_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/mylv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/wxzb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/ychb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/yctb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/ycyjzt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/extensions/yjzt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/init_files/qh+zrdw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/init_files/shej_02+shij_02+xj_02" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/init_files/shejxfbm+shijxfbm+xjxfbm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/param_trans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/szfz/report/ztfxbg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/ynxf/init_files/yjnr+ejnr+sjnr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/generate_file/fonts/SimSun-bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/generate_file/fonts/SimSun.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/generate_file/fonts/Vera.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/generate_file/fonts/VeraBd.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dev_tools/dispatch2front/.idea/dispatch2front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dev_tools/dispatch2front/apis_dispatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/.idea/hbxf-pro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/hbxf/.idea/hbxf.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dabot-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dabot-interface.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../calculate/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../calculate/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/datashow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/datashow.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TO-DO-List" beforeDir="false" afterPath="$PROJECT_DIR$/TO-DO-List" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/map/445300.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/map/445300.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/app.0e132249.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/chunk-2352fa2c.c144d175.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/chunk-4470ca16.7624f812.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/chunk-b77cf89a.43a666b9.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/img/bg.96abae09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/img/bg.fabfe50a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/img/btn-bg.8d4b4974.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-1269b99c.049fb8c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-1269b99c.049fb8c0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-1673378a.c6454c15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-1673378a.c6454c15.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-2352fa2c.695c4f4b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-2352fa2c.695c4f4b.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-3004c2e9.7b23a338.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-3004c2e9.7b23a338.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-4470ca16.da1e5e5e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-4470ca16.da1e5e5e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-b77cf89a.e6d48e19.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-b77cf89a.e6d48e19.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/data/mrxfdt/XflList.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/data/mrxfdt/XflList.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/map/445300.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/map/445300.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/app.423a838a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-0351a9fa.a8a66a10.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-04e5e148.b512c3b3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-05047619.7f62d6b3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-0dd6ba12.5c7a7394.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-39e5b6fa.913a97f2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-40caed38.fc25354c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-45fde7ba.1d357f41.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-4a14323b.5ff7add8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-6ab445a2.7003b54e.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-6f03d837.f0edcc0a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-7dd6a2eb.83d0de6b.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-0351a9fa.f3efa303.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-0351a9fa.f3efa303.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-04e5e148.c63175ff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-04e5e148.c63175ff.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-05047619.715979c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-05047619.715979c0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-0dd6ba12.14e6ea71.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-0dd6ba12.14e6ea71.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-39e5b6fa.0d23a15d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-39e5b6fa.0d23a15d.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-40caed38.8d217d69.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-40caed38.8d217d69.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-45fde7ba.aef23ad5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-45fde7ba.aef23ad5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-4a14323b.12b93ac4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-4a14323b.12b93ac4.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-5174c8e7.c37b68d1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-5174c8e7.c37b68d1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-6ab445a2.f7ace436.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-6ab445a2.f7ace436.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-6f03d837.4514f2aa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-6f03d837.4514f2aa.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-7dd6a2eb.99707282.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-7dd6a2eb.99707282.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/file/default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/hbxfdp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/static/css/app.b981f0a37f80bdecaaa2891b93da8342.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/static/js/0.4b74b73a5905838ccb4b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/static/js/app.ed21bb4ecb2c44df1c38.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hbxfdp/static/js/manifest.fe6d5dadb7713fe98008.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xfgzxspd/xfbm/blfs.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xfgzxspd/xfbm/blfs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xftstjfx/xfmd/XfmdfbzsY.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xftstjfx/xfmd/XfmdfbzsY.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xfxsyjyc/ycxs/DyfbMap.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xfxsyjyc/ycxs/DyfbMap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xfxsyjyc/ycxs/ZsLine.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xfxsyjyc/ycxs/ZsLine.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-0137752c.add61f55.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-0755cb72.e585e9eb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-0b7fd70e.c08ba45c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-12412304.e445cc58.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-1f9b295b.882d2a78.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-26b2468c.f71f1265.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-2aad5804.4ffcb52b.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-2bd91d52.7cc8a512.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-2d27452c.0691e843.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-2f8a0d75.c8d3946c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-34282d2d.1254aac6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-43ff03bd.68a9f3ab.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-4b8d9212.4525f312.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-539e872d.5be81ee5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-576e48c5.d35244a3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-69d6fb09.0a99ae77.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-7c3c0020.1f1b37ec.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-7d548f3b.3f3c1b7b.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-7d665504.461eadb0.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-8084ee08.e7890d98.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-880178f4.474e9e1a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-b085c918.9ac98cb9.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-ee8000c2.43436d39.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-fc1356c4.21854974.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/img/photo.5ab4bfd9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/app.d24f53d9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/app.d24f53d9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0137752c.b53db24a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0137752c.b53db24a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0755cb72.4a2b94fd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0755cb72.4a2b94fd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0b7fd70e.6a41c105.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-0b7fd70e.6a41c105.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-12412304.4033678f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-12412304.4033678f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-1f9b295b.44133f52.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-1f9b295b.44133f52.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-245566c6.30cc423b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-245566c6.30cc423b.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-26b2468c.8ba448ea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-26b2468c.8ba448ea.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2aad5804.ca2d6bfc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2aad5804.ca2d6bfc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2bd91d52.d2fcd8ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2bd91d52.d2fcd8ca.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2d27452c.64c5c778.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2d27452c.64c5c778.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2f8a0d75.67f1cc54.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-2f8a0d75.67f1cc54.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-34282d2d.a04ff09a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-34282d2d.a04ff09a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-43ff03bd.5a32326d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-43ff03bd.5a32326d.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-46132468.cfd3efa9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-46132468.cfd3efa9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-4b8d9212.a9df6e21.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-4b8d9212.a9df6e21.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-539e872d.52be70b3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-539e872d.52be70b3.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-55f9bd0a.b4a5de73.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-55f9bd0a.b4a5de73.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-576e48c5.b9016af0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-576e48c5.b9016af0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-69d6fb09.7ea5ddef.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-69d6fb09.7ea5ddef.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-732cb30e.39a3a3c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-732cb30e.39a3a3c0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7c3c0020.6a76a210.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7c3c0020.6a76a210.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7d548f3b.4af81a4e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7d548f3b.4af81a4e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7d665504.e8b7351f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-7d665504.e8b7351f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-8084ee08.15339710.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-8084ee08.15339710.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-880178f4.38b21e13.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-880178f4.38b21e13.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-b085c918.07493294.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-b085c918.07493294.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-ee8000c2.607a54ad.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-ee8000c2.607a54ad.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-fc1356c4.7e3fe9f9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-fc1356c4.7e3fe9f9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/api_gateway/get_dispatched_apis.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/api_gateway/get_dispatched_apis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes-bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert2data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert2graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_extension/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_extension/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_extension/ext_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_extension/ext_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/check_plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/check_plugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/mode_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/mode_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/params_check/params_check_each.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/params_check/params_check_each.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_parsed_api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_parsed_api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_parsed_api/process_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_parsed_api/process_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_parsed_api/process_invalid.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_parsed_api/process_invalid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_parsed_api/process_paramtrans.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_parsed_api/process_paramtrans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_columns_valuelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_columns_valuelist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_merged_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_merged_df.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_splited_columns.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table/get_splited_columns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/merge_initialized_table_bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/param_trans/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/param_trans/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv-bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/3-2-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/3-2-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/3-4-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/3-4-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/get_sql_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/aqdflv/get_sql_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/cplv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/extensions.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv-bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-2-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-2-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-4-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-4-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-5-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-5-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-6-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/1-6-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-2-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-2-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-4-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-4-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-5-全.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/2-5-形式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/base_sql_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/base_sql_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/get_sql_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/jssllv/get_sql_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/mylv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/wxzb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/extensions/ycyjzt.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/extensions/ycyjzt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/init_dicts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/init_files/xfbm.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/init_files/xj_02.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/init_files/yjnr+ejnr+sjnr" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/init_files/yjnr+ejnr+sjnr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/param_trans.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/param_trans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/qh_info-back.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/refresh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/refresh/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/refresh/search_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/refresh/search_init.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/global.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/global.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/hbxf/init_files/ejnr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/hbxf/init_files/jglb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/hbxf/init_files/zrdw.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/qh_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/qh_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/sys_extensions/calculate_tb_hb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sys_extensions/calculate_tb_hb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/value_mapped.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/value_mapped.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/win-server.py" beforeDir="false" afterPath="$PROJECT_DIR$/win-server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dev_tools/generate_tables/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../dev_tools/generate_tables/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../dev_tools/generate_tables/.idea/modules.xml" beforeDir="false" />
@@ -781,7 +483,6 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/TO-DO-List" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/app.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/bin/restart.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/bin/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/start-for-hb.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/bin/start.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/bin/stop.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/favicon.ico" beforeDir="false" />
@@ -1045,14 +746,13 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/zdgzqh.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/qhfb/zrdwRadar.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Cpl.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Gzgcjk.json" beforeDir="false" afterPath="$PROJECT_DIR$/../datacalculate/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Gzgcjk.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Jssll.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Myl.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Sjxfbmpm.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/Wxzb.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/xfbm/zrdwpm.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Cpl.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Gzgcjk.json" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2embedding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Jssll.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Myl.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/client/gdxfdp/LeadCockpit/data/xfjxkh/zrdw/Sjxfbmpm.json" beforeDir="false" />
@@ -1933,7 +1633,6 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/api_gateway/get_dispatched_apis.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/add_global_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/convert_dataframes-bak.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2nsv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/convert_dataframes/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/convert_dataframes/convert2data.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/convert_dataframe/convert_dataframes/convert2graph.py" beforeDir="false" />
@@ -1969,78 +1668,28 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/makeup_dataframe/merge_initialized_table/get_splited_columns.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/makeup_dataframe/merge_initialized_table_bak.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/layers/makeup_dataframe/order_limit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/libs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../datacalculate/layers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hbxf/libs/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/groupby.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/hb.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/predict.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/tb.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/extensions/zb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/libs/logger/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/param_trans/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/report/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/libs/report/bar/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2graph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/libs/report/color_series.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/libs/report/line/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/libs/report/pie/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/refresh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/apis_plugins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/auth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/custom/bgtc.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/custom/bgtc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/custom/ztfxbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/custom/ztfxbg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/extensions/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv-bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/3-2-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/3-2-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/3-2-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/3-2-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/3-4-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/3-4-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/3-4-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/3-4-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/__init__-bak.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/get_base_sql_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/get_base_sql_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/aqdflv/get_sql_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/aqdflv/get_sql_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/cjzb.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/chuj.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/cplv.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/cplv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/extensions.tar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv-bak.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-2-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-2-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-2-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-2-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-4-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-4-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-4-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-4-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-5-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-5-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-5-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-5-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-6-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-6-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/1-6-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/1-6-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-2-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-2-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-2-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-2-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-4-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-4-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-4-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-4-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-5-全.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-5-全.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/2-5-形式.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/2-5-形式.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/base_sql_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/base_sql_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/jssllv/get_sql_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/jssllv/get_sql_from_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/mylv.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/mylv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/wxzb.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/wxzb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/ychb.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/ychb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/yctb.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/yctb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/ycyjzt.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/ycyjzt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/extensions/yjzt.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/extensions/yjzt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/init_dicts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/shej_02+shij_02+xj_02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/shejxfbm+shijxfbm+xjxfbm" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/init_files/shejxfbm+shijxfbm+xjxfbm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/xfbm.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/xj_02.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/yjnr+ejnr+sjnr" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/init_files/yjnr+ejnr+sjnr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/init_files/zrdw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/init_files/qh+zrdw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/param_trans.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/qh_info-back.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/refresh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/refresh/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/refresh/search_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/refresh/search_init.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/gdxf/report/ztfxbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/report/ztfxbg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/global.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/apis_dispatch.py" beforeDir="false" />
@@ -2050,7 +1699,6 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/init_files/ejnr.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/init_files/jglb.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/init_files/shej_02+shij_02+xj_02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/init_files/yjnr+ejnr+sjnr" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/init_files/yjnr+ejnr+sjnr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/init_files/zrdw.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/param_trans.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/hbxf/refresh/__init__.py" beforeDir="false" />
@@ -2059,13 +1707,9 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/apis_dispatch.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/apis_plugins.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/auth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/init_dicts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/init_files/shej_02+shij_02+xj_02" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/param_trans.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/refresh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/cqxf/refresh/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/settings/ynxf/refresh/search_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/refresh/search_init.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/test_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/generate_file/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/check_sql.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/config_check.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/db_connection.py" beforeDir="false" />
@@ -2078,7 +1722,6 @@
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/qh_processor.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/results2df.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/router_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hbxf/utils/sys_extensions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/generate_file/generate_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/sys_extensions/calculate_tb_hb.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/sys_extensions/groupby.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../hbxf/utils/sys_extensions/params_parse_tb_hb.py" beforeDir="false" />
@@ -2309,7 +1952,7 @@
       <workItem from="1609724909752" duration="1281000" />
       <workItem from="1609739312212" duration="8995000" />
       <workItem from="1609813646048" duration="1018000" />
-      <workItem from="1609885997158" duration="3274000" />
+      <workItem from="1609885997158" duration="3691000" />
     </task>
     <task id="LOCAL-00001" summary="取消req的返回，解决to_list的bug，添加sql_qh参数用于sql过程的权限控制，修改广东接口">
       <created>1607434415393</created>
@@ -2325,7 +1968,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607605528023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加些许功能">
+      <created>1609890754586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609890754586</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2334,7 +1984,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="取消req的返回，解决to_list的bug，添加sql_qh参数用于sql过程的权限控制，修改广东接口" />
     <MESSAGE value="细化权限[sql_qhauth系列]: 搜索弹窗/数据反查/ 修改缓存的键策略(考虑权限)" />
-    <option name="LAST_COMMIT_MESSAGE" value="细化权限[sql_qhauth系列]: 搜索弹窗/数据反查/ 修改缓存的键策略(考虑权限)" />
+    <MESSAGE value="增加些许功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加些许功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607324196788">
@@ -2345,20 +1996,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="164" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1608712285512" />
-    <state x="164" y="0" key="CommitChangelistDialog2" timestamp="1609890561490">
+    <state x="164" y="0" key="CommitChangelistDialog2" timestamp="1609890735740">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="164" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1609890561490" />
+    <state x="164" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1609890735740" />
     <state width="1364" height="289" key="DebuggerActiveHint" timestamp="1609408581534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1364" height="290" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1608862410446" />
     <state width="1918" height="22" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1608779841110" />
     <state width="1364" height="289" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1609408581534" />
-    <state x="129" y="55" width="1092" height="610" key="DiffContextDialog" timestamp="1608883733170">
+    <state x="129" y="55" width="1092" height="610" key="DiffContextDialog" timestamp="1609890654890">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="55" width="1092" height="610" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1608883733170" />
+    <state x="129" y="55" width="1092" height="610" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1609890654890" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609207369781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -2416,6 +2067,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="480" y="65" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607326581658" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1609890920146">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609890920146" />
     <state width="972" height="532" key="XDebugger.FullValuePopup" timestamp="1608691200134">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
