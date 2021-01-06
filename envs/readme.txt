@@ -12,5 +12,6 @@
     说明：开始一直回车，然后一路yes，最后安装vs code时候选择no
 4. 安装knime
     下载：https://www.knime.com/download-previous-versions（官网选择对应版本）
+        4.1.2(Linux): https://download.knime.org/analytics-platform/linux/knime_4.1.2.linux.gtk.x86_64.tar.gz
     安装：解压即可
     说明：需要和开发版本一致

@@ -1,8 +1,8 @@
 import re
-import os
 import sys
 
 from settings.settings import *
+
 
 def get_tar_workflow_dirs():
     """
@@ -82,51 +82,3 @@ if __name__ == "__main__":
         crontab()
     else:
         run()
-    
-
-
-
-
-
-
-# with open(content_path) as f:
-#     res = f.readlines()
-# res = [i.strip() for i in res if i and not i.startswith("#")]
-
-
-# def jduge_ok(file_name, flag):
-#     flag1 = os.path.splitext(file_name)[0].endswith(flag)
-#     flag2 = any([i in os.path.splitext(file_name)[0] for i in res])
-#     return flag1 and flag2
-
-
-# def split_goups(path):
-#     file_list = os.listdir(path)
-#     # lista = [file_name for file_name in file_list if os.path.splitext(file_name)[0].endswith("_a")]
-#     # listb1 = [file_name for file_name in file_list if os.path.splitext(file_name)[0].endswith("_b1")]
-#     # listb2 = [file_name for file_name in file_list if os.path.splitext(file_name)[0].endswith("_b2")]
-#     # listb3 = [file_name for file_name in file_list if os.path.splitext(file_name)[0].endswith("_b3")]
-#     lista = [file_name for file_name in file_list if jduge_ok(file_name, "_a")]
-#     listb1 = [file_name for file_name in file_list if jduge_ok(file_name, "_b1")]
-#     listb2 = [file_name for file_name in file_list if jduge_ok(file_name, "_b2")]
-#     listb3 = [file_name for file_name in file_list if jduge_ok(file_name, "_b3")]
-#     return lista + listb1 + listb2 + listb3
-
-
-# if __name__ == '__main__':
-#     with open(os.path.join(log_path, "calculate_log"), "a") as f:
-#         f.write(f"----------运行时间：{datetime.datetime.today()}----------")
-#         f.write("===========================================================")
-#     file_list = split_goups(workflow_path)
-#     total = len(file_list)
-#     for n, file in enumerate(file_list):
-#         print(f"{n+1}/{total}--Calculating--{file}")
-#         t_start = time.time()
-#         workflow = os.path.join(workflow_path, file)
-#         # os.system(cmd.format(workflow, BASE_DIR))
-#         print(cmd.format(workflow, BASE_DIR))
-#         t_end = time.time()
-#         with open(os.path.join(log_path, "calculate_log"), "a") as f:
-#             f.write(f"{file}-----{t_end-t_start} seconds\n")
-#     with open(os.path.join(log_path, "calculate_log"), "a") as f:
-#         f.write("\n\n\n\n\n")

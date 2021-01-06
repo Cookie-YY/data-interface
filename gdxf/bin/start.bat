@@ -1,1 +1,0 @@
-D:\software\Anaconda3\Scripts\activate hbxf & python D:\dabotdp\hbxf\win-server.py

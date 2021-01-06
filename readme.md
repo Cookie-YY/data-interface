@@ -75,6 +75,8 @@
             	1. 此时计算流程并未执行，需要通过`sh ./start.sh` 执行
             	2. 可能存在dabot用户不存在的情况，`adduser dabot -G root`  即可
             	3. 添加完用户，将目录的权限赋予该用户 `chown -R dabot:dabot dabot`
+            	4. 添加完用户，将该用户的密码过期策略设置成永不过期`chage -M 9999 dabot`
+            		否则过一段时间会报错:you(dabot) are not allowed to access to (crontab) because of pam configuration
 
 
 

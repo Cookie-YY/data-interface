@@ -1,1 +1,0 @@
-var baseapi= '/api/xf';

@@ -1,3 +1,0 @@
-APIS_PLUGIN = [
-
-]
