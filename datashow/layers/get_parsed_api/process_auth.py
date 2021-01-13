@@ -17,7 +17,7 @@ def process_auth(api_dict):
 
     # 检查权限
     from utils.qh_processor import get_qh_with_auth
-    qh = api_dict.get("Cqh") or (api_dict.get("shej_02") or api_dict.get("shij_02") or api_dict.get("xj_02"))
+    qh = api_dict.get("Cqh") or (api_dict.get("xj_02") or api_dict.get("shij_02") or api_dict.get("shej_02"))
     table = api_dict.get("table", "")
     qh_with_auth = get_qh_with_auth(qh, qh_ceiling, table)
     if qh_with_auth:  # 开启level_auth但是没传Cqh 也没传shej_02/shij_02/xj_02

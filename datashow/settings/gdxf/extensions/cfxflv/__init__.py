@@ -37,11 +37,11 @@ def get_sql_map(flag):
             ["cfxflv"]),
         # 区划分布 --> 信访形式 --> 总体 【一个数】 市级
         "cfxflv_qh_xfxs_shij": (
-            f"select a.cfjc/a.zjc as cfxflv from {base_sql_map['1-1-形式']} as a where a.region_name='{{Cqh}}'",
+            f"select a.cfjc/a.zjc as cfxflv from {base_sql_map['1-1-形式']} as a where a.region_name='{{Cqh}}' where a.xfxs='{{xfxs}}'",
             ["cfxflv"]),
         # 区划分布 --> 信访形式 --> 总体 【一个数】 省级
         "cfxflv_qh_xfxs_xj": (
-            f"select a.cfjc/a.zjc as cfxflv from {base_sql_map['1-2-形式']} as a where a.region_name='{{Cqh}}'",
+            f"select a.cfjc/a.zjc as cfxflv from {base_sql_map['1-2-形式']} as a where a.region_name='{{Cqh}}' where a.xfxs='{{xfxs}}'",
             ["cfxflv"]),
 
         # 地图

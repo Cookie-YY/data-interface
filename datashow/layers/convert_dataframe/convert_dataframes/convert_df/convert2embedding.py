@@ -101,7 +101,7 @@ def stack_order_limit(df, s_columns, sort_type, limit_num):
     sort_type = False if 'desc' in sort_type else True  # 升降序确定
     df_cols = df.columns.values
     value = [i for i in df_cols if i not in s_columns]
-    df_copy = df.groupby(root_item, as_index=False)[value[0]].sum()
+    df_copy = df.groupby(root_item, as_index=False)[[value[0]]].sum()
 
     sorted_df = df_copy.sort_values(by=value[0], axis=0, ascending=sort_type, inplace=False)
     limited_sorted_df = sorted_df.head(int(limit_num))

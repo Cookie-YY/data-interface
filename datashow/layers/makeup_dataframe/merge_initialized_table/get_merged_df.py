@@ -16,6 +16,6 @@ def get_merged_df(df, init_df, val_col):
         df[on] = df[on].astype("str")
         # df[val_col] = df[val_col].astype("float")
         # init_df[val_col] = init_df[val_col].astype("float")
-        merged_df = pd.merge(init_df, df, how="out", on=on, suffixes=("_x", ""))
+        merged_df = pd.merge(init_df, df, how="left", on=on, suffixes=("_x", ""))
     merge_df = merged_df.drop([val_col+'_x'], axis=1)
     return merge_df

@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 
@@ -27,13 +28,14 @@ app.config.from_object(f"settings.{PROJECT}.auth")
 cache = Cache()
 cache.init_app(app)
 cache_timeout = app.config.get("CACHE_TIMEOUT", 60 * 60 * 24)
+# cache_prefix_func = app.config.get("CACHE_PREFIX_FUNC")
 init_project.init_project()  # 初始化项目
 
 ############################### /api/开头的接口路由 ###############################
 # 核心数据接口路由
 @app.route('/api/<string:realm>/<string:index>/', methods=['GET'])
 @app.route("/api/<string:realm>/", methods=['GET'])
-@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE"), "")+":" + request.full_path)
+@cache.cached(timeout=cache_timeout, key_prefix=lambda : request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE"), "") + ":" + request.full_path + str(datetime.datetime.now().day))
 def data_index_api(realm, index=""):
     request_args = dict(request.args)
     # 兼容可能的解析请求参数时得到列表：部署时使用的anaconda3中的环境会解析成列表
@@ -48,7 +50,7 @@ def data_index_api(realm, index=""):
     # convert层直接返回封装好的结果
     # 如果走插件过程，需要手动补充code和msg
     code, msg, parsed_data = parse_data(realm, index, request_args)
-    if code not in [200, 201, 202, 203, 999]:  # 201空数据   202  插件过程   203api分发时直接是字典
+    if code not in [200, 201, 202, 203, 204, 999]:  # 201空数据   202  插件过程   203api分发时直接是字典   204不需要变成json,原始字串
         parsed_data = {"code": code, "msg": msg, "data": {}}
     else:
         if code == 202:
@@ -57,7 +59,11 @@ def data_index_api(realm, index=""):
         elif code == 203:
             parsed_data["code"] = 203
             parsed_data["msg"] = "test data in apis_dispatch"
-    response = make_response(json.dumps(parsed_data, default=lambda x: int(x)))
+        elif code == 204:
+            parsed_data["code"] = 204
+            parsed_data["msg"] = "raw_data"
+    data = json.dumps(parsed_data, default=lambda x: int(x)) if parsed_data["code"] != 204 else parsed_data
+    response = make_response(data)
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = '*'
     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'

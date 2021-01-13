@@ -9,10 +9,16 @@ URL_REFERENCE = {
     "shej": "shej_02"
 }
 # 程序内置extension，可以直接transformer=@xx使用
-SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict"]  # 系统内置extension
+SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict", "topkzb"]  # 系统内置extension
 
 # 程序内置param_trans
 SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range"]
+
+# 程序内置value_map
+SYS_VALUE_MAP = {
+    "quarter": {"month->quarter": {"第一季度": "1|2|3", "第二季度": "4|5|6", "第三季度": "7|8|9", "第四季度": "10|11|12"}},
+    "halfyear": {"month->halfyear": {"上半年": "1|2|3|4|5|6", "下半年": "7|8|9|10|11|12"}},
+}
 
 # 特殊参数，除这些参数以外，其他参数会在数据库中当作条件
 # 如要修改特殊参数，在get_dataframe层的params_check中的params_check_for_each

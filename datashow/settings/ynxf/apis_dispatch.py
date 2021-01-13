@@ -99,7 +99,13 @@ URL_DISPATCH_MAP = {
     "热点模型分析_集体访_信访群体年龄分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_nlrange_xfxs_jtf_xfrc&name=nlrange&value=xfrc&full=true&day=[2019-01-01,2020-12-10]",
     "热点模型分析_集体访_信访诉求_信访问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_xfmd_xfxs_jtf_xfjc&name=xfmd&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
     "热点模型分析_集体访_信访诉求_投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfxs_jtf_xfjc&name=yjnr&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
-    # 4.其他(缺表)
+    # 4.其他
+    "热点模型分析_其它_进京访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_djlx_xfrc&name=djlx&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_进京访_倒流人数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_dlbz_xfrc&name=dlbz&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_进京访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_jjxfdd_xfrc&name=shij_02&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_djlx_xfrc&name=djlx&fsxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_倒流人数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_dlbz_xfrc&name=dlbz&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_fsxfdd_xfrc&name=shij_02&fsxfdd=天安门&year=2020",
 
     # 四. 政策关联分析
     # 1.涉件分析(缺)
@@ -113,7 +119,19 @@ URL_DISPATCH_MAP = {
     "信访人分析_重点人员_扬言": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cy_zjhm_xm_yy_xfjc&name=xm&value=zjhm&direct_order=-xfjc&direct_limit=100&full=none",
     "信访人分析_重点人员_专项": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cy_zjhm_xm_zxbz_xfjc&name=xm&value=zjhm&direct_order=-xfjc&direct_limit=100&full=none",
 
-    "矛盾分析预警预判_预警预测_预警地图$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_shij_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=云南省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=a,b,c,d&reindex=4&param_trans=qh_godown",
-    "矛盾分析预警预判_预警预测_预警状态$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_shij_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=云南省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=未来一周,同比,环比,预警状态&reindex=4,1,2,3",
-    "矛盾分析预警预判_预警预测_走势$": "http://127.0.0.1:3389/api/xf/?table=xf_xfj_cd_shij_xfjc&name=day&stack=day&day=[now-50,now]&extra_index=transformer@to:predict(7d+p=1+d=1+q=0);day@to:[now-200,now]&main_name=真实,预测&Cqh=云南省",
+    "矛盾分析预警预判_预警形式_地图": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&name=shij_02&transformer=yjzt&day=[now-7,now]",
+    "矛盾分析预警预判_预警形式_预警状态条目-信访量": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&extra_index=transformer@to:tb,transformer@to:hb,transformer@to:yjzt&day=[now-7,now]&main_name=信访件次,件次同比,件次环比,指数状态&shij_02=昆明市",
+    "矛盾分析预警预判_预警形式_预警状态条目-进京访": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_jjf_xfjc&extra_index=transformer@to:tb,transformer@to:hb,transformer@to:yjzt&jjf=进京访&day=[now-7,now]&main_name=信访件次,件次同比,件次环比,指数状态&shij_02=昆明市",
+    "矛盾分析预警预判_预警形式_预警状态条目-赴省访": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_fsf_xfjc&extra_index=transformer@to:tb,transformer@to:hb,transformer@to:yjzt&fsf=赴省访&day=[now-7,now]&main_name=信访件次,件次同比,件次环比,指数状态&shij_02=昆明市",
+    "矛盾分析预警预判_预警形式_预警状态条目-集体访": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_jtf_xfjc&extra_index=transformer@to:tb,transformer@to:hb,transformer@to:yjzt&jtf=集体访&day=[now-7,now]&main_name=信访件次,件次同比,件次环比,指数状态&shij_02=昆明市",
+
+    "矛盾分析预警预判_预警预测_预警地图$": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=云南省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=a,b,c,d&reindex=4&param_trans=qh_godown",
+    "矛盾分析预警预判_预警预测_预警状态$": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=云南省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=未来一周,同比,环比,预警状态&reindex=4,1,2,3",
+    "矛盾分析预警预判_预警预测_走势$": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&name=day&stack=day&day=[now-50,now]&extra_index=transformer@to:predict(7d+p=1+d=1+q=0);day@to:[now-200,now]&main_name=真实,预测&Cqh=云南省",
+
+    # 五. 行为预警分析
+    # 前端传证件号码 zjhm
+    "信访行为预警分析_行为轨迹分析_行为分析指数走势":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cm_zjhm_xm_xfxwzs&name=month&zjhm=100000000&year=2020",
+    "信访行为预警分析_行为轨迹分析_行为统计": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cd_zjhm_xm_xfxw&name=day&zjhm=100000000&day=[2020-12-20,2021-01-01]&full=none",
+    "信访行为预警分析_行为轨迹分析_重点人员摘要": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwgjyj_zdryzy&year=2020&month=1&zjhm=100000000",
 }

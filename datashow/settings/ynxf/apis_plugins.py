@@ -149,11 +149,19 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
         "full": {"name": "zb_db_sql:select {name} from {v_table} where {v_qhwhere}='{v_qhwhere_value}'", "value": [0],
                  "query": "$name"}
     },
-    # 云南 热点模型分析 人数规模分布 弹窗
+    # 云南 热点模型分析 人数规模分布 弹窗 [数据反查弹窗]
     {
         # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=gd_qjywjk_bgtc&query=来信&query_date=信访日期&day=[2019-01-01,2020-01-03]
         "url": "/api/xf/\?gd_id=yn_rdmxfx_rsgmfb_tc&",
         "mode": "custom",
         "file": "bgtc",
     },
+
+    # 云南_行为轨迹预警_重点人员摘要
+    {
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=yn_xwgjyj_zdryzy&month=1&zjhm=10000000
+        "url": "/api/xf/\?gd_id=yn_xwgjyj_zdryzy&",
+        "mode": "custom",
+        "file": "zdryzy",
+    }
 ]

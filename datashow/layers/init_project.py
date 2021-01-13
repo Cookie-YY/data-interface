@@ -8,6 +8,8 @@ from utils.error_page import InvalidUsage
 
 def init_project():
     from app import app
+    # 0. 补充系统配置的默认值【在系统的配置中指定】
+
 
     # # 1. 融合系统参数和项目参数
     # # 融合初始化信息
@@ -31,6 +33,32 @@ def init_project():
     CUS_PARAM_TRANS = app.config.get("CUS_PARAM_TRANS", [])
     PARAM_TRANS = SYS_PARAM_TRANS + CUS_PARAM_TRANS
     app.config["PARAM_TRANS"] = PARAM_TRANS
+
+    # 4. 融合value_map信息[可能重复，CUS中复写了系统的param_trans]
+    SYS_VALUE_MAP = app.config["SYS_VALUE_MAP"]
+    CUS_VALUE_MAP = app.config.get("CUS_VALUE_MAP", {})
+    VALUE_MAP = {**SYS_VALUE_MAP, **CUS_VALUE_MAP}
+    app.config["VALUE_MAP"] = VALUE_MAP
+
+    # # 4. init_dicts生成[之后放到refresh中]
+    # INITIALIZATION_FILE_MAP = app.config.get("INITIALIZATION_FILE_MAP", {})
+    # if INITIALIZATION_FILE_MAP:
+    #     path = app.config["INITIALIZATION_FILE_PATH"]
+    #     for file_name, mapping in INITIALIZATION_FILE_MAP.items():
+    #         init_file_df = pd.read_csv(os.path.join(path, file_name), sep=app.config.get("INITIALIZATION_FILE_SEP", "\t"))
+    #         col_list = mapping.get("init_dicts", [])
+    #         for idx in range(len(col_list)):
+    #             col = col_list[idx]
+    #             value_np = init_file_df[]
+    #             app.config["INITIALIZATION"].update({col: value_np.tolist()})
+    #             init_file_df[col_list[idx]]
+
+    INITIALIZATION_FILE_MAP = {  # 初始化项目时会在init_dicts中增加yjnr/ej_nr/sj_nr, 值是用seq分隔的字段并集
+        "yjnr+ejnr+sjnr": {
+            "init_dicts": ["yjnr", "ej_nr", "sj_nr"],
+            "sep": "_"
+        }
+    }
 
     # 99. 配置检查
     from utils.config_check import ConfigCheck

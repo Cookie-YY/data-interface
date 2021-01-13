@@ -178,11 +178,11 @@ def get_sql_map(flag):
         # 责任单位排名单独处理
         # 责任单位 --> 全部 --> 排名（某一个责任单位下辖的所有责任单位的排名）【name/value】
         "jssllv_zrdw_all_allshej": (
-            f"select a.company_name as qh, a.jssl/a.zs as jssllv from {base_sql_map['2-6-形式']} as a",
+            f"select a.company_name as qh, a.jssl/a.zs as jssllv from {base_sql_map['2-6-全']} as a",
             ["qh", "jssllv"]),
         # 责任单位 --> 信访形式 --> 排名（某一个责任单位下辖的所有责任单位的排名）【name/value】
         "jssllv_zrdw_xfxs_allshej": (
-            f"select a.company_name as qh, a.jssl/a.zs as jssllv from {base_sql_map['2-6-形式']} as a",
+            f"select a.company_name as qh, a.jssl/a.zs as jssllv from {base_sql_map['2-6-形式']} as a where a.xfxs='{{xfxs}}'",
             ["qh", "jssllv"]),
 
 

@@ -23,6 +23,7 @@ def search_sb(conn, sql, value1, value2):
             tb = "0.00"
             total_num, tb = f'{pre}{total_num}{post}', f'{pre}{tb}{post}'
         else:
+            total_num = total_num or 0
             tb = int(total_num) / last_total_num  # 同比
             from app import app
             tb = round(tb, app.config.get("SIGNIFICANT_DIGITS", 4))
@@ -54,6 +55,7 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     sql_djjg = "select sum(xfjc) from xf_xfj_cd_zt_qh_djjg_xfjc where zt='"+zt+"' and djjg='%s' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_djjg_qh} "
     sql_jtf = "select sum(xfjc) from xf_xfj_cd_zt_xj_jtf_xfjc where zt='"+zt+"' and jtf='集体访' AND `day` >= '%s' AND `day` <= '%s' AND" + f" {sql_qhauth_sheshixj} "
     # 全省-同比
+    print(sql)
     total_num, tb_qs = search_sb(zb_pymysql, sql, (s_time, e_time), (last_s_time, last_e_time))
     # xfxs_tb
     total_num_lx, tb_lx = search_sb(zb_pymysql, sql_xfxs, ('来信', s_time, e_time), ('来信', last_s_time, last_e_time))
@@ -68,7 +70,7 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     total_num_jtf, tb_jtf = search_sb(zb_pymysql, sql_jtf, (s_time, e_time), (last_s_time, last_e_time))  # 集体访
 
     from app import app
-    report_url = app.config["FILE_URL"] + f"report-{total_time}.docx"
+    report_url = app.config["FILE_URL"] + f"report-{zt}-{total_time}.docx"
     path = app.config["FILE_PATH"]
 
     # 标题
@@ -129,9 +131,9 @@ def run(start, end, zt, zb_pymysql, **kwargs):
     data_for_docx = begin_docx + para1 + para2 + para3 + para4 + ending
 
     # 生成docx和html报告文件
-    with open(os.path.join(path, f"report-{total_time}.html"), "w", encoding="utf8") as f:
+    with open(os.path.join(path, f"report-{zt}-{total_time}.html"), "w", encoding="utf8") as f:
         f.write(data_for_docx)
-    pypandoc.convert_file(os.path.join(path, f"report-{total_time}.html"), 'docx', outputfile=os.path.join(path, f"report-{total_time}.docx"))
+    pypandoc.convert_file(os.path.join(path, f"report-{zt}-{total_time}.html"), 'docx', outputfile=os.path.join(path, f"report-{zt}-{total_time}.docx"))
 
     # # data = '广东省'+ zt + '信访专题分析报告' + data1 + '\n' + data2 + '\n' + data3 + '\n' + data4 + '\n' + '  '*55 + '报告生成时间：' + str(now_time)
     # data = '<span class="title">' + '广东省'+ zt + '信访专题分析报告' + '</span><span class="date">'+now_time + '</span>' + data1 + data2 + data3 + data4 + '<span class="report_time">' + '报告生成时间：' + str(now_time) + '</span>'

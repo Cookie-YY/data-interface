@@ -1510,8 +1510,8 @@ sql_2_6_all = """(SELECT
 					'4400000000001810299' 
 				) 
 			) 
-			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) >= '2020-01-01 00:00:00' 
-			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) <= '2020-10-31 23:59:59' 
+			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) >= '{start}' 
+			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) <= '{end}' 
 			AND x.check_flag = 0 #参数3 登记机构类别
 			
 			AND x.djjglbdm IN ( '0000', '0100', '0200', '0300' ) #参数4 信访形式
@@ -1532,11 +1532,16 @@ sql_2_6_all = """(SELECT
 		AND r.is_choose = '1' 
 		AND r.is_petition = 0 
 GROUP BY
-	r.org_code
-)"""
+	r.org_code)"""
 sql_2_6_xfxs = """(SELECT
 	r.company_name,
-	t.xfxs xfxs,
+CASE
+		
+		WHEN ( t.xfxs = '来信' OR t.xfxs = '来访' ) THEN
+		t.xfxs 
+		WHEN t.xfxs IS NULL THEN
+		NULL ELSE '网信' 
+	END xfxs,
 	count( DISTINCT ( t.xfjbh ) ) AS zs,
 	count(
 		DISTINCT (
@@ -1607,8 +1612,8 @@ sql_2_6_xfxs = """(SELECT
 					'4400000000001810299' 
 				) 
 			) 
-			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) >= '2020-01-01 00:00:00' 
-			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) <= '2020-10-31 23:59:59' 
+			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) >= '{start}' 
+			AND DATE_ADD( x.djsj, INTERVAL 30 DAY ) <= '{end}' 
 			AND x.check_flag = 0 #参数3 登记机构类别
 			
 			AND x.djjglbdm IN ( '0000', '0100', '0200', '0300' ) #参数4 信访形式
@@ -1628,7 +1633,6 @@ sql_2_6_xfxs = """(SELECT
 		r.region_code = '440000000000' 
 		AND r.is_choose = '1' 
 		AND r.is_petition = 0 
-GROUP BY
+	GROUP BY
 	r.org_code,
-	t.xfxs
-)"""
+	xfxs)"""

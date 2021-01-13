@@ -40,36 +40,27 @@ class Chuj(Extension):
         from flask import g
         df_chongjian = g.get("df")
         df_all = Extension.groupby_and_sum(self.db_results[0][0], self.value)
-        # self.db_results[0][1] = Extension.groupby_and_sum(self.db_results[0][1], self.value)
-        # self.db_results[1][0] = Extension.groupby_and_sum(self.db_results[1][0], self.value)
-        # self.db_results[1][1] = Extension.groupby_and_sum(self.db_results[1][1], self.value)
 
         if isinstance(df_chongjian, pd.DataFrame) and df_chongjian.shape[1] == 1 and \
                 df_chongjian[self.value][0] is None:
             df_chongjian = np.int32(0)
-        # if isinstance(self.db_results[0][1], pd.DataFrame) and self.db_results[0][1].shape[1] == 1 and \
-        #         self.db_results[0][1][self.value][0] is None:
-        #     self.db_results[0][1] = np.int32(0)
+
         if isinstance(df_all, pd.DataFrame) and df_all.shape[1] == 1 and \
                 df_all[self.value][0] is None:
             df_all = np.int32(0)
-        # if isinstance(self.db_results[1][1], pd.DataFrame) and self.db_results[1][1].shape[1] == 1 and \
-        #         self.db_results[1][1][self.value][0] is None:
-        #     self.db_results[1][1] = np.int32(0)
 
-        # df_tb, df_hb = Yjzt.calculate_tb_and_hb(self.db_results, self.apis_copy)
-        # df_tb = df_hb.rename(columns={self.value: "tb"})
-        # df_hb = df_hb.rename(columns={self.value: "hb"})
-
-        # self.apis_copy["value"] = "zb"
+        # 如果有一个不是df，说明最终只能返回一个数
         if not isinstance(df_chongjian, pd.DataFrame) or not isinstance(df_all, pd.DataFrame):
-            self.df = pd.DataFrame({"xfjc": [df_all - df_chongjian]})
+            all_num = df_all[self.value][0] if isinstance(df_all, pd.DataFrame) else df_all
+            chongjian_num = df_chongjian[self.value][0] if isinstance(df_chongjian, pd.DataFrame) else df_chongjian
+            self.df = pd.DataFrame({"xfjc": [all_num - chongjian_num]})
             return
 
+        # 否则返回一个完整的df
         on_list = list(df_chongjian.columns)
         on_list.remove("xfjc")
         # self.apis_copy["value"] = "yjzt"
-        # 如果on_list为空，说明不需要merge，只有一行，返回预警状态即可
+        # 如果on_list为空，说明不需要merge，只有一行
         if not on_list:
             self.df = pd.DataFrame({"xfjc": [df_all["xfjc"][0]-df_chongjian["xfjc"][0]]})
             return
@@ -99,10 +90,3 @@ class Chuj(Extension):
             zb_df = df_chujian.drop(['all'], axis=1)  # drop不会就地修改，创建副本返回
             self.df = zb_df
 
-        # self.apis_copy["value"] = "yjzt"  # 不能放到前面，tb/hb解析的时候接受的db_results中的列名并没有改
-        # res = "平稳"
-        # if abs(df_tb) > 0.2 or abs(df_hb) > 0.2:
-        #     res = "告警"
-        # elif abs(df_tb) > 0.1 or abs(df_hb) > 0.1:
-        #     res = "异常"
-        # self.df = pd.DataFrame({"yjzt": [res]})

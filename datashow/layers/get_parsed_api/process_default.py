@@ -22,7 +22,7 @@ def process_default(api_dict):
         if "(" in transformer and ")" in transformer:
             args = transformer.replace(")", "")
             if "realdata_show" not in args:
-                args += "+realdata_show=0d)"
+                args += "+realdata_show=1d)"
             api_dict["transformer"] = args
 
 

@@ -90,10 +90,15 @@ DATE_END = "00:00:00"
 
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
 # get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
-VALUE_MAP = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
+CUS_VALUE_MAP = {
+    # "global_wx": {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}},
+    "dsr_type": {},
+}
 
 # plugin过程中的sql模式中的内容映射，主要用于大表格的反查，支持正则，格式和VALUE_MAP一样
-VALUE_MAP_FOR_PLUGIN_SQL = {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}}
+VALUE_MAP_FOR_PLUGIN_SQL = {
+    # "global_wx": {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}},
+}
 
 # 初始化指标需要的txt文件夹位置
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")

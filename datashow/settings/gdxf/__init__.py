@@ -9,15 +9,15 @@ import urllib.parse
 
 ############################## 数据库配置 ##############################
 # 分析库：业务表和码表的位置
-# FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
+FX_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3307/pt_dev_dabot_gd'
 # FX_DB = 'mysql+pymysql://admin_xfxx3:%s@19.15.64.203:15133/zhxf_pre' % urllib.parse.unquote_plus('S65@aG3c')
-FX_DB = 'mysql+pymysql://admin_xfxx1:%s@19.15.64.203:15132/zhxf_gd' % urllib.parse.unquote_plus('5JFGPNe@')
+# FX_DB = 'mysql+pymysql://admin_xfxx1:%s@19.15.64.203:15132/zhxf_gd' % urllib.parse.unquote_plus('5JFGPNe@')
 # FX_DB = 'mysql+pymysql://root:%s@localhost:3306/sys' % urllib.parse.quote_plus("@123%")
 
 # 指标库：指标表的位置
-# ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gdauth'
-ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
-# ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_fzjc' % urllib.parse.unquote_plus("cDhZ2@zR")
+ZB_DB = 'mysql+pymysql://root:Beidas0ft@39.107.240.28:3306/pt_pro_dabot_gdauth'
+# ZB_DB = 'mysql+pymysql://admin_xfxx8:%s@19.15.64.203:15152/zhxf_fzjc' % urllib.parse.unquote_plus("8cU5XQ%D")
+# ZB_DB = 'mysql+pymysql://admin_xfxx7:%s@19.15.64.203:15151/zhxf_1021' % urllib.parse.unquote_plus("cDhZ2@zR")
 # ZB_DB = 'mysql+pymysql://root:%s@localhost:3306/pt_dev_dabot_gd_zb' % urllib.parse.quote_plus("Beidas0ft")
 
 
@@ -71,6 +71,7 @@ LEVEL_AUTH_ENCRYPT = False
 CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("qh2sheshixj,wx_map", None), "full": ("true", None)}
 CUS_PARAM_TRANS = ["wx_map", "xfbm_godown", "zrdw_godown", "djjg_qhauth", "xfbm_qhauth", "zrdw_qhauth", "xfbmsearch_qhauth", "zrdwsearch_qhauth", "find_qh_from_xfbm", "last_day"]
 
+
 ############################### 数据配置 ###############################
 # 随机化配置
 RANDOM_OR_ZERO = "ZERO"
@@ -105,17 +106,20 @@ INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj", "cfxflv"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj","cfxflv"]
+
+# 有关联关系的字段
+RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 
 # 禁止full的情况
 DISABLE_FULL_WHEN_NAME = ["xm"]
 DISABLE_FULL_WHEN_VALUE = ["shej_02", "shij_02", "xj_02"]
 
 # predict（ext）的参数
-# 最小可供预测的数据，否则将均值作为预测结果
+# 最小可供预测的数据，否则返回均值
 PREDICT_MIN_DATA = 20            # 用于预测的最小的训练集的样本量
 PREDICT_MIN_MULTI_DATA = 3       # 用于预测的最小的训练集的样本量的倍数，如，预测7天，最少需要21天
-PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准("mean" or "zero")      震荡幅度(当zero时 幅度没用)
+PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准      震荡幅度(相对于均值)
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
 

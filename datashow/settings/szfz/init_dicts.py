@@ -90,4 +90,6 @@ INIT_DICT={
 'zxlx':[],
 'zxratio':[],
 'zzmm':[],
+'quarter':[],
+'halfyear':[],
 }

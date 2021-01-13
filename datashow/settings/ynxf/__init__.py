@@ -93,16 +93,16 @@ VALUE_MAP_FOR_PLUGIN_SQL = {}
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 
 # 自定义extensions
-CUS_EXTENSIONS = ["yctb", "ychb", "ycyjzt"]
+CUS_EXTENSIONS = ["yctb", "ychb", "ycyjzt", "yjzt"]
 
 # 自定义颜色系列
 COLOR_SERIES = {
     "Embedding": [  # 嵌套图的颜色
-        ['#dd6b66', '#759aa0', '#e69d87'],  # 红色系
-        ['#ea7e53', '#eedd78', '#73a373'],  # 蓝色系
-        ['#7289ab', '#91ca8c', '#f49f42'],  # 绿色系
-        ['#eedd78', '#73a373', '#73b9bc'],  # 黄色系
-        ['#8dc1a9', '#ea7e53', '#73b9bc']   # 紫色系
+        ['#5164ff', '#96a2ff', '#6d7dff'],  # 蓝色系
+        ['#3fcfdb', '#39dbc5', '#47c0f6'],  # 青色系
+        ['#b04aff', '#c1a4ff', '#a176ff'],  # 紫色系
+        ['#fd9f8c', '#f9bc95', '#ff8c86'],  # 橙色系
+        # ['#8dc1a9', '#ea7e53', '#73b9bc']   # 紫色系【没用上，目前只要前4个】
     ],
 }
 

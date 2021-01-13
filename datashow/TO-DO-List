@@ -377,7 +377,7 @@ name/stack/value：
 - embededding的嵌套格式【name=a,b,c,d】
 - 河北项目的sql过程是字符串类型的小数点
     http://127.0.0.1:3389/api/xf/?gd_id=hb_xfxs_sxrmd&day=[2020-10-26,2020-11-25]
-
+- 系统配置中指定项目配置的默认值，不用每次用的时候给默认值
 
 # 金鸿
 - uwsgi 在win下怎么用【不重要】

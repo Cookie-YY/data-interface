@@ -1,14 +1,14 @@
 from libs.extensions import Extension
+import pandas as pd
 
-
-class Zb(Extension):
-    """占比"""
+class Topkzb(Extension):
+    """前k个占比"""
     """
-    目前仅支持分组求和
+    返回前k个的占比: 只有一个数字  value改成zb
     """
     def __init__(self, apis_copy, apis, *args, **kwargs):
         # 执行父类方法，获得self.apis/self.apis_copy/self.value
-        super(Zb, self).__init__(apis_copy, apis, *args, **kwargs)
+        super(Topkzb, self).__init__(apis_copy, apis, *args, **kwargs)
 
     def after_search(self):
         """
@@ -20,14 +20,22 @@ class Zb(Extension):
 
         if len(self.args) == 1:
             if self.args[0] == "":
-                df_zb[self.value] = df_zb[self.value].apply(lambda x: x or 0) / (df_zb[self.value].sum())
+                return {}
+                # df_zb[self.value] = df_zb[self.value].apply(lambda x: x or 0) / (df_zb[self.value].sum())
             else:
-                former, later = self.args[0].split("/")
-                tmp = df_zb[later].map(
-                    lambda x: df_zb.loc[df_zb[later] == x, [self.value]].sum().squeeze())  # 按later类型计算value列的和，squeeze()取标量
-                df_zb[self.value] = df_zb[self.value] / tmp
-            df_zb = df_zb.rename(columns={self.value: "zb"})
+                # 这里可以不止支持返回一个数字的格式
+                # 可以是name/stack 的格式  按照name分组，每组的前10个stack
+                total = df_zb[self.value].sum()
+                topK = int(self.args[0])
+                df_zb = df_zb.sort_values([self.value], ascending=False).head(topK)
+                try:
+                    topKratio = df_zb[self.value].sum() / total
+                except:
+                    topKratio = 0
+                df_zb = pd.DataFrame({"zb": [topKratio]})
+            # df_zb = df_zb.rename(columns={self.value: "zb"})
             self.apis_copy["value"] = "zb"
+            self.apis_copy.pop("name", "")
         else:
             return {}
 

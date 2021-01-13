@@ -38,7 +38,7 @@ def get_dataframe_from_plugin(request_args):
         # custom模式
         if mode == "custom":
             code, msg, data = get_custom_apis(results, format_pool_custom)
-            if code != 200:
+            if code not in [200, 204]:
                 return code, msg, {}
             mapping = data.pop("mapping", "")
             data = data.pop("data", [])
@@ -52,5 +52,6 @@ def get_dataframe_from_plugin(request_args):
         else:
             return 400, "", {}
         res = {"map": mapping, "data": data} if mapping else {"data": data}
-        return 202, "success", res
+        code = 204 if code==204 else 202
+        return code, "success", res
     return 200, "success", request_args
