@@ -62,6 +62,11 @@ def makeup_dataframe(dataframe):
             df = add_ceil(dataframe)
             dataframe["df"] = df
 
+        # 删掉None数据[此时如果还有None]
+        df = dataframe.get("df")
+        if isinstance(df, pd.DataFrame) and df.shape[0]==1 and df.iloc[0,0]=="None":
+            dataframe["df"] = pd.DataFrame()
+
     return 200, "success", dataframe
 
 

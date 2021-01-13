@@ -117,7 +117,7 @@ class PT(ParamTrans):
             qh = zrdw["qh"][zrdw["zrdw"] == target].tolist()
             if len(set(qh)) == 1:
                 from utils.qh_processor import get_qh_with_auth
-                qh_with_auth = get_qh_with_auth(qh[0], qh_ceiling)
+                qh_with_auth = get_qh_with_auth(qh[0], qh_ceiling, self.apis_copy.get("table", ""))
                 res = zrdw["zrdw"][zrdw["qh"] == qh_with_auth].reset_index(drop=True)
                 res_bool = res.str.contains("住房和城乡建设").reset_index(drop=True)
                 res = res[res_bool].tolist()
@@ -177,5 +177,17 @@ class PT(ParamTrans):
         condition_day = self.apis_copy.get("day")
         if condition_day and "," in condition_day:
             self.apis_copy["day"] = condition_day.split(",")[-1].split()[0]+" 00:00:00"
+        return self
+
+    def qhsearch_qhauth(self, *args, **kwargs):
+        qh_ceiling = g.get("level_auth_name")
+        from utils.qh_processor import get_qh_level
+        qh_level = get_qh_level(qh_ceiling)
+        self.apis_copy["value"] = qh_level
+        return self
+
+    def addshijwhenxj(self, *args, **kwargs):
+        if self.apis_copy.get("value") == "xj_02":
+            self.apis_copy["name"] = "shij_02"
         return self
 

@@ -313,5 +313,5 @@ URL_DISPATCH_MAP = {
     "公共_部门索引弹窗$": "http://39.107.240.28:3390/api/xf/?table=search_xfbm_jb&name=xfbm_alpha&value=xfbm&transformer=@groupby&jb=2&full=none&param_trans=xfbmsearch_qhauth",
     "公共_单位索引弹窗$": "http://39.107.240.28:3390/api/xf/xf/?table=search_qh_zrdw_jb&name=qh_alpha&value=qh&transformer=@groupby&jb=1&full=none&param_trans=zrdwsearch_qhauth",
     "公共_单位索引弹窗_责任单位$": "http://39.107.240.28:3390/api/xf/xf/?table=search_qh_zrdw_jb&value=zrdw&transformer=@groupby&jb=1&Cqh=广东省&full=none",
-    "公共_区划索引弹窗$": "http://39.107.240.28:3390/api/xf/xf/?table=search_qh&value=shej_02&transformer=@groupby&full=none",
+    "公共_区划索引弹窗$": "http://39.107.240.28:3390/api/xf/xf/?table=search_qh&value=shej_02&transformer=@groupby&full=none&param_trans=qhsearch_qhauth,addshijwhenxj",
 }

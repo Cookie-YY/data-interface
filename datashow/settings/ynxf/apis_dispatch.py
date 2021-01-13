@@ -100,12 +100,13 @@ URL_DISPATCH_MAP = {
     "热点模型分析_集体访_信访诉求_信访问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_xfmd_xfxs_jtf_xfjc&name=xfmd&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
     "热点模型分析_集体访_信访诉求_投诉问题分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shej_yjnr_xfxs_jtf_xfjc&name=yjnr&value=xfjc&full=true&day=[2019-01-01,2020-12-10]",
     # 4.其他
-    "热点模型分析_其它_进京访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_djlx_xfrc&name=djlx&jjxfdd=天安门&year=2020",
-    "热点模型分析_其它_进京访_倒流人数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_dlbz_xfrc&name=dlbz&jjxfdd=天安门&year=2020",
-    "热点模型分析_其它_进京访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_jjxfdd_xfrc&name=shij_02&jjxfdd=天安门&year=2020",
-    "热点模型分析_其它_到省访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_djlx_xfrc&name=djlx&fsxfdd=天安门&year=2020",
-    "热点模型分析_其它_到省访_倒流人数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_dlbz_xfrc&name=dlbz&jjxfdd=天安门&year=2020",
-    "热点模型分析_其它_到省访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_fsxfdd_xfrc&name=shij_02&fsxfdd=天安门&year=2020",
+    "热点模型分析_其它_进京访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_djlx_xfjc&name=djlx&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_进京访_倒流件次": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_jjxfdd_dlbz_xfjc&name=dlbz&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_进京访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_jjxfdd_xfjc&name=shij_02&jjxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_总数": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_djlx_xfjc&year=2020",
+    "热点模型分析_其它_到省访_登记类型分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_djlx_xfjc&name=djlx&fsxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_倒流件次": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shej_fsxfdd_dlbz_xfjc&name=dlbz&fsxfdd=天安门&year=2020",
+    "热点模型分析_其它_到省访_信访量地区分布": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_fsxfdd_xfjc&name=shij_02&fsxfdd=天安门&year=2020",
 
     # 四. 政策关联分析
     # 1.涉件分析(缺)
@@ -129,9 +130,16 @@ URL_DISPATCH_MAP = {
     "矛盾分析预警预判_预警预测_预警状态$": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&day=[now-200,now]&transformer=predict(7d+p=1+d=1+q=0)&Cqh=云南省&extra_index=transformer@to:yctb(7d),transformer@to:ychb(7d),transformer@to:ycyjzt&main_name=未来一周,同比,环比,预警状态&reindex=4,1,2,3",
     "矛盾分析预警预判_预警预测_走势$": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cd_shij_xfjc&name=day&stack=day&day=[now-50,now]&extra_index=transformer@to:predict(7d+p=1+d=1+q=0);day@to:[now-200,now]&main_name=真实,预测&Cqh=云南省",
 
-    # 五. 行为预警分析
+    # 五. 行为分析预警
     # 前端传证件号码 zjhm
-    "信访行为预警分析_行为轨迹分析_行为分析指数走势":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cm_zjhm_xm_xfxwzs&name=month&zjhm=100000000&year=2020",
-    "信访行为预警分析_行为轨迹分析_行为统计": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cd_zjhm_xm_xfxw&name=day&zjhm=100000000&day=[2020-12-20,2021-01-01]&full=none",
-    "信访行为预警分析_行为轨迹分析_重点人员摘要": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwgjyj_zdryzy&year=2020&month=1&zjhm=100000000",
+# xf_xfjg_cy_shij_bmjssllv
+# xf_xfjg_cy_shij_bmcplv
+# xf_xfjg_cy_shij_bmmylv
+    "信访行为分析预警_行为转化预警_行为转化漏斗": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_abzhjc_bczhjc_aczhjc&value=abzhjc&extra_index=value@to:bczhjc,value@to:aczhjc&main_name=待定1,待定2,待定3&shij_02=昆明市&year=2020",
+    "信访行为分析预警_行为转化预警_年度三率": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfjg_cy_shij_bmjssllv&extra_index=table@to:xf_xfjg_cy_shij_bmcplv,table@to:xf_xfjg_cy_shij_bmmylv&main_name=待定1,待定2,待定3&shij_02=昆明市&year=2020",
+    "信访行为分析预警_行为转化预警_重点人列表": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwzhyj_zdxfrlb&year=2020&limit=10",
+
+    "信访行为分析预警_行为轨迹预警_行为分析指数走势":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cm_zjhm_xm_xfxwzs&name=month&zjhm=100000000&year=2020",
+    "信访行为分析预警_行为轨迹预警_行为统计": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cd_zjhm_xm_xfxw&name=day&zjhm=100000000&year=2021&param_trans=year2day&full=none",
+    "信访行为分析预警_行为轨迹预警_重点人员摘要": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwgjyj_zdryzy&year=2020&month=1&zjhm=100000000",
 }

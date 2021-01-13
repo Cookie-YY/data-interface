@@ -131,7 +131,7 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
     {
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_dttc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=yn_rdmxfx_rsgmfb&",
-        "map": {"name": "人数范围", "value": "信访件次", "id": "查询id", "type": "类型？"},
+        "map": {"name": "人数范围", "value": "信访件次", "id": "查询id"},
         "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfrqxfjc;"
                                  "{query_date}==登记日期 then xf_xfj_cd_xj_djrqxfjc;"
                                  "{query_date}==交换日期 then xf_xfj_cd_xj_jhrqxfjc;",
@@ -163,5 +163,16 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
         "url": "/api/xf/\?gd_id=yn_xwgjyj_zdryzy&",
         "mode": "custom",
         "file": "zdryzy",
-    }
+    },
+    # 云南_行为转化预警_重点信访人列表
+    {
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=yn_xwgjyj_zdryzy&month=1&zjhm=10000000
+        "url": "/api/xf/\?gd_id=yn_xwzhyj_zdxfrlb&",
+        "map": {"name": "重点人员", "value": "信访件次", "query": "查询id"},
+        "fx_db_sql": """""",
+        "zb_db_sql": """
+        select xm as name, zjhm as query, sum(xfjc) as value from xf_xfr_cy_zjhm_xm_xfjc where year={year} order by xfjc desc limit {limit}
+        """,
+        # "full": {"name": "yjnr", "value": [0], "query": "$name"}
+    },
 ]
