@@ -5,62 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="585a69d5-eb5a-4e20-97d4-48ffd794e6ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../datacalculate/.idea/datacalculate.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/ynxf/custom/zhld.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dev_tools/dispatch2front/.idea/dispatch2front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/.idea/hbxf-pro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/hbxf/.idea/hbxf.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculate/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../calculate/start.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TO-DO-List" beforeDir="false" afterPath="$PROJECT_DIR$/TO-DO-List" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/chunk-d89fdd66.6cda6fd8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-d89fdd66.6090b09a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-d89fdd66.6090b09a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-558630bd.90058831.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-558630bd.f7dda714.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-558630bd.f7dda714.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/gdxfdp/assistant/js/chain.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/assistant/js/chain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xfxwfxyj/xwgjyj/Xfxwtj.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xfxwfxyj/xwgjyj/Xfxwtj.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-036e1272.c8258ed5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-3b08a3b7.4ec6d6a4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-5aaf8e9c.f69aaf78.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-036e1272.b7045793.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-036e1272.b7045793.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-3b08a3b7.8d15d494.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-3b08a3b7.8d15d494.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-5aaf8e9c.860915f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-5aaf8e9c.860915f6.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ynxfdp/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2nsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2nsv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/param_trans/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/param_trans/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_plugins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/custom/bgtc.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/custom/bgtc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/custom/ztfxbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/custom/ztfxbg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/gdxf/param_trans.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/param_trans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/global.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/global.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/szfz/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/szfz/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/szfz/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/apis_plugins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/szfz/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/init_dicts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/custom/zdryzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/custom/zdryzy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/init_date_valuelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/init_date_valuelist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/sys_extensions/params_parse_tb_hb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sys_extensions/params_parse_tb_hb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +263,7 @@
       <workItem from="1612596782155" duration="598000" />
       <workItem from="1612708501925" duration="758000" />
       <workItem from="1612747033205" duration="3368000" />
-      <workItem from="1613094475080" duration="1034000" />
+      <workItem from="1613094475080" duration="2294000" />
     </task>
     <task id="LOCAL-00001" summary="取消req的返回，解决to_list的bug，添加sql_qh参数用于sql过程的权限控制，修改广东接口">
       <created>1607434415393</created>
@@ -368,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610525002704</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增加 value / name-value融合 增加year2day功能">
+      <created>1613095733111</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1613095733111</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +335,8 @@
     <MESSAGE value="参评率 满意率文件化" />
     <MESSAGE value="完善云南接口，custom增加204 raw_data" />
     <MESSAGE value="广东增加区划弹窗的权限，云南完善接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="广东增加区划弹窗的权限，云南完善接口" />
+    <MESSAGE value="增加 value / name-value融合 增加year2day功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 value / name-value融合 增加year2day功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="187" key="#Notifications" timestamp="1613094522718">
@@ -397,11 +351,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="164" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1610019938966" />
-    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2" timestamp="1610524997666">
+    <state x="76" y="90" width="804" height="567" key="CommitChangelistDialog2" timestamp="1613095721502">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1597" y="-103" key="CommitChangelistDialog2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610505386778" />
-    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1610524997666" />
+    <state x="76" y="90" width="804" height="567" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1613095721502" />
     <state width="1918" height="313" key="DebuggerActiveHint" timestamp="1612748042741">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
@@ -474,11 +428,11 @@
     </state>
     <state x="1403" y="-93" key="SettingsEditor/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612345427078" />
     <state x="27" y="7" width="1339" height="711" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610914939397" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1610525005295">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1613095908645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1753" y="36" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610505470169" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610525005295" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1613095908645" />
     <state width="972" height="532" key="XDebugger.FullValuePopup" timestamp="1610505174640">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
