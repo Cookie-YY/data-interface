@@ -103,6 +103,13 @@ class ParamTrans:
             g.reqdicts_before_pt.update({"start": str(start), "end": str(year)})
         return self
 
+    def year2day(self, *args, **kwargs):
+        year = self.apis_copy.get("year")
+        if year:
+            self.apis_copy["day"] = f"[{year}-01-01,{year}-12-31]"
+            self.apis_copy.pop("year", "")
+        return self
+
     def before_finish(self, *args, **kwargs):
         # 1. 存在qh 但 区划体系是  shej/shij/xj时，删除qh
         qh = self.apis_copy.get("Cqh", "")

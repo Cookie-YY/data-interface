@@ -77,10 +77,10 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_xfxstc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_xfxstc&",
         "map": {"name": "信访形式", "value": "信访件次", "query": "查询id"},
-        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfxs_xfrqxfjc;"
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfxs_xfjc;"
                                  "{query_date}==登记日期 then xf_xfj_cd_xj_xfxs_djrqxfjc;"
                                  "{query_date}==交换日期 then xf_xfj_cd_xj_xfxs_jhrqxfjc;",
-                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                      "v_select": "{query_date}==信访日期 then xfjc;"
                                   "{query_date}==登记日期 then djrqxfjc;"
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
@@ -96,10 +96,10 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_yjnrtc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_yjnrtc&",
         "map": {"name": "一级内容", "value": "信访件次", "query": "查询id"},
-        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_yjnr_xfrqxfjc;"
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_yjnr_xfjc;"
                                  "{query_date}==登记日期 then xf_xfj_cd_xj_yjnr_djrqxfjc;"
                                  "{query_date}==交换日期 then xf_xfj_cd_xj_yjnr_jhrqxfjc;",
-                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                      "v_select": "{query_date}==信访日期 then xfjc;"
                                   "{query_date}==登记日期 then djrqxfjc;"
                                   "{query_date}==交换日期 then jhrqxfjc;"},
         "fx_db_sql": """""",
@@ -113,10 +113,10 @@ APIS_PLUGIN = [
         # 测试用例：http://39.107.240.28:3389/api/xf/?gd_id=gd_qjywjk_dttc&query_date=信访日期&day=[2019-01-01,2020-01-01]
         "url": "/api/xf/\?gd_id=gd_qjywjk_dttc&",
         "map": {"name": "区划", "value": "信访件次", "query": "查询id"},
-        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfrqxfjc;"
+        "variables": {"v_table": "{query_date}==信访日期 then xf_xfj_cd_xj_xfjc;"
                                  "{query_date}==登记日期 then xf_xfj_cd_xj_djrqxfjc;"
                                  "{query_date}==交换日期 then xf_xfj_cd_xj_jhrqxfjc;",
-                      "v_select": "{query_date}==信访日期 then xfrqxfjc;"
+                      "v_select": "{query_date}==信访日期 then xfjc;"
                                   "{query_date}==登记日期 then djrqxfjc;"
                                   "{query_date}==交换日期 then jhrqxfjc;",
                       "v_qhwhere": "{name}==xj_02 then shij_02;"

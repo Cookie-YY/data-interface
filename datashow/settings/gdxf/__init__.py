@@ -91,7 +91,7 @@ SIGNIFICANT_DIGITS = 4
 TIME_FORMAT = "%Y-%m-%d"
 
 # 时间的精确配置
-DATE_START = "00:00:00"
+DATE_START = ""
 DATE_END = "23:59:59"
 
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则

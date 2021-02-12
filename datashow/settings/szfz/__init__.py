@@ -40,8 +40,14 @@ SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
 DP_CONTAINER = "client"         # 大屏的根路径
 DP_ROOT = "szfzdp"
 
-DP_DIR = ""                     # 为空或者相对于DP_ROOT的路径
-DP_URL = "szfzdp"               # 访问大屏的url（不用写/）
+DP_DIR_1 = ""  # 为空或者相对于DP_ROOT的路径
+DP_URL_1 = "szfzdp"  # 访问大屏的url（不用写/）
+
+# DP_DIR_2 = "LeadCockpit"
+# DP_URL_2 = "LeadCockpit"        # 访问大屏的url（不用写/）
+#
+# DP_DIR_3 = "assistant"
+# DP_URL_3 = "assistant"        # 访问大屏的url（不用写/）
 
 # 头像等获取的文件的地址
 FILE_URL = f"/{DP_ROOT}/file/"
@@ -65,7 +71,16 @@ LEVEL_AUTH_ENCRYPT = False
 # 有param_trans param_trans的开关才算打开，否则不走param_trans
 CUS_SPECIAL_PARAMS = {"busin": ("xfj", None), "xzqh": (False, "\d{6}"), "param_trans": ("is_ga,qh2sheshixj", None), "full": ("none", None)}
 CUS_PARAM_TRANS = ["is_ga"]
-
+# 自定义颜色系列
+COLOR_SERIES = {
+    "Embedding": [  # 嵌套图的颜色
+        ['#5164ff', '#96a2ff', '#6d7dff'],  # 蓝色系
+        ['#3fcfdb', '#39dbc5', '#47c0f6'],  # 青色系
+        ['#b04aff', '#c1a4ff', '#a176ff'],  # 紫色系
+        ['#fd9f8c', '#f9bc95', '#ff8c86'],  # 橙色系
+        # ['#8dc1a9', '#ea7e53', '#73b9bc']   # 紫色系【没用上，目前只要前4个】
+    ],
+}
 ############################### 数据配置 ###############################
 # 随机化配置
 RANDOM_OR_ZERO = "ZERO"
@@ -91,34 +106,29 @@ DATE_END = "00:00:00"
 # df的数值映射 默认所有字段都开启，如果需要关闭特定的接口中的特定的字段，需指定参数，支持正则
 # get_dataframe阶段的第一步simpele2df时执行[只要走父类的params_search就会走下面的数据映射]
 CUS_VALUE_MAP = {
-    # "global_wx": {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}},
-    "dsr_type": {},
 }
-
 # plugin过程中的sql模式中的内容映射，主要用于大表格的反查，支持正则，格式和VALUE_MAP一样
 VALUE_MAP_FOR_PLUGIN_SQL = {
-    # "global_wx": {"xfxs": {"网信": "(^(?!来信$))(^(?!来访$))"}},
 }
-
 # 初始化指标需要的txt文件夹位置
 INITIALIZATION_FILE_PATH = os.path.join(SETTINGS_DIR, "init_files")
 INITIALIZATION_FILE_SEP = "\t"
 
 # 自定义extensions
-CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "chuj"]
+CUS_EXTENSIONS = ["mylv", "cplv", "jssllv", "yjzt", "aqdflv", "wxzb", "yctb", "ychb", "ycyjzt", "cjzb"]
 
 # 有关联关系的字段
-RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]         # full补零需要
+RELATION_COLS = ["shej_02+shij_02+xj_02", "yjnr+ejnr+sjnr"]
 
 # 禁止full的情况
 DISABLE_FULL_WHEN_NAME = ["xm"]
 DISABLE_FULL_WHEN_VALUE = ["shej_02", "shij_02", "xj_02"]
 
 # predict（ext）的参数
-# 最小可供预测的数据，否则将均值作为预测结果
+# 最小可供预测的数据，否则返回均值
 PREDICT_MIN_DATA = 20            # 用于预测的最小的训练集的样本量
 PREDICT_MIN_MULTI_DATA = 3       # 用于预测的最小的训练集的样本量的倍数，如，预测7天，最少需要21天
-PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准("mean" or "zero")      震荡幅度(当zero时 幅度没用)
+PREDICT_STRATEGY_FILL_NA = ("mean", 0.1)   # 补零基准      震荡幅度(相对于均值)
 ############################### 调试配置 ###############################
 # SQLALCHEMY_ECHO = True
 

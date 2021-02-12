@@ -12,7 +12,7 @@ URL_REFERENCE = {
 SYS_EXTENSIONS = ["", "groupby", "tb", "hb", "zb", "predict", "topkzb"]  # 系统内置extension
 
 # 程序内置param_trans
-SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range"]
+SYS_PARAM_TRANS = ["qh2sheshixj", "qh_include_sub", "qh_godown", "year_range", "year2day"]
 
 # 程序内置value_map
 SYS_VALUE_MAP = {

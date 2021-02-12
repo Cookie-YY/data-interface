@@ -3,7 +3,7 @@ const $URL = {
   BASE_API: '/LeadCockpit', //部署地址
   // BASE_API: './', //部署地址
   // DATA_API: 'http://39.107.240.28:3390/api/xf',   //接口地址
-  DATA_API: '/api/xf/',   //代理
+  DATA_API: '/api/xf',   //代理
   JSON: false //true:本地json数据、false:接口数据
 }
 

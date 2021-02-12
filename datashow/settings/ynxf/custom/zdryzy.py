@@ -17,7 +17,7 @@ def get_data(conn, sql):
             res = 0
         return res
     except Exception as e:
-        print(e)
+        return 0
 
 
 def get_table_data(conn, table, year, month, zjhm):
@@ -28,34 +28,48 @@ def get_table_data(conn, table, year, month, zjhm):
 
 def get_yearmonth(year, month):  # month 和 year 需要用整数类型
     if month == 1:
+        month_last3 = 10
         month_last2 = 11
         month_last1 = 12
+        year_last3 = year-1
         year_last2 = year-1
         year_last1 = year-1
     elif month == 2:
+        month_last3 = 11
         month_last2 = 12
         month_last1 = 1
+        year_last3 = year-1
         year_last2 = year-1
         year_last1 = year
-    else:
-        month_last2 = month-2
-        month_last1 = month-1
+    elif month == 3:
+        month_last3 = 12
+        month_last2 = 1
+        month_last1 = 2
+        year_last3 = year-1
         year_last2 = year
         year_last1 = year
-    return year_last2, month_last2, year_last1, month_last1
+
+    else:
+        month_last3 = month-3
+        month_last2 = month-2
+        month_last1 = month-1
+        year_last3 = year
+        year_last2 = year
+        year_last1 = year
+    return year_last3, month_last3, year_last2, month_last2, year_last1, month_last1
 
 
 def get_yj(zb_pymysql, year, month, zjhm):
-    year_last2, month_last2, year_last1, month_last1 = get_yearmonth(int(year), int(month))
+    year_last3, month_last3, year_last2, month_last2, year_last1, month_last1 = get_yearmonth(int(year), int(month))
     present_data = get_table_data(zb_pymysql, table_xwzs, year, month, zjhm)
     last1_data = get_table_data(zb_pymysql, table_xwzs, year_last1, month_last1, zjhm)
     last2_data = get_table_data(zb_pymysql, table_xwzs, year_last2, month_last2, zjhm)
+    last3_data = get_table_data(zb_pymysql, table_xwzs, year_last3, month_last3, zjhm)
 
-
-    if present_data > last1_data > last2_data:
+    if present_data > last1_data > last2_data > last3_data:
         return ("连续三个月呈上涨趋势，进行 ", "形势预警")
     else:
-        return ("指数平稳")
+        return ("指数平稳",)
 
 
 def run(fx_pymysql, zb_pymysql, month, year, zjhm, **kwargs):
@@ -76,14 +90,14 @@ def run(fx_pymysql, zb_pymysql, month, year, zjhm, **kwargs):
     else:
         wrapper_yj = f'<span style="color: rgb(0, 228, 255); font-size: 18px; line-height: 30px;">{data_yj[0]}</span>'
     # 包装概要
-    wrapper_gy = f'<p style="color: rgb(0, 228, 255); font-size: 18px; line-height: 30px;">扬言<span style="color: rgb(243, 73, 141); font-weight: bold; padding: 0px 2px;font-size: 18px;line-height: 30px;">{data_yy}</span>次</p>'
+    wrapper_gy = f'<p style="color: rgb(0, 228, 255); font-size: 18px; line-height: 30px;">扬言<span style="color: rgb(243, 73, 141); font-weight: bold; padding: 0px 2px;font-size: 18px;line-height: 30px;">{data_yy}</span>次</p>' \
+                 # f'<p style="color: rgb(0, 228, 255); font-size: 18px; line-height: 30px;">扬言<span style="color: rgb(243, 73, 141); font-weight: bold; padding: 0px 2px;font-size: 18px;line-height: 30px;">{data_yy}</span>次</p>'
 
     data = [
         {"name": "时间", "value": data_time},
-        {"name": "信访行为分析指数", "value": wrapper_fxzs},
+        {"name": "分析指数", "value": wrapper_fxzs},
         {"name": "指数预警", "value": wrapper_yj},
-        {"name": "该信访人", "value": wrapper_gy},
+        {"name": "信访行为", "value": wrapper_gy+wrapper_gy},
     ]
-    print(data)
-    result = {"data": json.dumps(data)}
-    return 204, "success", result
+    result = {"data": data}
+    return 200, "success", result

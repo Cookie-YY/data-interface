@@ -27,7 +27,9 @@ def convert_dfs(dataframes):
             else:  # 如果没数，说明是第一次，把当前遍历的这个的data放上去
                 parsed_data["data"] = parsed_data_one["data"]
         else:   # 如果没有stack，说明需要name/value组合
-            parsed_data["data"].append({**{"name": dataframe.get("main_name")},**parsed_data_one["data"][0]})
+            for one in parsed_data_one["data"]:  # 需要把data里面所有的内容都拿出来
+                parsed_data["data"].append(one)
+            # parsed_data["data"].append({**{"name": dataframe.get("main_name")}, **parsed_data_one["data"][0]})
     return 200, "success", parsed_data
 
 

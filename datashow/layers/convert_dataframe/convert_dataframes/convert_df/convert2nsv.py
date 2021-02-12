@@ -19,7 +19,7 @@ def convert2nsv(dataframe, groupid=0):
         [i.update({"value": i.pop(value)}) for i in data]
 
     # 处理main_name问题
-    if main_name and not stack and not name:
+    if main_name and not stack and not name:  # 有main_name但是没有stack，说明只有name
         data[0]["name"] = main_name
 
     if stack:  # 处理堆叠问题

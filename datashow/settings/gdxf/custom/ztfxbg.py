@@ -27,20 +27,21 @@ def search_sb(conn, sql, value1, value2):
             tb = int(total_num) / last_total_num  # 同比
             from app import app
             tb = round(tb, app.config.get("SIGNIFICANT_DIGITS", 4))
+            total_num = int(total_num)
         return f'{pre}{total_num}{post}', f'{pre}{tb}{post}'
     except Exception as e:
         print(e)
 
 
 def run(start, end, zt, zb_pymysql, **kwargs):
-    s_time = start
-    e_time = end
+    s_time = start.split()[0]
+    e_time = end.split()[0]
     sql_qhauth_sheshixj = kwargs.get("sql_qhauth_sheshixj")
     sql_qhauth_qh = kwargs.get("sql_qhauth_qh")
     sql_qhauth_djjg_qh = kwargs.get("sql_qhauth_other").get("djjg_qh")
     qh = sql_qhauth_qh.replace("'", "").replace("qh","").replace("=","").strip()
-    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d %H:%M:%S")
-    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d %H:%M:%S")
+    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d")
+    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d")
     str1 = s_time1.strftime("%Y{y}%m{m}%d{d}").format(y="年", m="月", d="日")
     str2 = e_time1.strftime("%Y{y}%m{m}%d{d}").format(y="年", m="月", d="日")
     last_s_time = str(s_time1.year - 1) + s_time[4:]

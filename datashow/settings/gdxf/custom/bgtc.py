@@ -18,15 +18,15 @@ def run(fx_pymysql, start, end, query, query_date, **kwargs):
     # s_time = day[0].strip("[")
     # e_time = day[1].strip("]")
     # query = request.args.get('query', '来信')
-    s_time = start
-    e_time = end
+    s_time = start.split()[0]
+    e_time = end.split()[0]
     sql_qhauth_qh = kwargs.get("sql_qhauth_qh")
     qh = sql_qhauth_qh.replace("'", "").replace("qh","").replace("=","").strip()
 
 
     # query = "('" + query + "')" if query != '网信' else ('网上投诉', '网信', '领导信箱')
-    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d %H:%M:%S")
-    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d %H:%M:%S")
+    s_time1 = datetime.datetime.strptime(s_time, "%Y-%m-%d")
+    e_time1 = datetime.datetime.strptime(e_time, "%Y-%m-%d")
     # query_date = request.args.get('query_date', 'xfrq')
     query_date = 'xfrq' if query_date == '信访日期' else 'djsj'
     xfxssql = "select xfjbh, xfxsmc, nrflmc, djjgmc,wtsdmc ,xfrs, cfxfbz, xfrq,djsj from xf_xfjxx  where xfxsmc = '%s' and %s  between '%s' and '%s'" % (query, query_date, s_time1, e_time1) + f" and wtsdmc like '%{qh}%'"

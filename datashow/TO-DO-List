@@ -647,7 +647,7 @@ name/stack/value：
         1. @filter的参数中实现的方法需要提前写，并且有默认值[遇到某个表就有专属的filter方法]
     col_trans_in=a->b,c->d,qhdm->@xj,xfrq->@day, special->@process_special
         1. qhdm->xj 意思是从qhdm中获取shej_02/shij_02/xj_02
-        2. xfrq->day/year/month  如果是month, 需要year和month
+        2. xfrq->day/year/month  如果是month, 需要year和month和date
     agg=pre:, groupby:@unicount, post:unicount->xfrsrange,
         1. 如果post转换的结果中有range, 如uncount->xfrsrange, 自动拼接另一个agg=pre:followintogroup,groupby:@unicount,post:unicount->xfjc
     col_trans_agg=
@@ -860,3 +860,32 @@ name/stack/value：
         流程编号(0D000XX) 开始执行时间  执行完成时间  执行耗时  执行状态 异常原因 创建时间  修改时间
     7. 并行数
     8. 是否测试过程: 测试就是把所有的sql，limit=1
+
+
+云南
+    漏斗的custom
+    时间线的custom: br连接  没有次数 只有内容
+    卡片的custom: 类似时间线的custom 多几个wrapper
+
+漏斗：
+<p style="font-size: 18px;
+          color: #fff;line-height: 30px;">
+            <b style="color: #ff0010;">一般信访行为</b>
+            转化为 <b style="color: #ff0010;">到省访</b>转化率为 <b style="color: #ff0010;">89%</b>，实施 <b style="color: #ff0010;">红色预警</b>
+            </p >
+            <p style="font-size: 18px;
+          color: #fff;line-height: 30px;">
+            <b style="color: #fe5e00;">一般信访行为</b>
+            转化为 <b style="color: #fe5e00;">到省访</b>转化率为 <b style="color: #fe5e00;">89%</b>，实施 <b style="color: #fe5e00;">橙色预警</b>
+            
+            </p >
+            <p style="font-size: 18px;
+          color: #fff;line-height: 30px;">
+              <b style="color: #2a5cfd;">一般信访行为</b>
+            转化为 <b style="color: #2a5cfd;">到省访</b>转化率为 <b style="color: #2a5cfd;">89%</b>，实施 <b style="color: #2a5cfd;">蓝色预警</b>
+            </p >
+深圳
+    问题1：main_name=$zqlx
+    问题2：main_name=总数:bar,:line
+    [done]问题3：value和name-value用main_name拼起来
+    问题4：value_map

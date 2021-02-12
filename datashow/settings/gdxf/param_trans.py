@@ -92,7 +92,7 @@ class PT(ParamTrans):
                 xfbm_qh_index = 1
             else:
                 xfbm_qh_index = 2
-            if xfbm_qh_index < qh_ceiling_index:
+            if xfbm_qh_index < qh_ceiling_index:  # 超限了
                 xfbm_list = xfbm.iloc[:, qh_ceiling_index][xfbm.iloc[:, qh_ceiling_index].str.contains(qh_ceiling)].tolist()
                 if len(set(xfbm_list)) == 1:
                     self.apis_copy["xfbm"] = xfbm_list[0]
@@ -179,11 +179,13 @@ class PT(ParamTrans):
             self.apis_copy["day"] = condition_day.split(",")[-1].split()[0]+" 00:00:00"
         return self
 
-    def qhsearch_qhauth(self, *args, **kwargs):
+    def qhsearch_qhauth(self, *args, **kwargs):  # 不用管是否超限，因为超限了前端会隐藏掉高级的tab框，不会发送超过限度的请求
         qh_ceiling = g.get("level_auth_name")
         from utils.qh_processor import get_qh_level
-        qh_level = get_qh_level(qh_ceiling)
-        self.apis_copy["value"] = qh_level
+        qh_level_ceiling = get_qh_level(qh_ceiling)      # 权限上限的中文级别 shij_02
+        self.apis_copy[qh_level_ceiling] = qh_ceiling
+
+
         return self
 
     def addshijwhenxj(self, *args, **kwargs):

@@ -50,7 +50,7 @@ def data_index_api(realm, index=""):
     # convert层直接返回封装好的结果
     # 如果走插件过程，需要手动补充code和msg
     code, msg, parsed_data = parse_data(realm, index, request_args)
-    if code not in [200, 201, 202, 203, 204, 999]:  # 201空数据   202  插件过程   203api分发时直接是字典   204不需要变成json,原始字串
+    if code not in [200, 201, 202, 203, 999]:  # 201空数据   202  插件过程   203api分发时直接是字典   204不需要变成json,原始字串
         parsed_data = {"code": code, "msg": msg, "data": {}}
     else:
         if code == 202:
@@ -59,15 +59,17 @@ def data_index_api(realm, index=""):
         elif code == 203:
             parsed_data["code"] = 203
             parsed_data["msg"] = "test data in apis_dispatch"
-        elif code == 204:
-            parsed_data["code"] = 204
-            parsed_data["msg"] = "raw_data"
-    data = json.dumps(parsed_data, default=lambda x: int(x)) if parsed_data["code"] != 204 else parsed_data
+        # elif code == 204:
+        #     parsed_data["code"] = 204
+        #     parsed_data["msg"] = "raw_data"
+
+    data = json.dumps(parsed_data, default=lambda x: int(x))
+    # response = Response(response, mimetype='application/json')
     response = make_response(data)
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = '*'
     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
-    # response = Response(response, mimetype='application/json')
+    response.headers['content-type'] = 'application/json'
     if app.config.get("LEVEL_AUTH"):
         if not request.cookies.get(app.config.get("LEVEL_AUTH_COOKIE")) and g.get("level_auth"):
             response.set_cookie(app.config.get("LEVEL_AUTH_COOKIE"), g.level_auth)

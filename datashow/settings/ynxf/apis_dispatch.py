@@ -135,11 +135,13 @@ URL_DISPATCH_MAP = {
 # xf_xfjg_cy_shij_bmjssllv
 # xf_xfjg_cy_shij_bmcplv
 # xf_xfjg_cy_shij_bmmylv
-    "信访行为分析预警_行为转化预警_行为转化漏斗": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfj_cy_shij_abzhjc_bczhjc_aczhjc&value=abzhjc&extra_index=value@to:bczhjc,value@to:aczhjc&main_name=待定1,待定2,待定3&shij_02=昆明市&year=2020",
-    "信访行为分析预警_行为转化预警_年度三率": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfjg_cy_shij_bmjssllv&extra_index=table@to:xf_xfjg_cy_shij_bmcplv,table@to:xf_xfjg_cy_shij_bmmylv&main_name=待定1,待定2,待定3&shij_02=昆明市&year=2020",
+    "信访行为分析预警_行为转化预警_行为转化漏斗": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwzhyj_xwzhld&year=2020&shj_02=昆明市",
+    "信访行为分析预警_行为转化预警_年度三率": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfjg_cy_shij_bmjssllv&extra_index=table@to:xf_xfjg_cy_shij_bmcplv,table@to:xf_xfjg_cy_shij_bmmylv&main_name=部门及时受理率,部门参评率,部门满意率&shij_02=昆明市&year=2020",
     "信访行为分析预警_行为转化预警_重点人列表": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwzhyj_zdxfrlb&year=2020&limit=10",
 
     "信访行为分析预警_行为轨迹预警_行为分析指数走势":"http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cm_zjhm_xm_xfxwzs&name=month&zjhm=100000000&year=2020",
-    "信访行为分析预警_行为轨迹预警_行为统计": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cd_zjhm_xm_xfxw&name=day&zjhm=100000000&year=2021&param_trans=year2day&full=none",
+    # "信访行为分析预警_行为轨迹预警_行为统计": "http://www.fuyaofy.com:3391/api/xf/?table=xf_xfr_cd_zjhm_xm_xfxw&name=day&zjhm=100000000&year=2021&param_trans=year2day&full=none&black_list(year)",
+    # "信访行为分析预警_行为轨迹预警_行为统计": {"data": [{"name": "2020-01-14", "value": "扬言"},{"name": "2020-09-01", "value": "扬言"},{"name": "2020-09-10", "value": "扬言"}]},
+    "信访行为分析预警_行为轨迹预警_行为统计": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwgjyj_xwsjz&zjhm=100000000",
     "信访行为分析预警_行为轨迹预警_重点人员摘要": "http://www.fuyaofy.com:3391/api/xf/?gd_id=yn_xwgjyj_zdryzy&year=2020&month=1&zjhm=100000000",
 }

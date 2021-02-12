@@ -4,17 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="585a69d5-eb5a-4e20-97d4-48ffd794e6ac" name="Default Changelist" comment="完善云南接口，custom增加 204 raw_data">
+    <list default="true" id="585a69d5-eb5a-4e20-97d4-48ffd794e6ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../datacalculate/.idea/datacalculate.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings/ynxf/custom/zhld.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dev_tools/dispatch2front/.idea/dispatch2front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/.idea/hbxf-pro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../project_done/hbxf-pro/hbxf/.idea/hbxf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculate/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../calculate/start.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layers/makeup_dataframe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/makeup_dataframe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TO-DO-List" beforeDir="false" afterPath="$PROJECT_DIR$/TO-DO-List" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/css/chunk-d89fdd66.6cda6fd8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-d89fdd66.6090b09a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/AidDecisionMaking/static/js/chunk-d89fdd66.6090b09a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/css/chunk-558630bd.90058831.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-558630bd.f7dda714.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/static/js/chunk-558630bd.f7dda714.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/LeadCockpit/url.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/gdxfdp/assistant/js/chain.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/gdxfdp/assistant/js/chain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/data/xfxwfxyj/xwgjyj/Xfxwtj.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/data/xfxwfxyj/xwgjyj/Xfxwtj.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-036e1272.c8258ed5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-3b08a3b7.4ec6d6a4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/css/chunk-5aaf8e9c.f69aaf78.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-036e1272.b7045793.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-036e1272.b7045793.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-3b08a3b7.8d15d494.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-3b08a3b7.8d15d494.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-5aaf8e9c.860915f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/static/js/chunk-5aaf8e9c.860915f6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ynxfdp/url.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/ynxfdp/url.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2nsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_df/convert2nsv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layers/get_dataframe/get_dataframe_from_plugin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/param_trans/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/param_trans/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/gdxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_dispatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/apis_plugins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/custom/bgtc.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/custom/bgtc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/gdxf/custom/ztfxbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/custom/ztfxbg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/gdxf/param_trans.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/gdxf/param_trans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/global.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/global.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/szfz/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/szfz/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/apis_dispatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/szfz/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/apis_plugins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/szfz/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/szfz/init_dicts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/ynxf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_dispatch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/apis_plugins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/ynxf/custom/zdryzy.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/custom/zdryzy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/init_dicts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/ynxf/param_trans.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/ynxf/param_trans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/init_date_valuelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/init_date_valuelist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sys_extensions/params_parse_tb_hb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sys_extensions/params_parse_tb_hb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +107,13 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Project\dabot\datashow\utils\generate_file" />
+      <recent name="D:\Programming\Project\dabot\datashow\utils\generate_pdf" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming\Project\dabot\datashow\settings\ynxf" />
       <recent name="D:\Programming\Project\dabot\datashow\bin" />
@@ -70,26 +121,22 @@
       <recent name="D:\Programming\Project\dabot\datashow\settings\gdxf\extensions\aqdflv" />
       <recent name="D:\Programming\Project\dabot\datashow\settings\gdxf\extensions\jssllv" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programming\Project\dabot\datashow\utils\generate_file" />
-      <recent name="D:\Programming\Project\dabot\datashow\utils\generate_pdf" />
-    </key>
   </component>
   <component name="RunManager" selected="Python.app">
-    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="cq_test" />
+    <configuration name="[1]两数之和" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="calculate" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/cq_test" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../WorkSpace/LeetCode/Pycharm/leetcode/editor/cn" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/cq_test/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../WorkSpace/LeetCode/Pycharm/leetcode/editor/cn/[1]两数之和.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,20 +189,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dispatch2front" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="dispatch2front" />
+    <configuration name="env_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="datashow" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../dev_tools/dispatch2front" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../dev_tools/dispatch2front/dispatch2front.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/env_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,10 +236,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.env_test" />
+        <item itemvalue="Python.[1]两数之和" />
         <item itemvalue="Python.test_db" />
         <item itemvalue="Python.app (2)" />
-        <item itemvalue="Python.app (1)" />
-        <item itemvalue="Python.dispatch2front" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +293,31 @@
       <workItem from="1610330853839" duration="15548000" />
       <workItem from="1610354140870" duration="5325000" />
       <workItem from="1610429365072" duration="15699000" />
-      <workItem from="1610500148370" duration="16384000" />
+      <workItem from="1610500148370" duration="32749000" />
+      <workItem from="1610619570964" duration="600000" />
+      <workItem from="1610694770546" duration="3014000" />
+      <workItem from="1610913368096" duration="1490000" />
+      <workItem from="1610914884111" duration="1791000" />
+      <workItem from="1610934908843" duration="1324000" />
+      <workItem from="1610969419383" duration="665000" />
+      <workItem from="1611020799332" duration="5052000" />
+      <workItem from="1611110890840" duration="3327000" />
+      <workItem from="1611193335458" duration="12119000" />
+      <workItem from="1611280430288" duration="1196000" />
+      <workItem from="1611472205977" duration="94000" />
+      <workItem from="1611538490069" duration="3075000" />
+      <workItem from="1611575958498" duration="599000" />
+      <workItem from="1611816467476" duration="1320000" />
+      <workItem from="1611904792336" duration="1293000" />
+      <workItem from="1612230004806" duration="2717000" />
+      <workItem from="1612341431519" duration="1715000" />
+      <workItem from="1612345439513" duration="3116000" />
+      <workItem from="1612403269512" duration="2599000" />
+      <workItem from="1612507364728" duration="952000" />
+      <workItem from="1612596782155" duration="598000" />
+      <workItem from="1612708501925" duration="758000" />
+      <workItem from="1612747033205" duration="3368000" />
+      <workItem from="1613094475080" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary="取消req的返回，解决to_list的bug，添加sql_qh参数用于sql过程的权限控制，修改广东接口">
       <created>1607434415393</created>
@@ -290,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610505405543</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="广东增加区划弹窗的权限，云南完善接口">
+      <created>1610525002704</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610525002704</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,9 +381,14 @@
     <MESSAGE value="添加重复信访率" />
     <MESSAGE value="参评率 满意率文件化" />
     <MESSAGE value="完善云南接口，custom增加204 raw_data" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善云南接口，custom增加204 raw_data" />
+    <MESSAGE value="广东增加区划弹窗的权限，云南完善接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="广东增加区划弹窗的权限，云南完善接口" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="424" y="187" key="#Notifications" timestamp="1613094522718">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="424" y="187" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1613094522718" />
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607324196788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -314,83 +397,88 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="409" y="164" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1610019938966" />
-    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2" timestamp="1610524784092">
+    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2" timestamp="1610524997666">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1597" y="-103" key="CommitChangelistDialog2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610505386778" />
-    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1610524784092" />
-    <state width="1918" height="313" key="DebuggerActiveHint" timestamp="1610506592359">
+    <state x="537" y="55" width="804" height="567" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1610524997666" />
+    <state width="1918" height="313" key="DebuggerActiveHint" timestamp="1612748042741">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
     <state width="1364" height="290" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1608862410446" />
-    <state width="1918" height="313" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610506592359" />
+    <state width="1918" height="313" key="DebuggerActiveHint/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612748042741" />
     <state width="1364" height="289" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1609408581534" />
     <state x="129" y="55" width="1092" height="610" key="DiffContextDialog" timestamp="1609891219876">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="129" y="55" width="1092" height="610" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1609891219876" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609207369781">
+    <state x="766" y="119" key="FileChooserDialogImpl" timestamp="1610913902423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="2017" y="67" key="FileChooserDialogImpl/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1608689037618" />
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609207369781" />
-    <state width="1323" height="46" key="GridCell.Tab.0.bottom" timestamp="1610524880152">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="41" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610438861185" />
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610508788318" />
-    <state width="1323" height="46" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610524880152" />
-    <state width="1323" height="46" key="GridCell.Tab.0.center" timestamp="1610524880151">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="41" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610438861185" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610508788317" />
-    <state width="1323" height="46" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610524880151" />
-    <state width="1323" height="46" key="GridCell.Tab.0.left" timestamp="1610524880150">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="41" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610438861184" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610508788317" />
-    <state width="1323" height="46" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610524880150" />
-    <state width="1323" height="46" key="GridCell.Tab.0.right" timestamp="1610524880152">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="41" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610438861185" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610508788317" />
-    <state width="1323" height="46" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610524880152" />
-    <state width="1877" height="322" key="GridCell.Tab.1.bottom" timestamp="1610506832080">
+    <state x="766" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1610913902423" />
+    <state width="1876" height="146" key="GridCell.Tab.0.bottom" timestamp="1612758071586">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
-    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610081741761" />
-    <state width="1877" height="322" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610506832080" />
-    <state width="1323" height="409" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610094295411" />
-    <state width="1877" height="322" key="GridCell.Tab.1.center" timestamp="1610506832079">
+    <state width="1322" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1612747911777" />
+    <state width="1876" height="146" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1322" height="218" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610929648674" />
+    <state width="1876" height="146" key="GridCell.Tab.0.center" timestamp="1612758071586">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
-    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610081741761" />
-    <state width="1877" height="322" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610506832079" />
-    <state width="1323" height="409" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1610094295409" />
-    <state width="1877" height="322" key="GridCell.Tab.1.left" timestamp="1610506832079">
+    <state width="1322" height="144" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1612747911777" />
+    <state width="1876" height="146" key="GridCell.Tab.0.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1322" height="218" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610929648673" />
+    <state width="1876" height="146" key="GridCell.Tab.0.left" timestamp="1612758071586">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
-    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610081741761" />
-    <state width="1877" height="322" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610506832079" />
-    <state width="1323" height="409" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1610094295409" />
-    <state width="1877" height="322" key="GridCell.Tab.1.right" timestamp="1610506832079">
+    <state width="1322" height="144" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1612747911777" />
+    <state width="1876" height="146" key="GridCell.Tab.0.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1322" height="218" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610929648673" />
+    <state width="1876" height="146" key="GridCell.Tab.0.right" timestamp="1612758071586">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
-    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610081741761" />
-    <state width="1877" height="322" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610506832079" />
-    <state width="1323" height="409" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1610094295410" />
+    <state width="1322" height="144" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1612747911777" />
+    <state width="1876" height="146" key="GridCell.Tab.0.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1322" height="218" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610929648673" />
+    <state width="1876" height="146" key="GridCell.Tab.1.bottom" timestamp="1612758071586">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="230" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1611224215785" />
+    <state width="1876" height="146" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1323" height="349" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610619429067" />
+    <state width="1876" height="146" key="GridCell.Tab.1.center" timestamp="1612758071586">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="230" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1611224215785" />
+    <state width="1876" height="146" key="GridCell.Tab.1.center/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1323" height="349" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1610619429067" />
+    <state width="1876" height="146" key="GridCell.Tab.1.left" timestamp="1612758071586">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="230" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1611224215785" />
+    <state width="1876" height="146" key="GridCell.Tab.1.left/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1323" height="349" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1610619429066" />
+    <state width="1876" height="146" key="GridCell.Tab.1.right" timestamp="1612758071586">
+      <screen x="1366" y="-103" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="230" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1611224215785" />
+    <state width="1876" height="146" key="GridCell.Tab.1.right/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612758071586" />
+    <state width="1323" height="349" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1610619429067" />
     <state x="480" y="65" key="RollbackChangesDialog" timestamp="1607326581658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="480" y="65" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607326581658" />
-    <state x="1753" y="36" key="Vcs.Push.Dialog.v2" timestamp="1610505470169">
+    <state x="1403" y="-93" width="1339" height="711" key="SettingsEditor" timestamp="1612345427078">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
+    <state x="1403" y="-93" key="SettingsEditor/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1612345427078" />
+    <state x="27" y="7" width="1339" height="711" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610914939397" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1610525005295">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
     <state x="1753" y="36" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610505470169" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609924291417" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1610525005295" />
     <state width="972" height="532" key="XDebugger.FullValuePopup" timestamp="1610505174640">
       <screen x="1366" y="-103" width="1920" height="1040" />
     </state>
@@ -413,10 +501,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="371" y="232" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609891196942" />
-    <state x="1862" y="-33" width="945" height="969" key="search.everywhere.popup" timestamp="1610446314509">
-      <screen x="1366" y="-103" width="1920" height="1040" />
+    <state x="353" y="49" width="673" height="679" key="search.everywhere.popup" timestamp="1611040663616">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="353" y="49" width="673" height="679" key="search.everywhere.popup/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1610080608201" />
+    <state x="353" y="49" width="673" height="679" key="search.everywhere.popup/0.0.1366.728/1366.-103.1920.1040@0.0.1366.728" timestamp="1611040663616" />
     <state x="1862" y="-33" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/1366.-103.1920.1040@1366.-103.1920.1040" timestamp="1610446314509" />
     <state x="353" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1610177352023" />
   </component>
@@ -430,7 +518,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/settings/gdxf/custom/ztfxbg.py</url>
-          <line>64</line>
+          <line>65</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -514,14 +602,14 @@
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/layers/get_dataframe/__init__.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="129" />
+          <url>file://$PROJECT_DIR$/settings/ynxf/custom/zdryzy.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/layers/makeup_dataframe/__init__.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="130" />
+          <url>file://$PROJECT_DIR$/layers/convert_dataframe/convert_dataframes/convert_dfs.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="136" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -529,10 +617,11 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/datashow$app__2_.coverage" NAME="app (2) Coverage Results" MODIFIED="1609207595911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/重庆部署/cq_test" />
     <SUITE FILE_PATH="coverage/datashow$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1609071288606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第46周2020.12.28/cq_test" />
-    <SUITE FILE_PATH="coverage/datashow$env_test.coverage" NAME="env_test Coverage Results" MODIFIED="1608777042900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/datashow$dispatch2front.coverage" NAME="dispatch2front Coverage Results" MODIFIED="1608793383808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../dev_tools/dispatch2front" />
     <SUITE FILE_PATH="coverage/datashow$test_db.coverage" NAME="test_db Coverage Results" MODIFIED="1609651308847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/datashow$_1_.coverage" NAME="[1]两数之和 Coverage Results" MODIFIED="1610915336780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../WorkSpace/LeetCode/Pycharm/leetcode/editor/cn" />
+    <SUITE FILE_PATH="coverage/datashow$env_test.coverage" NAME="env_test Coverage Results" MODIFIED="1612747510603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/datashow$stack_with_color.coverage" NAME="stack_with_color Coverage Results" MODIFIED="1608691099626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../Study/PKUSE/worklogs/2020/第45周2020.12.21/集成/convert_dataframe/convert_dataframes/multi_stacks" />
-    <SUITE FILE_PATH="coverage/datashow$app.coverage" NAME="app Coverage Results" MODIFIED="1610524880119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/datashow$app.coverage" NAME="app Coverage Results" MODIFIED="1612748255655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

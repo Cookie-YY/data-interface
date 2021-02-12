@@ -171,8 +171,30 @@ select {name} as name, {name} as query, sum({v_select}) as value from {v_table} 
         "map": {"name": "重点人员", "value": "信访件次", "query": "查询id"},
         "fx_db_sql": """""",
         "zb_db_sql": """
-        select xm as name, zjhm as query, sum(xfjc) as value from xf_xfr_cy_zjhm_xm_xfjc where year={year} order by xfjc desc limit {limit}
+        select xm as name, zjhm as query, xfxwzs as value from xf_xfr_cm_zjhm_xm_xfxwzs where year={year} order by xfxwzs desc limit {limit}
         """,
         # "full": {"name": "yjnr", "value": [0], "query": "$name"}
     },
+
+    # 行为分析模块
+    # 行为转化漏斗
+    {
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=yn_xwzhyj_xwzhld&year=2020&shij_02=昆明市
+        "url": "/api/xf/\?gd_id=yn_xwzhyj_xwzhld&",
+        "mode": "custom",
+        "file": "zhld",
+    },
+    # 行为时间轨迹
+    {
+        # 测试用例：http://127.0.0.1:3389/api/xf/?gd_id=yn_xwgjyj_xwsjz&zjhm=1000000
+        "url": "/api/xf/\?gd_id=yn_xwgjyj_xwsjz&",
+        # "mode": "custom",
+        "map": {"name": "日期", "value": "信访行为"},
+        "fx_db_sql": """""",
+        "zb_db_sql": """
+        SELECT day as name,group_concat(xfxw separator '</br>') value FROM xf_xfr_cd_zjhm_xm_xfxw where zjhm='{zjhm}' GROUP BY day;""",
+        "time_format": "%Y年%m月%d日"
+    },
+
+
 ]

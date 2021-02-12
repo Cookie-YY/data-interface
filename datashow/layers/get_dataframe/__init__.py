@@ -19,7 +19,7 @@ def get_dataframe(apis):
 
     # 2.plugin【plugin模式，直接返回数据】
     code, msg, apis_or_result = get_dataframe_from_plugin(apis_copy)
-    if code in [202, 204]:  # 说明走的是插件的过程，不需要走后面了
+    if code in [202]:  # 说明走的是插件的过程，不需要走后面了
         return code, msg, apis_or_result
     if code != 200:
         return code, msg, {}
